@@ -15,16 +15,17 @@
  }
  function attachListeners() {}
  function handleMessage(message) {
-   var mess = message.data + " <br>";
+   var mess = message.data;
    var messField = document.getElementById("mess")
-   messField.innerHTML += mess;
+   messField.innerText += mess;
+   scrollTo(0, messField.scrollHeight);
  }
  </script>
 </head>
 <body>
   <div id="console"></div>
+   <h3 id="tit"></h3> 
   <div id="mess">
-     <h3 id="tit"></h3> 
   </div>
   <!--pNaCl csound module-->
   <div id="engine"></div>
