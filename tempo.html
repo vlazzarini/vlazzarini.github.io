@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<!--
+ Csound pnacl csd player example
+ Copyright (C) 2013 V Lazzarini
+-->
+<head>
+ <title> tempo example </title>
+ <style type="text/css">
+   textarea.console { font-family: "Courier New"; color: #FCF477;
+                     background-color: #007777 }
+  </style>
+ <script type="text/javascript" src="csound.js"></script>
+ <script type="text/javascript">
+ // called by csound.js
+ function moduleDidLoad() {
+
+ }
+ function attachListeners() { 
+  document.getElementById('playButton').
+       addEventListener('click', togglePlay);
+   document.getElementById("tempo").
+       addEventListener("change",setTempo);
+ }
+
+ var count = 0;
+ function handleMessage(message) {
+        var element = document.getElementById('console');
+        element.value += message.data;
+        element.scrollTop = 99999; // focus on bottom
+        count += 1;
+        if(count == 1000) {
+           element.value = ' ';
+           count = 0;
+        }
+  }
+
+  function setTempo() {
+  var val = document.getElementById("tempo").value;
+  csound.SetChannel("tempo", val); 
+ }
+ 
+
+ var playing = false;
+ var started = false;
+ var fname = "tempo.csd";
+
+ function togglePlay(){
+  if(!playing) {
+  if(started) csound.Play();
+  else {
+   csound.PlayCsd("http/" + fname);
+   console.log("playing");
+   started = true;
+  }
+  document.getElementById('playButton').innerText = "Pause";
+  playing = true;
+  } else {
+  csound.Pause()
+  document.getElementById('playButton').innerText ="Play";
+  playing = false;
+  }
+}
+
+ 
+</script>
+</head>
+<body>
+  <p>
+  <button id="playButton">Play</button>
+  </p>
+<p>
+    <input type="range" name="tempo" id="tempo" step="1" value="50"
+  min="0" max="100">
+</p>
+  <textarea class="console" cols="55" rows="13" id="console"
+  value="">Csound: not loaded</textarea>
+  <!--pNaCl csound module-->
+  <div id="engine"></div>
+</body>
+</html>
+
