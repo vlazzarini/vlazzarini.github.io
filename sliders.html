@@ -64,15 +64,16 @@
  }
  function SetParam(name) {
   var val = document.getElementById(name).value;
-  csound.SetChannel(name, val);
+  csound.SetChannel(name, val); 
  }
  </script>
 </head>
 <body>
+   
+  </textarea>
   <p>
   <input type="range" name="frequency" id="freq" step="1" value="50"
-  min="0" max="100"> fundamental
-  </p>
+  min="0" max="100"> fundamental </p>
   <p>
   <input type="range" name="frequency" id="amp" step="1" value="500"
   min="0" max="1000"> amplitude</p>
