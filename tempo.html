@@ -21,6 +21,8 @@
        addEventListener('click', togglePlay);
    document.getElementById("tempo").
        addEventListener("change",setTempo);
+   document.getElementById('resetButton').
+       addEventListener('click', reset_);
  }
 
  var count = 0;
@@ -62,6 +64,9 @@
   }
 }
 
+ function reset_(){
+  csound.Event("i3 0 0.1");
+ }
  
 </script>
 </head>
@@ -73,6 +78,9 @@
     <input type="range" name="tempo" id="tempo" step="1" value="50"
   min="0" max="100">
 </p>
+  <p>
+  <button id="resetButton">Reset</button>
+  </p>
   <textarea class="console" cols="55" rows="13" id="console"
   value="">Csound: not loaded</textarea>
   <!--pNaCl csound module-->

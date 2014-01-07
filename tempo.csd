@@ -7,36 +7,36 @@
 nchnls = 2
 gi1 chnget "tempo"
 schedule 2, 0, -1
+gkpitch init 0
+gkpan init 0
 
 instr 1
   a2 expon 0.5,p3,0.001
   a1 oscil 0dbfs*a2, cpspch(p4)
-  out a1
+  outs a1*p5, a1*(1-p5)
+  print p5
 endin
 
 instr 2
 k1 chnget "tempo"
-tempo 60*(k1+1), 60*(gi1+1)
-k2 tempoval
-printk2 k2
+k1 = k1*2 + 0.2
+ktrig metro k1
+if ktrig == 1 then
+gkpitch = (gkpitch == 8.00 ? 8.07 : 8.00)
+gkpan = (gkpan == 0 ? 1 : 0)
+event "i", 1, 0, 0.5, gkpitch, gkpan
+endif
+printk2 k1
 endin
 
 instr 3
-setscorepos 0
-schedule 2, 0, -1
-turnoff
+schedule 2,0,-1
 endin
 
 
 </CsInstruments>
 <CsScore>
 
-{ 100 CNT
-i 1 [00.00+$CNT] 00.5 8.00
-i 1 [00.25+$CNT] 00.5 8.04
-i 1 [00.50+$CNT] 00.5 8.07
-i 1 [00.75+$CNT] 00.5 8.10
-}
 
 
 </CsScore>
@@ -55,7 +55,7 @@ i 1 [00.75+$CNT] 00.5 8.10
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject type="BSBHSlider" version="2">
+ <bsbObject version="2" type="BSBHSlider">
   <objectName>tempo</objectName>
   <x>23</x>
   <y>23</y>
@@ -67,13 +67,13 @@ i 1 [00.75+$CNT] 00.5 8.10
   <midicc>0</midicc>
   <minimum>0.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>0.46666667</value>
+  <value>0.98000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBButton" version="2">
+ <bsbObject version="2" type="BSBButton">
   <objectName>button1</objectName>
   <x>20</x>
   <y>59</y>
@@ -90,7 +90,7 @@ i 1 [00.75+$CNT] 00.5 8.10
   <image>/</image>
   <eventLine>i3 0 1</eventLine>
   <latch>false</latch>
-  <latched>false</latched>
+  <latched>true</latched>
  </bsbObject>
 </bsbPanel>
 <bsbPresets>
