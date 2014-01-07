@@ -1,6 +1,6 @@
 <CsoundSynthesizer>
 <CsOptions>
--odac -t60
+-odac 
 </CsOptions>
 <CsInstruments>
 
@@ -66,7 +66,7 @@ endin
   <midicc>0</midicc>
   <minimum>0.00000000</minimum>
   <maximum>100.00000000</maximum>
-  <value>88.66666667</value>
+  <value>100.00000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
