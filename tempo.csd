@@ -14,7 +14,6 @@ instr 1
   a2 expon 0.5,p3,0.001
   a1 oscil 0dbfs*a2, cpspch(p4)
   outs a1*p5, a1*(1-p5)
-  print p5
 endin
 
 instr 2
@@ -27,7 +26,6 @@ gkpitch = (gkpitch == 8.00 ? 8.07 : 8.00)
 gkpan = (gkpan == 0 ? 1 : 0)
 event "i", 1, 0, 0.5, gkpitch, gkpan
 endif
-printk2 k1
 endin
 
 instr 3
