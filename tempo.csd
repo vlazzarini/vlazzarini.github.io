@@ -19,6 +19,7 @@ endin
 
 instr 2
 k1 chnget "tempo"
+k1 /= 100
 k1 = k1*2 + 0.2
 ktrig metro k1
 if ktrig == 1 then
@@ -66,8 +67,8 @@ endin
   <midichan>0</midichan>
   <midicc>0</midicc>
   <minimum>0.00000000</minimum>
-  <maximum>1.00000000</maximum>
-  <value>0.98000000</value>
+  <maximum>100.00000000</maximum>
+  <value>88.66666667</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
