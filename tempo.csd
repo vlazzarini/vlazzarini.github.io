@@ -5,7 +5,7 @@
 <CsInstruments>
 
 nchnls = 2
-gi1 init 50
+chnset 50, "tempo"
 schedule 2, 0, -1
 gkpitch init 0
 gkpan init 0
