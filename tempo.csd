@@ -5,7 +5,7 @@
 <CsInstruments>
 
 nchnls = 2
-gi1 chnget "tempo"
+gi1 init 50
 schedule 2, 0, -1
 gkpitch init 0
 gkpan init 0
@@ -54,7 +54,7 @@ endin
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject version="2" type="BSBHSlider">
+ <bsbObject type="BSBHSlider" version="2">
   <objectName>tempo</objectName>
   <x>23</x>
   <y>23</y>
@@ -72,7 +72,7 @@ endin
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBButton">
+ <bsbObject type="BSBButton" version="2">
   <objectName>button1</objectName>
   <x>20</x>
   <y>59</y>
@@ -89,7 +89,7 @@ endin
   <image>/</image>
   <eventLine>i3 0 1</eventLine>
   <latch>false</latch>
-  <latched>true</latched>
+  <latched>false</latched>
  </bsbObject>
 </bsbPanel>
 <bsbPresets>
