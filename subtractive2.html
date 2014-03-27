@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<!--
+ Csound pnacl sliders example
+ Copyright (C) 2013 V Lazzarini
+-->
+<head>
+ <title>Sliders Example</title>
+ <style type="text/css">
+   textarea.console { font-family: "Courier New"; color: #FCF477;
+                     background-color: #000077 }
+
+   #att {
+    -webkit-appearance: slider-vertical;
+   }
+
+   #dec {
+    -webkit-appearance: slider-vertical;
+   }
+
+   #sus {
+    -webkit-appearance: slider-vertical;
+   }
+
+   #rel {
+    -webkit-appearance: slider-vertical;
+   }
+
+  </style>
+
+ <script type="text/javascript" src="csound.js"></script>
+ <script type="text/javascript">
+ // called by csound.js
+ var playing 
+ function moduleDidLoad() {
+  csound.Play();
+  csound.CompileOrc(
+  "instr 1 \n" +
+  "kfr chnget \"freq\" \n" +
+  "iatt chnget \"att\" \n" +
+  "idec chnget \"dec\" \n" +
+  "isus chnget \"sus\" \n" +
+  "irel chnget \"rel\" \n" +
+  "kamp1 chnget \"amp\" \n" +
+  "kamp2 chnget \"noise\" \n" +
+  "kamp3 chnget \"amp2\" \n" +
+  "kfr2 chnget \"freq2\" \n" +
+  "kcf chnget \"cf\" \n" +
+    "kres chnget \"res\" \n" +
+  "a2  rand  kamp2/1000 \n" +
+  "a1 vco2 kamp1/1000,440+kfr \n" +
+  "a3 vco2 kamp3/1000,440+kfr2, 10 \n" +
+  "ksig madsr iatt/1000,idec/1000,isus/1000,irel/1000 \n" +
+  "a2 moogvcf ksig*(a1+a2+a3), kcf, kres/1000 \n" +
+   "outs a2,a2 \n"  +
+  "endin");
+  SetParam("amp");
+  SetParam("cf");
+  SetParam("freq");
+  SetParam("amp2");
+  SetParam("noise");
+  SetParam("freq2")
+    SetParam("att");
+  SetParam("dec");
+  SetParam("sus");
+    SetParam("rel");
+       SetParam("res");
+ }
+ function attachListeners() {
+   document.getElementById("freq").
+       addEventListener("change",SetFreq);
+   document.getElementById("amp").
+       addEventListener("change",SetAmp);
+   document.getElementById("cf").
+       addEventListener("change",SetCf);
+   document.getElementById("noise").
+       addEventListener("change",SetNoise);
+   document.getElementById("freq2").
+       addEventListener("change",SetFreq2);
+      document.getElementById("amp2").
+       addEventListener("change",SetAmp2);
+      document.getElementById("att").
+       addEventListener("change",SetAtt);
+      document.getElementById("dec").
+       addEventListener("change",SetDec);
+      document.getElementById("rel").
+       addEventListener("change",SetRel);
+      document.getElementById("sus").
+       addEventListener("change",SetSus);
+      document.getElementById("res").
+       addEventListener("change",SetRes);
+
+  document.getElementById('playButton').
+       addEventListener('click', togglePlay);
+
+ }
+
+ var count = 0;
+    function handleMessage(message) {
+        var element = document.getElementById('console');
+        element.value += message.data;
+        element.scrollTop = 99999; // focus on bottom
+        count += 1;
+        if(count == 1000) {
+           element.value = ' ';
+           count = 0;
+        }
+  }
+
+ function SetAmp(){
+  SetParam('amp');
+ }
+ function SetFreq(){
+  SetParam('freq');
+ }
+ function SetCf(){
+  SetParam('cf');
+ }
+ function SetNoise(){
+  SetParam('noise');
+ }
+ function SetAmp2(){
+  SetParam('amp2');
+ }
+ function SetFreq2(){
+  SetParam('freq2');
+ }
+
+ function SetAtt(){
+  SetParam('att');
+ }
+
+ function SetDec(){
+  SetParam('dec');
+ }
+
+ function SetSus(){
+  SetParam('sus');
+ }
+
+ function SetRel(){
+  SetParam('rel');
+ }
+
+ function SetRes(){
+  SetParam('res');
+ }
+
+ function SetParam(name) {
+  var val = document.getElementById(name).value;
+  csound.SetChannel(name, val); 
+ }
+
+ var playing = false;
+ function togglePlay(){
+  if(playing) {
+   csound.Event("i-1 0 1");
+   playing = false;
+   console.log("stop");
+  } else {
+   csound.Event("i1 0 -1");
+   playing = true;
+   console.log("play");
+  }
+}
+
+ </script>
+</head>
+<body>
+<div id="container" style="width:810px">
+  <div id="top" style="width:200p;text-align:center;">
+   <p>
+  <button id="playButton">Play/Stop</button>
+  </p>
+   <div>
+  <div id="generators" style="width:200px;float:left;">
+  <div id="oscil1" style="background-color:#FFA500;">
+  <p> OSCILLATOR 1 (SAW) </p>
+   <p>
+  <input type="range" name="frequency" id="freq" step="1" value="50"
+  min="0" max="100"> frequency </p>
+  <p>
+  <input type="range" name="frequency" id="amp" step="1" value="500"
+  min="0" max="1000"> amplitude</p>
+  </div>
+   <div id="oscil2" style="background-color:#00A500;">
+    <p> OSCILLATOR 2 (SQUARE) </p>
+     <p>
+  <input type="range" name="frequency" id="freq2" step="1" value="50"
+  min="0" max="100">frequency </p>
+  <p>
+  <input type="range" name="frequency" id="amp2" step="1" value="500"
+  min="0" max="1000"> amplitude</p>
+   </div>
+   <div id="NOISE GENERATOR" style="background-color:#F000F5;float">
+     <p> NOISE GENERATOR </p>
+     <p>
+  <input type="range" name="frequency" id="noise" step="1" value="0"
+  min="0" max="1000"> noise </p>
+     </div>
+    </div>
+    <div id="mods" style="width:600px;float:right">
+    <div id="filter" style="background-color:#11FF11;">
+      <p> LOWPASS FILTER </p>
+      <p>
+  <input type="range" name="frequency" id="cf" step="1" value="5000"
+  min="100" max="10000">frequency</p>
+   <p>
+  <p>
+  <input type="range" name="resonance" id="res" step="1" value="500"
+  min="0" max="1000"> resonance</p>
+      </div>
+     
+      <div id="adsr" style="background-color:#FF1111;">
+	<p>
+  <input type="range" name="att" id="att" step="1" value="50"
+  min="1" max="1000"> 
+  <input type="range" name="dec" id="dec" step="1" value="50"
+  min="1" max="1000">
+  <input type="range" name="frequency" id="sus" step="1" value="800"
+  min="0" max="1000"> 
+ <input type="range" name= "rel" id="rel" step="1" value="50"
+  min="1" max="1000"> </p>
+<pre>
+    attack            decay            sustain            release
+</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div id="cons" style="600px;clear:both;text-align:center;">
+  <textarea class="console" cols="55" rows="16" id="console"
+	value="">Csound: not loaded</textarea
+</div>
+  <!--pNaCl csound module-->
+  <div id="engine"></div>
+  
+</body>
+</html>
+
