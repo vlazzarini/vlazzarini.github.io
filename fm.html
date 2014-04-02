@@ -42,16 +42,12 @@
   "isus chnget \"sus\" \n" +
   "irel chnget \"rel\" \n" +
   "kamp1 chnget \"amp\" \n" +
-  "kamp2 chnget \"noise\" \n" +
   "kamp3 chnget \"amp2\" \n" +
   "kfr2 chnget \"freq2\" \n" +
-  "kcf chnget \"cf\" \n" +
-    "kres chnget \"res\" \n" +
-  "a2  rand  kamp2/1000 \n" +
-  "a1 vco2 kamp1/1000,440+kfr \n" +
-  "a3 vco2 kamp3/1000,440+kfr2, 10 \n" +
+  "a1 oscili kamp1*(440+kfr)/100,440+kfr \n" +
+  "a3 oscili kamp3/1000,440+kfr2+a1 \n" +
   "ksig madsr iatt/1000,idec/1000,isus/1000,irel/1000 \n" +
-  "a2 moogvcf ksig*(a1+a2+a3), kcf, kres/1000 \n" +
+  "a2  = ksig*a3 \n" +
    "outs a2,a2 \n"  +
   "print p3\n" +
   "endin \n" +
@@ -59,26 +55,19 @@
   "turnoff2 1,0,0 \n" +
   "endin");
   SetParam("amp");
-  SetParam("cf");
   SetParam("freq");
   SetParam("amp2");
-  SetParam("noise");
   SetParam("freq2")
   SetParam("att");
   SetParam("dec");
   SetParam("sus");
   SetParam("rel");
-  SetParam("res");
  }
  function attachListeners() {
    document.getElementById("freq").
        addEventListener("change",SetFreq);
    document.getElementById("amp").
        addEventListener("change",SetAmp);
-   document.getElementById("cf").
-       addEventListener("change",SetCf);
-   document.getElementById("noise").
-       addEventListener("change",SetNoise);
    document.getElementById("freq2").
        addEventListener("change",SetFreq2);
       document.getElementById("amp2").
@@ -90,9 +79,7 @@
       document.getElementById("rel").
        addEventListener("change",SetRel);
       document.getElementById("sus").
-       addEventListener("change",SetSus);
-      document.getElementById("res").
-       addEventListener("change",SetRes);
+       addEventListener("change",SetSus);;
 
   document.getElementById('playButton').
        addEventListener('click', notePlay);
@@ -179,7 +166,7 @@
  </script>
 </head>
 <body>
-<h1> MU224 - Subtractive Synthesizer </h1>
+<H1> MU224 - Frequency Modulation Synthesizer </h1>
 <div id="container" style="width:810px">
   <div id="top" style="width:200p;text-align:center;">
    <p>
@@ -188,16 +175,16 @@
    <div>
   <div id="generators" style="width:200px;float:left;">
   <div id="oscil1" style="background-color:#FFA500;">
-  <p> OSCILLATOR 1 (SAW) </p>
+  <p> MODULATOR </p>
    <p>
   <input type="range" name="frequency" id="freq" step="1" value="50"
   min="0" max="100"> frequency </p>
   <p>
   <input type="range" name="frequency" id="amp" step="1" value="500"
-  min="0" max="1000"> amplitude</p>
+  min="0" max="1000"> mod ndx </p>
   </div>
    <div id="oscil2" style="background-color:#00A500;">
-    <p> OSCILLATOR 2 (SQUARE) </p>
+    <p> CARRIER </p>
      <p>
   <input type="range" name="frequency" id="freq2" step="1" value="50"
   min="0" max="100">frequency </p>
@@ -205,25 +192,8 @@
   <input type="range" name="frequency" id="amp2" step="1" value="500"
   min="0" max="1000"> amplitude</p>
    </div>
-   <div id="NOISE GENERATOR" style="background-color:#F000F5;float">
-     <p> NOISE GENERATOR </p>
-     <p>
-  <input type="range" name="frequency" id="noise" step="1" value="0"
-  min="0" max="1000"> noise </p>
-     </div>
     </div>
-    <div id="mods" style="width:600px;float:right">
-    <div id="filter" style="background-color:#11FF11;">
-      <p> LOWPASS FILTER </p>
-      <p>
-  <input type="range" name="frequency" id="cf" step="1" value="5000"
-  min="100" max="10000">frequency</p>
-   <p>
-  <p>
-  <input type="range" name="resonance" id="res" step="1" value="500"
-  min="0" max="1000"> resonance</p>
-      </div>
-     
+    <div id="mods" style="width:600px;float:right"> 
       <div id="adsr" style="background-color:#FF1111;">
 	<p>
   <input type="range" name="att" id="att" step="1" value="50"

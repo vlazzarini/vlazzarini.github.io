@@ -31,7 +31,7 @@ var csound = (function() {
     model.setAttribute('name', 'csound_module');
     model.setAttribute('id', 'csound_module');
     model.setAttribute('path', 'pnacl/Release');
-    model.setAttribute('src', 'http://vlazzarini.github.io/pnacl/Release/csound.nmf');
+    model.setAttribute('src', 'pnacl/Release/csound.nmf');
     var mimetype = 'application/x-pnacl';
     model.setAttribute('type', mimetype);
     var csoundhook = document.getElementById('engine');
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (csound.module == null) {
         csound.updateStatus('loading csound module');
         csound.attachDefaultListeners();
-         csound.createModule();
+        csound.createModule();
     } else {
       csound.updateStatus('not ready');
     }
