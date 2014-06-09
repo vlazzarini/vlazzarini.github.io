@@ -128,7 +128,7 @@ kv table p7, 2
 kvol tablei kv, 5 
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-       outs 0.25*a1*kvol*(0.5-kpan/2)*kenv, 0.25*a2*kvol*(0.5+kpan/2)*kenv 
+       outs a1*kvol*(0.5-kpan/2)*kenv, a2*kvol*(0.5+kpan/2)*kenv 
 endin
 
 instr 11
