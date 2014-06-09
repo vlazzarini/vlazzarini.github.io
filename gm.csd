@@ -123,12 +123,12 @@ endin
 instr 10
 kenv linenr 10,0.001,p8,0.001
 iamp table p5, 5
-a1, a2 sfplay p5*0.5, p4, iamp,1, p6, 0, 0, 2
+a1, a2 sfplay p5, p4, iamp,1, p6, 0, 0, 2
 kv table p7, 2
 kvol tablei kv, 5 
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-       outs a1*kvol*(0.5-kpan/2)*kenv, a2*kvol*(0.5+kpan/2)*kenv 
+       outs 0.5*a1*kvol*(0.5-kpan/2)*kenv, 0.5*a2*kvol*(0.5+kpan/2)*kenv 
 endin
 
 instr 11
