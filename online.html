@@ -7,7 +7,7 @@
 <head>
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="-1">
-  <title>Csound</title>
+  <title>Interactive Csound</title>
 
   <style type="text/css">
    textarea.console { font-family: "Courier New"; color: #00FF00 ;
@@ -23,13 +23,20 @@
 
     // functions called by csound.js
     function moduleDidLoad() {
-
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     }
 
+    function WithInput(){
+    csound.StartInputAudio();
+    document.getElementById('inputAudio').removeEventListener('click',
+    WithInput);
+   }
+
     function attachListeners() {
-       document.getElementById('playButton').addEventListener('click', csound.Play);
+       document.getElementById('playButton').addEventListener('click',
+       csound.Play);
        document.getElementById('pauseButton').addEventListener('click',csound.Pause);
+       document.getElementById('inputAudio').addEventListener('click',WithInput);
        document.getElementById('loadButton').addEventListener('click', loadFile);
        document.getElementById('compileButton1').addEventListener('click', compileOrc1);
        document.getElementById('compileButton2').addEventListener('click', compileOrc2);
@@ -101,21 +108,17 @@
 
   </script>
 </head>
+
 <body>
-<h1>Csound</h1>
-<p> This page allows you to run Csound inside your browser. Just type
-in your code in the edit <br>
-box below and use the controls to compile and
-run it.
-</p>
   <p>
   <button id="playButton">Start Engine</button>
-  <button id="pauseButton">Pause Engine</button> </p>
+  <button id="pauseButton">Pause Engine</button>
+ <input type="radio" id="inputAudio" value="1">input audio<br>
+  </p>
   <p> 
   <textarea class="code" cols="80" rows="20" id="orchestraField">
 ; press "Compile All" to compile this code, 
 ; if Csound is running you will hear white noise.
-; Click on "start engine" above to run Csound.
 ; This is an edit box, you can change the code
 ; and compile again with the buttons below.
 
@@ -131,13 +134,10 @@ endin
   <button id="compileButton1">Compile All</button>
   <button id="compileButton2">Compile Selection</button> </p>
    <p>
-  <p> Here you can load some files to use with Csound (samples,
-  soundfonts, MIDI files etc). </p>
   <p>
   <input type="file" id="files" name="file" />
   <button id="loadButton">load to ./local</button>
   </p>
-  <p> Message Console </p>
   <textarea class="console" cols="80" rows="25" id="console"
   value="">Csound: not loaded</textarea>
   </p>
