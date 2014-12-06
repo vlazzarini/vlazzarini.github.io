@@ -245,6 +245,22 @@ var csound = (function() {
     csound.module.postMessage(channel + value);
    }
 
+
+  /**
+   * Sends in a MIDI message to Csound MIDI system
+   *
+   * @param {string} byte1 first midi byte (0-127)
+   * @param {string} byte2 second midi byte (0-127)
+   * @param {string} byte3 third midi byte (0-127)
+   */
+    function MIDIin(byte1, byte2, byte3){
+	var mess1 = 'midi:' + byte1;
+	var mess2 = ':' + byte2;
+	var mess3 = ':' + byte3;
+    csound.module.postMessage(mess1+mess2+mess3);
+   }
+
+    
   /**
    * Sets the value of a table position
    *
@@ -382,7 +398,8 @@ var csound = (function() {
     GetTableData : GetTableData,
     RequestTable: RequestTable,
     SetStringChannel: SetStringChannel,
-    StartInputAudio: StartInputAudio
+    StartInputAudio: StartInputAudio,
+    MIDIin : MIDIin   
   };
 
 }());
