@@ -43,10 +43,10 @@ function moduleDidLoad() {
 
  // click handler
  function Play() {
-  csound.MIDIin(144,60,60);
+  csound.NoteOn(1,60,60);
 }
  function Stop() {
-  csound.MIDIin(128,60,60);
+  csound.NoteOff(1,60,60);
  }
 
  </script>
