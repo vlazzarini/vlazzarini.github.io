@@ -2,7 +2,7 @@
   "program": {
     "portable": {
       "pnacl-translate": {
-        "url": "csound_unstripped.pexe"
+        "url": "csound.pexe"
       }
     }
   }
