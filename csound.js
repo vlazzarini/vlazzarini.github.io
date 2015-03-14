@@ -457,9 +457,9 @@ var csound = (function() {
    *
    */
    function StartInputAudio() {
-       // navigator.webkitGetUserMedia({'audio': true},input_ok,input_fail);
-     var constraints = {audio:  { mandatory: { echoCancellation: false }}}	
-     navigator.webkitGetUserMedia(constraints,input_ok,input_fail);
+      navigator.webkitGetUserMedia({'audio': true},input_ok,input_fail);
+     //var constraints = {audio:  { mandatory: { echoCancellation: false }}}	
+     //navigator.webkitGetUserMedia(constraints,input_ok,input_fail);
    }
 
    return {
