@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+		<meta charset="utf-8">
+
+		<title>Ubiquitous Music</title>
+
+		<meta name="description" content="Ubiquitous Music">
+		<meta name="author" content="Victor Lazzarini">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/editor.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style type="text/css">
+   textarea.console { font-family: "Courier New"; color: #00FF00 ;
+                     background-color: #000000 }
+   textarea.code { font-family: "Courier New"; color: black;
+background-color:#B8F4F5 }
+
+li {
+font-size: 250%;
+}
+#wrapper {
+width: 600px
+}
+
+#lister {
+width: 590px;
+float: left;
+}
+
+#rightpic {
+display: inline;
+margin-left: auto;
+margin-right: 30px;
+padding: 20px 0 20px 0;
+width: 200px;
+float: right;
+} 
+
+</style>
+</head>
+<body>
+<div class="reveal">
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+  <section>
+  <h1>Ubiquitous Music</h1>
+   <h3>Victor Lazzarini</h3>
+  <p><small>Maynooth University</small></p>
+ </section>
+ <section>  
+ <section>
+  <h1>What is it?</h1>
+  </section>
+  <section>
+  <ul>
+  <li>Sound and Music Computing</li>
+  <li>Human Computer Interfaces</li>
+  <li>Creativity studies</li>
+  <li>Education</li>
+  </ul>
+  </section>
+  </section>
+  <section>
+  <section>
+  <h1>What do we study?</h1>
+  </section>
+  <section>
+  <ul>
+  <li>Music making: composition, performance, creativity</li>
+  <li>Mobile Devices: development, use, evaluation</li>
+  <li>Web and Internet: apps, network music, web audio</li>
+  <li>DIY electronics: maker groups, music instruments</li>
+  </ul>
+ </section>
+ </section>
+  <section>
+  <section>
+  <h1>Who? Where? How?</h1>
+  </section>
+  <section>
+  <p>
+<div id="wrapper">
+    <div id="lister">
+  <ul>
+  <li>G-Ubimus: Australia, Brazil, Ireland, Sweden, UK</li>
+  <li>Annual Ubiquitous Music Workshops</li>
+  <li>CAPES, CNPq, FAPES, FAPESP, SFI</li>
+  <li>Special issues: JNMI, JCIT </li>
+  <li>Ubiquitous Music (2014, Springer), Ubiquitous Musical Ecologies
+  (in preparation)</li>
+</ul>
+</div>
+</div>
+<div id="rightpic">
+  <img src="ubimus.jpg">
+  </div>
+ </p>
+ </section>
+ </section>
+  
+</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+</body>
+</html>
