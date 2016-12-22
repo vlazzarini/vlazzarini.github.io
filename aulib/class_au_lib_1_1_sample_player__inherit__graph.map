@@ -1,0 +1,5 @@
+<map id="AuLib::SamplePlayer" name="AuLib::SamplePlayer">
+<area shape="rect" id="node2" href="$class_au_lib_1_1_oscili.html" title="AuLib::Oscili" alt="" coords="31,155,127,181"/>
+<area shape="rect" id="node3" href="$class_au_lib_1_1_oscil.html" title="AuLib::Oscil" alt="" coords="32,80,125,107"/>
+<area shape="rect" id="node4" href="$class_au_lib_1_1_audio_base.html" title="AuLib::AudioBase" alt="" coords="15,5,143,32"/>
+</map>

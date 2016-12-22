@@ -1,0 +1,7 @@
+<map id="AuLib::SamplePlayer" name="AuLib::SamplePlayer">
+<area shape="rect" id="node2" href="$class_au_lib_1_1_oscili.html" title="AuLib::Oscili" alt="" coords="31,328,127,355"/>
+<area shape="rect" id="node3" href="$class_au_lib_1_1_oscil.html" title="AuLib::Oscil" alt="" coords="32,251,125,277"/>
+<area shape="rect" id="node4" href="$class_au_lib_1_1_audio_base.html" title="AuLib::AudioBase" alt="" coords="27,5,155,32"/>
+<area shape="rect" id="node6" href="$class_au_lib_1_1_func_table.html" title="AuLib::FuncTable" alt="" coords="97,83,223,109"/>
+<area shape="rect" id="node5" href="$class_au_lib_1_1_fourier_table.html" title="AuLib::FourierTable" alt="" coords="95,160,233,187"/>
+</map>

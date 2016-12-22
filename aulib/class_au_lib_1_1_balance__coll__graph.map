@@ -1,0 +1,5 @@
+<map id="AuLib::Balance" name="AuLib::Balance">
+<area shape="rect" id="node2" href="$class_au_lib_1_1_audio_base.html" title="AuLib::AudioBase" alt="" coords="7,5,135,32"/>
+<area shape="rect" id="node4" href="$class_au_lib_1_1_tone_l_p.html" title="AuLib::ToneLP" alt="" coords="78,83,188,109"/>
+<area shape="rect" id="node3" href="$class_au_lib_1_1_rms.html" title="AuLib::Rms" alt="" coords="83,160,173,187"/>
+</map>
