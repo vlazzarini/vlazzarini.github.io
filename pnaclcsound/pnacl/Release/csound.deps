@@ -1,0 +1,123 @@
+# Updated by fix_deps.py
+pnacl/Release/csound.o: csound.cpp \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/audio.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_stdint.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_macros.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_audio.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_bool.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_instance.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_resource.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_time.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/audio_config.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_audio_config.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/resource.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/instance_handle.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/pass_ref.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/audio_buffer.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_audio_buffer.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/media_stream_audio_track.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_media_stream_audio_track.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_completion_callback.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_var.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/var.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/var_array_buffer.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/completion_callback.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_errors.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/extensions/ext_output_traits.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/extensions/from_var_converter.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/extensions/optional.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/logging.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/var_array.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/var_dictionary.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/module.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_module.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_core.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/core.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/output_traits.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/array_output.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_array_output.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/instance.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_console.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/view.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/rect.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_rect.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_point.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_size.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/point.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/size.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/url_loader.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/url_request_info.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_url_request_info.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/utility/completion_callback_factory.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/utility/completion_callback_factory_thread_traits.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/ppapi/utility/threading/lock.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/pnacl/sys/mount.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/nacl_io/nacl_io.h \
+  /Users/victor/src/nacl_sdk/pepper_34/include/sdk_util/macros.h \
+  ../../include/csound.h ../../include/sysdep.h ../float-version.h \
+  ../../include/text.h ../../include/cfgvar.h ../../include/msg_attr.h \
+  ../../include/version.h
+csound.cpp:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/audio.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_stdint.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_macros.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_audio.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_bool.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_instance.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_resource.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_time.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/audio_config.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_audio_config.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/resource.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/instance_handle.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/pass_ref.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/audio_buffer.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_audio_buffer.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/media_stream_audio_track.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_media_stream_audio_track.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_completion_callback.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_var.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/var.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/var_array_buffer.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/completion_callback.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_errors.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/extensions/ext_output_traits.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/extensions/from_var_converter.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/extensions/optional.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/logging.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/var_array.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/var_dictionary.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/module.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_module.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_core.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/core.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/output_traits.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/array_output.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_array_output.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/instance.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_console.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/view.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/rect.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_rect.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_point.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/pp_size.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/point.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/size.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/url_loader.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/cpp/url_request_info.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/c/ppb_url_request_info.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/utility/completion_callback_factory.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/utility/completion_callback_factory_thread_traits.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/ppapi/utility/threading/lock.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/pnacl/sys/mount.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/nacl_io/nacl_io.h:
+/Users/victor/src/nacl_sdk/pepper_34/include/sdk_util/macros.h:
+../../include/csound.h:
+../../include/sysdep.h:
+../float-version.h:
+../../include/text.h:
+../../include/cfgvar.h:
+../../include/msg_attr.h:
+../../include/version.h:
