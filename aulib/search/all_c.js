@@ -11,8 +11,7 @@ var searchData=
   ['oscili',['Oscili',['../class_au_lib_1_1_oscili.html',1,'AuLib']]],
   ['oscili',['Oscili',['../class_au_lib_1_1_oscili.html#a80a02ebf21d51591d9b9d8d9624d7646',1,'AuLib::Oscili::Oscili(double amp=0., double freq=0., double phase=0., uint32_t vframes=def_vframes, double sr=def_sr)'],['../class_au_lib_1_1_oscili.html#af39d5ec84391d9c385ac0adf1457e68f',1,'AuLib::Oscili::Oscili(double amp, double freq, const FuncTable &amp;ftable, double phase=.0, uint32_t vframes=def_vframes, double sr=def_sr)']]],
   ['oscili_2eh',['Oscili.h',['../_oscili_8h.html',1,'']]],
-  ['oscilic',['Oscilic',['../class_au_lib_1_1_oscilic.html',1,'AuLib']]],
   ['oscilic',['Oscilic',['../class_au_lib_1_1_oscilic.html#a430df89f8ec5f7c4f2aa7864caf5cb6d',1,'AuLib::Oscilic::Oscilic(double amp=0., double freq=0., double phase=0., uint32_t vframes=def_vframes, double sr=def_sr)'],['../class_au_lib_1_1_oscilic.html#a3fbe8024f89311dde026de29bdef7353',1,'AuLib::Oscilic::Oscilic(double amp, double freq, const FuncTable &amp;ftable, double phase=0., uint32_t vframes=def_vframes, double sr=def_sr)']]],
-  ['oscilic_2eh',['Oscilic.h',['../_oscilic_8h.html',1,'']]],
-  ['oscillator',['oscillator',['../class_au_lib_1_1_oscil.html#ab6c9560559bfef690a5086211fb7079d',1,'AuLib::Oscil::oscillator()'],['../class_au_lib_1_1_oscili.html#a45a9e8452882cd4c74ce76526d5aa256',1,'AuLib::Oscili::oscillator()'],['../class_au_lib_1_1_oscilic.html#a5a1683f82c9af39cd48fd7efe9a69d8b',1,'AuLib::Oscilic::oscillator()'],['../class_au_lib_1_1_sample_player.html#afdd1c1497b1f7cfbad64c081934c0c94',1,'AuLib::SamplePlayer::oscillator()']]]
+  ['oscilic',['Oscilic',['../class_au_lib_1_1_oscilic.html',1,'AuLib']]],
+  ['oscilic_2eh',['Oscilic.h',['../_oscilic_8h.html',1,'']]]
 ];

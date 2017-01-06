@@ -1,7 +1,7 @@
 var searchData=
 [
   ['table',['table',['../class_au_lib_1_1_func_table.html#a56092d2ca9d6e7e965535477f026e50e',1,'AuLib::FuncTable']]],
-  ['tableread',['TableRead',['../class_au_lib_1_1_table_read.html#aae47249b3cceed2a3cd9a4689d094178',1,'AuLib::TableRead']]],
+  ['tableread',['TableRead',['../class_au_lib_1_1_table_read.html#aec544bf217ee620791913107b27056ce',1,'AuLib::TableRead::TableRead(const FuncTable &amp;ftable, double phase=0., bool norm=true, bool wrap=true, uint32_t vframes=def_vframes, double sr=def_sr)'],['../class_au_lib_1_1_table_read.html#aa25856fe63f9531e52fa6c417fd8aa02',1,'AuLib::TableRead::TableRead(double phase=0., bool norm=true, bool wrap=true, uint32_t vframes=def_vframes, double sr=def_sr)']]],
   ['tableread',['TableRead',['../class_au_lib_1_1_table_read.html',1,'AuLib']]],
   ['tableread_2ecpp',['TableRead.cpp',['../_table_read_8cpp.html',1,'']]],
   ['tableread_2eh',['TableRead.h',['../_table_read_8h.html',1,'']]],

@@ -23,16 +23,16 @@ var searchData=
   ['m_5fnorm',['m_norm',['../class_au_lib_1_1_table_read.html#ac644690bd0799620d5bd7b6517c0063b',1,'AuLib::TableRead']]],
   ['m_5foffs',['m_offs',['../class_au_lib_1_1_sig_bus.html#ab7800a55370f6dc4628ad8bbe261231f',1,'AuLib::SigBus']]],
   ['m_5fovw',['m_ovw',['../class_au_lib_1_1_sig_bus.html#a267bf797b1ecd9faafecf460cb4c2075',1,'AuLib::SigBus']]],
-  ['m_5fphs',['m_phs',['../class_au_lib_1_1_oscil.html#a987c65d2212eea9727c38da6e7f3303d',1,'AuLib::Oscil::m_phs()'],['../class_au_lib_1_1_phasor.html#a5c7507c2e905df2aaa47d8ea2a1d290e',1,'AuLib::Phasor::m_phs()'],['../class_au_lib_1_1_table_read.html#a1b074699470aa3e1599792bac862d06a',1,'AuLib::TableRead::m_phs()']]],
+  ['m_5fphs',['m_phs',['../class_au_lib_1_1_phasor.html#a5c7507c2e905df2aaa47d8ea2a1d290e',1,'AuLib::Phasor::m_phs()'],['../class_au_lib_1_1_table_read.html#a1b074699470aa3e1599792bac862d06a',1,'AuLib::TableRead::m_phs()']]],
   ['m_5fpos',['m_pos',['../class_au_lib_1_1_delay.html#aa64d5468e3592f58e3518b6c6088ace6',1,'AuLib::Delay::m_pos()'],['../class_au_lib_1_1_pan.html#af587d07548d42ba8df3b3763cbfbb42f',1,'AuLib::Pan::m_pos()']]],
   ['m_5frt',['m_rt',['../class_au_lib_1_1_envel.html#a8589472aaf21440fcc6779e727dd0f22',1,'AuLib::Envel']]],
   ['m_5fscal',['m_scal',['../class_au_lib_1_1_filter.html#a3ae7a30637613b570e065235a42bd26a',1,'AuLib::Filter::m_scal()'],['../class_au_lib_1_1_sig_bus.html#a22ba965322d27b762c0ac4f2e7f3b5b9',1,'AuLib::SigBus::m_scal()']]],
   ['m_5fsegs',['m_segs',['../class_au_lib_1_1_envel.html#a130dbc98cabfbcb7a1c5e22e6381c76f',1,'AuLib::Envel']]],
   ['m_5fsig',['m_sig',['../class_au_lib_1_1_balance.html#ad5ed6e5d54261702a19039c62176fab3',1,'AuLib::Balance']]],
-  ['m_5fsine',['m_sine',['../class_au_lib_1_1_oscil.html#a5394e752beaa405caaae162eeb7bbb28',1,'AuLib::Oscil']]],
+  ['m_5fsine',['m_sine',['../class_au_lib_1_1_table_read.html#a5dde170dbb6385c4d9d1e73e1fd5605f',1,'AuLib::TableRead']]],
   ['m_5fsr',['m_sr',['../class_au_lib_1_1_audio_base.html#ad297f2a8c0faf1ff78cd996d122c528e',1,'AuLib::AudioBase']]],
-  ['m_5ftable',['m_table',['../class_au_lib_1_1_oscil.html#abaf7a760e5a62118ea0b5dbbf15b3263',1,'AuLib::Oscil::m_table()'],['../class_au_lib_1_1_table_read.html#a23d512367672976db2e2ffa2a7d0c7f2',1,'AuLib::TableRead::m_table()']]],
-  ['m_5ftframes',['m_tframes',['../class_au_lib_1_1_func_table.html#a303acfa2f50f3566b19b0234fa99578d',1,'AuLib::FuncTable::m_tframes()'],['../class_au_lib_1_1_oscil.html#ad79b94e7b3dafbc2edfdfe660d925a02',1,'AuLib::Oscil::m_tframes()'],['../class_au_lib_1_1_table_read.html#a89e62ef370f3030caac89e77cb70abdf',1,'AuLib::TableRead::m_tframes()']]],
+  ['m_5ftable',['m_table',['../class_au_lib_1_1_table_read.html#a23d512367672976db2e2ffa2a7d0c7f2',1,'AuLib::TableRead']]],
+  ['m_5ftframes',['m_tframes',['../class_au_lib_1_1_func_table.html#a303acfa2f50f3566b19b0234fa99578d',1,'AuLib::FuncTable::m_tframes()'],['../class_au_lib_1_1_table_read.html#a89e62ef370f3030caac89e77cb70abdf',1,'AuLib::TableRead::m_tframes()']]],
   ['m_5ftime',['m_time',['../class_au_lib_1_1_envel.html#a0b4b2d29bdb1d90202ef2bc7ac5d3c1c',1,'AuLib::Envel']]],
   ['m_5ftrig',['m_trig',['../class_au_lib_1_1_envel.html#ac43c9354d7736acc118f509ef9de048c',1,'AuLib::Envel']]],
   ['m_5fvector',['m_vector',['../class_au_lib_1_1_audio_base.html#a837e8932b10cfb6948ea3902c7c28af4',1,'AuLib::AudioBase']]],
@@ -45,5 +45,5 @@ var searchData=
   ['m_5fy1',['m_y1',['../class_au_lib_1_1_line.html#afff56d4c69878e322965290ce6b717b7',1,'AuLib::Line']]],
   ['major_5fversion',['major_version',['../namespace_au_lib_1_1_info.html#ac6d5cfc178b539e5f2db46bfdd2f28ec',1,'AuLib::Info']]],
   ['minor_5fversion',['minor_version',['../namespace_au_lib_1_1_info.html#ac16b1c764f5929afb3d8f39abc93f04e',1,'AuLib::Info']]],
-  ['mod',['mod',['../class_au_lib_1_1_oscil.html#a02aad731b7f59bdc4f3121b442c4d81f',1,'AuLib::Oscil::mod()'],['../class_au_lib_1_1_phasor.html#a7db24b564941c68b55e1ae24cfe27a8b',1,'AuLib::Phasor::mod()'],['../class_au_lib_1_1_table_read.html#abbc3a86d23ddc019cefbeef570c7e097',1,'AuLib::TableRead::mod()']]]
+  ['mod',['mod',['../class_au_lib_1_1_phasor.html#a7db24b564941c68b55e1ae24cfe27a8b',1,'AuLib::Phasor::mod()'],['../class_au_lib_1_1_table_read.html#abbc3a86d23ddc019cefbeef570c7e097',1,'AuLib::TableRead::mod()']]]
 ];
