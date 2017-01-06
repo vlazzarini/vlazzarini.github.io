@@ -6,6 +6,8 @@ var searchData=
   ['tablereadic',['TableReadic',['../class_au_lib_1_1_table_readic.html#a74ead6f10bf88ce5269ed96019d2a226',1,'AuLib::TableReadic']]],
   ['tables',['tables',['../class_au_lib_1_1_table_set.html#a8dc199f80ff08328c51ef783e96daef1',1,'AuLib::TableSet']]],
   ['tableset',['TableSet',['../class_au_lib_1_1_table_set.html#a893fbd3979f2c73ed3ef93823dcb1891',1,'AuLib::TableSet']]],
+  ['tap',['Tap',['../class_au_lib_1_1_tap.html#a5463205ed0549e42749abcca9471bedf',1,'AuLib::Tap']]],
+  ['tapi',['Tapi',['../class_au_lib_1_1_tapi.html#ac62c8dc51ebd16c397c37e00d49ddd71',1,'AuLib::Tapi']]],
   ['tframes',['tframes',['../class_au_lib_1_1_func_table.html#a3783b6b8c9dd09abd57f3bd8aeb497ba',1,'AuLib::FuncTable']]],
   ['time',['time',['../class_au_lib_1_1_sound_in.html#aa779d0ba2828934511b790a0c24fb506',1,'AuLib::SoundIn::time()'],['../class_au_lib_1_1_sound_out.html#a13f56d809e69898bc85405e69d53757d',1,'AuLib::SoundOut::time()']]],
   ['tonehp',['ToneHP',['../class_au_lib_1_1_tone_h_p.html#a611bed3606c45346567f3e8ffe8335e1',1,'AuLib::ToneHP']]],
