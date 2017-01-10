@@ -7,11 +7,12 @@ var searchData=
   ['bandp',['BandP',['../class_au_lib_1_1_band_p.html',1,'AuLib']]],
   ['bandp',['BandP',['../class_au_lib_1_1_band_p.html#ac5739ba18be540dc9cca115d39eb66f5',1,'AuLib::BandP']]],
   ['bandp_2eh',['BandP.h',['../_band_p_8h.html',1,'']]],
-  ['bandr',['BandR',['../class_au_lib_1_1_band_r.html',1,'AuLib']]],
   ['bandr',['BandR',['../class_au_lib_1_1_band_r.html#a3f0f68915f37acb16eed7716af93f3c9',1,'AuLib::BandR']]],
+  ['bandr',['BandR',['../class_au_lib_1_1_band_r.html',1,'AuLib']]],
   ['bandr_2eh',['BandR.h',['../_band_r_8h.html',1,'']]],
   ['base',['base',['../namespace_au_lib.html#aec29ebaeae7c1ae2beee7108977b46ab',1,'AuLib']]],
-  ['blosc',['BlOsc',['../class_au_lib_1_1_bl_osc.html#ac19acbdac9f0682d68737f6c3333caf2',1,'AuLib::BlOsc']]],
+  ['beta',['BETA',['../_au_lib_8h.html#a1b996515309fc3c03449912bb33046e3',1,'AuLib.h']]],
   ['blosc',['BlOsc',['../class_au_lib_1_1_bl_osc.html',1,'AuLib']]],
+  ['blosc',['BlOsc',['../class_au_lib_1_1_bl_osc.html#ac19acbdac9f0682d68737f6c3333caf2',1,'AuLib::BlOsc']]],
   ['blosc_2eh',['BlOsc.h',['../_bl_osc_8h.html',1,'']]]
 ];

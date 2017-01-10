@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['octs',['octs',['../namespace_au_lib.html#acadf0aef85af21818ed4bc491bed254e',1,'AuLib']]],
+  ['octs',['octs',['../namespace_au_lib.html#a734927e39c8ee95cc272f1af666c17d2',1,'AuLib']]],
   ['operator_2a_3d',['operator*=',['../class_au_lib_1_1_audio_base.html#a2c6deb09b63fc64cd1f23f059152d2d5',1,'AuLib::AudioBase::operator*=(double scal)'],['../class_au_lib_1_1_audio_base.html#a5d76ff9aace0975f938bb0210b9b434b',1,'AuLib::AudioBase::operator*=(const double *sig)'],['../class_au_lib_1_1_audio_base.html#a489bf85837dd69d6187a05aef5c78d0a',1,'AuLib::AudioBase::operator*=(const AudioBase &amp;obj)']]],
   ['operator_2b_3d',['operator+=',['../class_au_lib_1_1_audio_base.html#a3b0fafc85fa4a10218893dc26274ed3b',1,'AuLib::AudioBase::operator+=(double offs)'],['../class_au_lib_1_1_audio_base.html#ad65d80306d5900b5a043dfabdb285508',1,'AuLib::AudioBase::operator+=(const double *sig)'],['../class_au_lib_1_1_audio_base.html#a33d6ada963cb0932905d10c92bc4b87a',1,'AuLib::AudioBase::operator+=(const AudioBase &amp;obj)']]],
   ['operator_5b_5d',['operator[]',['../class_au_lib_1_1_audio_base.html#a4591d8b7fe2446c86937335ce4f1d338',1,'AuLib::AudioBase::operator[](uint32_t ndx)'],['../class_au_lib_1_1_audio_base.html#aae8c730c9ce598c5ced0785b08b182b4',1,'AuLib::AudioBase::operator[](uint32_t ndx) const']]],

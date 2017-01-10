@@ -7,5 +7,7 @@ var searchData=
   ['soundin_2ecpp',['SoundIn.cpp',['../_sound_in_8cpp.html',1,'']]],
   ['soundin_2eh',['SoundIn.h',['../_sound_in_8h.html',1,'']]],
   ['soundout_2ecpp',['SoundOut.cpp',['../_sound_out_8cpp.html',1,'']]],
-  ['soundout_2eh',['SoundOut.h',['../_sound_out_8h.html',1,'']]]
+  ['soundout_2eh',['SoundOut.h',['../_sound_out_8h.html',1,'']]],
+  ['stft_2ecpp',['Stft.cpp',['../_stft_8cpp.html',1,'']]],
+  ['stft_2eh',['Stft.h',['../_stft_8h.html',1,'']]]
 ];

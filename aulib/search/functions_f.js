@@ -11,5 +11,6 @@ var searchData=
   ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html#a969965991a7ca0c30d917333508cb861',1,'AuLib::SquareTable']]],
   ['sr',['sr',['../class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12',1,'AuLib::AudioBase']]],
   ['src',['src',['../class_au_lib_1_1_sound_in.html#a31febbd17a1f59a6f814cbcff35f882f',1,'AuLib::SoundIn']]],
-  ['start',['start',['../class_au_lib_1_1_segments.html#aeeeba586589e7cc5fa254ad4fcf1c9eb',1,'AuLib::Segments']]]
+  ['start',['start',['../class_au_lib_1_1_segments.html#aeeeba586589e7cc5fa254ad4fcf1c9eb',1,'AuLib::Segments']]],
+  ['stft',['Stft',['../class_au_lib_1_1_stft.html#ac845b30f0f3d2a219c43c4124a27362c',1,'AuLib::Stft']]]
 ];
