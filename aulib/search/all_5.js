@@ -9,6 +9,7 @@ var searchData=
   ['fir',['Fir',['../class_au_lib_1_1_fir.html',1,'AuLib']]],
   ['fir',['Fir',['../class_au_lib_1_1_fir.html#a1357ed3dd1bba6b815fb7a4ed8296c9f',1,'AuLib::Fir']]],
   ['fir_2eh',['Fir.h',['../_fir_8h.html',1,'']]],
+  ['forward',['forward',['../namespace_au_lib_1_1fft.html#a0b687c582866cb18d64fcf5c21e14d0f',1,'AuLib::fft']]],
   ['fouriertable',['FourierTable',['../class_au_lib_1_1_fourier_table.html',1,'AuLib']]],
   ['fouriertable',['FourierTable',['../class_au_lib_1_1_fourier_table.html#a28d016101f58492ebb149e3a89bf88c5',1,'AuLib::FourierTable::FourierTable(uint32_t harms=1, double *amps=nullptr, double phase=0., uint64_t tframes=def_tframes)'],['../class_au_lib_1_1_fourier_table.html#a6f5c3c1b8f4a94044df067e9d50b8d21',1,'AuLib::FourierTable::FourierTable(uint32_t harms, uint32_t type, uint64_t tframes=def_tframes)']]],
   ['fouriertable_2ecpp',['FourierTable.cpp',['../_fourier_table_8cpp.html',1,'']]],
