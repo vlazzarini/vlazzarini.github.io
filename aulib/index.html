@@ -67,7 +67,8 @@ $(function() {
 <p><a href="https://github.com/vlazzarini/AuLib">github.com/vlazzarini/AuLib</a></p>
 <h1><a class="anchor" id="build_the_package"></a>
 Building</h1>
-<p>The library and example programs are built with CMake. The only dependencies are libsndfile and portaudio and they are only required to build the example programs that use the audio IO classes. The code can be used within any audio processing context and it can be incorporated in plugins and other programs with their own IO.</p>
+<p>The library and example programs are built with CMake. The only <em>optional</em> dependencies are libsndfile and portaudio.</p>
+<p>The code can be used within any audio processing context and it can be incorporated in plugins and other programs with their own IO.</p>
 <div class="fragment"><div class="line">$ mkdir build</div><div class="line">$ cd build</div><div class="line">$ cmake ..</div><div class="line">$ make</div><div class="line">$ make install</div></div><!-- fragment --><h1><a class="anchor" id="using_the_library"></a>
 Using</h1>
 <p>A number of minimal examples are supplied to demonstrate how the library can be used. However, these are only very simple programs that only hint at the possible applications. Generally speaking, objects of the different processing classes are instantiated and then used to generate or process vectors of audio data, which are kept the library objects.</p>
