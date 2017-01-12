@@ -208,7 +208,8 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833acd260516eab709ebd550fc426b429be7">AULIB_RTOPEN_ERROR</a>, 
 <a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ac270dd7bce1331402c244f97ab04218c">AULIB_RTSTREAM_ERROR</a>, 
 <br />
-&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ab5d1a104acd278ae1636f025dc019393">AULIB_SOUNDOUT_ERROR</a>
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833afcc0b1af5ce805f1615b915005f05209">AULIB_NOIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a93cac56594f791e163626ede2685dda2">AULIB_SOUNDIO_ERROR</a>
 <br />
  }</td></tr>
 <tr class="separator:a82adab6f94c073685791a888ca5b2833"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,10 +252,6 @@ Variables</h2></td></tr>
 <tr class="separator:af70f7e556db4ff881e6acce8266854dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7da3f526ad62cf7de9feb44bb0ef20e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#ad7da3f526ad62cf7de9feb44bb0ef20e">soundout_error</a> []</td></tr>
 <tr class="separator:ad7da3f526ad62cf7de9feb44bb0ef20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20acf906cee9da84727ad8bc3727d678"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a20acf906cee9da84727ad8bc3727d678">polar</a> = true</td></tr>
-<tr class="separator:a20acf906cee9da84727ad8bc3727d678"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a337bec9bbe987c7ae69b6bc7dd594081"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a337bec9bbe987c7ae69b6bc7dd594081">rectang</a> = false</td></tr>
-<tr class="separator:a337bec9bbe987c7ae69b6bc7dd594081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a674199f1b701df31251f174ce0d704ac"></a>
@@ -351,7 +348,8 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a60290276db1063d10ab865c7bb2558a8"></a>AULIB_RTINIT_ERROR&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833acd260516eab709ebd550fc426b429be7"></a>AULIB_RTOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833ac270dd7bce1331402c244f97ab04218c"></a>AULIB_RTSTREAM_ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833ab5d1a104acd278ae1636f025dc019393"></a>AULIB_SOUNDOUT_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833afcc0b1af5ce805f1615b915005f05209"></a>AULIB_NOIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a93cac56594f791e163626ede2685dda2"></a>AULIB_SOUNDIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -585,36 +583,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a20acf906cee9da84727ad8bc3727d678"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20acf906cee9da84727ad8bc3727d678">&#9670;&nbsp;</a></span>polar</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool AuLib::polar = true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>definition of polar </p>
-
-</div>
-</div>
-<a id="a337bec9bbe987c7ae69b6bc7dd594081"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a337bec9bbe987c7ae69b6bc7dd594081">&#9670;&nbsp;</a></span>rectang</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool AuLib::rectang = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>definition of rectang </p>
-
-</div>
-</div>
 <a id="af96dc3467ae49bf522dedafebfbdf345"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af96dc3467ae49bf522dedafebfbdf345">&#9670;&nbsp;</a></span>sampletable_error</h2>
 
@@ -641,7 +609,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    <span class="stringliteral">&quot;SoundIn: file open error&quot;</span>, <span class="stringliteral">&quot;SoundIn: RT initialisation error&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundIn: RT open error&quot;</span>, <span class="stringliteral">&quot;SoundIn: RT stream start error&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundIn: general error&quot;</span>}</div></div><!-- fragment --><p>Standard Error messages </p>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    <span class="stringliteral">&quot;SoundIn: file open error&quot;</span>, <span class="stringliteral">&quot;SoundIn: RT initialisation error&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundIn: RT open error&quot;</span>, <span class="stringliteral">&quot;SoundIn: RT stream start error&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundOut: source not available&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundIn: general error&quot;</span>}</div></div><!-- fragment --><p>Standard Error messages </p>
 
 </div>
 </div>
@@ -656,7 +624,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    <span class="stringliteral">&quot;SoundOut: file open error&quot;</span>, <span class="stringliteral">&quot;SoundOut: RT initialisation error&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundOut: RT open error&quot;</span>, <span class="stringliteral">&quot;SoundOut: RT stream start error&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundOut: general error&quot;</span>}</div></div><!-- fragment --><p>Standard Error messages </p>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    <span class="stringliteral">&quot;SoundOut: file open error&quot;</span>, <span class="stringliteral">&quot;SoundOut: RT initialisation error&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundOut: RT open error&quot;</span>, <span class="stringliteral">&quot;SoundOut: RT stream start error&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundOut: destination not available&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SoundOut: general error&quot;</span>}</div></div><!-- fragment --><p>Standard Error messages </p>
 
 </div>
 </div>

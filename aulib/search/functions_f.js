@@ -8,9 +8,10 @@ var searchData=
   ['sigbus',['SigBus',['../class_au_lib_1_1_sig_bus.html#a3a22d532246ad46a92e520822d6fe2a3',1,'AuLib::SigBus']]],
   ['soundin',['SoundIn',['../class_au_lib_1_1_sound_in.html#a5e9055925169cd4a071df36e504b7458',1,'AuLib::SoundIn']]],
   ['soundout',['SoundOut',['../class_au_lib_1_1_sound_out.html#a7ea36734e4726fa14b2a50b91cae7b17',1,'AuLib::SoundOut']]],
+  ['spectrum',['spectrum',['../class_au_lib_1_1_pvoc.html#ac6f1793a0ba9f3c5bfd4a90afad9d469',1,'AuLib::Pvoc::spectrum()'],['../class_au_lib_1_1_stft.html#aa47419a9fbc61c26c4f28a443a2456e7',1,'AuLib::Stft::spectrum()']]],
   ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html#a969965991a7ca0c30d917333508cb861',1,'AuLib::SquareTable']]],
   ['sr',['sr',['../class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12',1,'AuLib::AudioBase']]],
   ['src',['src',['../class_au_lib_1_1_sound_in.html#a31febbd17a1f59a6f814cbcff35f882f',1,'AuLib::SoundIn']]],
   ['start',['start',['../class_au_lib_1_1_segments.html#aeeeba586589e7cc5fa254ad4fcf1c9eb',1,'AuLib::Segments']]],
-  ['stft',['Stft',['../class_au_lib_1_1_stft.html#a9026ddf73fcfd78341538ced94b857ae',1,'AuLib::Stft']]]
+  ['stft',['Stft',['../class_au_lib_1_1_stft.html#a6a3fab6df9dc5e774287f63a82176898',1,'AuLib::Stft']]]
 ];

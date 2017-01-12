@@ -35,14 +35,15 @@ var searchData=
   ['soundout_5frt',['SOUNDOUT_RT',['../namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca48c71db286c10b62e0c6914261b3ad6f',1,'AuLib']]],
   ['soundout_5fsndfile',['SOUNDOUT_SNDFILE',['../namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca2c5acaa79dec4ad020d3650840e81ce8',1,'AuLib']]],
   ['soundout_5fstdout',['SOUNDOUT_STDOUT',['../namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca2d66014f022b9d6e67a08f45431fad62',1,'AuLib']]],
+  ['spectrum',['spectrum',['../class_au_lib_1_1_pvoc.html#ac6f1793a0ba9f3c5bfd4a90afad9d469',1,'AuLib::Pvoc::spectrum()'],['../class_au_lib_1_1_stft.html#aa47419a9fbc61c26c4f28a443a2456e7',1,'AuLib::Stft::spectrum()']]],
   ['square',['SQUARE',['../namespace_au_lib.html#a91c02f802d3f1f50f51ff352567c78cdad928629a2e658f0245b01bf1125d2978',1,'AuLib']]],
-  ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html',1,'AuLib']]],
   ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html#a969965991a7ca0c30d917333508cb861',1,'AuLib::SquareTable']]],
+  ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html',1,'AuLib']]],
   ['sr',['sr',['../class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12',1,'AuLib::AudioBase']]],
   ['src',['src',['../class_au_lib_1_1_sound_in.html#a31febbd17a1f59a6f814cbcff35f882f',1,'AuLib::SoundIn']]],
   ['start',['start',['../class_au_lib_1_1_segments.html#aeeeba586589e7cc5fa254ad4fcf1c9eb',1,'AuLib::Segments']]],
-  ['stft',['Stft',['../class_au_lib_1_1_stft.html#a9026ddf73fcfd78341538ced94b857ae',1,'AuLib::Stft']]],
   ['stft',['Stft',['../class_au_lib_1_1_stft.html',1,'AuLib']]],
+  ['stft',['Stft',['../class_au_lib_1_1_stft.html#a6a3fab6df9dc5e774287f63a82176898',1,'AuLib::Stft']]],
   ['stft_2ecpp',['Stft.cpp',['../_stft_8cpp.html',1,'']]],
   ['stft_2eh',['Stft.h',['../_stft_8h.html',1,'']]]
 ];
