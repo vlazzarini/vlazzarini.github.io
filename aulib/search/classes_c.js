@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['tableread',['TableRead',['../class_au_lib_1_1_table_read.html',1,'AuLib']]],
-  ['tablereadi',['TableReadi',['../class_au_lib_1_1_table_readi.html',1,'AuLib']]],
-  ['tablereadic',['TableReadic',['../class_au_lib_1_1_table_readic.html',1,'AuLib']]],
-  ['tableset',['TableSet',['../class_au_lib_1_1_table_set.html',1,'AuLib']]],
-  ['tap',['Tap',['../class_au_lib_1_1_tap.html',1,'AuLib']]],
-  ['tapi',['Tapi',['../class_au_lib_1_1_tapi.html',1,'AuLib']]],
-  ['tonehp',['ToneHP',['../class_au_lib_1_1_tone_h_p.html',1,'AuLib']]],
-  ['tonelp',['ToneLP',['../class_au_lib_1_1_tone_l_p.html',1,'AuLib']]],
-  ['triangletable',['TriangleTable',['../struct_au_lib_1_1_triangle_table.html',1,'AuLib']]]
+  ['sampleplayer',['SamplePlayer',['../class_au_lib_1_1_sample_player.html',1,'AuLib']]],
+  ['sampletable',['SampleTable',['../class_au_lib_1_1_sample_table.html',1,'AuLib']]],
+  ['sawtable',['SawTable',['../struct_au_lib_1_1_saw_table.html',1,'AuLib']]],
+  ['segments',['Segments',['../class_au_lib_1_1_segments.html',1,'AuLib']]],
+  ['sigbus',['SigBus',['../class_au_lib_1_1_sig_bus.html',1,'AuLib']]],
+  ['soundin',['SoundIn',['../class_au_lib_1_1_sound_in.html',1,'AuLib']]],
+  ['soundout',['SoundOut',['../class_au_lib_1_1_sound_out.html',1,'AuLib']]],
+  ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html',1,'AuLib']]],
+  ['stft',['Stft',['../class_au_lib_1_1_stft.html',1,'AuLib']]]
 ];

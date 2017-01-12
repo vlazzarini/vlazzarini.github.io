@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pan',['Pan',['../class_au_lib_1_1_pan.html',1,'AuLib']]],
-  ['phasor',['Phasor',['../class_au_lib_1_1_phasor.html',1,'AuLib']]],
-  ['pvoc',['Pvoc',['../class_au_lib_1_1_pvoc.html',1,'AuLib']]]
+  ['oscil',['Oscil',['../class_au_lib_1_1_oscil.html',1,'AuLib']]],
+  ['oscili',['Oscili',['../class_au_lib_1_1_oscili.html',1,'AuLib']]],
+  ['oscilic',['Oscilic',['../class_au_lib_1_1_oscilic.html',1,'AuLib']]]
 ];

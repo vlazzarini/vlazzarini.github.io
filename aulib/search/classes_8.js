@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['oscil',['Oscil',['../class_au_lib_1_1_oscil.html',1,'AuLib']]],
-  ['oscili',['Oscili',['../class_au_lib_1_1_oscili.html',1,'AuLib']]],
-  ['oscilic',['Oscilic',['../class_au_lib_1_1_oscilic.html',1,'AuLib']]]
+  ['line',['Line',['../class_au_lib_1_1_line.html',1,'AuLib']]],
+  ['lowp',['LowP',['../class_au_lib_1_1_low_p.html',1,'AuLib']]]
 ];
