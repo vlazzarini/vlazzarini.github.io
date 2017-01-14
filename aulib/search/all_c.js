@@ -1,6 +1,7 @@
 var searchData=
 [
   ['octs',['octs',['../namespace_au_lib.html#a734927e39c8ee95cc272f1af666c17d2',1,'AuLib']]],
+  ['operator_20const_20double_20_2a',['operator const double *',['../class_au_lib_1_1_audio_base.html#ae616c12801fa8b87146ae85460f69b07',1,'AuLib::AudioBase']]],
   ['operator_2a_3d',['operator*=',['../class_au_lib_1_1_audio_base.html#a2c6deb09b63fc64cd1f23f059152d2d5',1,'AuLib::AudioBase::operator*=(double scal)'],['../class_au_lib_1_1_audio_base.html#a5d76ff9aace0975f938bb0210b9b434b',1,'AuLib::AudioBase::operator*=(const double *sig)'],['../class_au_lib_1_1_audio_base.html#a489bf85837dd69d6187a05aef5c78d0a',1,'AuLib::AudioBase::operator*=(const AudioBase &amp;obj)']]],
   ['operator_2b_3d',['operator+=',['../class_au_lib_1_1_audio_base.html#a3b0fafc85fa4a10218893dc26274ed3b',1,'AuLib::AudioBase::operator+=(double offs)'],['../class_au_lib_1_1_audio_base.html#ad65d80306d5900b5a043dfabdb285508',1,'AuLib::AudioBase::operator+=(const double *sig)'],['../class_au_lib_1_1_audio_base.html#a33d6ada963cb0932905d10c92bc4b87a',1,'AuLib::AudioBase::operator+=(const AudioBase &amp;obj)']]],
   ['operator_5b_5d',['operator[]',['../class_au_lib_1_1_audio_base.html#a4591d8b7fe2446c86937335ce4f1d338',1,'AuLib::AudioBase::operator[](uint32_t ndx)'],['../class_au_lib_1_1_audio_base.html#aae8c730c9ce598c5ced0785b08b182b4',1,'AuLib::AudioBase::operator[](uint32_t ndx) const']]],
@@ -13,5 +14,7 @@ var searchData=
   ['oscili_2eh',['Oscili.h',['../_oscili_8h.html',1,'']]],
   ['oscilic',['Oscilic',['../class_au_lib_1_1_oscilic.html#a430df89f8ec5f7c4f2aa7864caf5cb6d',1,'AuLib::Oscilic::Oscilic(double amp=0., double freq=0., double phase=0., uint32_t vframes=def_vframes, double sr=def_sr)'],['../class_au_lib_1_1_oscilic.html#a3fbe8024f89311dde026de29bdef7353',1,'AuLib::Oscilic::Oscilic(double amp, double freq, const FuncTable &amp;ftable, double phase=0., uint32_t vframes=def_vframes, double sr=def_sr)']]],
   ['oscilic',['Oscilic',['../class_au_lib_1_1_oscilic.html',1,'AuLib']]],
-  ['oscilic_2eh',['Oscilic.h',['../_oscilic_8h.html',1,'']]]
+  ['oscilic_2eh',['Oscilic.h',['../_oscilic_8h.html',1,'']]],
+  ['oscillator',['oscillator',['../class_au_lib_1_1_oscil.html#ab6c9560559bfef690a5086211fb7079d',1,'AuLib::Oscil::oscillator()'],['../class_au_lib_1_1_oscili.html#a45a9e8452882cd4c74ce76526d5aa256',1,'AuLib::Oscili::oscillator()'],['../class_au_lib_1_1_oscilic.html#a5a1683f82c9af39cd48fd7efe9a69d8b',1,'AuLib::Oscilic::oscillator()'],['../class_au_lib_1_1_sample_player.html#afdd1c1497b1f7cfbad64c081934c0c94',1,'AuLib::SamplePlayer::oscillator()']]],
+  ['vector_3c_20double_20_3e_20_26',['vector&lt; double &gt; &amp;',['../class_au_lib_1_1_audio_base.html#a1a0572eb542ce04ddc0af10b0199e8b3',1,'AuLib::AudioBase']]]
 ];
