@@ -1,7 +1,7 @@
 var searchData=
 [
   ['complex',['complex',['../namespacecsnd.html#a392e9133842c8924ff5f7756dfaecd9da3588a38f3a03d0b0d601aaf9055ef905',1,'csnd']]],
-  ['const_5fiterator',['const_iterator',['../classcsnd_1_1_vector.html#a0dcda13f0e7ff8a59296ea21ac062ba1',1,'csnd::Vector::const_iterator()'],['../classcsnd_1_1_fsig.html#a4cf5f0ab7f88c51e7a5c81c779105cc8',1,'csnd::Fsig::const_iterator()'],['../classcsnd_1_1_table.html#abece17029fd3decb8c7a3f4c2302aab4',1,'csnd::Table::const_iterator()'],['../classcsnd_1_1_aux_mem.html#a390c63208f5949bf22206dcb7736ed7a',1,'csnd::AuxMem::const_iterator()']]],
+  ['const_5fiterator',['const_iterator',['../classcsnd_1_1_vector.html#a0dcda13f0e7ff8a59296ea21ac062ba1',1,'csnd::Vector::const_iterator()'],['../classcsnd_1_1_pvs.html#af6b4e1274d39f33b9e7d2b69f61c2ca3',1,'csnd::Pvs::const_iterator()'],['../classcsnd_1_1_table.html#abece17029fd3decb8c7a3f4c2302aab4',1,'csnd::Table::const_iterator()'],['../classcsnd_1_1_aux_mem.html#a390c63208f5949bf22206dcb7736ed7a',1,'csnd::AuxMem::const_iterator()']]],
   ['count',['count',['../classcsnd_1_1_fsig.html#a9b3a40c8f7f6afff400523b73001cbc3',1,'csnd::Fsig::count() const'],['../classcsnd_1_1_fsig.html#a2e6d605700ba0f0c45a3c4f51f83e69c',1,'csnd::Fsig::count(uint32_t cnt)']]],
   ['csnd',['csnd',['../namespacecsnd.html',1,'']]],
   ['csound',['Csound',['../classcsnd_1_1_csound.html',1,'csnd']]],

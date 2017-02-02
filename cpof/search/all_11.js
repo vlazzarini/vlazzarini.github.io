@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['vector',['Vector',['../classcsnd_1_1_vector.html',1,'csnd']]],
-  ['vector_5fdata',['vector_data',['../classcsnd_1_1_params.html#ab2870b9541b8c05c8781c811b1755820',1,'csnd::Params']]]
+  ['table',['Table',['../classcsnd_1_1_table.html',1,'csnd']]],
+  ['thread',['thread',['../namespacecsnd.html#a9bb8e34198ce91ee0096ad0237d448ac',1,'csnd']]],
+  ['tracks',['tracks',['../namespacecsnd.html#a392e9133842c8924ff5f7756dfaecd9da69afb074a11e3c05be0f8658cbc38610',1,'csnd']]]
 ];

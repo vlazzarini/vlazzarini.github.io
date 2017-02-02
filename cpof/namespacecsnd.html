@@ -83,7 +83,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcsnd_1_1_plugin.html">Plugin</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1pvsbin.html">pvsbin</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_pv_bin.html">PvBin</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_pvs.html">Pvs</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_table.html">Table</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -96,6 +98,14 @@ Typedefs</h2></td></tr>
 <tr class="separator:a20ff5e540c0db43383ef34ca10a5e916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada690354ce57dc0c7472771a7028d1ba"><td class="memItemLeft" align="right" valign="top">typedef std::complex&lt; MYFLT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#ada690354ce57dc0c7472771a7028d1ba">sldcmplx</a></td></tr>
 <tr class="separator:ada690354ce57dc0c7472771a7028d1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a788f0fbb665915ff43ed5ed5cea9ba"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcsnd_1_1_pv_bin.html">PvBin</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a6a788f0fbb665915ff43ed5ed5cea9ba">pv_bin</a></td></tr>
+<tr class="separator:a6a788f0fbb665915ff43ed5ed5cea9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537e10ece5866737ab686e1166d10b21"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcsnd_1_1_pv_bin.html">PvBin</a>&lt; MYFLT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a537e10ece5866737ab686e1166d10b21">spv_bin</a></td></tr>
+<tr class="separator:a537e10ece5866737ab686e1166d10b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b75c52ee1f4ef4a0cb7c44253c9a62"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcsnd_1_1_pvs.html">Pvs</a>&lt; <a class="el" href="namespacecsnd.html#a6a788f0fbb665915ff43ed5ed5cea9ba">pv_bin</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a27b75c52ee1f4ef4a0cb7c44253c9a62">pv_frame</a></td></tr>
+<tr class="separator:a27b75c52ee1f4ef4a0cb7c44253c9a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78cc4999d9069deaca9d7a6d4cd8a451"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcsnd_1_1_pvs.html">Pvs</a>&lt; <a class="el" href="namespacecsnd.html#a537e10ece5866737ab686e1166d10b21">spv_bin</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a78cc4999d9069deaca9d7a6d4cd8a451">spv_frame</a></td></tr>
+<tr class="separator:a78cc4999d9069deaca9d7a6d4cd8a451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -127,6 +137,36 @@ Functions</h2></td></tr>
 <tr class="separator:a8a7df0de2c9a022c48e3eed5b6d4b31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a6a788f0fbb665915ff43ed5ed5cea9ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a788f0fbb665915ff43ed5ed5cea9ba">&#9670;&nbsp;</a></span>pv_bin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcsnd_1_1_pv_bin.html">PvBin</a>&lt;float&gt; <a class="el" href="namespacecsnd.html#a6a788f0fbb665915ff43ed5ed5cea9ba">csnd::pv_bin</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Phase Vocoder bin </p>
+
+</div>
+</div>
+<a id="a27b75c52ee1f4ef4a0cb7c44253c9a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b75c52ee1f4ef4a0cb7c44253c9a62">&#9670;&nbsp;</a></span>pv_frame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcsnd_1_1_pvs.html">Pvs</a>&lt;<a class="el" href="namespacecsnd.html#a6a788f0fbb665915ff43ed5ed5cea9ba">pv_bin</a>&gt; <a class="el" href="namespacecsnd.html#a27b75c52ee1f4ef4a0cb7c44253c9a62">csnd::pv_frame</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Phase Vocoder frame </p>
+
+</div>
+</div>
 <a id="a20ff5e540c0db43383ef34ca10a5e916"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20ff5e540c0db43383ef34ca10a5e916">&#9670;&nbsp;</a></span>pvscmplx</h2>
 
@@ -152,6 +192,36 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a537e10ece5866737ab686e1166d10b21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537e10ece5866737ab686e1166d10b21">&#9670;&nbsp;</a></span>spv_bin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcsnd_1_1_pv_bin.html">PvBin</a>&lt;MYFLT&gt; <a class="el" href="namespacecsnd.html#a537e10ece5866737ab686e1166d10b21">csnd::spv_bin</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sliding Phase Vocoder bin </p>
+
+</div>
+</div>
+<a id="a78cc4999d9069deaca9d7a6d4cd8a451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78cc4999d9069deaca9d7a6d4cd8a451">&#9670;&nbsp;</a></span>spv_frame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcsnd_1_1_pvs.html">Pvs</a>&lt;<a class="el" href="namespacecsnd.html#a537e10ece5866737ab686e1166d10b21">spv_bin</a>&gt; <a class="el" href="namespacecsnd.html#a78cc4999d9069deaca9d7a6d4cd8a451">csnd::spv_frame</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sliding Phase Vocoder frame </p>
 
 </div>
 </div>

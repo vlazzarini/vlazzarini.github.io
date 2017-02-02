@@ -1,15 +1,12 @@
 var searchData=
 [
-  ['params',['Params',['../classcsnd_1_1_params.html',1,'csnd']]],
-  ['params_3c_20m_20_3e',['Params&lt; M &gt;',['../classcsnd_1_1_params.html',1,'csnd']]],
-  ['perf_5ferror',['perf_error',['../classcsnd_1_1_csound.html#a4de81f3c78285ac584d2f01dd2be7f2d',1,'csnd::Csound']]],
-  ['plugin',['plugin',['../namespacecsnd.html#ad6914482b8d33e06c6d5ccf7d31d42ca',1,'csnd::plugin(CSOUND *csound, const char *name, const char *oargs, const char *iargs, uint32_t thread, uint32_t flags=0)'],['../namespacecsnd.html#a8a7df0de2c9a022c48e3eed5b6d4b31c',1,'csnd::plugin(CSOUND *csound, const char *name, uint32_t thread, uint32_t flags=0)']]],
-  ['plugin',['Plugin',['../structcsnd_1_1_plugin.html',1,'csnd']]],
-  ['plugin_2eh',['plugin.h',['../plugin_8h.html',1,'']]],
-  ['plugin_5fdeinit',['plugin_deinit',['../classcsnd_1_1_csound.html#a9d98c983b8f18f953c36484360006831',1,'csnd::Csound']]],
-  ['polar',['polar',['../namespacecsnd.html#a392e9133842c8924ff5f7756dfaecd9da8032d9060aa9a695cae7da0c8612833b',1,'csnd']]],
-  ['pvs',['pvs',['../namespacecsnd.html#a392e9133842c8924ff5f7756dfaecd9dab73f233f81430801803dabe8c7e079ac',1,'csnd']]],
-  ['pvsbin',['pvsbin',['../classcsnd_1_1pvsbin.html#a0b2aba2fb337a3aa24ce5ee0a484ccf8',1,'csnd::pvsbin']]],
-  ['pvsbin',['pvsbin',['../classcsnd_1_1pvsbin.html',1,'csnd']]],
-  ['pvscmplx',['pvscmplx',['../namespacecsnd.html#a20ff5e540c0db43383ef34ca10a5e916',1,'csnd']]]
+  ['offset',['offset',['../structcsnd_1_1_plugin.html#ad7104d6548f077f441422b6f1571b89a',1,'csnd::Plugin']]],
+  ['operator_20pv_5fframe_20_26',['operator pv_frame &amp;',['../classcsnd_1_1_fsig.html#a9b656130306f6ce8e6d89262712df654',1,'csnd::Fsig']]],
+  ['operator_20pvscmplx_20_26',['operator pvscmplx &amp;',['../classcsnd_1_1_pv_bin.html#a211148d382fbd604ad0a09a9c6890774',1,'csnd::PvBin']]],
+  ['operator_20pvscmplx_20_2a',['operator pvscmplx *',['../classcsnd_1_1_pv_bin.html#a43cdf6a4c60f70ded2615a1611fd2a34',1,'csnd::PvBin']]],
+  ['operator_20spv_5fframe_20_26',['operator spv_frame &amp;',['../classcsnd_1_1_fsig.html#a202f48c30a4cb337e8e6884e03205cbd',1,'csnd::Fsig']]],
+  ['operator_2a',['operator*',['../classcsnd_1_1_pv_bin.html#a9bcbf6bc7da4c050dd62d0061083c9fd',1,'csnd::PvBin::operator*(const PvBin &amp;a)'],['../classcsnd_1_1_pv_bin.html#a661500f5935809f3779a70c5f19cae38',1,'csnd::PvBin::operator*(MYFLT f)']]],
+  ['operator_2a_3d',['operator*=',['../classcsnd_1_1_pv_bin.html#a5c170e71ecd634f45a3812d9168677d3',1,'csnd::PvBin::operator*=(const PvBin &amp;bin)'],['../classcsnd_1_1_pv_bin.html#a49876b78490fef5da04969ff8873de95',1,'csnd::PvBin::operator*=(MYFLT f)']]],
+  ['operator_5b_5d',['operator[]',['../classcsnd_1_1_vector.html#a13a5c93c027e2f4d10baca86e65a87a3',1,'csnd::Vector::operator[](int n)'],['../classcsnd_1_1_vector.html#abf5ba62b834217bf94579eb11a054f26',1,'csnd::Vector::operator[](int n) const'],['../classcsnd_1_1_pvs.html#aac7346642a2d3a9cf35e3cac45fc7d2f',1,'csnd::Pvs::operator[](int n)'],['../classcsnd_1_1_pvs.html#a799d2826acfdcddd013142d5276137b1',1,'csnd::Pvs::operator[](int n) const'],['../classcsnd_1_1_table.html#a2e01d0d977cd36c43302c6ee20c482a8',1,'csnd::Table::operator[](int n)'],['../classcsnd_1_1_table.html#a17f7d9047317ed6f43d516ac01a2f24d',1,'csnd::Table::operator[](int n) const'],['../classcsnd_1_1_aux_mem.html#a71e75a331fb37338ef9eae0e374926ce',1,'csnd::AuxMem::operator[](int n)'],['../classcsnd_1_1_aux_mem.html#a2d567114d5badd7db53842c2625adce3',1,'csnd::AuxMem::operator[](int n) const'],['../classcsnd_1_1_params.html#ac0f58f64ad9ef463eb5018d0d697fd93',1,'csnd::Params::operator[](int n)'],['../classcsnd_1_1_params.html#aa86ce949794ae1c8d7695b45a0f21f05',1,'csnd::Params::operator[](int n) const']]],
+  ['outargs',['outargs',['../structcsnd_1_1_plugin.html#adc17a8265f55eceda2dc32a70427769e',1,'csnd::Plugin']]]
 ];

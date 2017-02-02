@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['sa_5foffset',['sa_offset',['../structcsnd_1_1_plugin.html#a75942c656cd6529c2f6f071eb898b0ef',1,'csnd::Plugin']]],
-  ['sldcmplx',['sldcmplx',['../namespacecsnd.html#ada690354ce57dc0c7472771a7028d1ba',1,'csnd']]],
-  ['sr',['sr',['../classcsnd_1_1_csound.html#ae1adadcd8c28327bd37714f6862b16fd',1,'csnd::Csound']]],
-  ['str_5fdata',['str_data',['../classcsnd_1_1_params.html#a9ab9e300a08612c92f171ef016e02628',1,'csnd::Params']]]
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['rfft',['rfft',['../classcsnd_1_1_csound.html#a9829c1a471c7585d7d4bf889dc0f0044',1,'csnd::Csound']]],
+  ['rfft_5fsetup',['rfft_setup',['../classcsnd_1_1_csound.html#a26b6ff04ec5f3c86e1f874174cd9e70a',1,'csnd::Csound']]]
 ];
