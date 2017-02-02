@@ -123,6 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aff47dfff3bbaf2b7745f6c7e4cb0c01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28f0e6c87fc95264545149471f2f1021"><td class="memItemLeft" align="right" valign="top">const INSDS *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a28f0e6c87fc95264545149471f2f1021">midi_chn_list</a> ()</td></tr>
 <tr class="separator:a28f0e6c87fc95264545149471f2f1021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d98c983b8f18f953c36484360006831"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9d98c983b8f18f953c36484360006831"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a9d98c983b8f18f953c36484360006831">plugin_deinit</a> (T *p)</td></tr>
+<tr class="separator:a9d98c983b8f18f953c36484360006831"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26b6ff04ec5f3c86e1f874174cd9e70a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a26b6ff04ec5f3c86e1f874174cd9e70a">rfft_setup</a> (uint32_t size, uint32_t direction)</td></tr>
 <tr class="separator:a26b6ff04ec5f3c86e1f874174cd9e70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9829c1a471c7585d7d4bf889dc0f0044"><td class="memItemLeft" align="right" valign="top">std::complex&lt; MYFLT &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a9829c1a471c7585d7d4bf889dc0f0044">rfft</a> (void *setup, MYFLT *data)</td></tr>
@@ -586,6 +589,35 @@ returns an INSDS array with 128 items, one per MIDI note number. Inactive instan
 </table>
 </div><div class="memdoc">
 <p>perf-time error message </p>
+
+</div>
+</div>
+<a id="a9d98c983b8f18f953c36484360006831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d98c983b8f18f953c36484360006831">&#9670;&nbsp;</a></span>plugin_deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csnd::Csound::plugin_deinit </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>deinit registration for a given plugin class </p>
 
 </div>
 </div>
