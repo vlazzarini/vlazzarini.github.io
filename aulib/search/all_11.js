@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['update',['update',['../class_au_lib_1_1_band_p.html#ab0b0031f473f1817fa7baf61f15d7510',1,'AuLib::BandP::update()'],['../class_au_lib_1_1_band_r.html#abc78794396bab802d8dd48a53c695eb0',1,'AuLib::BandR::update()'],['../class_au_lib_1_1_high_p.html#a20b9193827b865533139d6b78a9f5c05',1,'AuLib::HighP::update()'],['../class_au_lib_1_1_iir.html#a48a4aa8d1e61f31aff76924f53792f6f',1,'AuLib::Iir::update()'],['../class_au_lib_1_1_low_p.html#a92784f6e3c46615130c58c3fa1407641',1,'AuLib::LowP::update()'],['../class_au_lib_1_1_reson_r.html#ab548bf8d9098356ddb2d79cdd042d550',1,'AuLib::ResonR::update()'],['../class_au_lib_1_1_reson_z.html#ac7e2a444e50d533d623afde85b39a354',1,'AuLib::ResonZ::update()'],['../class_au_lib_1_1_tone_h_p.html#ac7c62ed101369ba646fbd81eb8cb1504',1,'AuLib::ToneHP::update()'],['../class_au_lib_1_1_tone_l_p.html#a30cec830ae9550c0028d8e131841e4cc',1,'AuLib::ToneLP::update()']]]
+  ['vector',['vector',['../class_au_lib_1_1_audio_base.html#aa452590914e89b6ac1067360636060b6',1,'AuLib::AudioBase::vector() const'],['../class_au_lib_1_1_audio_base.html#afa34990c43c69936c12aa0a35da7bb17',1,'AuLib::AudioBase::vector(uint32_t frndx, uint32_t chn) const']]],
+  ['version',['version',['../namespace_au_lib_1_1_info.html#ae30e6b4316b03d5ea7df3b2a7d22360a',1,'AuLib::Info']]],
+  ['vframes',['vframes',['../class_au_lib_1_1_audio_base.html#a306a6d366ebdb9bbff3be2ea3e812f59',1,'AuLib::AudioBase::vframes(uint32_t frames)'],['../class_au_lib_1_1_audio_base.html#a1b89b8ab2920360601e92cc0353c73a4',1,'AuLib::AudioBase::vframes() const']]],
+  ['vsamps',['vsamps',['../class_au_lib_1_1_audio_base.html#a37d69e2b90a2055eb246511a59d605a4',1,'AuLib::AudioBase']]]
 ];

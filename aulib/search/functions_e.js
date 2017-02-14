@@ -1,15 +1,18 @@
 var searchData=
 [
-  ['read',['read',['../class_au_lib_1_1_sound_in.html#a93b0b4b7d41487c43e7e74eda070a368',1,'AuLib::SoundIn']]],
-  ['rect',['rect',['../class_au_lib_1_1_rms.html#a232c25825df15e9035d130b79b7169c0',1,'AuLib::Rms']]],
-  ['release',['release',['../class_au_lib_1_1_envel.html#a0191a8cc5e500524a641223b5030c5b7',1,'AuLib::Envel']]],
-  ['reorder',['reorder',['../fft_8cpp.html#a70b951ed85a63513f98a491fd29abf45',1,'fft.cpp']]],
-  ['repr',['repr',['../class_au_lib_1_1_stft.html#a415e57b08c3153d9f53431058eaa6a03',1,'AuLib::Stft']]],
-  ['reset',['reset',['../class_au_lib_1_1_adsr.html#ad1479cc2af7d0cefcc10f19f7dfa8ab1',1,'AuLib::Adsr::reset()'],['../class_au_lib_1_1_envel.html#a8650ec02553710a62475a0f79242eff8',1,'AuLib::Envel::reset()'],['../class_au_lib_1_1_line.html#aa71242cd6bf4c93110a2737666d155e5',1,'AuLib::Line::reset()']]],
-  ['reson',['Reson',['../class_au_lib_1_1_reson.html#a57ada758fdde93e98563c73d0e8626a1',1,'AuLib::Reson']]],
-  ['resonr',['ResonR',['../class_au_lib_1_1_reson_r.html#aa9780ac6e4a671609c05ed84d59694d5',1,'AuLib::ResonR']]],
-  ['resonz',['ResonZ',['../class_au_lib_1_1_reson_z.html#acb5a090ff44cb6154b450970897690f3',1,'AuLib::ResonZ']]],
-  ['retrig',['retrig',['../class_au_lib_1_1_envel.html#ac71ec242bffd4d0a603b1f17f884403e',1,'AuLib::Envel::retrig()'],['../class_au_lib_1_1_expon.html#a99ca8ecdf125f84a8c876f2f2d36e2cb',1,'AuLib::Expon::retrig()'],['../class_au_lib_1_1_line.html#a6f7bf3a886c7db068560204660a0864e',1,'AuLib::Line::retrig()']]],
-  ['rframes',['rframes',['../class_au_lib_1_1_envel.html#a8520fbec56ac8722ec1fdd8fa4d268cc',1,'AuLib::Envel']]],
-  ['rms',['Rms',['../class_au_lib_1_1_rms.html#a5c4ec3f3feeb5ba66eb904a4bdbed4f4',1,'AuLib::Rms']]]
+  ['sampleplayer',['SamplePlayer',['../class_au_lib_1_1_sample_player.html#ac912dd5dc7226c1d0eefccbf770a7da6',1,'AuLib::SamplePlayer']]],
+  ['sampletable',['SampleTable',['../class_au_lib_1_1_sample_table.html#ac3c89c2633e2f26e12d6a88691a89715',1,'AuLib::SampleTable']]],
+  ['sawtable',['SawTable',['../struct_au_lib_1_1_saw_table.html#af617f3b7e1e1f3fd4e05fcc6edbbf914',1,'AuLib::SawTable']]],
+  ['segments',['Segments',['../class_au_lib_1_1_segments.html#ae6c13583e3c8fbfa9f3058a5c3f90c74',1,'AuLib::Segments::Segments(double start, const std::vector&lt; double &gt; endpts, const std::vector&lt; double &gt; times, bool linear=true, double sr=def_sr)'],['../class_au_lib_1_1_segments.html#aee87493d4856b1c956275ac20d8faba7',1,'AuLib::Segments::Segments()']]],
+  ['set',['set',['../class_au_lib_1_1_audio_base.html#a0d431c60f7e139c1765cce9972775c4a',1,'AuLib::AudioBase::set(const double *sig)'],['../class_au_lib_1_1_audio_base.html#ae62df9ef4b0ad61aaf6992999d62e19d',1,'AuLib::AudioBase::set(double v)'],['../class_au_lib_1_1_audio_base.html#af180e344b30d8efb1477d99ac071b578',1,'AuLib::AudioBase::set(double v, uint32_t p)']]],
+  ['set_5fincr',['set_incr',['../class_au_lib_1_1_bl_osc.html#a99307a305def4ec1b2d7867c27bd124b',1,'AuLib::BlOsc::set_incr()'],['../class_au_lib_1_1_oscil.html#ab39b4cf3dbb0ad967e333c89fdfe104f',1,'AuLib::Oscil::set_incr()'],['../class_au_lib_1_1_sample_player.html#a1413d3e6b732e3eba2148abdf6793863',1,'AuLib::SamplePlayer::set_incr()']]],
+  ['sigbus',['SigBus',['../class_au_lib_1_1_sig_bus.html#a3a22d532246ad46a92e520822d6fe2a3',1,'AuLib::SigBus']]],
+  ['soundin',['SoundIn',['../class_au_lib_1_1_sound_in.html#a5e9055925169cd4a071df36e504b7458',1,'AuLib::SoundIn']]],
+  ['soundout',['SoundOut',['../class_au_lib_1_1_sound_out.html#a7ea36734e4726fa14b2a50b91cae7b17',1,'AuLib::SoundOut']]],
+  ['spectrum',['spectrum',['../class_au_lib_1_1_pvoc.html#ac6f1793a0ba9f3c5bfd4a90afad9d469',1,'AuLib::Pvoc::spectrum()'],['../class_au_lib_1_1_stft.html#aa47419a9fbc61c26c4f28a443a2456e7',1,'AuLib::Stft::spectrum()']]],
+  ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html#a969965991a7ca0c30d917333508cb861',1,'AuLib::SquareTable']]],
+  ['sr',['sr',['../class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12',1,'AuLib::AudioBase']]],
+  ['src',['src',['../class_au_lib_1_1_sound_in.html#a31febbd17a1f59a6f814cbcff35f882f',1,'AuLib::SoundIn']]],
+  ['start',['start',['../class_au_lib_1_1_segments.html#aeeeba586589e7cc5fa254ad4fcf1c9eb',1,'AuLib::Segments']]],
+  ['stft',['Stft',['../class_au_lib_1_1_stft.html#a6a3fab6df9dc5e774287f63a82176898',1,'AuLib::Stft']]]
 ];

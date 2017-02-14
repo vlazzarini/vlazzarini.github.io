@@ -77,8 +77,8 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a893fbd3979f2c73ed3ef93823dcb1891"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_table_set.html#a893fbd3979f2c73ed3ef93823dcb1891">TableSet</a> (uint32_t type, double sr=<a class="el" href="namespace_au_lib.html#a5474e642bbb8f60b8a04d9bcd60ba842">def_sr</a>)</td></tr>
 <tr class="separator:a893fbd3979f2c73ed3ef93823dcb1891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dc199f80ff08328c51ef783e96daef1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_au_lib_1_1_func_table.html">FuncTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_table_set.html#a8dc199f80ff08328c51ef783e96daef1">tables</a> () const</td></tr>
-<tr class="separator:a8dc199f80ff08328c51ef783e96daef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2884a7e1cdf26c3d68a605562f993f16"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_au_lib_1_1_func_table.html">FuncTable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_table_set.html#a2884a7e1cdf26c3d68a605562f993f16">operator[]</a> (uint32_t num) const</td></tr>
+<tr class="separator:a2884a7e1cdf26c3d68a605562f993f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A set of tables for <a class="el" href="class_au_lib_1_1_bl_osc.html">BlOsc</a> </p>
@@ -121,8 +121,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8dc199f80ff08328c51ef783e96daef1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dc199f80ff08328c51ef783e96daef1">&#9670;&nbsp;</a></span>tables()</h2>
+<a id="a2884a7e1cdf26c3d68a605562f993f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2884a7e1cdf26c3d68a605562f993f16">&#9670;&nbsp;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,9 +131,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_au_lib_1_1_func_table.html">FuncTable</a>* AuLib::TableSet::tables </td>
+          <td class="memname">const <a class="el" href="class_au_lib_1_1_func_table.html">FuncTable</a>&amp; AuLib::TableSet::operator[] </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -143,7 +144,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>returns a read-only pointer to the array of FuncTables </p>
+<p>returns a function table in the set. </p>
 
 </div>
 </div>

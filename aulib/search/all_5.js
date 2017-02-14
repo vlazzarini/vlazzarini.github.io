@@ -2,7 +2,7 @@ var searchData=
 [
   ['fft_2ecpp',['fft.cpp',['../fft_8cpp.html',1,'']]],
   ['fft_2eh',['fft.h',['../fft_8h.html',1,'']]],
-  ['filter',['filter',['../class_au_lib_1_1_iir.html#abe3ba685532ed3d82ae52a395897d9d9',1,'AuLib::Iir::filter()'],['../class_au_lib_1_1_reson.html#ac043d9c4bb109a2789fd960547fccd47',1,'AuLib::Reson::filter()'],['../class_au_lib_1_1_rms.html#a19cdd9d0c4569a323046254bbf57313f',1,'AuLib::Rms::filter()'],['../class_au_lib_1_1_tone_l_p.html#aa36a300799481a3a8f27b3475db710cd',1,'AuLib::ToneLP::filter()']]],
+  ['filter',['filter',['../class_au_lib_1_1_reson.html#ac043d9c4bb109a2789fd960547fccd47',1,'AuLib::Reson']]],
   ['fir',['Fir',['../class_au_lib_1_1_fir.html',1,'AuLib']]],
   ['fir',['Fir',['../class_au_lib_1_1_fir.html#a1357ed3dd1bba6b815fb7a4ed8296c9f',1,'AuLib::Fir']]],
   ['fir_2eh',['Fir.h',['../_fir_8h.html',1,'']]],

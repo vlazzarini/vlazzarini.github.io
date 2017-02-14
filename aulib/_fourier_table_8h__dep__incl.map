@@ -1,15 +1,15 @@
 <map id="FourierTable.h" name="FourierTable.h">
-<area shape="rect" id="node2" href="$_bl_osc_8h.html" title="BlOsc.h" alt="" coords="5,304,75,331"/>
-<area shape="rect" id="node3" href="$_table_read_8h.html" title="TableRead.h" alt="" coords="320,80,419,107"/>
-<area shape="rect" id="node12" href="$_fourier_table_8cpp.html" title="FourierTable.cpp" alt="" coords="443,80,565,107"/>
-<area shape="rect" id="node13" href="$_wave_tables_8h.html" title="WaveTables.h" alt="" coords="589,80,696,107"/>
-<area shape="rect" id="node14" href="$_wintabs_8h.html" title="Wintabs.h" alt="" coords="721,80,801,107"/>
-<area shape="rect" id="node4" href="$_oscil_8h.html" title="Oscil.h" alt="" coords="269,155,331,181"/>
-<area shape="rect" id="node9" href="$_table_read_8cpp.html" title="TableRead.cpp" alt="" coords="401,229,513,256"/>
-<area shape="rect" id="node10" href="$_table_readi_8h.html" title="TableReadi.h" alt="" coords="407,155,508,181"/>
-<area shape="rect" id="node11" href="$_table_readic_8h.html" title="TableReadic.h" alt="" coords="533,155,640,181"/>
-<area shape="rect" id="node5" href="$_oscili_8h.html" title="Oscili.h" alt="" coords="151,229,216,256"/>
-<area shape="rect" id="node6" href="$_oscil_8cpp.html" title="Oscil.cpp" alt="" coords="217,379,295,405"/>
-<area shape="rect" id="node8" href="$_oscilic_8h.html" title="Oscilic.h" alt="" coords="341,304,413,331"/>
-<area shape="rect" id="node7" href="$_sample_player_8h.html" title="SamplePlayer.h" alt="" coords="150,304,265,331"/>
+<area shape="rect" id="node2" href="$_bl_osc_8h.html" title="BlOsc.h" alt="" coords="5,229,75,256"/>
+<area shape="rect" id="node3" href="$_oscil_8h.html" title="Oscil.h" alt="" coords="246,80,308,107"/>
+<area shape="rect" id="node8" href="$_fourier_table_8cpp.html" title="FourierTable.cpp" alt="" coords="333,80,456,107"/>
+<area shape="rect" id="node9" href="$_table_read_8h.html" title="TableRead.h" alt="" coords="480,80,579,107"/>
+<area shape="rect" id="node13" href="$_wave_tables_8h.html" title="WaveTables.h" alt="" coords="603,80,709,107"/>
+<area shape="rect" id="node14" href="$_wintabs_8h.html" title="Wintabs.h" alt="" coords="734,80,815,107"/>
+<area shape="rect" id="node4" href="$_oscili_8h.html" title="Oscili.h" alt="" coords="151,155,216,181"/>
+<area shape="rect" id="node5" href="$_oscil_8cpp.html" title="Oscil.cpp" alt="" coords="217,304,295,331"/>
+<area shape="rect" id="node7" href="$_oscilic_8h.html" title="Oscilic.h" alt="" coords="341,229,413,256"/>
+<area shape="rect" id="node6" href="$_sample_player_8h.html" title="SamplePlayer.h" alt="" coords="150,229,265,256"/>
+<area shape="rect" id="node10" href="$_table_read_8cpp.html" title="TableRead.cpp" alt="" coords="473,229,585,256"/>
+<area shape="rect" id="node11" href="$_table_readi_8h.html" title="TableReadi.h" alt="" coords="479,155,580,181"/>
+<area shape="rect" id="node12" href="$_table_readic_8h.html" title="TableReadic.h" alt="" coords="605,155,712,181"/>
 </map>

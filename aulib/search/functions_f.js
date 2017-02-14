@@ -1,17 +1,16 @@
 var searchData=
 [
-  ['sampleplayer',['SamplePlayer',['../class_au_lib_1_1_sample_player.html#ac912dd5dc7226c1d0eefccbf770a7da6',1,'AuLib::SamplePlayer']]],
-  ['sampletable',['SampleTable',['../class_au_lib_1_1_sample_table.html#ac3c89c2633e2f26e12d6a88691a89715',1,'AuLib::SampleTable']]],
-  ['sawtable',['SawTable',['../struct_au_lib_1_1_saw_table.html#af617f3b7e1e1f3fd4e05fcc6edbbf914',1,'AuLib::SawTable']]],
-  ['segments',['Segments',['../class_au_lib_1_1_segments.html#ae6c13583e3c8fbfa9f3058a5c3f90c74',1,'AuLib::Segments::Segments(double start, const std::vector&lt; double &gt; endpts, const std::vector&lt; double &gt; times, bool linear=true, double sr=def_sr)'],['../class_au_lib_1_1_segments.html#aee87493d4856b1c956275ac20d8faba7',1,'AuLib::Segments::Segments()']]],
-  ['set',['set',['../class_au_lib_1_1_audio_base.html#a0d431c60f7e139c1765cce9972775c4a',1,'AuLib::AudioBase::set(const double *sig)'],['../class_au_lib_1_1_audio_base.html#ae62df9ef4b0ad61aaf6992999d62e19d',1,'AuLib::AudioBase::set(double v)'],['../class_au_lib_1_1_audio_base.html#af180e344b30d8efb1477d99ac071b578',1,'AuLib::AudioBase::set(double v, uint32_t p)']]],
-  ['sigbus',['SigBus',['../class_au_lib_1_1_sig_bus.html#a3a22d532246ad46a92e520822d6fe2a3',1,'AuLib::SigBus']]],
-  ['soundin',['SoundIn',['../class_au_lib_1_1_sound_in.html#a5e9055925169cd4a071df36e504b7458',1,'AuLib::SoundIn']]],
-  ['soundout',['SoundOut',['../class_au_lib_1_1_sound_out.html#a7ea36734e4726fa14b2a50b91cae7b17',1,'AuLib::SoundOut']]],
-  ['spectrum',['spectrum',['../class_au_lib_1_1_pvoc.html#ac6f1793a0ba9f3c5bfd4a90afad9d469',1,'AuLib::Pvoc::spectrum()'],['../class_au_lib_1_1_stft.html#aa47419a9fbc61c26c4f28a443a2456e7',1,'AuLib::Stft::spectrum()']]],
-  ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html#a969965991a7ca0c30d917333508cb861',1,'AuLib::SquareTable']]],
-  ['sr',['sr',['../class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12',1,'AuLib::AudioBase']]],
-  ['src',['src',['../class_au_lib_1_1_sound_in.html#a31febbd17a1f59a6f814cbcff35f882f',1,'AuLib::SoundIn']]],
-  ['start',['start',['../class_au_lib_1_1_segments.html#aeeeba586589e7cc5fa254ad4fcf1c9eb',1,'AuLib::Segments']]],
-  ['stft',['Stft',['../class_au_lib_1_1_stft.html#a6a3fab6df9dc5e774287f63a82176898',1,'AuLib::Stft']]]
+  ['tableread',['TableRead',['../class_au_lib_1_1_table_read.html#aec544bf217ee620791913107b27056ce',1,'AuLib::TableRead']]],
+  ['tablereadi',['TableReadi',['../class_au_lib_1_1_table_readi.html#ab94af9961546257a33075a0a6f2cce2a',1,'AuLib::TableReadi']]],
+  ['tablereadic',['TableReadic',['../class_au_lib_1_1_table_readic.html#a74ead6f10bf88ce5269ed96019d2a226',1,'AuLib::TableReadic']]],
+  ['tableset',['TableSet',['../class_au_lib_1_1_table_set.html#a893fbd3979f2c73ed3ef93823dcb1891',1,'AuLib::TableSet']]],
+  ['tap',['Tap',['../class_au_lib_1_1_tap.html#a5463205ed0549e42749abcca9471bedf',1,'AuLib::Tap']]],
+  ['tapi',['Tapi',['../class_au_lib_1_1_tapi.html#ac62c8dc51ebd16c397c37e00d49ddd71',1,'AuLib::Tapi']]],
+  ['tframes',['tframes',['../class_au_lib_1_1_func_table.html#a3783b6b8c9dd09abd57f3bd8aeb497ba',1,'AuLib::FuncTable']]],
+  ['time',['time',['../class_au_lib_1_1_sound_in.html#aa779d0ba2828934511b790a0c24fb506',1,'AuLib::SoundIn::time()'],['../class_au_lib_1_1_sound_out.html#a13f56d809e69898bc85405e69d53757d',1,'AuLib::SoundOut::time()']]],
+  ['tonehp',['ToneHP',['../class_au_lib_1_1_tone_h_p.html#a611bed3606c45346567f3e8ffe8335e1',1,'AuLib::ToneHP']]],
+  ['tonelp',['ToneLP',['../class_au_lib_1_1_tone_l_p.html#ade5ee6b605dfa0e33c72f46c27f18675',1,'AuLib::ToneLP']]],
+  ['transform',['transform',['../class_au_lib_1_1_stft.html#ab014a3510597cba3d86aacf1a86ee47f',1,'AuLib::Stft::transform()'],['../namespace_au_lib_1_1fft.html#a02ad29005338898751d8810af5096e68',1,'AuLib::fft::transform(std::vector&lt; std::complex&lt; double &gt;&gt; &amp;data, bool dir)'],['../namespace_au_lib_1_1fft.html#a80512b643c1567df3e2dee1f20bb1dae',1,'AuLib::fft::transform(std::vector&lt; std::complex&lt; double &gt;&gt; &amp;out, double *in)'],['../namespace_au_lib_1_1fft.html#af427027f36999875e944daa21a8787e9',1,'AuLib::fft::transform(double *out, std::vector&lt; std::complex&lt; double &gt;&gt; &amp;in)']]],
+  ['triangletable',['TriangleTable',['../struct_au_lib_1_1_triangle_table.html#a72c395e25e3cbba84debb6b79a1e35b3',1,'AuLib::TriangleTable']]],
+  ['tselect',['tselect',['../class_au_lib_1_1_bl_osc.html#a0fb6c1c6dddf1d298240275fecf80c58',1,'AuLib::BlOsc']]]
 ];
