@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['end',['end',['../class_au_lib_1_1_score.html#a1b907e39d0ec1e09e11eacde6eb2b2c5',1,'AuLib::Score::end()'],['../class_au_lib_1_1_audio_base.html#a87803c34229e497693b43a0b735085ac',1,'AuLib::AudioBase::end()']]],
   ['endpts',['endpts',['../class_au_lib_1_1_segments.html#aed319c4a361acc18aef59748a54fcca1',1,'AuLib::Segments']]],
   ['envel',['Envel',['../class_au_lib_1_1_envel.html',1,'AuLib']]],
   ['envel',['Envel',['../class_au_lib_1_1_envel.html#a6b66ffedd3b6dcd0a6a6c0727f25d48c',1,'AuLib::Envel::Envel(const Segments &amp;segs, double rel=0.f, uint32_t vframes=def_vframes, double sr=def_sr)'],['../class_au_lib_1_1_envel.html#a3f4e59a9a4280b55aaa2f3cca32e72ae',1,'AuLib::Envel::Envel(double rel=0.f, uint32_t vframes=def_vframes, double sr=def_sr)']]],

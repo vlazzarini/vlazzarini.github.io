@@ -1,14 +1,16 @@
 var searchData=
 [
+  ['add_5fcmd',['add_cmd',['../class_au_lib_1_1_score.html#a6c0e5974e18a2349fc3956252be636e5',1,'AuLib::Score']]],
   ['adsr',['Adsr',['../class_au_lib_1_1_adsr.html',1,'AuLib']]],
   ['adsr',['Adsr',['../class_au_lib_1_1_adsr.html#a591eebf9a8d640aca95e235336620509',1,'AuLib::Adsr']]],
   ['adsr_2eh',['Adsr.h',['../_adsr_8h.html',1,'']]],
+  ['aftouch',['aftouch',['../namespace_au_lib_1_1midi.html#a544dc9dccf07988f5f3378c2844e1e40',1,'AuLib::midi']]],
   ['allpass',['AllPass',['../class_au_lib_1_1_all_pass.html',1,'AuLib']]],
   ['allpass',['AllPass',['../class_au_lib_1_1_all_pass.html#a0b11b3a750afc969c7e80aac8fb56488',1,'AuLib::AllPass']]],
   ['allpass_2eh',['AllPass.h',['../_all_pass_8h.html',1,'']]],
   ['am_5ffm',['am_fm',['../class_au_lib_1_1_bl_osc.html#a2b7d75a7e9c63c72a8fb45aac02758a4',1,'AuLib::BlOsc::am_fm()'],['../class_au_lib_1_1_oscil.html#ae5281900edb947c70de366f79c9f4eca',1,'AuLib::Oscil::am_fm()'],['../class_au_lib_1_1_sample_player.html#a8d45c67e581189ee217ed36c92af3019',1,'AuLib::SamplePlayer::am_fm()']]],
-  ['audiobase',['AudioBase',['../class_au_lib_1_1_audio_base.html',1,'AuLib']]],
   ['audiobase',['AudioBase',['../class_au_lib_1_1_audio_base.html#aea9683208b42d11533ac506d7d03fb6a',1,'AuLib::AudioBase']]],
+  ['audiobase',['AudioBase',['../class_au_lib_1_1_audio_base.html',1,'AuLib']]],
   ['audiobase_2eh',['AudioBase.h',['../_audio_base_8h.html',1,'']]],
   ['aulib',['AuLib',['../namespace_au_lib.html',1,'']]],
   ['aulib_2eh',['AuLib.h',['../_au_lib_8h.html',1,'']]],
@@ -25,5 +27,7 @@ var searchData=
   ['aulib_5frtstream_5ferror',['AULIB_RTSTREAM_ERROR',['../namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ac270dd7bce1331402c244f97ab04218c',1,'AuLib']]],
   ['aulib_5fsoundio_5ferror',['AULIB_SOUNDIO_ERROR',['../namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a93cac56594f791e163626ede2685dda2',1,'AuLib']]],
   ['fft',['fft',['../namespace_au_lib_1_1fft.html',1,'AuLib']]],
-  ['info',['Info',['../namespace_au_lib_1_1_info.html',1,'AuLib']]]
+  ['info',['Info',['../namespace_au_lib_1_1_info.html',1,'AuLib']]],
+  ['midi',['midi',['../namespace_au_lib_1_1midi.html',1,'AuLib']]],
+  ['waveset',['waveset',['../namespace_au_lib_1_1waveset.html',1,'AuLib']]]
 ];

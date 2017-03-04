@@ -2,5 +2,9 @@ var searchData=
 [
   ['iir',['Iir',['../class_au_lib_1_1_iir.html#a64b5e022b89f67f058fb18775758f34f',1,'AuLib::Iir::Iir(const double *a, const double *b, uint32_t vframes=def_vframes, double sr=def_sr)'],['../class_au_lib_1_1_iir.html#a43d4d8302e7e252a1c42466f79d48014',1,'AuLib::Iir::Iir(uint32_t vframes=def_vframes, double sr=def_sr)']]],
   ['incrs',['incrs',['../class_au_lib_1_1_segments.html#ac27d9ba6aa1a67b3fa6400fd0ffd2b50',1,'AuLib::Segments']]],
+  ['insert',['insert',['../class_au_lib_1_1_score.html#a6644b526a02261edfefcbb9a4abd1455',1,'AuLib::Score::insert(std::istream &amp;input)'],['../class_au_lib_1_1_score.html#aba6a856a818495478b710e3fde187afd',1,'AuLib::Score::insert(std::istream &amp;input, uint64_t offset)']]],
+  ['instrument',['Instrument',['../class_au_lib_1_1_instrument.html#a7f490409785b15dea9153d9d0feb1da7',1,'AuLib::Instrument']]],
+  ['is_5ffinished',['is_finished',['../class_au_lib_1_1_envel.html#a6d728823239fb380e21ee7d2d2b666a3',1,'AuLib::Envel']]],
+  ['is_5fon',['is_on',['../class_au_lib_1_1_note.html#a8dd60b512674a94d8956a6f420ff7476',1,'AuLib::Note']]],
   ['islinear',['isLinear',['../class_au_lib_1_1_segments.html#aa950ede8655a74f99225757085530db0',1,'AuLib::Segments']]]
 ];

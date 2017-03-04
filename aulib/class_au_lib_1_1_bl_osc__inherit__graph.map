@@ -1,5 +1,8 @@
 <map id="AuLib::BlOsc" name="AuLib::BlOsc">
-<area shape="rect" id="node2" href="$class_au_lib_1_1_oscili.html" title="AuLib::Oscili" alt="" coords="21,155,117,181"/>
-<area shape="rect" id="node3" href="$class_au_lib_1_1_oscil.html" title="AuLib::Oscil" alt="" coords="23,80,116,107"/>
-<area shape="rect" id="node4" href="$class_au_lib_1_1_audio_base.html" title="AuLib::AudioBase" alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node5" href="$struct_au_lib_1_1_saw_osc.html" title="AuLib::SawOsc" alt="" coords="5,304,117,331"/>
+<area shape="rect" id="node6" href="$struct_au_lib_1_1_sq_osc.html" title="AuLib::SqOsc" alt="" coords="143,304,247,331"/>
+<area shape="rect" id="node7" href="$struct_au_lib_1_1_tri_osc.html" title="AuLib::TriOsc" alt="" coords="271,304,373,331"/>
+<area shape="rect" id="node2" href="$class_au_lib_1_1_oscili.html" title="AuLib::Oscili" alt="" coords="147,155,243,181"/>
+<area shape="rect" id="node3" href="$class_au_lib_1_1_oscil.html" title="AuLib::Oscil" alt="" coords="148,80,241,107"/>
+<area shape="rect" id="node4" href="$class_au_lib_1_1_audio_base.html" title="AuLib::AudioBase" alt="" coords="131,5,259,32"/>
 </map>

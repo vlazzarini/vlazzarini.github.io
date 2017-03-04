@@ -11,9 +11,10 @@ var searchData=
   ['bandr',['BandR',['../class_au_lib_1_1_band_r.html',1,'AuLib']]],
   ['bandr_2eh',['BandR.h',['../_band_r_8h.html',1,'']]],
   ['base',['base',['../namespace_au_lib.html#aec29ebaeae7c1ae2beee7108977b46ab',1,'AuLib']]],
+  ['begin',['begin',['../class_au_lib_1_1_audio_base.html#ad3cae5b4720ac5a1876fab9f9dda4f6b',1,'AuLib::AudioBase']]],
   ['beta',['BETA',['../_au_lib_8h.html#a1b996515309fc3c03449912bb33046e3',1,'AuLib.h']]],
   ['bin',['bin',['../class_au_lib_1_1_stft.html#a9050ebe6edf8f8d30ae77a1e2cfa3355',1,'AuLib::Stft']]],
-  ['blosc',['BlOsc',['../class_au_lib_1_1_bl_osc.html#ac19acbdac9f0682d68737f6c3333caf2',1,'AuLib::BlOsc']]],
   ['blosc',['BlOsc',['../class_au_lib_1_1_bl_osc.html',1,'AuLib']]],
+  ['blosc',['BlOsc',['../class_au_lib_1_1_bl_osc.html#ac19acbdac9f0682d68737f6c3333caf2',1,'AuLib::BlOsc']]],
   ['blosc_2eh',['BlOsc.h',['../_bl_osc_8h.html',1,'']]]
 ];
