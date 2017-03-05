@@ -12,7 +12,7 @@
 <area shape="rect" id="node29" href="$class_au_lib_1_1_oscil.html" title="AuLib::Oscil" alt="" coords="203,528,296,555"/>
 <area shape="rect" id="node34" href="$class_au_lib_1_1_pan.html" title="AuLib::Pan" alt="" coords="206,579,293,605"/>
 <area shape="rect" id="node35" href="$class_au_lib_1_1_phasor.html" title="AuLib::Phasor" alt="" coords="197,629,302,656"/>
-<area shape="rect" id="node36" href="$class_au_lib_1_1_score.html" title="AuLib::Score" alt="" coords="200,680,299,707"/>
+<area shape="rect" id="node36" href="$class_au_lib_1_1_score_player.html" title="AuLib::ScorePlayer" alt="" coords="181,680,317,707"/>
 <area shape="rect" id="node37" href="$class_au_lib_1_1_sig_bus.html" title="AuLib::SigBus" alt="" coords="197,731,302,757"/>
 <area shape="rect" id="node38" href="$class_au_lib_1_1_sound_in.html" title="AuLib::SoundIn" alt="" coords="193,781,306,808"/>
 <area shape="rect" id="node39" href="$class_au_lib_1_1_sound_out.html" title="AuLib::SoundOut" alt="" coords="187,832,311,859"/>

@@ -4,6 +4,7 @@ var searchData=
   ['sampletable_2ecpp',['SampleTable.cpp',['../_sample_table_8cpp.html',1,'']]],
   ['sampletable_2eh',['SampleTable.h',['../_sample_table_8h.html',1,'']]],
   ['score_2eh',['Score.h',['../_score_8h.html',1,'']]],
+  ['scoreplayer_2eh',['ScorePlayer.h',['../_score_player_8h.html',1,'']]],
   ['sigbus_2eh',['SigBus.h',['../_sig_bus_8h.html',1,'']]],
   ['soundin_2ecpp',['SoundIn.cpp',['../_sound_in_8cpp.html',1,'']]],
   ['soundin_2eh',['SoundIn.h',['../_sound_in_8h.html',1,'']]],

@@ -88,10 +88,12 @@ var menudata={children:[
 {text:"~",url:"functions_func_0x7e.html#index_0x7e"}]},
 {text:"Variables",url:"functions_vars.html",children:[
 {text:"c",url:"functions_vars.html#index_c"},
+{text:"d",url:"functions_vars.html#index_d"},
 {text:"e",url:"functions_vars.html#index_e"},
 {text:"l",url:"functions_vars.html#index_l"},
 {text:"m",url:"functions_vars.html#index_m"},
-{text:"o",url:"functions_vars.html#index_o"}]},
+{text:"o",url:"functions_vars.html#index_o"},
+{text:"t",url:"functions_vars.html#index_t"}]},
 {text:"Typedefs",url:"functions_type.html"},
 {text:"Related Functions",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[

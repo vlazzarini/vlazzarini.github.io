@@ -5,7 +5,7 @@ var searchData=
   ['iir_2ecpp',['Iir.cpp',['../_iir_8cpp.html',1,'']]],
   ['iir_2eh',['Iir.h',['../_iir_8h.html',1,'']]],
   ['incrs',['incrs',['../class_au_lib_1_1_segments.html#ac27d9ba6aa1a67b3fa6400fd0ffd2b50',1,'AuLib::Segments']]],
-  ['insert',['insert',['../class_au_lib_1_1_score.html#a6644b526a02261edfefcbb9a4abd1455',1,'AuLib::Score::insert(std::istream &amp;input)'],['../class_au_lib_1_1_score.html#aba6a856a818495478b710e3fde187afd',1,'AuLib::Score::insert(std::istream &amp;input, uint64_t offset)']]],
+  ['insert',['insert',['../class_au_lib_1_1_score_player.html#a8e563bf10dae0f0fb10f1247694b9d56',1,'AuLib::ScorePlayer']]],
   ['instrument',['Instrument',['../class_au_lib_1_1_instrument.html',1,'AuLib']]],
   ['instrument',['Instrument',['../class_au_lib_1_1_instrument.html#a7f490409785b15dea9153d9d0feb1da7',1,'AuLib::Instrument']]],
   ['inverse',['inverse',['../namespace_au_lib_1_1fft.html#a87eb31dcb52d98b1ebe2457ad852674d',1,'AuLib::fft']]],

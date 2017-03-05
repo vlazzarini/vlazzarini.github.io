@@ -15,8 +15,8 @@
 <area shape="rect" id="node42" href="$_pan_8h.html" title="Pan.h" alt="" coords="1793,80,1849,107"/>
 <area shape="rect" id="node44" href="$_phasor_8h.html" title="Phasor.h" alt="" coords="1874,80,1949,107"/>
 <area shape="rect" id="node46" href="$_sig_bus_8h.html" title="SigBus.h" alt="" coords="1974,80,2049,107"/>
-<area shape="rect" id="node47" href="$_sound_in_8h.html" title="SoundIn.h" alt="" coords="2083,80,2165,107"/>
-<area shape="rect" id="node49" href="$_sound_out_8h.html" title="SoundOut.h" alt="" coords="2199,80,2292,107"/>
+<area shape="rect" id="node47" href="$_sound_in_8h.html" title="SoundIn.h" alt="" coords="2101,80,2184,107"/>
+<area shape="rect" id="node49" href="$_sound_out_8h.html" title="SoundOut.h" alt="" coords="2236,80,2329,107"/>
 <area shape="rect" id="node3" href="$_adsr_8h.html" title="Adsr.h" alt="" coords="5,155,64,181"/>
 <area shape="rect" id="node4" href="$_envel_8cpp.html" title="Envel.cpp" alt="" coords="89,155,169,181"/>
 <area shape="rect" id="node5" href="$_envel_table_8h.html" title="EnvelTable.h" alt="" coords="245,155,344,181"/>
@@ -43,9 +43,9 @@
 <area shape="rect" id="node37" href="$_expon_8h.html" title="Expon.h" alt="" coords="1607,155,1677,181"/>
 <area shape="rect" id="node39" href="$_midi_in_8h.html" title="MidiIn.h" alt="" coords="1703,155,1772,181"/>
 <area shape="rect" id="node40" href="$_note_8cpp.html" title="Note.cpp" alt="" coords="1797,155,1872,181"/>
-<area shape="rect" id="node41" href="$_score_8h.html" title="Score.h" alt="" coords="1897,155,1964,181"/>
-<area shape="rect" id="node43" href="$_pan_8cpp.html" title="Pan.cpp" alt="" coords="1989,155,2059,181"/>
-<area shape="rect" id="node45" href="$_phasor_8cpp.html" title="Phasor.cpp" alt="" coords="2083,155,2172,181"/>
-<area shape="rect" id="node48" href="$_sound_in_8cpp.html" title="SoundIn.cpp" alt="" coords="2197,155,2293,181"/>
-<area shape="rect" id="node50" href="$_sound_out_8cpp.html" title="SoundOut.cpp" alt="" coords="2319,155,2425,181"/>
+<area shape="rect" id="node41" href="$_score_player_8h.html" title="ScorePlayer.h" alt="" coords="1897,155,2001,181"/>
+<area shape="rect" id="node43" href="$_pan_8cpp.html" title="Pan.cpp" alt="" coords="2026,155,2096,181"/>
+<area shape="rect" id="node45" href="$_phasor_8cpp.html" title="Phasor.cpp" alt="" coords="2121,155,2209,181"/>
+<area shape="rect" id="node48" href="$_sound_in_8cpp.html" title="SoundIn.cpp" alt="" coords="2234,155,2331,181"/>
+<area shape="rect" id="node50" href="$_sound_out_8cpp.html" title="SoundOut.cpp" alt="" coords="2356,155,2463,181"/>
 </map>

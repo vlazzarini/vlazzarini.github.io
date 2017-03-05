@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['data',['data',['../struct_au_lib_1_1_event.html#a8d6c489e55b28f633179ffb63f357fdb',1,'AuLib::Event']]],
   ['db_5fmin',['db_min',['../namespace_au_lib.html#a6e64b26ae590d8d2ddbf692157eaabd1',1,'AuLib']]],
   ['def_5fbframes',['def_bframes',['../namespace_au_lib.html#abbd7edb22f589f45865586f5bfd658c8',1,'AuLib']]],
   ['def_5fdecim',['def_decim',['../namespace_au_lib.html#a1eefbb60c0dc4a52bba813dbaea8c709',1,'AuLib']]],
