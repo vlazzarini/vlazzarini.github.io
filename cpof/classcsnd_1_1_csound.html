@@ -123,13 +123,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aff47dfff3bbaf2b7745f6c7e4cb0c01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28f0e6c87fc95264545149471f2f1021"><td class="memItemLeft" align="right" valign="top">const INSDS *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a28f0e6c87fc95264545149471f2f1021">midi_chn_list</a> ()</td></tr>
 <tr class="separator:a28f0e6c87fc95264545149471f2f1021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af608d734f85dac6d40048c8406a179b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#af608d734f85dac6d40048c8406a179b9">is_asig</a> (void *arg)</td></tr>
+<tr class="separator:af608d734f85dac6d40048c8406a179b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d98c983b8f18f953c36484360006831"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9d98c983b8f18f953c36484360006831"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a9d98c983b8f18f953c36484360006831">plugin_deinit</a> (T *p)</td></tr>
 <tr class="separator:a9d98c983b8f18f953c36484360006831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26b6ff04ec5f3c86e1f874174cd9e70a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a26b6ff04ec5f3c86e1f874174cd9e70a">rfft_setup</a> (uint32_t size, uint32_t direction)</td></tr>
-<tr class="separator:a26b6ff04ec5f3c86e1f874174cd9e70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9829c1a471c7585d7d4bf889dc0f0044"><td class="memItemLeft" align="right" valign="top">std::complex&lt; MYFLT &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a9829c1a471c7585d7d4bf889dc0f0044">rfft</a> (void *setup, MYFLT *data)</td></tr>
-<tr class="separator:a9829c1a471c7585d7d4bf889dc0f0044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed70a663e6b01c9010150e65e1617ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecsnd.html#a16253bb4255b64789b5b090a97a58e6e">fftp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a0ed70a663e6b01c9010150e65e1617ee">fft_setup</a> (uint32_t size, uint32_t direction)</td></tr>
+<tr class="separator:a0ed70a663e6b01c9010150e65e1617ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3127a093e61344aa268531ae20d5a31"><td class="memItemLeft" align="right" valign="top">std::complex&lt; MYFLT &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#ad3127a093e61344aa268531ae20d5a31">rfft</a> (<a class="el" href="namespacecsnd.html#a16253bb4255b64789b5b090a97a58e6e">fftp</a> setup, MYFLT *data)</td></tr>
+<tr class="separator:ad3127a093e61344aa268531ae20d5a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b56decaeff8b33af8fc98bb7f45ea2"><td class="memItemLeft" align="right" valign="top">std::complex&lt; MYFLT &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html#a90b56decaeff8b33af8fc98bb7f45ea2">fft</a> (<a class="el" href="namespacecsnd.html#a16253bb4255b64789b5b090a97a58e6e">fftp</a> setup, std::complex&lt; MYFLT &gt; *data)</td></tr>
+<tr class="separator:a90b56decaeff8b33af8fc98bb7f45ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classcsnd_1_1_csound.html">Csound</a> Engine object. </p>
@@ -238,6 +242,82 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a90b56decaeff8b33af8fc98bb7f45ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b56decaeff8b33af8fc98bb7f45ea2">&#9670;&nbsp;</a></span>fft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::complex&lt;MYFLT&gt;* csnd::Csound::fft </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecsnd.html#a16253bb4255b64789b5b090a97a58e6e">fftp</a>&#160;</td>
+          <td class="paramname"><em>setup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::complex&lt; MYFLT &gt; *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>FFT operation for complex data, in-place, but also returning a pointer to std::complex&lt;MYFLT&gt; to the transformed data memory. </p>
+
+</div>
+</div>
+<a id="a0ed70a663e6b01c9010150e65e1617ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ed70a663e6b01c9010150e65e1617ee">&#9670;&nbsp;</a></span>fft_setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecsnd.html#a16253bb4255b64789b5b090a97a58e6e">fftp</a> csnd::Csound::fft_setup </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>FFT setup: real-to-complex and complex-to-real <br />
+direction: FFT_FWD or FFT_INV <br />
+returns a handle to the FFT setup. </p>
+
+</div>
+</div>
 <a id="ad2c6577e0a34838ea7057a38f49c0f02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2c6577e0a34838ea7057a38f49c0f02">&#9670;&nbsp;</a></span>init_error()</h2>
 
@@ -262,6 +342,33 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>init-time error message </p>
+
+</div>
+</div>
+<a id="af608d734f85dac6d40048c8406a179b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af608d734f85dac6d40048c8406a179b9">&#9670;&nbsp;</a></span>is_asig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool csnd::Csound::is_asig </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check for audio signal variable argument </p>
 
 </div>
 </div>
@@ -621,8 +728,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a9829c1a471c7585d7d4bf889dc0f0044"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9829c1a471c7585d7d4bf889dc0f0044">&#9670;&nbsp;</a></span>rfft()</h2>
+<a id="ad3127a093e61344aa268531ae20d5a31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3127a093e61344aa268531ae20d5a31">&#9670;&nbsp;</a></span>rfft()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -633,7 +740,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">std::complex&lt;MYFLT&gt;* csnd::Csound::rfft </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecsnd.html#a16253bb4255b64789b5b090a97a58e6e">fftp</a>&#160;</td>
           <td class="paramname"><em>setup</em>, </td>
         </tr>
         <tr>
@@ -655,45 +762,6 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>FFT operation, in-place, but also returning a pointer to std::complex&lt;MYFLT&gt; to the transformed data memory. </p>
-
-</div>
-</div>
-<a id="a26b6ff04ec5f3c86e1f874174cd9e70a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26b6ff04ec5f3c86e1f874174cd9e70a">&#9670;&nbsp;</a></span>rfft_setup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* csnd::Csound::rfft_setup </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>direction</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>FFT setup: real-to-complex and complex-to-real <br />
-direction: FFT_FWD or FFT_INV <br />
-returns a handle to the FFT setup. </p>
 
 </div>
 </div>

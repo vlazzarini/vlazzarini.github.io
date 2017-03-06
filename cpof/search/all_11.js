@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['table',['Table',['../classcsnd_1_1_table.html',1,'csnd']]],
-  ['thread',['thread',['../namespacecsnd.html#a9bb8e34198ce91ee0096ad0237d448ac',1,'csnd']]],
-  ['tracks',['tracks',['../namespacecsnd.html#a392e9133842c8924ff5f7756dfaecd9da69afb074a11e3c05be0f8658cbc38610',1,'csnd']]]
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['rfft',['rfft',['../classcsnd_1_1_csound.html#ad3127a093e61344aa268531ae20d5a31',1,'csnd::Csound']]],
+  ['run',['run',['../classcsnd_1_1_thread.html#a0e45947e667cf8fe8c62682a076aa966',1,'csnd::Thread']]]
 ];

@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['operator_20pv_5fframe_20_26',['operator pv_frame &amp;',['../classcsnd_1_1_fsig.html#a9b656130306f6ce8e6d89262712df654',1,'csnd::Fsig']]],
-  ['operator_20pvscmplx_20_26',['operator pvscmplx &amp;',['../classcsnd_1_1_pv_bin.html#a211148d382fbd604ad0a09a9c6890774',1,'csnd::PvBin']]],
-  ['operator_20pvscmplx_20_2a',['operator pvscmplx *',['../classcsnd_1_1_pv_bin.html#a43cdf6a4c60f70ded2615a1611fd2a34',1,'csnd::PvBin']]],
-  ['operator_20spv_5fframe_20_26',['operator spv_frame &amp;',['../classcsnd_1_1_fsig.html#a202f48c30a4cb337e8e6884e03205cbd',1,'csnd::Fsig']]],
-  ['operator_2a',['operator*',['../classcsnd_1_1_pv_bin.html#a9bcbf6bc7da4c050dd62d0061083c9fd',1,'csnd::PvBin::operator*(const PvBin &amp;a)'],['../classcsnd_1_1_pv_bin.html#a661500f5935809f3779a70c5f19cae38',1,'csnd::PvBin::operator*(MYFLT f)']]],
-  ['operator_2a_3d',['operator*=',['../classcsnd_1_1_pv_bin.html#a5c170e71ecd634f45a3812d9168677d3',1,'csnd::PvBin::operator*=(const PvBin &amp;bin)'],['../classcsnd_1_1_pv_bin.html#a49876b78490fef5da04969ff8873de95',1,'csnd::PvBin::operator*=(MYFLT f)']]],
-  ['operator_5b_5d',['operator[]',['../classcsnd_1_1_vector.html#a13a5c93c027e2f4d10baca86e65a87a3',1,'csnd::Vector::operator[](int n)'],['../classcsnd_1_1_vector.html#abf5ba62b834217bf94579eb11a054f26',1,'csnd::Vector::operator[](int n) const'],['../classcsnd_1_1_pvs.html#aac7346642a2d3a9cf35e3cac45fc7d2f',1,'csnd::Pvs::operator[](int n)'],['../classcsnd_1_1_pvs.html#a799d2826acfdcddd013142d5276137b1',1,'csnd::Pvs::operator[](int n) const'],['../classcsnd_1_1_table.html#a2e01d0d977cd36c43302c6ee20c482a8',1,'csnd::Table::operator[](int n)'],['../classcsnd_1_1_table.html#a17f7d9047317ed6f43d516ac01a2f24d',1,'csnd::Table::operator[](int n) const'],['../classcsnd_1_1_aux_mem.html#a71e75a331fb37338ef9eae0e374926ce',1,'csnd::AuxMem::operator[](int n)'],['../classcsnd_1_1_aux_mem.html#a2d567114d5badd7db53842c2625adce3',1,'csnd::AuxMem::operator[](int n) const'],['../classcsnd_1_1_params.html#ac0f58f64ad9ef463eb5018d0d697fd93',1,'csnd::Params::operator[](int n)'],['../classcsnd_1_1_params.html#aa86ce949794ae1c8d7695b45a0f21f05',1,'csnd::Params::operator[](int n) const']]]
+  ['message',['message',['../classcsnd_1_1_csound.html#a042d3bc43c9fb841260f4f1194e0c6d8',1,'csnd::Csound']]],
+  ['midi_5fchannel',['midi_channel',['../classcsnd_1_1_csound.html#a86ef2988efe6075cf55e6eadc5755a98',1,'csnd::Csound']]],
+  ['midi_5fchn_5faftertouch',['midi_chn_aftertouch',['../classcsnd_1_1_csound.html#a78e44963f40a078511de782ae2f52dee',1,'csnd::Csound']]],
+  ['midi_5fchn_5fctl',['midi_chn_ctl',['../classcsnd_1_1_csound.html#a5bda8665893c908ee6ab48d8e5d502b7',1,'csnd::Csound']]],
+  ['midi_5fchn_5flist',['midi_chn_list',['../classcsnd_1_1_csound.html#a28f0e6c87fc95264545149471f2f1021',1,'csnd::Csound']]],
+  ['midi_5fchn_5fpitchbend',['midi_chn_pitchbend',['../classcsnd_1_1_csound.html#aff47dfff3bbaf2b7745f6c7e4cb0c01e',1,'csnd::Csound']]],
+  ['midi_5fchn_5fpolytouch',['midi_chn_polytouch',['../classcsnd_1_1_csound.html#a37c655fb504eddbbbec8c7daa4b0b798',1,'csnd::Csound']]],
+  ['midi_5fnote_5fnum',['midi_note_num',['../classcsnd_1_1_csound.html#ad1f681682fcf076c998ac27184e89362',1,'csnd::Csound']]],
+  ['midi_5fnote_5fvel',['midi_note_vel',['../classcsnd_1_1_csound.html#ab23b0de5e0f0f34f614345d2d1d5b12b',1,'csnd::Csound']]],
+  ['myfltvec_5fdata',['myfltvec_data',['../classcsnd_1_1_param.html#a186aba66da188e4f7d60ecf7ee35bc98',1,'csnd::Param']]]
 ];

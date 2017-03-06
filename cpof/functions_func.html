@@ -76,25 +76,44 @@ $(function() {
 : <a class="el" href="classcsnd_1_1_aux_mem.html#abdff72388b31bc7cb3b3bf6822523e1e">csnd::AuxMem&lt; T &gt;</a>
 </li>
 <li>amp()
-: <a class="el" href="classcsnd_1_1_pv_bin.html#a459e1fc05bdc66d4919fac7d5f5a2377">csnd::PvBin&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_pvbin.html#a0b7d19f46d15614db92651fe67ec4536">csnd::Pvbin&lt; T &gt;</a>
 </li>
 <li>aperf()
 : <a class="el" href="structcsnd_1_1_plugin.html#ad5d757624f928744c2809330f81980ec">csnd::Plugin&lt; N, M &gt;</a>
+</li>
+<li>AudioSig()
+: <a class="el" href="classcsnd_1_1_audio_sig.html#aa8bbe1ecb025f2ac3a7bdfe5bc78ce2d">csnd::AudioSig</a>
 </li>
 </ul>
 
 
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>begin()
-: <a class="el" href="classcsnd_1_1_aux_mem.html#a0b2e0b21abda4dff6146f78d2b3a3a7c">csnd::AuxMem&lt; T &gt;</a>
-, <a class="el" href="classcsnd_1_1_pvs.html#ad4129eee0527dfe5140fd2ffb0e8d235">csnd::Pvs&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_audio_sig.html#afab1e22c73790fda75700716eb88f45e">csnd::AudioSig</a>
+, <a class="el" href="classcsnd_1_1_aux_mem.html#a0b2e0b21abda4dff6146f78d2b3a3a7c">csnd::AuxMem&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_param.html#a09782dc3462082709fad92539315dfe3">csnd::Param&lt; N &gt;</a>
+, <a class="el" href="classcsnd_1_1_pvframe.html#a47dc9893cf97a15cb7a9f476687193f8">csnd::Pvframe&lt; T &gt;</a>
 , <a class="el" href="classcsnd_1_1_table.html#a3e1bf9e3971c2bdb64c270a1ebad13ed">csnd::Table</a>
-, <a class="el" href="classcsnd_1_1_vector.html#acf620f9578e0090cb96c09549fe0547a">csnd::Vector&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_vector.html#a46c4352171c9ab619ee9bb63393bb716">csnd::Vector&lt; T &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
+<li>cbegin()
+: <a class="el" href="classcsnd_1_1_audio_sig.html#a81b900011e74bbb98b06a4fa888ac25a">csnd::AudioSig</a>
+, <a class="el" href="classcsnd_1_1_aux_mem.html#a715a2e9b3bdd826abc2abec9c6404cf7">csnd::AuxMem&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_param.html#ad9d4e18622bd9d5e15ef1d930b1b2794">csnd::Param&lt; N &gt;</a>
+, <a class="el" href="classcsnd_1_1_pvframe.html#adecad53ba27c29308a54ccb81556cc6e">csnd::Pvframe&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_table.html#a34e6334e90137958cd8635ba56b00ac7">csnd::Table</a>
+</li>
+<li>cend()
+: <a class="el" href="classcsnd_1_1_audio_sig.html#abf7144d36b925917f7c65d9c6cd363d7">csnd::AudioSig</a>
+, <a class="el" href="classcsnd_1_1_aux_mem.html#abc5a2c8f895f912b594d89bf5be61f9b">csnd::AuxMem&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_param.html#a92176f788ea1e820160366b9f65ffef0">csnd::Param&lt; N &gt;</a>
+, <a class="el" href="classcsnd_1_1_pvframe.html#a79ff8a53cbc78b5c01e116890eb3676d">csnd::Pvframe&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_table.html#a70b58b2caf0da24ce1760829ed39a392">csnd::Table</a>
+</li>
 <li>count()
 : <a class="el" href="classcsnd_1_1_fsig.html#a9b3a40c8f7f6afff400523b73001cbc3">csnd::Fsig</a>
 </li>
@@ -110,8 +129,7 @@ $(function() {
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>data()
 : <a class="el" href="classcsnd_1_1_aux_mem.html#afe9fe20b1f3a779d7244391cbf9a4c97">csnd::AuxMem&lt; T &gt;</a>
-, <a class="el" href="classcsnd_1_1_params.html#ade9a6a99f708a1c21ddb82f745002362">csnd::Params&lt; N &gt;</a>
-, <a class="el" href="classcsnd_1_1_pvs.html#aa294abd776fd4d100f9cae7ebe617892">csnd::Pvs&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_pvframe.html#ae58ed5ed411aa8fe55298e83d65611ed">csnd::Pvframe&lt; T &gt;</a>
 , <a class="el" href="classcsnd_1_1_table.html#a4c193bd89cda5d2034226424c012d4fa">csnd::Table</a>
 </li>
 <li>data_array()
@@ -124,9 +142,14 @@ $(function() {
 
 
 <h3><a id="index_e"></a>- e -</h3><ul>
+<li>elem_offset()
+: <a class="el" href="classcsnd_1_1_vector.html#a8b4a675c2f18e65c63832e0b87075d7a">csnd::Vector&lt; T &gt;</a>
+</li>
 <li>end()
-: <a class="el" href="classcsnd_1_1_aux_mem.html#af02a3f2833481d2a624732dafd18482a">csnd::AuxMem&lt; T &gt;</a>
-, <a class="el" href="classcsnd_1_1_pvs.html#a4a86e81226bb25d6757287ab3afa9a45">csnd::Pvs&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_audio_sig.html#a54392eb72fc5e666a23877e56d7fdcd2">csnd::AudioSig</a>
+, <a class="el" href="classcsnd_1_1_aux_mem.html#af02a3f2833481d2a624732dafd18482a">csnd::AuxMem&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_param.html#a5cf68b391e8436784903aed64998734e">csnd::Param&lt; N &gt;</a>
+, <a class="el" href="classcsnd_1_1_pvframe.html#ae60d91d567425d331740e1539eae7fbc">csnd::Pvframe&lt; T &gt;</a>
 , <a class="el" href="classcsnd_1_1_table.html#a4cf8097c42ee2930e9fa543b41a642c3">csnd::Table</a>
 , <a class="el" href="classcsnd_1_1_vector.html#adb65b138949092453b15a96bc2c30a7e">csnd::Vector&lt; T &gt;</a>
 </li>
@@ -134,14 +157,27 @@ $(function() {
 
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>fft()
+: <a class="el" href="classcsnd_1_1_csound.html#a90b56decaeff8b33af8fc98bb7f45ea2">csnd::Csound</a>
+</li>
+<li>fft_setup()
+: <a class="el" href="classcsnd_1_1_csound.html#a0ed70a663e6b01c9010150e65e1617ee">csnd::Csound</a>
+</li>
 <li>freq()
-: <a class="el" href="classcsnd_1_1_pv_bin.html#afa0fd86adbe0d2c51d5bffa981cfaac5">csnd::PvBin&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_pvbin.html#aabc8db2a7e9471d9e4f16429bd2d532f">csnd::Pvbin&lt; T &gt;</a>
 </li>
 <li>fsig_data()
-: <a class="el" href="classcsnd_1_1_params.html#a634babbae9e771dbd3cb9a9f37c5ab6a">csnd::Params&lt; N &gt;</a>
+: <a class="el" href="classcsnd_1_1_param.html#a62455f860496d6000bc3c3de9b9d723a">csnd::Param&lt; N &gt;</a>
 </li>
 <li>fsig_format()
 : <a class="el" href="classcsnd_1_1_fsig.html#abc8b49406bdb3ec85dbca750a1184602">csnd::Fsig</a>
+</li>
+</ul>
+
+
+<h3><a id="index_g"></a>- g -</h3><ul>
+<li>get_thread()
+: <a class="el" href="classcsnd_1_1_thread.html#a525f87d633f53aee5b40862f88d94906">csnd::Thread</a>
 </li>
 </ul>
 
@@ -163,8 +199,18 @@ $(function() {
 <li>init_error()
 : <a class="el" href="classcsnd_1_1_csound.html#ad2c6577e0a34838ea7057a38f49c0f02">csnd::Csound</a>
 </li>
+<li>is_asig()
+: <a class="el" href="classcsnd_1_1_csound.html#af608d734f85dac6d40048c8406a179b9">csnd::Csound</a>
+</li>
 <li>isSliding()
 : <a class="el" href="classcsnd_1_1_fsig.html#a46f7071a00c5d9d6b6cd32ca48eb6e3e">csnd::Fsig</a>
+</li>
+</ul>
+
+
+<h3><a id="index_j"></a>- j -</h3><ul>
+<li>join()
+: <a class="el" href="classcsnd_1_1_thread.html#a82f013428efc1f383d87f151cb8b9dab">csnd::Thread</a>
 </li>
 </ul>
 
@@ -179,7 +225,7 @@ $(function() {
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>len()
 : <a class="el" href="classcsnd_1_1_aux_mem.html#a1762f24f07127d803f538f82cba9c919">csnd::AuxMem&lt; T &gt;</a>
-, <a class="el" href="classcsnd_1_1_pvs.html#abc45f6e31410e3fc4cf996f5753768a4">csnd::Pvs&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_pvframe.html#a9905377226708f5483f81853856c63b6">csnd::Pvframe&lt; T &gt;</a>
 , <a class="el" href="classcsnd_1_1_table.html#a9050fd8b8a8c03b697fce0dea02dad5c">csnd::Table</a>
 , <a class="el" href="classcsnd_1_1_vector.html#ab0405f282f3adb50741d112467dfa830">csnd::Vector&lt; T &gt;</a>
 </li>
@@ -214,6 +260,9 @@ $(function() {
 <li>midi_note_vel()
 : <a class="el" href="classcsnd_1_1_csound.html#ab23b0de5e0f0f34f614345d2d1d5b12b">csnd::Csound</a>
 </li>
+<li>myfltvec_data()
+: <a class="el" href="classcsnd_1_1_param.html#a186aba66da188e4f7d60ecf7ee35bc98">csnd::Param&lt; N &gt;</a>
+</li>
 </ul>
 
 
@@ -235,26 +284,30 @@ $(function() {
 : <a class="el" href="classcsnd_1_1_fsig.html#a9b656130306f6ce8e6d89262712df654">csnd::Fsig</a>
 </li>
 <li>operator pvscmplx &amp;()
-: <a class="el" href="classcsnd_1_1_pv_bin.html#a211148d382fbd604ad0a09a9c6890774">csnd::PvBin&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_pvbin.html#a02adbe53b1f5a9864cc0a186242cb107">csnd::Pvbin&lt; T &gt;</a>
 </li>
 <li>operator pvscmplx *()
-: <a class="el" href="classcsnd_1_1_pv_bin.html#a43cdf6a4c60f70ded2615a1611fd2a34">csnd::PvBin&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_pvbin.html#acc93f75c0cc3678d80bdbdc7a8c2b502">csnd::Pvbin&lt; T &gt;</a>
 </li>
 <li>operator spv_frame &amp;()
 : <a class="el" href="classcsnd_1_1_fsig.html#a202f48c30a4cb337e8e6884e03205cbd">csnd::Fsig</a>
 </li>
+<li>operator()()
+: <a class="el" href="classcsnd_1_1_param.html#a9169f13a25d018b7262eb07a081c5014">csnd::Param&lt; N &gt;</a>
+</li>
 <li>operator*()
-: <a class="el" href="classcsnd_1_1_pv_bin.html#a9bcbf6bc7da4c050dd62d0061083c9fd">csnd::PvBin&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_pvbin.html#a0ee2c84c3c6557f31b77a04205c43cf6">csnd::Pvbin&lt; T &gt;</a>
 </li>
 <li>operator*=()
-: <a class="el" href="classcsnd_1_1_pv_bin.html#a49876b78490fef5da04969ff8873de95">csnd::PvBin&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_pvbin.html#aa2f7533dc7248d1cbc666a66e7e02870">csnd::Pvbin&lt; T &gt;</a>
 </li>
 <li>operator[]()
-: <a class="el" href="classcsnd_1_1_aux_mem.html#a71e75a331fb37338ef9eae0e374926ce">csnd::AuxMem&lt; T &gt;</a>
-, <a class="el" href="classcsnd_1_1_params.html#aa86ce949794ae1c8d7695b45a0f21f05">csnd::Params&lt; N &gt;</a>
-, <a class="el" href="classcsnd_1_1_pvs.html#aac7346642a2d3a9cf35e3cac45fc7d2f">csnd::Pvs&lt; T &gt;</a>
+: <a class="el" href="classcsnd_1_1_audio_sig.html#a6c9a5cd6243163f5145acda527c27f27">csnd::AudioSig</a>
+, <a class="el" href="classcsnd_1_1_aux_mem.html#a71e75a331fb37338ef9eae0e374926ce">csnd::AuxMem&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_param.html#a930a0f0d966aea6e7a43a41bf0fb1b4b">csnd::Param&lt; N &gt;</a>
+, <a class="el" href="classcsnd_1_1_pvframe.html#afe9b83fac2629e546b27731bf619498b">csnd::Pvframe&lt; T &gt;</a>
 , <a class="el" href="classcsnd_1_1_table.html#a17f7d9047317ed6f43d516ac01a2f24d">csnd::Table</a>
-, <a class="el" href="classcsnd_1_1_vector.html#abf5ba62b834217bf94579eb11a054f26">csnd::Vector&lt; T &gt;</a>
+, <a class="el" href="classcsnd_1_1_vector.html#a13a5c93c027e2f4d10baca86e65a87a3">csnd::Vector&lt; T &gt;</a>
 </li>
 </ul>
 
@@ -266,38 +319,42 @@ $(function() {
 <li>plugin_deinit()
 : <a class="el" href="classcsnd_1_1_csound.html#a9d98c983b8f18f953c36484360006831">csnd::Csound</a>
 </li>
-<li>PvBin()
-: <a class="el" href="classcsnd_1_1_pv_bin.html#afeb1bac98c1eb7c44506940867d2ff2a">csnd::PvBin&lt; T &gt;</a>
+<li>Pvbin()
+: <a class="el" href="classcsnd_1_1_pvbin.html#a9d0efa1e76e8232bfaffcd45265a5970">csnd::Pvbin&lt; T &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>rfft()
-: <a class="el" href="classcsnd_1_1_csound.html#a9829c1a471c7585d7d4bf889dc0f0044">csnd::Csound</a>
+: <a class="el" href="classcsnd_1_1_csound.html#ad3127a093e61344aa268531ae20d5a31">csnd::Csound</a>
 </li>
-<li>rfft_setup()
-: <a class="el" href="classcsnd_1_1_csound.html#a26b6ff04ec5f3c86e1f874174cd9e70a">csnd::Csound</a>
+<li>run()
+: <a class="el" href="classcsnd_1_1_thread.html#a0e45947e667cf8fe8c62682a076aa966">csnd::Thread</a>
 </li>
 </ul>
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
-<li>sa_offset()
-: <a class="el" href="structcsnd_1_1_plugin.html#a75942c656cd6529c2f6f071eb898b0ef">csnd::Plugin&lt; N, M &gt;</a>
-</li>
 <li>sr()
 : <a class="el" href="classcsnd_1_1_csound.html#ae1adadcd8c28327bd37714f6862b16fd">csnd::Csound</a>
 </li>
 <li>str_data()
-: <a class="el" href="classcsnd_1_1_params.html#a9ab9e300a08612c92f171ef016e02628">csnd::Params&lt; N &gt;</a>
+: <a class="el" href="classcsnd_1_1_param.html#a9cfdae0d95f10660968e4b61e8dede53">csnd::Param&lt; N &gt;</a>
+</li>
+</ul>
+
+
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>Thread()
+: <a class="el" href="classcsnd_1_1_thread.html#a5717b355700c599b54e1d41aefa5ce23">csnd::Thread</a>
 </li>
 </ul>
 
 
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>vector_data()
-: <a class="el" href="classcsnd_1_1_params.html#ab2870b9541b8c05c8781c811b1755820">csnd::Params&lt; N &gt;</a>
+: <a class="el" href="classcsnd_1_1_param.html#a688206fad945911022e3549b70b6f71f">csnd::Param&lt; N &gt;</a>
 </li>
 </ul>
 

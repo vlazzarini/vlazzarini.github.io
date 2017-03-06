@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pv_5fbin',['pv_bin',['../namespacecsnd.html#a6a788f0fbb665915ff43ed5ed5cea9ba',1,'csnd']]],
-  ['pv_5fframe',['pv_frame',['../namespacecsnd.html#a27b75c52ee1f4ef4a0cb7c44253c9a62',1,'csnd']]],
-  ['pvscmplx',['pvscmplx',['../namespacecsnd.html#a20ff5e540c0db43383ef34ca10a5e916',1,'csnd']]]
+  ['iterator',['iterator',['../classcsnd_1_1_audio_sig.html#a8dd80e56cb065d257a25debe7f5599ee',1,'csnd::AudioSig::iterator()'],['../classcsnd_1_1_vector.html#a74c13cc0a3ecafb4f59e1b6a50f26f5a',1,'csnd::Vector::iterator()'],['../classcsnd_1_1_pvframe.html#a6626817be5164bb776e3eaad38706e1d',1,'csnd::Pvframe::iterator()'],['../classcsnd_1_1_table.html#ac9e6338d4f7d901e38a2969f482a8cdd',1,'csnd::Table::iterator()'],['../classcsnd_1_1_aux_mem.html#a8f90a23037f808e1907ddafc5d1353f1',1,'csnd::AuxMem::iterator()'],['../classcsnd_1_1_param.html#a7cc54739b07fb5474e1c49d10aafda8c',1,'csnd::Param::iterator()']]]
 ];

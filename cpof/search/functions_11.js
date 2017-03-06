@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vector_5fdata',['vector_data',['../classcsnd_1_1_params.html#ab2870b9541b8c05c8781c811b1755820',1,'csnd::Params']]]
+  ['rfft',['rfft',['../classcsnd_1_1_csound.html#ad3127a093e61344aa268531ae20d5a31',1,'csnd::Csound']]],
+  ['run',['run',['../classcsnd_1_1_thread.html#a0e45947e667cf8fe8c62682a076aa966',1,'csnd::Thread']]]
 ];

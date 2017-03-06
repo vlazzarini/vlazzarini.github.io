@@ -76,11 +76,15 @@ $(function() {
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;complex&gt;</code><br />
 <code>#include &lt;csdl.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;pstream.h&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for plugin.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="plugin_8h__incl.png" border="0" usemap="#plugin_8h" alt=""/></div>
+<map name="plugin_8h" id="plugin_8h">
+</map>
 </div>
 </div>
 <p><a href="plugin_8h_source.html">Go to the source code of this file.</a></p>
@@ -89,21 +93,25 @@ Include dependency graph for plugin.h:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_csound.html">csnd::Csound</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_thread.html">csnd::Thread</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_audio_sig.html">csnd::AudioSig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_vector.html">csnd::Vector&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_pv_bin.html">csnd::PvBin&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_pvbin.html">csnd::Pvbin&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_pvs.html">csnd::Pvs&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_pvframe.html">csnd::Pvframe&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_fsig.html">csnd::Fsig</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_pvs.html">csnd::Pvs&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_pvframe.html">csnd::Pvframe&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_table.html">csnd::Table</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_aux_mem.html">csnd::AuxMem&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_params.html">csnd::Params&lt; N &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsnd_1_1_param.html">csnd::Param&lt; N &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcsnd_1_1_plugin.html">csnd::Plugin&lt; N, M &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,18 +125,22 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a16253bb4255b64789b5b090a97a58e6e"><td class="memItemLeft" align="right" valign="top">typedef CSOUND_FFT_SETUP *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a16253bb4255b64789b5b090a97a58e6e">csnd::fftp</a></td></tr>
+<tr class="separator:a16253bb4255b64789b5b090a97a58e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65a79ff0d07ccfca8edea1f24227d760"><td class="memItemLeft" align="right" valign="top">typedef Vector&lt; MYFLT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a65a79ff0d07ccfca8edea1f24227d760">csnd::myfltvec</a></td></tr>
+<tr class="separator:a65a79ff0d07ccfca8edea1f24227d760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20ff5e540c0db43383ef34ca10a5e916"><td class="memItemLeft" align="right" valign="top">typedef std::complex&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a20ff5e540c0db43383ef34ca10a5e916">csnd::pvscmplx</a></td></tr>
 <tr class="separator:a20ff5e540c0db43383ef34ca10a5e916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada690354ce57dc0c7472771a7028d1ba"><td class="memItemLeft" align="right" valign="top">typedef std::complex&lt; MYFLT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#ada690354ce57dc0c7472771a7028d1ba">csnd::sldcmplx</a></td></tr>
 <tr class="separator:ada690354ce57dc0c7472771a7028d1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a788f0fbb665915ff43ed5ed5cea9ba"><td class="memItemLeft" align="right" valign="top">typedef PvBin&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a6a788f0fbb665915ff43ed5ed5cea9ba">csnd::pv_bin</a></td></tr>
-<tr class="separator:a6a788f0fbb665915ff43ed5ed5cea9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a537e10ece5866737ab686e1166d10b21"><td class="memItemLeft" align="right" valign="top">typedef PvBin&lt; MYFLT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a537e10ece5866737ab686e1166d10b21">csnd::spv_bin</a></td></tr>
-<tr class="separator:a537e10ece5866737ab686e1166d10b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27b75c52ee1f4ef4a0cb7c44253c9a62"><td class="memItemLeft" align="right" valign="top">typedef Pvs&lt; pv_bin &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a27b75c52ee1f4ef4a0cb7c44253c9a62">csnd::pv_frame</a></td></tr>
-<tr class="separator:a27b75c52ee1f4ef4a0cb7c44253c9a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78cc4999d9069deaca9d7a6d4cd8a451"><td class="memItemLeft" align="right" valign="top">typedef Pvs&lt; spv_bin &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a78cc4999d9069deaca9d7a6d4cd8a451">csnd::spv_frame</a></td></tr>
-<tr class="separator:a78cc4999d9069deaca9d7a6d4cd8a451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208f4528e663a83ed8cf67c995e65d64"><td class="memItemLeft" align="right" valign="top">typedef Pvbin&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a208f4528e663a83ed8cf67c995e65d64">csnd::pv_bin</a></td></tr>
+<tr class="separator:a208f4528e663a83ed8cf67c995e65d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c7241b023ba73a7db73667ced28ba3"><td class="memItemLeft" align="right" valign="top">typedef Pvbin&lt; MYFLT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#af4c7241b023ba73a7db73667ced28ba3">csnd::spv_bin</a></td></tr>
+<tr class="separator:af4c7241b023ba73a7db73667ced28ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0165c0f114e4ce7225532a651c92b015"><td class="memItemLeft" align="right" valign="top">typedef Pvframe&lt; pv_bin &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a0165c0f114e4ce7225532a651c92b015">csnd::pv_frame</a></td></tr>
+<tr class="separator:a0165c0f114e4ce7225532a651c92b015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5ce71246d97012f0198e4544022337"><td class="memItemLeft" align="right" valign="top">typedef Pvframe&lt; spv_bin &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#afb5ce71246d97012f0198e4544022337">csnd::spv_frame</a></td></tr>
+<tr class="separator:afb5ce71246d97012f0198e4544022337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -152,12 +164,18 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad6914482b8d33e06c6d5ccf7d31d42ca"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad6914482b8d33e06c6d5ccf7d31d42ca"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#ad6914482b8d33e06c6d5ccf7d31d42ca">csnd::plugin</a> (CSOUND *csound, const char *name, const char *oargs, const char *iargs, uint32_t thread, uint32_t flags=0)</td></tr>
-<tr class="separator:ad6914482b8d33e06c6d5ccf7d31d42ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a7df0de2c9a022c48e3eed5b6d4b31c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a8a7df0de2c9a022c48e3eed5b6d4b31c"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a8a7df0de2c9a022c48e3eed5b6d4b31c">csnd::plugin</a> (CSOUND *csound, const char *name, uint32_t thread, uint32_t flags=0)</td></tr>
-<tr class="separator:a8a7df0de2c9a022c48e3eed5b6d4b31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2693620fa68de484d7f7b614009478fd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2693620fa68de484d7f7b614009478fd"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a2693620fa68de484d7f7b614009478fd">csnd::plugin</a> (Csound *csound, const char *name, const char *oargs, const char *iargs, uint32_t thread, uint32_t flags=0)</td></tr>
+<tr class="separator:a2693620fa68de484d7f7b614009478fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43e99ddf422efe4710eee56b0c90c79b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a43e99ddf422efe4710eee56b0c90c79b"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a43e99ddf422efe4710eee56b0c90c79b">csnd::plugin</a> (Csound *csound, const char *name, uint32_t thread, uint32_t flags=0)</td></tr>
+<tr class="separator:a43e99ddf422efe4710eee56b0c90c79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3ab01f3347367d920508c7bd57e212"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Types&gt; </td></tr>
+<tr class="memitem:aab3ab01f3347367d920508c7bd57e212"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#aab3ab01f3347367d920508c7bd57e212">csnd::constr</a> (T *p, Types... args)</td></tr>
+<tr class="separator:aab3ab01f3347367d920508c7bd57e212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c12d4b7dc84914c1ad74fc6b320db8f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7c12d4b7dc84914c1ad74fc6b320db8f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecsnd.html#a7c12d4b7dc84914c1ad74fc6b320db8f">csnd::destr</a> (T *p)</td></tr>
+<tr class="separator:a7c12d4b7dc84914c1ad74fc6b320db8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

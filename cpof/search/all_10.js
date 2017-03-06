@@ -1,9 +1,18 @@
 var searchData=
 [
-  ['sa_5foffset',['sa_offset',['../structcsnd_1_1_plugin.html#a75942c656cd6529c2f6f071eb898b0ef',1,'csnd::Plugin']]],
-  ['sldcmplx',['sldcmplx',['../namespacecsnd.html#ada690354ce57dc0c7472771a7028d1ba',1,'csnd']]],
-  ['spv_5fbin',['spv_bin',['../namespacecsnd.html#a537e10ece5866737ab686e1166d10b21',1,'csnd']]],
-  ['spv_5fframe',['spv_frame',['../namespacecsnd.html#a78cc4999d9069deaca9d7a6d4cd8a451',1,'csnd']]],
-  ['sr',['sr',['../classcsnd_1_1_csound.html#ae1adadcd8c28327bd37714f6862b16fd',1,'csnd::Csound']]],
-  ['str_5fdata',['str_data',['../classcsnd_1_1_params.html#a9ab9e300a08612c92f171ef016e02628',1,'csnd::Params']]]
+  ['param',['Param',['../classcsnd_1_1_param.html',1,'csnd']]],
+  ['param_3c_20m_20_3e',['Param&lt; M &gt;',['../classcsnd_1_1_param.html',1,'csnd']]],
+  ['perf_5ferror',['perf_error',['../classcsnd_1_1_csound.html#a4de81f3c78285ac584d2f01dd2be7f2d',1,'csnd::Csound']]],
+  ['plugin',['plugin',['../namespacecsnd.html#a2693620fa68de484d7f7b614009478fd',1,'csnd::plugin(Csound *csound, const char *name, const char *oargs, const char *iargs, uint32_t thread, uint32_t flags=0)'],['../namespacecsnd.html#a43e99ddf422efe4710eee56b0c90c79b',1,'csnd::plugin(Csound *csound, const char *name, uint32_t thread, uint32_t flags=0)']]],
+  ['plugin',['Plugin',['../structcsnd_1_1_plugin.html',1,'csnd']]],
+  ['plugin_2eh',['plugin.h',['../plugin_8h.html',1,'']]],
+  ['plugin_5fdeinit',['plugin_deinit',['../classcsnd_1_1_csound.html#a9d98c983b8f18f953c36484360006831',1,'csnd::Csound']]],
+  ['polar',['polar',['../namespacecsnd.html#a392e9133842c8924ff5f7756dfaecd9da8032d9060aa9a695cae7da0c8612833b',1,'csnd']]],
+  ['pv_5fbin',['pv_bin',['../namespacecsnd.html#a208f4528e663a83ed8cf67c995e65d64',1,'csnd']]],
+  ['pv_5fframe',['pv_frame',['../namespacecsnd.html#a0165c0f114e4ce7225532a651c92b015',1,'csnd']]],
+  ['pvbin',['Pvbin',['../classcsnd_1_1_pvbin.html#a9d0efa1e76e8232bfaffcd45265a5970',1,'csnd::Pvbin']]],
+  ['pvbin',['Pvbin',['../classcsnd_1_1_pvbin.html',1,'csnd']]],
+  ['pvframe',['Pvframe',['../classcsnd_1_1_pvframe.html',1,'csnd']]],
+  ['pvs',['pvs',['../namespacecsnd.html#a392e9133842c8924ff5f7756dfaecd9dab73f233f81430801803dabe8c7e079ac',1,'csnd']]],
+  ['pvscmplx',['pvscmplx',['../namespacecsnd.html#a20ff5e540c0db43383ef34ca10a5e916',1,'csnd']]]
 ];
