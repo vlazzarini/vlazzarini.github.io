@@ -5,6 +5,8 @@ var searchData=
   ['sawosc',['SawOsc',['../struct_au_lib_1_1_saw_osc.html',1,'AuLib']]],
   ['sawtable',['SawTable',['../struct_au_lib_1_1_saw_table.html',1,'AuLib']]],
   ['score',['Score',['../class_au_lib_1_1_score.html',1,'AuLib']]],
+  ['score',['Score',['../class_score.html',1,'']]],
+  ['scoreplayer',['ScorePlayer',['../class_score_player.html',1,'']]],
   ['scoreplayer',['ScorePlayer',['../class_au_lib_1_1_score_player.html',1,'AuLib']]],
   ['segments',['Segments',['../class_au_lib_1_1_segments.html',1,'AuLib']]],
   ['sigbus',['SigBus',['../class_au_lib_1_1_sig_bus.html',1,'AuLib']]],

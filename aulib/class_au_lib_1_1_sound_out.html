@@ -65,6 +65,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_au_lib_1_1_sound_out-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AuLib::SoundOut Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
@@ -91,6 +92,22 @@ Collaboration diagram for AuLib::SoundOut:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a7ea36734e4726fa14b2a50b91cae7b17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a7ea36734e4726fa14b2a50b91cae7b17">SoundOut</a> (const char *<a class="el" href="class_au_lib_1_1_sound_out.html#a349ecc12b687de76ab382e823da81ce1">dest</a>, uint32_t <a class="el" href="class_au_lib_1_1_audio_base.html#a17ebbd3616ce5682a1a548e86f7b110d">nchnls</a>=<a class="el" href="namespace_au_lib.html#a50285c07fffaf75020e8238a6e1ac971">def_nchnls</a>, uint32_t <a class="el" href="class_au_lib_1_1_audio_base.html#a306a6d366ebdb9bbff3be2ea3e812f59">vframes</a>=<a class="el" href="namespace_au_lib.html#abbd7edb22f589f45865586f5bfd658c8">def_bframes</a>, double <a class="el" href="class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12">sr</a>=<a class="el" href="namespace_au_lib.html#a5474e642bbb8f60b8a04d9bcd60ba842">def_sr</a>)</td></tr>
+<tr class="separator:a7ea36734e4726fa14b2a50b91cae7b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58fb9211ec642e2ad22f2e10bddec275"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a58fb9211ec642e2ad22f2e10bddec275">~SoundOut</a> ()</td></tr>
+<tr class="separator:a58fb9211ec642e2ad22f2e10bddec275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d5493b951c854d03cac2480c07a3c7c"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a6d5493b951c854d03cac2480c07a3c7c">write</a> (const double *sig, uint32_t frames=<a class="el" href="namespace_au_lib.html#a9af7341071c7c07ea70348f9f1a6125b">def_vframes</a>)</td></tr>
+<tr class="separator:a6d5493b951c854d03cac2480c07a3c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7faa6f1e6fbafe75af21e849490ca21"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#ab7faa6f1e6fbafe75af21e849490ca21">write</a> (const <a class="el" href="class_au_lib_1_1_audio_base.html">AudioBase</a> &amp;obj)</td></tr>
+<tr class="separator:ab7faa6f1e6fbafe75af21e849490ca21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f56d809e69898bc85405e69d53757d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a13f56d809e69898bc85405e69d53757d">time</a> () const</td></tr>
+<tr class="separator:a13f56d809e69898bc85405e69d53757d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349ecc12b687de76ab382e823da81ce1"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a349ecc12b687de76ab382e823da81ce1">dest</a> () const</td></tr>
+<tr class="separator:a349ecc12b687de76ab382e823da81ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d74cf68e114a0cf5813e0114553ea6"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#aa1d74cf68e114a0cf5813e0114553ea6">error_message</a> () const</td></tr>
+<tr class="separator:aa1d74cf68e114a0cf5813e0114553ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71bbe12d7f762488a4f5622ac5a728b1"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a71bbe12d7f762488a4f5622ac5a728b1">operator()</a> (const <a class="el" href="class_au_lib_1_1_audio_base.html">AudioBase</a> &amp;obj)</td></tr>
+<tr class="separator:a71bbe12d7f762488a4f5622ac5a728b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ea36734e4726fa14b2a50b91cae7b17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a7ea36734e4726fa14b2a50b91cae7b17">SoundOut</a> (const char *<a class="el" href="class_au_lib_1_1_sound_out.html#a349ecc12b687de76ab382e823da81ce1">dest</a>, uint32_t <a class="el" href="class_au_lib_1_1_audio_base.html#a17ebbd3616ce5682a1a548e86f7b110d">nchnls</a>=<a class="el" href="namespace_au_lib.html#a50285c07fffaf75020e8238a6e1ac971">def_nchnls</a>, uint32_t <a class="el" href="class_au_lib_1_1_audio_base.html#a306a6d366ebdb9bbff3be2ea3e812f59">vframes</a>=<a class="el" href="namespace_au_lib.html#abbd7edb22f589f45865586f5bfd658c8">def_bframes</a>, double <a class="el" href="class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12">sr</a>=<a class="el" href="namespace_au_lib.html#a5474e642bbb8f60b8a04d9bcd60ba842">def_sr</a>)</td></tr>
 <tr class="separator:a7ea36734e4726fa14b2a50b91cae7b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58fb9211ec642e2ad22f2e10bddec275"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a58fb9211ec642e2ad22f2e10bddec275">~SoundOut</a> ()</td></tr>
@@ -152,6 +169,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afa34990c43c69936c12aa0a35da7bb17 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a306a6d366ebdb9bbff3be2ea3e812f59 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_audio_base.html#a306a6d366ebdb9bbff3be2ea3e812f59">vframes</a> (uint32_t frames)</td></tr>
 <tr class="separator:a306a6d366ebdb9bbff3be2ea3e812f59 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc20302e28f40d19c8dde127f515e871 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_audio_base.html#abc20302e28f40d19c8dde127f515e871">resize_exact</a> (uint32_t frames)</td></tr>
+<tr class="separator:abc20302e28f40d19c8dde127f515e871 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b89b8ab2920360601e92cc0353c73a4 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_audio_base.html#a1b89b8ab2920360601e92cc0353c73a4">vframes</a> () const</td></tr>
 <tr class="separator:a1b89b8ab2920360601e92cc0353c73a4 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37d69e2b90a2055eb246511a59d605a4 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_audio_base.html#a37d69e2b90a2055eb246511a59d605a4">vsamps</a> () const</td></tr>
@@ -162,6 +181,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a549a53c29207dbd6dc7d4eca0e1b4d12 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b603cdef4f81fdcb37c3e8faf15cd16 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_audio_base.html#a2b603cdef4f81fdcb37c3e8faf15cd16">error</a> () const</td></tr>
 <tr class="separator:a2b603cdef4f81fdcb37c3e8faf15cd16 inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a82b66352abe45bc5a41e8b8acacf195b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a82b66352abe45bc5a41e8b8acacf195b">rt_audio</a> (const float *input, float *output, unsigned long frameCount, const void *timeInfo, unsigned long statusFlags, <a class="el" href="class_au_lib_1_1_sound_out.html">SoundOut</a> *userData)</td></tr>
+<tr class="separator:a82b66352abe45bc5a41e8b8acacf195b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f7553854e977e1e2031c0739ebff95b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a4f7553854e977e1e2031c0739ebff95b">audio</a> (<a class="el" href="class_au_lib_1_1_sound_out.html">AuLib::SoundOut</a> &amp;obj)</td></tr>
+<tr class="separator:a4f7553854e977e1e2031c0739ebff95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b66352abe45bc5a41e8b8acacf195b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a82b66352abe45bc5a41e8b8acacf195b">rt_audio</a> (const float *input, float *output, unsigned long frameCount, const void *timeInfo, unsigned long statusFlags, <a class="el" href="class_au_lib_1_1_sound_out.html">SoundOut</a> *userData)</td></tr>
+<tr class="separator:a82b66352abe45bc5a41e8b8acacf195b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f7553854e977e1e2031c0739ebff95b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_sound_out.html#a4f7553854e977e1e2031c0739ebff95b">audio</a> (<a class="el" href="class_au_lib_1_1_sound_out.html">AuLib::SoundOut</a> &amp;obj)</td></tr>
+<tr class="separator:a4f7553854e977e1e2031c0739ebff95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -186,7 +216,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Audio output class </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7ea36734e4726fa14b2a50b91cae7b17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ea36734e4726fa14b2a50b91cae7b17">&#9670;&nbsp;</a></span>SoundOut()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea36734e4726fa14b2a50b91cae7b17">&#9670;&nbsp;</a></span>SoundOut() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +263,72 @@ vframes - vector size <br />
 </div>
 </div>
 <a id="a58fb9211ec642e2ad22f2e10bddec275"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58fb9211ec642e2ad22f2e10bddec275">&#9670;&nbsp;</a></span>~SoundOut()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a58fb9211ec642e2ad22f2e10bddec275">&#9670;&nbsp;</a></span>~SoundOut() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AuLib::SoundOut::~SoundOut </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="class_au_lib_1_1_sound_out.html">SoundOut</a> destructor </p>
+
+</div>
+</div>
+<a id="a7ea36734e4726fa14b2a50b91cae7b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea36734e4726fa14b2a50b91cae7b17">&#9670;&nbsp;</a></span>SoundOut() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AuLib::SoundOut::SoundOut </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nchnls</em> = <code><a class="el" href="namespace_au_lib.html#a50285c07fffaf75020e8238a6e1ac971">def_nchnls</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>vframes</em> = <code><a class="el" href="namespace_au_lib.html#abbd7edb22f589f45865586f5bfd658c8">def_bframes</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sr</em> = <code><a class="el" href="namespace_au_lib.html#a5474e642bbb8f60b8a04d9bcd60ba842">def_sr</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="class_au_lib_1_1_sound_out.html">SoundOut</a> constructor <br />
+<br />
+dest - vector destination ("dac", "stdout", or file path) <br />
+nchnls - number of channels <br />
+sr - sampling rate <br />
+vframes - vector size <br />
+</p>
+
+</div>
+</div>
+<a id="a58fb9211ec642e2ad22f2e10bddec275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58fb9211ec642e2ad22f2e10bddec275">&#9670;&nbsp;</a></span>~SoundOut() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +347,33 @@ vframes - vector size <br />
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a349ecc12b687de76ab382e823da81ce1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a349ecc12b687de76ab382e823da81ce1">&#9670;&nbsp;</a></span>dest()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a349ecc12b687de76ab382e823da81ce1">&#9670;&nbsp;</a></span>dest() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* AuLib::SoundOut::dest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the destination name </p>
+
+</div>
+</div>
+<a id="a349ecc12b687de76ab382e823da81ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349ecc12b687de76ab382e823da81ce1">&#9670;&nbsp;</a></span>dest() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,7 +399,35 @@ vframes - vector size <br />
 </div>
 </div>
 <a id="aa1d74cf68e114a0cf5813e0114553ea6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1d74cf68e114a0cf5813e0114553ea6">&#9670;&nbsp;</a></span>error_message()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d74cf68e114a0cf5813e0114553ea6">&#9670;&nbsp;</a></span>error_message() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* AuLib::SoundOut::error_message </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get error message </p>
+
+<p>Reimplemented from <a class="el" href="class_au_lib_1_1_audio_base.html#a3d5f4528f2b7bf5a30cde615fa1c6e14">AuLib::AudioBase</a>.</p>
+
+</div>
+</div>
+<a id="aa1d74cf68e114a0cf5813e0114553ea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d74cf68e114a0cf5813e0114553ea6">&#9670;&nbsp;</a></span>error_message() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +455,34 @@ vframes - vector size <br />
 </div>
 </div>
 <a id="a71bbe12d7f762488a4f5622ac5a728b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71bbe12d7f762488a4f5622ac5a728b1">&#9670;&nbsp;</a></span>operator()()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a71bbe12d7f762488a4f5622ac5a728b1">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t AuLib::SoundOut::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_au_lib_1_1_audio_base.html">AudioBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>operator() overload convenience method </p>
+
+</div>
+</div>
+<a id="a71bbe12d7f762488a4f5622ac5a728b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71bbe12d7f762488a4f5622ac5a728b1">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,7 +509,33 @@ vframes - vector size <br />
 </div>
 </div>
 <a id="a13f56d809e69898bc85405e69d53757d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13f56d809e69898bc85405e69d53757d">&#9670;&nbsp;</a></span>time()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f56d809e69898bc85405e69d53757d">&#9670;&nbsp;</a></span>time() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AuLib::SoundOut::time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current vector stream time </p>
+
+</div>
+</div>
+<a id="a13f56d809e69898bc85405e69d53757d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f56d809e69898bc85405e69d53757d">&#9670;&nbsp;</a></span>time() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -359,7 +561,36 @@ vframes - vector size <br />
 </div>
 </div>
 <a id="a6d5493b951c854d03cac2480c07a3c7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d5493b951c854d03cac2480c07a3c7c">&#9670;&nbsp;</a></span>write() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d5493b951c854d03cac2480c07a3c7c">&#9670;&nbsp;</a></span>write() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t AuLib::SoundOut::write </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>sig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>frames</em> = <code><a class="el" href="namespace_au_lib.html#a9af7341071c7c07ea70348f9f1a6125b">def_vframes</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Writes sig to the vector destination, returning the vector current framecount. </p>
+
+</div>
+</div>
+<a id="a6d5493b951c854d03cac2480c07a3c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d5493b951c854d03cac2480c07a3c7c">&#9670;&nbsp;</a></span>write() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,7 +619,7 @@ vframes - vector size <br />
 </div>
 </div>
 <a id="ab7faa6f1e6fbafe75af21e849490ca21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7faa6f1e6fbafe75af21e849490ca21">&#9670;&nbsp;</a></span>write() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7faa6f1e6fbafe75af21e849490ca21">&#9670;&nbsp;</a></span>write() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,9 +645,211 @@ vframes - vector size <br />
 
 </div>
 </div>
+<a id="ab7faa6f1e6fbafe75af21e849490ca21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7faa6f1e6fbafe75af21e849490ca21">&#9670;&nbsp;</a></span>write() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t AuLib::SoundOut::write </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_au_lib_1_1_audio_base.html">AudioBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Writes the audio vector in obj to the vector destination, returning the vector current framecount. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a4f7553854e977e1e2031c0739ebff95b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f7553854e977e1e2031c0739ebff95b">&#9670;&nbsp;</a></span>audio <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void audio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_au_lib_1_1_sound_out.html">AuLib::SoundOut</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f7553854e977e1e2031c0739ebff95b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f7553854e977e1e2031c0739ebff95b">&#9670;&nbsp;</a></span>audio <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void audio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_au_lib_1_1_sound_out.html">AuLib::SoundOut</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82b66352abe45bc5a41e8b8acacf195b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b66352abe45bc5a41e8b8acacf195b">&#9670;&nbsp;</a></span>rt_audio <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rt_audio </td>
+          <td>(</td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>frameCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>timeInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>statusFlags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_au_lib_1_1_sound_out.html">SoundOut</a> *&#160;</td>
+          <td class="paramname"><em>userData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82b66352abe45bc5a41e8b8acacf195b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b66352abe45bc5a41e8b8acacf195b">&#9670;&nbsp;</a></span>rt_audio <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rt_audio </td>
+          <td>(</td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>frameCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>timeInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>statusFlags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_au_lib_1_1_sound_out.html">SoundOut</a> *&#160;</td>
+          <td class="paramname"><em>userData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_sound_out_8h_source.html">SoundOut.h</a></li>
+<li><a class="el" href="_sound_out__o_8h_source.html">SoundOut_o.h</a></li>
 <li><a class="el" href="_sound_out_8cpp.html">SoundOut.cpp</a></li>
+<li><a class="el" href="_sound_out__o_8cpp.html">SoundOut_o.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

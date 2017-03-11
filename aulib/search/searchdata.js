@@ -6,10 +6,10 @@ var indexSectionsWithContent =
   3: "abcdefhilmnoprstw",
   4: "abcdefhilmnoprstuvw~",
   5: "abcdefilmnoprstu",
-  6: "ci",
+  6: "cip",
   7: "desw",
   8: "ast",
-  9: "o",
+  9: "aor",
   10: "abn"
 };
 

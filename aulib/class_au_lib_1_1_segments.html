@@ -65,6 +65,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_au_lib_1_1_segments-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AuLib::Segments Class Reference</div>  </div>
@@ -75,7 +76,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae6c13583e3c8fbfa9f3058a5c3f90c74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_segments.html#ae6c13583e3c8fbfa9f3058a5c3f90c74">Segments</a> (double <a class="el" href="class_au_lib_1_1_segments.html#aeeeba586589e7cc5fa254ad4fcf1c9eb">start</a>, const std::vector&lt; double &gt; <a class="el" href="class_au_lib_1_1_segments.html#aed319c4a361acc18aef59748a54fcca1">endpts</a>, const std::vector&lt; double &gt; times, bool linear=true, double sr=<a class="el" href="namespace_au_lib.html#a5474e642bbb8f60b8a04d9bcd60ba842">def_sr</a>)</td></tr>
+<tr class="memitem:ae6c13583e3c8fbfa9f3058a5c3f90c74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_segments.html#ae6c13583e3c8fbfa9f3058a5c3f90c74">Segments</a> (double <a class="el" href="class_au_lib_1_1_segments.html#aeeeba586589e7cc5fa254ad4fcf1c9eb">start</a>, const std::vector&lt; double &gt; <a class="el" href="class_au_lib_1_1_segments.html#aed319c4a361acc18aef59748a54fcca1">endpts</a>, const std::vector&lt; double &gt; times, bool <a class="el" href="class_au_lib_1_1_segments.html#ae8144e0a19e79ca3f6d50319a5b2ab65">linear</a>=true, double sr=<a class="el" href="namespace_au_lib.html#a5474e642bbb8f60b8a04d9bcd60ba842">def_sr</a>)</td></tr>
 <tr class="separator:ae6c13583e3c8fbfa9f3058a5c3f90c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee87493d4856b1c956275ac20d8faba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_segments.html#aee87493d4856b1c956275ac20d8faba7">Segments</a> ()</td></tr>
 <tr class="separator:aee87493d4856b1c956275ac20d8faba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,6 +96,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa950ede8655a74f99225757085530db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34842c389deaf039698fd2753d38be7d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_segments.html#a34842c389deaf039698fd2753d38be7d">frames</a> () const</td></tr>
 <tr class="separator:a34842c389deaf039698fd2753d38be7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae8144e0a19e79ca3f6d50319a5b2ab65"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_segments.html#ae8144e0a19e79ca3f6d50319a5b2ab65">linear</a> = true</td></tr>
+<tr class="separator:ae8144e0a19e79ca3f6d50319a5b2ab65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30df78d34c97488fd81d45036e6fd839"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_segments.html#a30df78d34c97488fd81d45036e6fd839">exponential</a> = false</td></tr>
+<tr class="separator:a30df78d34c97488fd81d45036e6fd839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Curve segments for envelope generators and tables </p>
@@ -390,6 +398,53 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Get the start value </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a30df78d34c97488fd81d45036e6fd839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30df78d34c97488fd81d45036e6fd839">&#9670;&nbsp;</a></span>exponential</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool AuLib::Segments::exponential = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define exponential segments </p>
+
+</div>
+</div>
+<a id="ae8144e0a19e79ca3f6d50319a5b2ab65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8144e0a19e79ca3f6d50319a5b2ab65">&#9670;&nbsp;</a></span>linear</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool AuLib::Segments::linear = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define linear segments </p>
 
 </div>
 </div>

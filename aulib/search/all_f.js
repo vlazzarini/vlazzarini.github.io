@@ -20,7 +20,7 @@ var searchData=
   ['tapi',['Tapi',['../class_au_lib_1_1_tapi.html#ac62c8dc51ebd16c397c37e00d49ddd71',1,'AuLib::Tapi']]],
   ['tapi_2eh',['Tapi.h',['../_tapi_8h.html',1,'']]],
   ['tframes',['tframes',['../class_au_lib_1_1_func_table.html#a3783b6b8c9dd09abd57f3bd8aeb497ba',1,'AuLib::FuncTable']]],
-  ['time',['time',['../struct_au_lib_1_1_event.html#a951ce4b039850e3d28a7a253563dc1fd',1,'AuLib::Event::time()'],['../class_au_lib_1_1_sound_in.html#aa779d0ba2828934511b790a0c24fb506',1,'AuLib::SoundIn::time()'],['../class_au_lib_1_1_sound_out.html#a13f56d809e69898bc85405e69d53757d',1,'AuLib::SoundOut::time()']]],
+  ['time',['time',['../struct_au_lib_1_1_event.html#a951ce4b039850e3d28a7a253563dc1fd',1,'AuLib::Event::time()'],['../class_au_lib_1_1_sound_in.html#aa779d0ba2828934511b790a0c24fb506',1,'AuLib::SoundIn::time()'],['../class_au_lib_1_1_sound_out.html#a13f56d809e69898bc85405e69d53757d',1,'AuLib::SoundOut::time() const'],['../class_au_lib_1_1_sound_out.html#a13f56d809e69898bc85405e69d53757d',1,'AuLib::SoundOut::time() const']]],
   ['time_5fstamp',['time_stamp',['../class_au_lib_1_1_note.html#a07b14bb3c74dcc095596d5d208d65998',1,'AuLib::Note']]],
   ['tone_2ecpp',['Tone.cpp',['../_tone_8cpp.html',1,'']]],
   ['tonehp',['ToneHP',['../class_au_lib_1_1_tone_h_p.html',1,'AuLib']]],

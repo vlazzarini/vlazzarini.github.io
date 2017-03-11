@@ -67,8 +67,6 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_au_lib_1_1_score-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AuLib::Score Class Reference</div>  </div>
@@ -103,18 +101,6 @@ Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a1b907e39d0ec1e09e11eacde6eb2b2c5"><td class="memItemLeft" align="right" valign="top">static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_score.html#a1b907e39d0ec1e09e11eacde6eb2b2c5">end</a> = 0</td></tr>
 <tr class="separator:a1b907e39d0ec1e09e11eacde6eb2b2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:aa279de1ebfac429634986feb88e5377c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_score.html#aa279de1ebfac429634986feb88e5377c">parse_stream</a> (std::istream &amp;input, double offset=0.)</td></tr>
-<tr class="separator:aa279de1ebfac429634986feb88e5377c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a76f5e8cc8d77a70b87f57f9e46f42aca"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="struct_au_lib_1_1_event.html">Event</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_score.html#a76f5e8cc8d77a70b87f57f9e46f42aca">m_score</a></td></tr>
-<tr class="separator:a76f5e8cc8d77a70b87f57f9e46f42aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae74d7eb63d115edb978e6a274adb06ca"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="struct_au_lib_1_1_score_1_1_cmd.html">Cmd</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_score.html#ae74d7eb63d115edb978e6a274adb06ca">m_cmds</a></td></tr>
-<tr class="separator:ae74d7eb63d115edb978e6a274adb06ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Basic score model </p>
@@ -202,42 +188,6 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>clear the stored score </p>
-
-</div>
-</div>
-<a id="aa279de1ebfac429634986feb88e5377c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa279de1ebfac429634986feb88e5377c">&#9670;&nbsp;</a></span>parse_stream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AuLib::Score::parse_stream </td>
-          <td>(</td>
-          <td class="paramtype">std::istream &amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>offset</em> = <code>0.</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -369,50 +319,6 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>end command message </p>
-
-</div>
-</div>
-<a id="ae74d7eb63d115edb978e6a274adb06ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae74d7eb63d115edb978e6a274adb06ca">&#9670;&nbsp;</a></span>m_cmds</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::list&lt;<a class="el" href="struct_au_lib_1_1_score_1_1_cmd.html">Cmd</a>&gt; AuLib::Score::m_cmds</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a76f5e8cc8d77a70b87f57f9e46f42aca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76f5e8cc8d77a70b87f57f9e46f42aca">&#9670;&nbsp;</a></span>m_score</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::list&lt;<a class="el" href="struct_au_lib_1_1_event.html">Event</a>&gt; AuLib::Score::m_score</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

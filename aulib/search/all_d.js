@@ -1,26 +1,29 @@
 var searchData=
 [
-  ['read',['read',['../class_au_lib_1_1_score.html#a2c370695bea7ce4351d6081e93037084',1,'AuLib::Score::read(std::ifstream &amp;input)'],['../class_au_lib_1_1_score.html#af9e04d51858efee7e69952d626e515f1',1,'AuLib::Score::read(std::string &amp;input)'],['../class_au_lib_1_1_score.html#a6cc12fbb26e769ba3e0a204c726a92e4',1,'AuLib::Score::read(std::istream &amp;input)'],['../class_au_lib_1_1_sound_in.html#a93b0b4b7d41487c43e7e74eda070a368',1,'AuLib::SoundIn::read()']]],
+  ['read',['read',['../class_au_lib_1_1_circular.html#ac4a8bd071d4f9c1baad9e7b5f6fc43e9',1,'AuLib::Circular::read()'],['../class_au_lib_1_1_score.html#a2c370695bea7ce4351d6081e93037084',1,'AuLib::Score::read(std::ifstream &amp;input)'],['../class_au_lib_1_1_score.html#af9e04d51858efee7e69952d626e515f1',1,'AuLib::Score::read(std::string &amp;input)'],['../class_au_lib_1_1_score.html#a6cc12fbb26e769ba3e0a204c726a92e4',1,'AuLib::Score::read(std::istream &amp;input)'],['../class_au_lib_1_1_sound_in.html#a93b0b4b7d41487c43e7e74eda070a368',1,'AuLib::SoundIn::read()']]],
   ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['reads',['reads',['../class_au_lib_1_1_circular.html#abfa8aa4d85c20bd816868a351e9d2f56',1,'AuLib::Circular']]],
   ['rect',['rect',['../class_au_lib_1_1_rms.html#a232c25825df15e9035d130b79b7169c0',1,'AuLib::Rms']]],
   ['rectang',['rectang',['../namespace_au_lib_1_1fft.html#a46ac46bf98366554053c5a3e4dd8172e',1,'AuLib::fft']]],
   ['release',['release',['../class_au_lib_1_1_envel.html#a0191a8cc5e500524a641223b5030c5b7',1,'AuLib::Envel']]],
   ['reorder',['reorder',['../fft_8cpp.html#a70b951ed85a63513f98a491fd29abf45',1,'fft.cpp']]],
   ['repr',['repr',['../class_au_lib_1_1_stft.html#a415e57b08c3153d9f53431058eaa6a03',1,'AuLib::Stft']]],
   ['reset',['reset',['../class_au_lib_1_1_adsr.html#ad1479cc2af7d0cefcc10f19f7dfa8ab1',1,'AuLib::Adsr::reset()'],['../class_au_lib_1_1_segments.html#a686bc397247b93c7a52138e523d06124',1,'AuLib::Segments::reset()'],['../class_au_lib_1_1_envel.html#a8650ec02553710a62475a0f79242eff8',1,'AuLib::Envel::reset()'],['../class_au_lib_1_1_line.html#aa71242cd6bf4c93110a2737666d155e5',1,'AuLib::Line::reset()'],['../class_au_lib_1_1_score_player.html#a71972d655e6f5c30c14c8a1ce8cfc70e',1,'AuLib::ScorePlayer::reset()']]],
-  ['reson',['Reson',['../class_au_lib_1_1_reson.html',1,'AuLib']]],
+  ['resize_5fexact',['resize_exact',['../class_au_lib_1_1_audio_base.html#abc20302e28f40d19c8dde127f515e871',1,'AuLib::AudioBase']]],
   ['reson',['Reson',['../class_au_lib_1_1_reson.html#a57ada758fdde93e98563c73d0e8626a1',1,'AuLib::Reson']]],
+  ['reson',['Reson',['../class_au_lib_1_1_reson.html',1,'AuLib']]],
   ['reson_2eh',['Reson.h',['../_reson_8h.html',1,'']]],
   ['resonr',['ResonR',['../class_au_lib_1_1_reson_r.html#aa9780ac6e4a671609c05ed84d59694d5',1,'AuLib::ResonR']]],
   ['resonr',['ResonR',['../class_au_lib_1_1_reson_r.html',1,'AuLib']]],
   ['resonr_2eh',['ResonR.h',['../_reson_r_8h.html',1,'']]],
-  ['resonz',['ResonZ',['../class_au_lib_1_1_reson_z.html#acb5a090ff44cb6154b450970897690f3',1,'AuLib::ResonZ']]],
   ['resonz',['ResonZ',['../class_au_lib_1_1_reson_z.html',1,'AuLib']]],
+  ['resonz',['ResonZ',['../class_au_lib_1_1_reson_z.html#acb5a090ff44cb6154b450970897690f3',1,'AuLib::ResonZ']]],
   ['resonz_2eh',['ResonZ.h',['../_reson_z_8h.html',1,'']]],
   ['restart',['restart',['../class_au_lib_1_1_expon.html#a4674ea21dac00bc75475e8687c2ef712',1,'AuLib::Expon::restart()'],['../class_au_lib_1_1_line.html#a485dd700e52d0ab670503fff149f5aa8',1,'AuLib::Line::restart()']]],
   ['retrig',['retrig',['../class_au_lib_1_1_envel.html#ac71ec242bffd4d0a603b1f17f884403e',1,'AuLib::Envel::retrig()'],['../class_au_lib_1_1_line.html#a18e3ff0fb0c52c524e2a732edea99ae7',1,'AuLib::Line::retrig()']]],
   ['rframes',['rframes',['../class_au_lib_1_1_envel.html#a8520fbec56ac8722ec1fdd8fa4d268cc',1,'AuLib::Envel']]],
   ['rms',['Rms',['../class_au_lib_1_1_rms.html#a5c4ec3f3feeb5ba66eb904a4bdbed4f4',1,'AuLib::Rms']]],
   ['rms',['Rms',['../class_au_lib_1_1_rms.html',1,'AuLib']]],
-  ['rms_2eh',['Rms.h',['../_rms_8h.html',1,'']]]
+  ['rms_2eh',['Rms.h',['../_rms_8h.html',1,'']]],
+  ['rt_5faudio',['rt_audio',['../class_au_lib_1_1_sound_in.html#a493c454e33c377703d581a37a0d22505',1,'AuLib::SoundIn::rt_audio()'],['../class_au_lib_1_1_sound_out.html#a82b66352abe45bc5a41e8b8acacf195b',1,'AuLib::SoundOut::rt_audio()'],['../class_au_lib_1_1_sound_out.html#a82b66352abe45bc5a41e8b8acacf195b',1,'AuLib::SoundOut::rt_audio()']]]
 ];

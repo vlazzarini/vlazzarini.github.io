@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c',['operator&lt;&lt;',['../class_au_lib_1_1_audio_base.html#a2b1496e715bfdc3db1419acbe31d9c65',1,'AuLib::AudioBase']]],
-  ['operator_3e_3e',['operator&gt;&gt;',['../class_au_lib_1_1_audio_base.html#a4dcd7764ab604cfc84a55f53a741eae3',1,'AuLib::AudioBase']]]
+  ['audio',['audio',['../class_au_lib_1_1_sound_in.html#af1de995358d1647b2abfa55b6320ac90',1,'AuLib::SoundIn::audio()'],['../class_au_lib_1_1_sound_out.html#a4f7553854e977e1e2031c0739ebff95b',1,'AuLib::SoundOut::audio()'],['../class_au_lib_1_1_sound_out.html#a4f7553854e977e1e2031c0739ebff95b',1,'AuLib::SoundOut::audio()']]]
 ];

@@ -62,7 +62,9 @@ $(function() {
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">AuLib Namespace Reference</div>  </div>
@@ -97,6 +99,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_bl_osc.html">BlOsc</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_chn.html">Chn</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_circular.html">Circular</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_delay.html">Delay</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +143,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_oscilic.html">Oscilic</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_pan.html">Pan</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_p_conv.html">PConv</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_phasor.html">Phasor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +205,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_au_lib_1_1_tri_osc.html">TriOsc</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a6b773960288f14572078068a26f40bc6"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a6b773960288f14572078068a26f40bc6">pa_callback_t</a>) (const void *, void *, unsigned long, const PaStreamCallbackTimeInfo *, unsigned long, void *)</td></tr>
+<tr class="separator:a6b773960288f14572078068a26f40bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a88ae3cf651eaa361e157ae855bfb2118"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a88ae3cf651eaa361e157ae855bfb2118">error_codes</a> { <a class="el" href="namespace_au_lib.html#a88ae3cf651eaa361e157ae855bfb2118ad0c90e1233b1c073d4861545ddfcaa9d">AULIB_NOERROR</a> = 0, 
@@ -219,22 +230,69 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespace_au_lib.html#a674199f1b701df31251f174ce0d704aca4fc807cef666dfa5db0375f7c05ee3d2">SOUNDIN_SNDFILE</a>
  }</td></tr>
 <tr class="separator:a674199f1b701df31251f174ce0d704ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb0a0e3f85ec221b3d553cfbe0b749cc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cc">dest_types</a> { <a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca48c71db286c10b62e0c6914261b3ad6f">SOUNDOUT_RT</a> = 1, 
-<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca2d66014f022b9d6e67a08f45431fad62">SOUNDOUT_STDOUT</a>, 
-<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca2c5acaa79dec4ad020d3650840e81ce8">SOUNDOUT_SNDFILE</a>
+<tr class="memitem:abb0a0e3f85ec221b3d553cfbe0b749cc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cc">dest_types</a> { <br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5">SOUNDOUT_RT</a> = 1, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e">SOUNDOUT_STDOUT</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a">SOUNDOUT_SNDFILE</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5">SOUNDOUT_RT</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e">SOUNDOUT_STDOUT</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a">SOUNDOUT_SNDFILE</a>
+<br />
  }</td></tr>
 <tr class="separator:abb0a0e3f85ec221b3d553cfbe0b749cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82adab6f94c073685791a888ca5b2833"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833">soundout_error_codes</a> { <br />
-&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833acb7643aadda5c2efc7c982234510cb3b">AULIB_FOPEN_ERROR</a> = AULIB_ERROR + 1, 
-<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a60290276db1063d10ab865c7bb2558a8">AULIB_RTINIT_ERROR</a>, 
-<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833acd260516eab709ebd550fc426b429be7">AULIB_RTOPEN_ERROR</a>, 
-<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ac270dd7bce1331402c244f97ab04218c">AULIB_RTSTREAM_ERROR</a>, 
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182">AULIB_FOPEN_ERROR</a> = AULIB_ERROR + 1, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1">AULIB_RTINIT_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f">AULIB_RTOPEN_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a">AULIB_RTSTREAM_ERROR</a>, 
 <br />
-&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833afcc0b1af5ce805f1615b915005f05209">AULIB_NOIO_ERROR</a>, 
-<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a93cac56594f791e163626ede2685dda2">AULIB_SOUNDIO_ERROR</a>
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072">AULIB_NOIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16">AULIB_SOUNDIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182">AULIB_FOPEN_ERROR</a> = AULIB_ERROR + 1, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1">AULIB_RTINIT_ERROR</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f">AULIB_RTOPEN_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a">AULIB_RTSTREAM_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072">AULIB_NOIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16">AULIB_SOUNDIO_ERROR</a>
 <br />
  }</td></tr>
 <tr class="separator:a82adab6f94c073685791a888ca5b2833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb0a0e3f85ec221b3d553cfbe0b749cc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cc">dest_types</a> { <br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5">SOUNDOUT_RT</a> = 1, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e">SOUNDOUT_STDOUT</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a">SOUNDOUT_SNDFILE</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5">SOUNDOUT_RT</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e">SOUNDOUT_STDOUT</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a">SOUNDOUT_SNDFILE</a>
+<br />
+ }</td></tr>
+<tr class="separator:abb0a0e3f85ec221b3d553cfbe0b749cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82adab6f94c073685791a888ca5b2833"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833">soundout_error_codes</a> { <br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182">AULIB_FOPEN_ERROR</a> = AULIB_ERROR + 1, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1">AULIB_RTINIT_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f">AULIB_RTOPEN_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a">AULIB_RTSTREAM_ERROR</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072">AULIB_NOIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16">AULIB_SOUNDIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182">AULIB_FOPEN_ERROR</a> = AULIB_ERROR + 1, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1">AULIB_RTINIT_ERROR</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f">AULIB_RTOPEN_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a">AULIB_RTSTREAM_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072">AULIB_NOIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16">AULIB_SOUNDIO_ERROR</a>
+<br />
+ }</td></tr>
+<tr class="separator:a82adab6f94c073685791a888ca5b2833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2391488417c7febe67bd9a18eead0a29"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a2391488417c7febe67bd9a18eead0a29">npow2</a> (uint32_t n)</td></tr>
+<tr class="separator:a2391488417c7febe67bd9a18eead0a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -274,9 +332,24 @@ Variables</h2></td></tr>
 <tr class="separator:af96dc3467ae49bf522dedafebfbdf345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af70f7e556db4ff881e6acce8266854dc"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#af70f7e556db4ff881e6acce8266854dc">soundin_error</a> []</td></tr>
 <tr class="separator:af70f7e556db4ff881e6acce8266854dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7da3f526ad62cf7de9feb44bb0ef20e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#ad7da3f526ad62cf7de9feb44bb0ef20e">soundout_error</a> []</td></tr>
-<tr class="separator:ad7da3f526ad62cf7de9feb44bb0ef20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a0c0753b714b99e932da85de7452fd0"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a9a0c0753b714b99e932da85de7452fd0">soundout_error</a> []</td></tr>
+<tr class="separator:a9a0c0753b714b99e932da85de7452fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a6b773960288f14572078068a26f40bc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b773960288f14572078068a26f40bc6">&#9670;&nbsp;</a></span>pa_callback_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* AuLib::pa_callback_t)(const void *, void *, unsigned long, const PaStreamCallbackTimeInfo *, unsigned long, void *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a674199f1b701df31251f174ce0d704ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a674199f1b701df31251f174ce0d704ac">&#9670;&nbsp;</a></span>anonymous enum</h2>
@@ -298,7 +371,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="abb0a0e3f85ec221b3d553cfbe0b749cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb0a0e3f85ec221b3d553cfbe0b749cc">&#9670;&nbsp;</a></span>dest_types</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abb0a0e3f85ec221b3d553cfbe0b749cc">&#9670;&nbsp;</a></span>dest_types <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,9 +383,35 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>destinations </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca48c71db286c10b62e0c6914261b3ad6f"></a>SOUNDOUT_RT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca2d66014f022b9d6e67a08f45431fad62"></a>SOUNDOUT_STDOUT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca2c5acaa79dec4ad020d3650840e81ce8"></a>SOUNDOUT_SNDFILE&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5"></a>SOUNDOUT_RT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e"></a>SOUNDOUT_STDOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a"></a>SOUNDOUT_SNDFILE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5"></a>SOUNDOUT_RT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e"></a>SOUNDOUT_STDOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a"></a>SOUNDOUT_SNDFILE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="abb0a0e3f85ec221b3d553cfbe0b749cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb0a0e3f85ec221b3d553cfbe0b749cc">&#9670;&nbsp;</a></span>dest_types <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cc">AuLib::dest_types</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>destinations </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5"></a>SOUNDOUT_RT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e"></a>SOUNDOUT_STDOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a"></a>SOUNDOUT_SNDFILE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5"></a>SOUNDOUT_RT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e"></a>SOUNDOUT_STDOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a"></a>SOUNDOUT_SNDFILE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -356,7 +455,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a82adab6f94c073685791a888ca5b2833"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82adab6f94c073685791a888ca5b2833">&#9670;&nbsp;</a></span>soundout_error_codes</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a82adab6f94c073685791a888ca5b2833">&#9670;&nbsp;</a></span>soundout_error_codes <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,12 +467,47 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Error codes </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833acb7643aadda5c2efc7c982234510cb3b"></a>AULIB_FOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a60290276db1063d10ab865c7bb2558a8"></a>AULIB_RTINIT_ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833acd260516eab709ebd550fc426b429be7"></a>AULIB_RTOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833ac270dd7bce1331402c244f97ab04218c"></a>AULIB_RTSTREAM_ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833afcc0b1af5ce805f1615b915005f05209"></a>AULIB_NOIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a93cac56594f791e163626ede2685dda2"></a>AULIB_SOUNDIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182"></a>AULIB_FOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1"></a>AULIB_RTINIT_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f"></a>AULIB_RTOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a"></a>AULIB_RTSTREAM_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072"></a>AULIB_NOIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16"></a>AULIB_SOUNDIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182"></a>AULIB_FOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1"></a>AULIB_RTINIT_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f"></a>AULIB_RTOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a"></a>AULIB_RTSTREAM_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072"></a>AULIB_NOIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16"></a>AULIB_SOUNDIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a82adab6f94c073685791a888ca5b2833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82adab6f94c073685791a888ca5b2833">&#9670;&nbsp;</a></span>soundout_error_codes <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833">AuLib::soundout_error_codes</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error codes </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182"></a>AULIB_FOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1"></a>AULIB_RTINIT_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f"></a>AULIB_RTOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a"></a>AULIB_RTSTREAM_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072"></a>AULIB_NOIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16"></a>AULIB_SOUNDIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182"></a>AULIB_FOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1"></a>AULIB_RTINIT_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f"></a>AULIB_RTOPEN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a"></a>AULIB_RTSTREAM_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072"></a>AULIB_NOIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16"></a>AULIB_SOUNDIO_ERROR&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -395,6 +529,34 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a91c02f802d3f1f50f51ff352567c78cdad928629a2e658f0245b01bf1125d2978"></a>SQUARE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a91c02f802d3f1f50f51ff352567c78cda04e5652eff4e4e3421e591fa25a84eea"></a>TRIANGLE&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a2391488417c7febe67bd9a18eead0a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2391488417c7febe67bd9a18eead0a29">&#9670;&nbsp;</a></span>npow2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t AuLib::npow2 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>return the next power-of-two &lt;= n </p>
 
 </div>
 </div>
@@ -637,14 +799,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad7da3f526ad62cf7de9feb44bb0ef20e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7da3f526ad62cf7de9feb44bb0ef20e">&#9670;&nbsp;</a></span>soundout_error</h2>
+<a id="a9a0c0753b714b99e932da85de7452fd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a0c0753b714b99e932da85de7452fd0">&#9670;&nbsp;</a></span>soundout_error</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string AuLib::soundout_error[]</td>
+          <td class="memname">const std::string AuLib::soundout_error</td>
         </tr>
       </table>
 </div><div class="memdoc">

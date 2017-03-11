@@ -73,13 +73,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_audio_base_8h_source.html">AudioBase.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_circular_8h_source.html">Circular.h</a>&quot;</code><br />
+<code>#include &lt;thread&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SoundOut.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_sound_out_8h__incl.png" border="0" usemap="#_sound_out_8h" alt=""/></div>
 <map name="_sound_out_8h" id="_sound_out_8h">
-<area shape="rect" id="node2" href="_audio_base_8h.html" title="AudioBase.h" alt="" coords="203,80,300,107"/>
-<area shape="rect" id="node3" href="_au_lib_8h.html" title="AuLib.h" alt="" coords="176,155,243,181"/>
+<area shape="rect" id="node2" href="_audio_base_8h.html" title="AudioBase.h" alt="" coords="203,155,300,181"/>
+<area shape="rect" id="node10" href="_circular_8h.html" title="Circular.h" alt="" coords="290,80,368,107"/>
+<area shape="rect" id="node3" href="_au_lib_8h.html" title="AuLib.h" alt="" coords="176,229,243,256"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -89,6 +92,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="_sound_out_8hdep" id="_sound_out_8hdep">
 <area shape="rect" id="node2" href="_sound_in_8cpp.html" title="SoundIn.cpp" alt="" coords="5,80,101,107"/>
 <area shape="rect" id="node3" href="_sound_out_8cpp.html" title="SoundOut.cpp" alt="" coords="127,80,233,107"/>
+<area shape="rect" id="node4" href="_sound_out__o_8cpp.html" title="SoundOut_o.cpp" alt="" coords="257,80,380,107"/>
 </map>
 </div>
 </div>
@@ -106,27 +110,40 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:abb0a0e3f85ec221b3d553cfbe0b749cc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cc">AuLib::dest_types</a> { <a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca48c71db286c10b62e0c6914261b3ad6f">AuLib::SOUNDOUT_RT</a> = 1, 
-<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca2d66014f022b9d6e67a08f45431fad62">AuLib::SOUNDOUT_STDOUT</a>, 
-<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca2c5acaa79dec4ad020d3650840e81ce8">AuLib::SOUNDOUT_SNDFILE</a>
+<tr class="memitem:abb0a0e3f85ec221b3d553cfbe0b749cc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cc">AuLib::dest_types</a> { <br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5">AuLib::SOUNDOUT_RT</a> = 1, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e">AuLib::SOUNDOUT_STDOUT</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a">AuLib::SOUNDOUT_SNDFILE</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749ccacc6f4689eb0cad8f0519bef367310ea5">AuLib::SOUNDOUT_RT</a> = 1, 
+<br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca8dde89c8d0d79ef5776db74d94b30c2e">AuLib::SOUNDOUT_STDOUT</a>, 
+<a class="el" href="namespace_au_lib.html#abb0a0e3f85ec221b3d553cfbe0b749cca86a0d5c1f77da87e50652665f98a1d1a">AuLib::SOUNDOUT_SNDFILE</a>
+<br />
  }</td></tr>
 <tr class="separator:abb0a0e3f85ec221b3d553cfbe0b749cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82adab6f94c073685791a888ca5b2833"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833">AuLib::soundout_error_codes</a> { <br />
-&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833acb7643aadda5c2efc7c982234510cb3b">AuLib::AULIB_FOPEN_ERROR</a> = AULIB_ERROR + 1, 
-<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a60290276db1063d10ab865c7bb2558a8">AuLib::AULIB_RTINIT_ERROR</a>, 
-<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833acd260516eab709ebd550fc426b429be7">AuLib::AULIB_RTOPEN_ERROR</a>, 
-<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ac270dd7bce1331402c244f97ab04218c">AuLib::AULIB_RTSTREAM_ERROR</a>, 
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182">AuLib::AULIB_FOPEN_ERROR</a> = AULIB_ERROR + 1, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1">AuLib::AULIB_RTINIT_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f">AuLib::AULIB_RTOPEN_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a">AuLib::AULIB_RTSTREAM_ERROR</a>, 
 <br />
-&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833afcc0b1af5ce805f1615b915005f05209">AuLib::AULIB_NOIO_ERROR</a>, 
-<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a93cac56594f791e163626ede2685dda2">AuLib::AULIB_SOUNDIO_ERROR</a>
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072">AuLib::AULIB_NOIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16">AuLib::AULIB_SOUNDIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a7b651e082bc5aa5a5664805c5b257182">AuLib::AULIB_FOPEN_ERROR</a> = AULIB_ERROR + 1, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a30d8cfd0f24f29faf3168e6f781f63f1">AuLib::AULIB_RTINIT_ERROR</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833ab67bd57724e227c5a86cf2717a45055f">AuLib::AULIB_RTOPEN_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833af397077ce4bfcdf68d5f275b6761f60a">AuLib::AULIB_RTSTREAM_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833abda7cc866524f7689f49258fa02ba072">AuLib::AULIB_NOIO_ERROR</a>, 
+<a class="el" href="namespace_au_lib.html#a82adab6f94c073685791a888ca5b2833a22c7581c5f68cade01985e4b1007cf16">AuLib::AULIB_SOUNDIO_ERROR</a>
 <br />
  }</td></tr>
 <tr class="separator:a82adab6f94c073685791a888ca5b2833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad7da3f526ad62cf7de9feb44bb0ef20e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#ad7da3f526ad62cf7de9feb44bb0ef20e">AuLib::soundout_error</a> []</td></tr>
-<tr class="separator:ad7da3f526ad62cf7de9feb44bb0ef20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a0c0753b714b99e932da85de7452fd0"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib.html#a9a0c0753b714b99e932da85de7452fd0">AuLib::soundout_error</a> []</td></tr>
+<tr class="separator:a9a0c0753b714b99e932da85de7452fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

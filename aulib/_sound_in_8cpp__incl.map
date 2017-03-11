@@ -1,6 +1,7 @@
 <map id="SoundIn.cpp" name="SoundIn.cpp">
-<area shape="rect" id="node2" href="$_sound_in_8h.html" title="SoundIn.h" alt="" coords="143,80,225,107"/>
-<area shape="rect" id="node11" href="$_sound_out_8h.html" title="SoundOut.h" alt="" coords="249,80,343,107"/>
-<area shape="rect" id="node3" href="$_audio_base_8h.html" title="AudioBase.h" alt="" coords="193,155,289,181"/>
-<area shape="rect" id="node4" href="$_au_lib_8h.html" title="AuLib.h" alt="" coords="165,229,232,256"/>
+<area shape="rect" id="node2" href="$_sound_in_8h.html" title="SoundIn.h" alt="" coords="244,80,327,107"/>
+<area shape="rect" id="node14" href="$_sound_out_8h.html" title="SoundOut.h" alt="" coords="119,80,212,107"/>
+<area shape="rect" id="node3" href="$_audio_base_8h.html" title="AudioBase.h" alt="" coords="127,229,224,256"/>
+<area shape="rect" id="node11" href="$_circular_8h.html" title="Circular.h" alt="" coords="211,155,289,181"/>
+<area shape="rect" id="node4" href="$_au_lib_8h.html" title="AuLib.h" alt="" coords="179,304,245,331"/>
 </map>
