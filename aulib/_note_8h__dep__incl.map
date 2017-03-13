@@ -1,6 +1,7 @@
 <map id="Note.h" name="Note.h">
-<area shape="rect" id="node2" href="$_midi_in_8h.html" title="MidiIn.h" alt="" coords="12,80,81,107"/>
-<area shape="rect" id="node4" href="$_note_8cpp.html" title="Note.cpp" alt="" coords="106,80,181,107"/>
-<area shape="rect" id="node5" href="$_score_player_8h.html" title="ScorePlayer.h" alt="" coords="206,80,311,107"/>
-<area shape="rect" id="node3" href="$_midi_in_8cpp.html" title="MidiIn.cpp" alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node2" href="$_instrument_8h.html" title="Instrument.h" alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$_midi_in_8h.html" title="MidiIn.h" alt="" coords="125,80,195,107"/>
+<area shape="rect" id="node5" href="$_note_8cpp.html" title="Note.cpp" alt="" coords="219,80,295,107"/>
+<area shape="rect" id="node6" href="$_score_player_8h.html" title="ScorePlayer.h" alt="" coords="319,80,424,107"/>
+<area shape="rect" id="node4" href="$_midi_in_8cpp.html" title="MidiIn.cpp" alt="" coords="119,155,201,181"/>
 </map>
