@@ -108,6 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a93b68d0db681dcd191714c1efa053f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3783b6b8c9dd09abd57f3bd8aeb497ba"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_func_table.html#a3783b6b8c9dd09abd57f3bd8aeb497ba">tframes</a> () const</td></tr>
 <tr class="separator:a3783b6b8c9dd09abd57f3bd8aeb497ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac473b48b2494ff4bdca17ded0343465f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_func_table.html#ac473b48b2494ff4bdca17ded0343465f">rescale</a> (double max)</td></tr>
+<tr class="separator:ac473b48b2494ff4bdca17ded0343465f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_au_lib_1_1_audio_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_au_lib_1_1_audio_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_au_lib_1_1_audio_base.html">AuLib::AudioBase</a></td></tr>
 <tr class="memitem:aea9683208b42d11533ac506d7d03fb6a inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_audio_base.html#aea9683208b42d11533ac506d7d03fb6a">AudioBase</a> (uint32_t <a class="el" href="class_au_lib_1_1_audio_base.html#a17ebbd3616ce5682a1a548e86f7b110d">nchnls</a>=<a class="el" href="namespace_au_lib.html#a50285c07fffaf75020e8238a6e1ac971">def_nchnls</a>, uint32_t <a class="el" href="class_au_lib_1_1_audio_base.html#a306a6d366ebdb9bbff3be2ea3e812f59">vframes</a>=<a class="el" href="namespace_au_lib.html#a9af7341071c7c07ea70348f9f1a6125b">def_vframes</a>, double <a class="el" href="class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12">sr</a>=<a class="el" href="namespace_au_lib.html#a5474e642bbb8f60b8a04d9bcd60ba842">def_sr</a>)</td></tr>
 <tr class="separator:aea9683208b42d11533ac506d7d03fb6a inherit pub_methods_class_au_lib_1_1_audio_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,8 +177,8 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a77859fa6bf04423900e242b48cd21666"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_func_table.html#a77859fa6bf04423900e242b48cd21666">normalise_table</a> ()</td></tr>
-<tr class="separator:a77859fa6bf04423900e242b48cd21666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09bd7d3d1e12b0bab7a2cf6eb9d2a088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_func_table.html#a09bd7d3d1e12b0bab7a2cf6eb9d2a088">normalise_table</a> (double s=1.0)</td></tr>
+<tr class="separator:a09bd7d3d1e12b0bab7a2cf6eb9d2a088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -315,8 +317,8 @@ sr - sampling rate <br />
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a77859fa6bf04423900e242b48cd21666"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77859fa6bf04423900e242b48cd21666">&#9670;&nbsp;</a></span>normalise_table()</h2>
+<a id="a09bd7d3d1e12b0bab7a2cf6eb9d2a088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09bd7d3d1e12b0bab7a2cf6eb9d2a088">&#9670;&nbsp;</a></span>normalise_table()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +329,8 @@ sr - sampling rate <br />
         <tr>
           <td class="memname">void AuLib::FuncTable::normalise_table </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em> = <code>1.0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -338,6 +341,33 @@ sr - sampling rate <br />
 </table>
 </div><div class="memdoc">
 <p>Normalise the table </p>
+
+</div>
+</div>
+<a id="ac473b48b2494ff4bdca17ded0343465f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac473b48b2494ff4bdca17ded0343465f">&#9670;&nbsp;</a></span>rescale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AuLib::FuncTable::rescale </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>rescale the table for an absolute max </p>
 
 </div>
 </div>

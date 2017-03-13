@@ -75,10 +75,10 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a02ad29005338898751d8810af5096e68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib_1_1fft.html#a02ad29005338898751d8810af5096e68">transform</a> (std::vector&lt; std::complex&lt; double &gt;&gt; &amp;data, bool dir)</td></tr>
 <tr class="separator:a02ad29005338898751d8810af5096e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80512b643c1567df3e2dee1f20bb1dae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib_1_1fft.html#a80512b643c1567df3e2dee1f20bb1dae">transform</a> (std::vector&lt; std::complex&lt; double &gt;&gt; &amp;out, double *in)</td></tr>
-<tr class="separator:a80512b643c1567df3e2dee1f20bb1dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af427027f36999875e944daa21a8787e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib_1_1fft.html#af427027f36999875e944daa21a8787e9">transform</a> (double *out, std::vector&lt; std::complex&lt; double &gt;&gt; &amp;in)</td></tr>
-<tr class="separator:af427027f36999875e944daa21a8787e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3667e181de85c23b429148c83be4e43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib_1_1fft.html#ae3667e181de85c23b429148c83be4e43">transform</a> (std::vector&lt; std::complex&lt; double &gt;&gt; &amp;out, double *in, bool pckd=true)</td></tr>
+<tr class="separator:ae3667e181de85c23b429148c83be4e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3e5d134c48fb799e5b02df5c250ed2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib_1_1fft.html#a5b3e5d134c48fb799e5b02df5c250ed2">transform</a> (double *out, std::vector&lt; std::complex&lt; double &gt;&gt; &amp;in, bool pckd=true)</td></tr>
+<tr class="separator:a5b3e5d134c48fb799e5b02df5c250ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -90,6 +90,8 @@ Variables</h2></td></tr>
 <tr class="separator:ae689fa8055d999340fc656a923f2dbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46ac46bf98366554053c5a3e4dd8172e"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib_1_1fft.html#a46ac46bf98366554053c5a3e4dd8172e">rectang</a> = false</td></tr>
 <tr class="separator:a46ac46bf98366554053c5a3e4dd8172e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb1f2620dfaddda69bb4905a141d89ff"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_au_lib_1_1fft.html#afb1f2620dfaddda69bb4905a141d89ff">packed</a> = true</td></tr>
+<tr class="separator:afb1f2620dfaddda69bb4905a141d89ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a02ad29005338898751d8810af5096e68"></a>
@@ -119,13 +121,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>In-place complex-to-complex FFT <br />
 data - data to be transformed <br />
-fwd - true for forward operation, false for inverse <br />
-Size of data is expected to be a power-of-two. </p>
+dir - true for forward operation, false for inverse <br />
+pckd - true for packed data (first point is DC,Nyq) Size of data is expected to be a power-of-two. </p>
 
 </div>
 </div>
-<a id="a80512b643c1567df3e2dee1f20bb1dae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80512b643c1567df3e2dee1f20bb1dae">&#9670;&nbsp;</a></span>transform() <span class="overload">[2/3]</span></h2>
+<a id="ae3667e181de85c23b429148c83be4e43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3667e181de85c23b429148c83be4e43">&#9670;&nbsp;</a></span>transform() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +142,13 @@ Size of data is expected to be a power-of-two. </p>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>in</em>&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pckd</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -150,15 +158,17 @@ Size of data is expected to be a power-of-two. </p>
       </table>
 </div><div class="memdoc">
 <p>Real-to-complex forward FFT (size N) <br />
-in - pointer to real array of size N <br />
-out - complex vector of size N/2 <br />
-im(0) contains the Nyquist coefficient <br />
-N is expected to be a power-of-two and the in and out data may reside in the same memory location for an in-place transform </p>
+ in - pointer to real array of size N or N + 1 <br />
+ out - complex vector of size N/2 or N/2 + 1 <br />
+ pckd - true for packed data. Size of complex out array is expected to be a power-of-two (pckd = <a class="el" href="namespace_au_lib_1_1fft.html#afb1f2620dfaddda69bb4905a141d89ff">fft::packed</a>) or power-of-two + 1 (pckd = !fft<a class="el" href="namespace_au_lib_1_1fft.html#afb1f2620dfaddda69bb4905a141d89ff">packed</a>) In packed form im(0) contains the Nyquist coefficient <br />
+ The in and out data may reside in the same memory location for an in-place transform (but should have enough memory to hold N/2 or N/2</p><ul>
+<li>1 complex numbers). </li>
+</ul>
 
 </div>
 </div>
-<a id="af427027f36999875e944daa21a8787e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af427027f36999875e944daa21a8787e9">&#9670;&nbsp;</a></span>transform() <span class="overload">[3/3]</span></h2>
+<a id="a5b3e5d134c48fb799e5b02df5c250ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b3e5d134c48fb799e5b02df5c250ed2">&#9670;&nbsp;</a></span>transform() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +183,13 @@ N is expected to be a power-of-two and the in and out data may reside in the sam
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; std::complex&lt; double &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>in</em>&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pckd</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -182,11 +198,14 @@ N is expected to be a power-of-two and the in and out data may reside in the sam
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Complex-to-real inverse FFT <br />
-in - complex vector of size N/2 <br />
-with im(0) containing the Nyquist coefficient <br />
-out - real array of <br />
-N is expected to be a power-of-two and the in and out data may reside in the same memory location for an in-place transform </p>
+<p>Complex-to-real inverse FFT (size N) <br />
+ in - complex vector of size N/2 or N/2 + 1 <br />
+ with im(0) containing the Nyquist coefficient <br />
+ out - real array of size N or N + 1 <br />
+ Size of complex in array is expected to be a power-of-two (pckd = <a class="el" href="namespace_au_lib_1_1fft.html#afb1f2620dfaddda69bb4905a141d89ff">fft::packed</a>) or power-of-two + 1 (pckd = !fft<a class="el" href="namespace_au_lib_1_1fft.html#afb1f2620dfaddda69bb4905a141d89ff">packed</a>) In packed form im(0) contains the Nyquist coefficient <br />
+ The in and out data may reside in the same memory location for an in-place transform (but should have enough memory to hold N/2 or N/2</p><ul>
+<li>1 complex numbers). </li>
+</ul>
 
 </div>
 </div>
@@ -218,6 +237,21 @@ N is expected to be a power-of-two and the in and out data may reside in the sam
       </table>
 </div><div class="memdoc">
 <p>definition of inverse </p>
+
+</div>
+</div>
+<a id="afb1f2620dfaddda69bb4905a141d89ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb1f2620dfaddda69bb4905a141d89ff">&#9670;&nbsp;</a></span>packed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool AuLib::fft::packed = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>definition of packed </p>
 
 </div>
 </div>

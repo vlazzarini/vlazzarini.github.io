@@ -2,7 +2,7 @@ var searchData=
 [
   ['nchnls',['nchnls',['../class_au_lib_1_1_audio_base.html#a17ebbd3616ce5682a1a548e86f7b110d',1,'AuLib::AudioBase']]],
   ['noncopyable',['NONCOPYABLE',['../_au_lib_8h.html#adf1a3464410770e38468c84c991b5bc1',1,'AuLib.h']]],
-  ['normalise_5ftable',['normalise_table',['../class_au_lib_1_1_func_table.html#a77859fa6bf04423900e242b48cd21666',1,'AuLib::FuncTable']]],
+  ['normalise_5ftable',['normalise_table',['../class_au_lib_1_1_func_table.html#a09bd7d3d1e12b0bab7a2cf6eb9d2a088',1,'AuLib::FuncTable']]],
   ['normalised',['normalised',['../class_au_lib_1_1_func_table.html#a56eca2f90b4ef4a0385fd684000d2ecc',1,'AuLib::FuncTable']]],
   ['note',['Note',['../class_note.html',1,'Note'],['../class_au_lib_1_1_note.html#a1efb97581cc6d7c2388792c328c3164d',1,'AuLib::Note::Note()']]],
   ['note',['Note',['../class_au_lib_1_1_note.html',1,'AuLib']]],
