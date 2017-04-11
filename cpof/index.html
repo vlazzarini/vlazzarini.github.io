@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CPOF: Csound Plugin Opcode Framework (CPOF)</title>
+<title>CPOF: Main Page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,138 +60,10 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Csound Plugin Opcode Framework (CPOF) </div>  </div>
+<div class="title">CPOF Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Plugins in Csound are usually written in C, which provides a low-level access to the system interface, allowing an uncompromised and complete scope for new opcode development. For most sys developers, this will continue to be the best working environment. However, for many of the more common forms of plugins, this interface can be complex and cumbersome. In particular, we might like to take advantage of an object-oriented approach so that we can, for instance, re-use code more extensively and take advantage of existing algorithms and libraries. For this, the ideal language is C++, and so we have provided a lightweight framework to facilitate programming in this environment. While there is an existing interface for plugin writing in the Csound codebase, we would like to provide here an alternative to it attempts to be thin, simple, complete and that handles internal Csound resources in a safe way.</p>
-<h2>The Base Classes </h2>
-<p>The framework base classes are actually templates which need to be derived and instantiated by the user code. The most general of these is Plugin. To use we program our own class by subclassing it and passing the number of output and inputs our opcode needs as its template arguments</p>
-<div class="fragment"><div class="line">#include &lt;plugin.h&gt;</div><div class="line"></div><div class="line">Struct MyPlug : csnd::Plugin&lt;1,1&gt; {</div><div class="line"></div><div class="line">};</div></div><!-- fragment --><p>The above lines will create a plugin opcode with one output (first template argument) and one input (second template argument). All CPOF code is declared in the namespace csnd. This class will create a complete opcode, although it will also be fully non-op.</p>
-<p>To make it do something, we will need to reimplement one, two or three of its methods. This base class is derived from the Csound structure OPDS and has the following members:</p>
-<ul>
-<li>outargs: output arguments.</li>
-<li>inargs: input arguments.</li>
-<li>csound: a pointer to the Csound engine object.</li>
-<li>offset: the starting position of an audio vector (for audio opcodes).</li>
-<li>nsmps: the size of an audio vector (also for audio opcodes only).</li>
-<li>init(), kperf() and aperf() non-op methods, to be reimplemented as needed.</li>
-<li>sa_offset((MYFLT *v) method to be used in audio processsing to calculate offset and nsmps for sample-accurate behaviour. It takes an audio output vector as input and returns the updated nsmps value. This method should be called for each output in the case of multiple channels.</li>
-</ul>
-<p>The other base class in the CPOF is FPlugin, derived from Plugin, which provides an extra facility for fsig (streaming frequency-domain) plugins:</p>
-<ul>
-<li>framecount: a member to hold a running count of fsig frames.</li>
-</ul>
-<h2>Init-time opcodes </h2>
-<p>For init-time opcodes, all we need to do is provide an implementation of the init() method:</p>
-<div class="fragment"><div class="line">#include &lt;plugin.h&gt;</div><div class="line"></div><div class="line">/** i-time plugin opcode example</div><div class="line">    with 1 output and 1 input \n</div><div class="line">    iout simple iin</div><div class="line"> */</div><div class="line">struct Simplei : csnd::Plugin&lt;1,1&gt; {</div><div class="line">  int init() {</div><div class="line">    outargs[0] = inargs[0];</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p> In this simple example, we just copy the input arguments to the output once, at init-time. Each scalar input can be accessed using array indexing.</p>
-<h2>K-rate opcodes </h2>
-<p>For opcodes running only at k-rate (no init-time operation), all we need to do is provide an implementation of the kperf() method:</p>
-<div class="fragment"><div class="line">#include &lt;plugin.h&gt;</div><div class="line"></div><div class="line">/** k-rate plugin opcode example</div><div class="line">    with 1 output and 1 input \n</div><div class="line">    kout simple kin</div><div class="line"> */</div><div class="line">struct Simplek : csnd::Plugin&lt;1,1&gt; {</div><div class="line">  int kperf() {</div><div class="line">    outargs[0] = inargs[0];</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p> Similarly, in this simple example, we just copy the input arguments to the output at each k-period.</p>
-<h2>A-rate opcodes </h2>
-<p>For opcodes running only at a-rate (and with no init-time operation), all we need to do is provide an implementation of the aperf() method:</p>
-<div class="fragment"><div class="line">#include &lt;plugin.h&gt;</div><div class="line"></div><div class="line">/** a-rate plugin opcode example</div><div class="line">    with 1 output and 1 input \n</div><div class="line">    aout simple ain</div><div class="line"> */</div><div class="line">struct Simplea : csnd::Plugin&lt;1,1&gt; {</div><div class="line">int aperf() {</div><div class="line">    nsmps = insdshead-&gt;ksmps;</div><div class="line">    std::copy(inargs.data(0),inargs.data(0)+nsmps, outargs.data(0));</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p>Because audio arguments are vectors, we get these using the data() method for the inargs and outargs objects, which takes the argument number as input and returns a MYFLT pointer to the vector. MYFLT is the internal floating-point data type used by Csound.</p>
-<p>Note that the OPDS member insdshead holds the value of the instrument vector size (ksmps), so we can get it from there. More normally, we will just access the nsmps variable after calling sa_offset() to get this value. We will demonstrate this in later examples.</p>
-<h2>Registering opcodes with Csound </h2>
-<p>Once we have written our opcode classes, we need to tell Csound about them, so that they can be used, for this we use the CPOF function template <a class="el" href="namespacecsnd.html#a2693620fa68de484d7f7b614009478fd">plugin()</a>:</p>
-<div class="fragment"><div class="line">template &lt;typename T&gt;</div><div class="line">int plugin(CSOUND *csound, const char *name, const char *oargs,</div><div class="line">           const char *iargs, uint32_t thread, uint32_t flags = 0)</div></div><!-- fragment --><p>Its parameters are:</p>
-<ul>
-<li>csound: a pointer to the Csound object to which we want to register our opcode.</li>
-<li>name: the opcode name as it will be used in Csound code.</li>
-<li>oargs: a string containing the opcode output types, one identifier per argument</li>
-<li>iargs: a string containintg the opcode input types, one identifier per argument</li>
-<li>thread: a code to tell Csound when the opcode shoulld be active.</li>
-<li>flags: multithread flags (generally 0 unless the opcode accesses global resources).</li>
-</ul>
-<p>For opcode type identifiers, the most common types are: a (audio), k (control), i (i-time), S (string) and f (fsig). For the thread argument, we have the following options, which depend on the processing methods implemented in our plugin class:</p>
-<ul>
-<li>csnd::thread::i : init().</li>
-<li>csnd::thread::k : kperf().</li>
-<li>csnd::thread::ik : init() and kperf().</li>
-<li>csnd:thread::a : aperf().</li>
-<li>csnd::thread::ia : init() and aperf().</li>
-<li>csnd::thread::ika : init(), kperf() and aperf().</li>
-</ul>
-<p>We instantiate and call these template functions inside the plugin library entry-point function on_load():</p>
-<div class="fragment"><div class="line">void csnd::on_load(CSOUND *csound){</div><div class="line">  csnd::plugin&lt;Simplei&gt;(csound, &quot;simple&quot;, &quot;i&quot;, &quot;i&quot;,  csnd::thread::i);</div><div class="line">  csnd::plugin&lt;Simplek&gt;(csound, &quot;simple&quot;, &quot;k&quot;, &quot;k&quot;,  csnd::thread::k);</div><div class="line">  csnd::plugin&lt;Simplea&gt;(csound, &quot;simple&quot;, &quot;a&quot;, &quot;a&quot;,  csnd::thread::a);</div><div class="line">  return 0;</div><div class="line">}</div></div><!-- fragment --><p>Note how the class name is passed as an argument to the function template, followed by the function call. If the class defines two specific static members, otypes and itypes, to hold the types for output and input arguments, declared as</p>
-<div class="fragment"><div class="line">Struct MyPlug : csnd::Plugin&lt;1,2&gt; {</div><div class="line">  static constexpr char const *otypes = &quot;k&quot;;</div><div class="line">  static constexpr char const *itypes = &quot;ki&quot;;</div><div class="line">  ...</div><div class="line">};</div></div><!-- fragment --><p>then we can use a simpler overload of the plugin registration function:</p>
-<div class="fragment"><div class="line">template &lt;typename T&gt;</div><div class="line">int plugin(CSOUND *csound, const char *name, uint32_t thread, uint32_t flags = 0)</div></div><!-- fragment --><h2>Memory allocation </h2>
-<p>For efficiency and to prevent leaks and undefined behaviour we need to leave all memory allocation to Csound and refrain from using C++ allocators or standard library containers that use dynamic allocation behind the scenes (e.g. std::vector). If we follow these rules, our code will work as intended and cause no problems for users.</p>
-<p>This requires us to use the AuxAlloc mechanism implemented by Csound for opcodes. To allow for ease of use, CPOF provides a wrapper template class (which is not too dissimilar to std::vector) for us to allocate and use as much memory as we need. This functionality is given by the AuxMem class, which has the following methods and members:</p>
-<ul>
-<li>allocate(): allocates memory (if required).</li>
-<li>operator[] : array-subscript access to the allocated memory.</li>
-<li>data(): returns a pointer to the data.</li>
-<li>len(): returns the length of the vector.</li>
-<li>begin() and end(): return iterators to the beginning and end of data</li>
-<li>iterator and const_iterator: iterator types for this class.</li>
-</ul>
-<p>As an example of use, we can implement a simple delay line opcode, whose delay time is set at i-time, providing a slap-back echo effect:</p>
-<div class="fragment"><div class="line">/** a-rate plugin opcode example: delay line</div><div class="line">    with 1 output and 2 inputs (a,i) \n</div><div class="line">    asig delayline ain,idel</div><div class="line"> */</div><div class="line">struct DelayLine : csnd::Plugin&lt;1,2&gt; {</div><div class="line">  csnd::AuxMem&lt;MYFLT&gt; delay;</div><div class="line">  csnd::AuxMem&lt;MYFLT&gt;::iterator iter;</div><div class="line"></div><div class="line">  int init() {</div><div class="line">    delay.allocate(csound, csound-&gt;GetSr(csound)*inargs[1]);</div><div class="line">    iter = delay.begin();</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line"></div><div class="line">  int aperf() {</div><div class="line">    MYFLT *out = outargs.data(0);</div><div class="line">    MYFLT *in = inargs.data(0);</div><div class="line"></div><div class="line">    sa_offset(out);</div><div class="line">    for(uint32_t i=offset; i &lt; nsmps; i++, iter++) {</div><div class="line">      if(iter == delay.end()) iter = delay.begin();</div><div class="line">      out[i] = *iter;</div><div class="line">      *iter = in[i]; </div><div class="line">    }</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p>In this example, we use an AuxMem interator to access the delay vector. It is equally possible to access each element with an array-style subscript. The memory allocated by this class is managed by Csound, so we do not need to be concerned about disposing of it. To register this opcode, we do</p>
-<div class="fragment"><div class="line">csnd::plugin&lt;DelayLine&gt;(csound, &quot;delayline&quot;, &quot;a&quot;, &quot;ai&quot;, csnd::thread::ia);</div></div><!-- fragment --><h2>Table Access </h2>
-<p>Access to function tables has also been facilitated by a thin wrapper class that allows us to treat it as a vector object. This is provided by the Table class, which has the following members:</p>
-<ul>
-<li>init(): initialises a table object from an opcode argument pointer.</li>
-<li>operator[] : array-subscript access to the function table.</li>
-<li>data(): returns a pointer to the function table data.</li>
-<li>len(): returns the length of the table (excluding guard point).</li>
-<li>begin() and end(): return iterators to the beginning and end of the function table</li>
-<li>iterator and const_iterator: iterator types for this class.</li>
-</ul>
-<p>An example of table access is given by an oscillator opcode, which is implemented in the following class:</p>
-<div class="fragment"><div class="line">/** a-rate plugin opcode example: oscillator</div><div class="line">    with 1 output and 3 inputs (k,k,i) \n</div><div class="line">    aout oscillator kamp,kcps,ifn</div><div class="line"> */</div><div class="line">struct Oscillator : csnd::Plugin&lt;1,3&gt; {</div><div class="line">  csnd::Table table;</div><div class="line">  double scl;</div><div class="line">  double ndx;</div><div class="line"></div><div class="line">  int init() {</div><div class="line">    table.init(csound,inargs.data(2));</div><div class="line">    scl = table.len()/csound-&gt;GetSr(csound);</div><div class="line">    ndx = 0;</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line"></div><div class="line">  int aperf() {</div><div class="line">    MYFLT *out = outargs.data(0);</div><div class="line">    MYFLT amp = inargs[0];</div><div class="line">    MYFLT si = inargs[1]*scl;</div><div class="line"></div><div class="line">    sa_offset(out);</div><div class="line">    for(uint32_t i=offset; i &lt; nsmps; i++) {</div><div class="line">      out[i] = amp*table[(uint32_t)ndx];</div><div class="line">      ndx += si;</div><div class="line">      while(ndx &lt; 0)</div><div class="line">    ndx += table.len();</div><div class="line">      while(ndx &gt;= table.len())</div><div class="line">    ndx -= table.len();</div><div class="line">    }</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p> The table is initialised by passing the relevant argument pointer to it (using its data() method). Also note that, as we need a precise phase index value, we cannot use iterators in this case (without making it very awkward), so we employ straightforward array subscripting. The opcode is registered by</p>
-<div class="fragment"><div class="line">csnd::plugin&lt;Oscillator&gt;(csound, &quot;oscillator&quot;, &quot;a&quot;, &quot;kki&quot;,csnd::thread::ia);</div></div><!-- fragment --><h2>Strings </h2>
-<p>String variables in Csound are held in a STRINGDAT data structure, containing a data member that holds the actual string and a size member with the allocated memory size. While CPOF does not wrap strings, it provides a translated access to string arguments through the argument objects str_data() function. This takes a an argument index (similarly to data()) and returns a reference to the string variable, as demonstrated in this example:</p>
-<div class="fragment"><div class="line">/** i-time string plugin opcode example</div><div class="line">    with only 1 input \n</div><div class="line">    tprint Sin</div><div class="line"> */</div><div class="line">struct Tprint : csnd::Plugin&lt;0,1&gt; {</div><div class="line">  int init() {</div><div class="line">    csound-&gt;message(inargs.str_data(0).data);</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p>This opcode will print the string to the console. Note that we have no output arguments, so we set the first template parameter to 0. We register it using</p>
-<div class="fragment"><div class="line">csnd::plugin&lt;Tprint&gt;(csound, &quot;tprint&quot;, &quot;&quot;, &quot;S&quot;,  csnd::thread::i);</div></div><!-- fragment --><h2>Fsigs </h2>
-<p>For streaming spectral processing opcodes, we have a different base class with extra facilities needed for their operation (FPlugin). In Csound, fsig variables are held in a PVSDAT data structure.</p>
-<p>To facilitate their manipulation, CPOF provides a wrapper class <a class="el" href="classcsnd_1_1_fsig.html">csnd::Fsig</a> that holds the PVSDAT data. To access to phase vocoder bins, a container interface is provided by <a class="el" href="namespacecsnd.html#a0165c0f114e4ce7225532a651c92b015">csnd::pv_frame</a> (spv_frame for the sliding mode). This holds a series of <a class="el" href="namespacecsnd.html#a208f4528e663a83ed8cf67c995e65d64">csnd::pv_bin</a> (spv_bin for sliding) objects, which have the following methods:</p>
-<ul>
-<li>amp(): returns the bin amplitude.</li>
-<li>freq(): returns the bin frequency.</li>
-<li>amp(float a): sets the bin amplitude to a.</li>
-<li>freq(float f): sets the bin frequency to f.</li>
-<li>operator*(pv_bin f): multiply the amp of a pvs bin by f.amp.</li>
-<li>operator*(MYFLT f): multiply the bin amp by f</li>
-<li>operator*=(): unary versions of the above.</li>
-</ul>
-<p>The pv_bin class can also be translated into a std::complex&lt;float&gt; object if needed. This class is also fully compatible the C complex type and an object obj can be cast into a float array consisting of two items (or a float pointer), using reinterpret_cast&lt;float (&amp;)[2]&gt;(obj) or reinterpret_cast&lt;float *&gt;(&amp;obj)</p>
-<p>The Fsig class has the following methods:</p>
-<ul>
-<li>init(): initialisation from individual parameters or from an existing fsig. Also allocates frame memory as needed.</li>
-<li>dft_size(), hop_size(), win_size(), win_type() and nbins(), returning the PV data parameters.</li>
-<li>count(): get and set fsig framecount.</li>
-<li>isSliding(): checks for sliding mode.</li>
-<li><a class="el" href="namespacecsnd.html#a392e9133842c8924ff5f7756dfaecd9d">fsig_format()</a>: returns the fsig data format (csnd::fsig_format::pvs, csnd::fsig_format::polar, csnd::fsig_format::complex, or csnd::fsig_format::tracks).</li>
-</ul>
-<p>The pv_frame (or spv_frame) class contains the following methods:</p>
-<ul>
-<li>operator[] : array-subscript access to the spectral frame</li>
-<li>data(): returns a pointer to the spectral frame data.</li>
-<li>len(): returns the length of the frame.</li>
-<li>begin() and end(): return iterators to the beginning and end of the data frame.</li>
-<li>iterator and const_iterator: iterator types for this class.</li>
-</ul>
-<p>Fsig opcodes run at k-rate but will internally use an update rate based on the analysis hopsize. For this to work, a framecount is kept and checked to make sure we only process the input when new data is available. The following example class implements a simple gain scaler for fsigs:</p>
-<div class="fragment"><div class="line">/** f-sig plugin opcode example: pv gain change</div><div class="line">    with 1 output and 2 inputs (f,k) \n</div><div class="line">    fsig pvg fsin, kgain</div><div class="line"> */</div><div class="line">struct PVGain : csnd::FPlugin&lt;1, 2&gt; {</div><div class="line">  static constexpr char const *otypes = &quot;f&quot;;</div><div class="line">  static constexpr char const *itypes = &quot;fk&quot;;</div><div class="line"></div><div class="line">  int init() {</div><div class="line">    if (inargs.fsig_data(0).isSliding())</div><div class="line">      return csound-&gt;init_error(&quot;sliding not supported&quot;);</div><div class="line"></div><div class="line">    if (inargs.fsig_data(0).fsig_format() != csnd::fsig_format::pvs &amp;&amp;</div><div class="line">        inargs.fsig_data(0).fsig_format() != csnd::fsig_format::polar)</div><div class="line">        return csound-&gt;init_error(&quot;fsig format not supported&quot;);</div><div class="line"></div><div class="line">    csnd::Fsig &amp;fout = outargs.fsig_data(0);</div><div class="line">    fout.init(csound, inargs.fsig_data(0));</div><div class="line">    framecount = 0;</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line"></div><div class="line">  int kperf() {</div><div class="line">    csnd::pv_frame &amp;fin = inargs.fsig_data(0);</div><div class="line">    csnd::pv_frame &amp;fout = outargs.fsig_data(0);</div><div class="line">    uint32_t i;</div><div class="line"></div><div class="line">    if (framecount &lt; fin.count()) {</div><div class="line">      MYFLT g = inargs[1];</div><div class="line">      std::transform(fin.begin(), fin.end(), fout.begin(),</div><div class="line">            [g](csnd::pv_bin f){ return f *= g; });</div><div class="line">      framecount = fout.count(fin.count());</div><div class="line">    }</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p>Note that, as with strings, there is a dedicated method in the arguments object that returns a ref to an Fsig class (which can also be assigned to a pv_frame ref). This is used to initialise the output object at i-time and then to obtain the input and output variable data Csound processing. The framecount member is provided by the base class, as well as the format check methods. This opcode is registered using</p>
-<div class="fragment"><div class="line">csnd::plugin&lt;PVGain&gt;(csound, &quot;pvg&quot;, csnd::thread::ik);</div></div><!-- fragment --><p>For some classes, this might be a very convenient way to define the argument types. For other cases, where opcode polymorphism might be involved, we might re-use the same class for different argument types, in which case it is not desirable to define these statically in a class.</p>
-<h2>Arrays </h2>
-<p>Opcodes with array inputs or outputs use the data structure ARRAYDAT for parameters. Again, in order to facilitate access to these argument types, CPOF provides a wrapper class. The framework currently supports only one-dimensional arrays (for multidimensional arrays a raw pointer to ARRAYDAT should be used), which covers the most common uses.</p>
-<p>The template container class Vector, derived from ARRAYDAT, holds the argument data. It has the following members:</p>
-<ul>
-<li>init(): initialises an output variable.</li>
-<li>operator[] : array-subscript access to the vector data.</li>
-<li>data(): returns a pointer to the vector data.</li>
-<li>len(): returns the length of the vector.</li>
-<li>begin() and end(): return iterators to the beginning and end of the vector.</li>
-<li>iterator and const_iterator: iterator types for this class.</li>
-<li>data_array(): returns a pointer to the vector data.</li>
-</ul>
-<p>In addition to this, the inargs and outargs objects in the Plugin class have a template method that can be used to get a Vector class reference. A trivial example is shown below:</p>
-<div class="fragment"><div class="line">/** k-rate numeric array example</div><div class="line">    with 1 output and 1 input \n</div><div class="line">    kout[] simple kin[]</div><div class="line"> */</div><div class="line">struct SimpleArray : csnd::Plugin&lt;1, 1&gt; {</div><div class="line">  int init() {</div><div class="line">    csnd::Vector&lt;MYFLT&gt; &amp;out = outargs.vector_data&lt;MYFLT&gt;(0);</div><div class="line">    csnd::Vector&lt;MYFLT&gt; &amp;in = inargs.vector_data&lt;MYFLT&gt;(0);</div><div class="line">    out.init(csound, in.len());</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line"></div><div class="line">  int kperf() {</div><div class="line">    csnd::Vector&lt;MYFLT&gt; &amp;out = outargs.vector_data&lt;MYFLT&gt;(0);</div><div class="line">    csnd::Vector&lt;MYFLT&gt; &amp;in = inargs.vector_data&lt;MYFLT&gt;(0);</div><div class="line">    std::copy(in.begin(), in.end(), out.begin());</div><div class="line">    return OK;</div><div class="line">  }</div><div class="line">  };</div></div><!-- fragment --><p>This opcode is registered using the following line:</p>
-<div class="fragment"><div class="line">csnd::plugin&lt;SimpleArray&gt;(csound, &quot;simple&quot;, &quot;k[]&quot;, &quot;k[]&quot;, csnd::thread::ik);</div></div><!-- fragment --><h2>Building the opcodes </h2>
-<p>The code discussed here is provided in the opcodes.cpp source file in the examples directory. In order to build these opcodes, we require a c++ compiler using c++11 mode (-std=c++11), and the Csound public headers (including <a class="el" href="plugin_8h.html">plugin.h</a>). The opcodes should be built as a dynamic/shared library (e.g so in Linux and dylib in OSX), but CPOF does not impose any link-time dependencies (not even to Csound).</p>
-<p>Victor Lazzarini, 01/2017 </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
