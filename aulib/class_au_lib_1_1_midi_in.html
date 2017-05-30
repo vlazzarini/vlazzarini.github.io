@@ -103,6 +103,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a79954f00f7e2d8656d64346ca2995237"><td class="memTemplParams" colspan="2">template&lt;typename... Targs&gt; </td></tr>
 <tr class="memitem:a79954f00f7e2d8656d64346ca2995237"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="class_au_lib_1_1_midi_in.html">MidiIn</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_midi_in.html#a79954f00f7e2d8656d64346ca2995237">listen</a> (Targs &amp;... args)</td></tr>
 <tr class="separator:a79954f00f7e2d8656d64346ca2995237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a22df944423b74a39b03d343d7910bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_midi_in.html#a2a22df944423b74a39b03d343d7910bf">ctlval</a> (int32_t chn, uint32_t num)</td></tr>
+<tr class="separator:a2a22df944423b74a39b03d343d7910bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646dc71e5447721c01c1e4e46c5d056b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_midi_in.html#a646dc71e5447721c01c1e4e46c5d056b">aftval</a> (int32_t chn, uint32_t num)</td></tr>
+<tr class="separator:a646dc71e5447721c01c1e4e46c5d056b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf0d7b2aa552c5790777abce34cbf9b0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_midi_in.html#aaf0d7b2aa552c5790777abce34cbf9b0">aftval</a> (int32_t chn)</td></tr>
+<tr class="separator:aaf0d7b2aa552c5790777abce34cbf9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8286b0af13968ce382e25629284f54b0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_midi_in.html#a8286b0af13968ce382e25629284f54b0">program</a> (int32_t chn)</td></tr>
+<tr class="separator:a8286b0af13968ce382e25629284f54b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa8c5c4538a2724fd23101c433eee08"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_midi_in.html#a1fa8c5c4538a2724fd23101c433eee08">read</a> ()</td></tr>
+<tr class="separator:a1fa8c5c4538a2724fd23101c433eee08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac85642aec6d206078beeab4f66957bf9"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_au_lib_1_1_midi_in.html#ac85642aec6d206078beeab4f66957bf9">device_list</a> ()</td></tr>
 <tr class="separator:ac85642aec6d206078beeab4f66957bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_au_lib_1_1_audio_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_au_lib_1_1_audio_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_au_lib_1_1_audio_base.html">AuLib::AudioBase</a></td></tr>
@@ -224,6 +234,72 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a646dc71e5447721c01c1e4e46c5d056b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a646dc71e5447721c01c1e4e46c5d056b">&#9670;&nbsp;</a></span>aftval() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AuLib::MidiIn::aftval </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>chn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>returns a MIDI aftertouch value for channel chn and note num, chn &lt; 0 means all channels.<br />
+ Results in the range [0.,1.) </p>
+
+</div>
+</div>
+<a id="aaf0d7b2aa552c5790777abce34cbf9b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf0d7b2aa552c5790777abce34cbf9b0">&#9670;&nbsp;</a></span>aftval() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AuLib::MidiIn::aftval </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>chn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>returns a MIDI aftertouch value for channel chn, chn &lt; 0 means all channels.<br />
+ Results in the range [0.,1.) </p>
+
+</div>
+</div>
 <a id="ae4e58e80580619146797bdceb6fb7f54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4e58e80580619146797bdceb6fb7f54">&#9670;&nbsp;</a></span>close()</h2>
 
@@ -239,6 +315,44 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Close MIDI connection </p>
+
+</div>
+</div>
+<a id="a2a22df944423b74a39b03d343d7910bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a22df944423b74a39b03d343d7910bf">&#9670;&nbsp;</a></span>ctlval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AuLib::MidiIn::ctlval </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>chn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>returns a MIDI control value for channel chn and control num, chn &lt; 0 means all channels. <br />
+ Results in the range [0.,1.) </p>
 
 </div>
 </div>
@@ -313,6 +427,52 @@ template&lt;typename... Targs&gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Open MIDI input device dev </p>
+
+</div>
+</div>
+<a id="a8286b0af13968ce382e25629284f54b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8286b0af13968ce382e25629284f54b0">&#9670;&nbsp;</a></span>program()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AuLib::MidiIn::program </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>chn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>returns a MIDI program value for channel chn, chn &lt; 0 means all channels. </p>
+
+</div>
+</div>
+<a id="a1fa8c5c4538a2724fd23101c433eee08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa8c5c4538a2724fd23101c433eee08">&#9670;&nbsp;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AuLib::MidiIn::read </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>read MIDI input, returning number of MIDI events read. <br />
+Only needs to be called if <a class="el" href="class_au_lib_1_1_midi_in.html#a79954f00f7e2d8656d64346ca2995237">listen()</a> is not used </p>
 
 </div>
 </div>

@@ -52,7 +52,7 @@ var searchData=
   ['spectrum',['spectrum',['../class_au_lib_1_1_pvoc.html#ac6f1793a0ba9f3c5bfd4a90afad9d469',1,'AuLib::Pvoc::spectrum()'],['../class_au_lib_1_1_stft.html#aa47419a9fbc61c26c4f28a443a2456e7',1,'AuLib::Stft::spectrum()']]],
   ['sqosc',['SqOsc',['../struct_au_lib_1_1_sq_osc.html',1,'AuLib']]],
   ['sqosc',['SqOsc',['../struct_au_lib_1_1_sq_osc.html#a936dfdb01bedea69316691724a86bf22',1,'AuLib::SqOsc']]],
-  ['square',['square',['../namespace_au_lib_1_1waveset.html#a16ea0c11b69ade14c2864d7057044e19',1,'AuLib::waveset::square()'],['../namespace_au_lib.html#a91c02f802d3f1f50f51ff352567c78cdad928629a2e658f0245b01bf1125d2978',1,'AuLib::SQUARE()']]],
+  ['square',['SQUARE',['../namespace_au_lib.html#a91c02f802d3f1f50f51ff352567c78cdad928629a2e658f0245b01bf1125d2978',1,'AuLib::SQUARE()'],['../namespace_au_lib_1_1waveset.html#a16ea0c11b69ade14c2864d7057044e19',1,'AuLib::waveset::square()']]],
   ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html#a969965991a7ca0c30d917333508cb861',1,'AuLib::SquareTable']]],
   ['squaretable',['SquareTable',['../struct_au_lib_1_1_square_table.html',1,'AuLib']]],
   ['sr',['sr',['../class_au_lib_1_1_audio_base.html#a549a53c29207dbd6dc7d4eca0e1b4d12',1,'AuLib::AudioBase']]],

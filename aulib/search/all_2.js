@@ -17,5 +17,6 @@ var searchData=
   ['const_5fiterator',['const_iterator',['../class_au_lib_1_1_audio_base.html#a682b884c9d9130c0bea737cddd943454',1,'AuLib::AudioBase']]],
   ['copyright',['copyright',['../namespace_au_lib_1_1_info.html#ad12d22e7e831107904f9180425fc2f93',1,'AuLib::Info']]],
   ['create',['create',['../class_au_lib_1_1_fourier_table.html#aba560739f1dfcbd2508f88258b7aa23b',1,'AuLib::FourierTable']]],
+  ['ctlval',['ctlval',['../class_au_lib_1_1_midi_in.html#a2a22df944423b74a39b03d343d7910bf',1,'AuLib::MidiIn']]],
   ['ctrl_5fmsg',['ctrl_msg',['../class_au_lib_1_1_note.html#a43d4cefe5cf6fcf3d8e7ca1f5052693a',1,'AuLib::Note::ctrl_msg()'],['../namespace_au_lib_1_1midi.html#a3bf31951bc81da9492a8d1752a90a4f4',1,'AuLib::midi::ctrl_msg()']]]
 ];

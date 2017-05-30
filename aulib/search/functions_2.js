@@ -9,5 +9,6 @@ var searchData=
   ['close',['close',['../class_au_lib_1_1_midi_in.html#ae4e58e80580619146797bdceb6fb7f54',1,'AuLib::MidiIn']]],
   ['copyright',['copyright',['../namespace_au_lib_1_1_info.html#ad12d22e7e831107904f9180425fc2f93',1,'AuLib::Info']]],
   ['create',['create',['../class_au_lib_1_1_fourier_table.html#aba560739f1dfcbd2508f88258b7aa23b',1,'AuLib::FourierTable']]],
+  ['ctlval',['ctlval',['../class_au_lib_1_1_midi_in.html#a2a22df944423b74a39b03d343d7910bf',1,'AuLib::MidiIn']]],
   ['ctrl_5fmsg',['ctrl_msg',['../class_au_lib_1_1_note.html#a43d4cefe5cf6fcf3d8e7ca1f5052693a',1,'AuLib::Note']]]
 ];

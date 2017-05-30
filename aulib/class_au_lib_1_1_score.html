@@ -161,7 +161,12 @@ Static Public Attributes</h2></td></tr>
  msg, // uint32_t message code <br />
  len // uint32_t number of data items (doubles) in cmd <br />
  } <br />
-</p>
+<br />
+Scores are required to define the termination command:<br />
+<br />
+ {name, <a class="el" href="struct_au_lib_1_1_score_1_1_cmd.html#a8a953590c3a13a88ee82eea7c6dbbe6f">Score::Cmd::omni</a>, <a class="el" href="class_au_lib_1_1_score.html#a1b907e39d0ec1e09e11eacde6eb2b2c5">Score::end</a>, 0}, <br />
+<br />
+ where name is a user-defined name (std::string) for the command </p>
 
 </div>
 </div>
