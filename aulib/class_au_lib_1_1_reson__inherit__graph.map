@@ -1,7 +1,0 @@
-<map id="AuLib::Reson" name="AuLib::Reson">
-<area shape="rect" id="node2" href="$class_au_lib_1_1_reson_r.html" title="AuLib::ResonR" alt="" coords="13,304,125,331"/>
-<area shape="rect" id="node3" href="$class_au_lib_1_1_band_p.html" title="AuLib::BandP" alt="" coords="17,229,121,256"/>
-<area shape="rect" id="node4" href="$class_au_lib_1_1_low_p.html" title="AuLib::LowP" alt="" coords="21,155,117,181"/>
-<area shape="rect" id="node5" href="$class_au_lib_1_1_iir.html" title="AuLib::Iir" alt="" coords="32,80,107,107"/>
-<area shape="rect" id="node6" href="$class_au_lib_1_1_audio_base.html" title="AuLib::AudioBase" alt="" coords="5,5,133,32"/>
-</map>

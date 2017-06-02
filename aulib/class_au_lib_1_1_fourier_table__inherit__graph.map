@@ -1,9 +1,0 @@
-<map id="AuLib::FourierTable" name="AuLib::FourierTable">
-<area shape="rect" id="node4" href="$struct_au_lib_1_1_hamming.html" title="AuLib::Hamming" alt="" coords="5,229,125,256"/>
-<area shape="rect" id="node5" href="$struct_au_lib_1_1_hann.html" title="AuLib::Hann" alt="" coords="149,229,245,256"/>
-<area shape="rect" id="node6" href="$struct_au_lib_1_1_saw_table.html" title="AuLib::SawTable" alt="" coords="269,229,392,256"/>
-<area shape="rect" id="node7" href="$struct_au_lib_1_1_square_table.html" title="AuLib::SquareTable" alt="" coords="417,229,556,256"/>
-<area shape="rect" id="node8" href="$struct_au_lib_1_1_triangle_table.html" title="AuLib::TriangleTable" alt="" coords="581,229,725,256"/>
-<area shape="rect" id="node2" href="$class_au_lib_1_1_func_table.html" title="AuLib::FuncTable" alt="" coords="267,80,393,107"/>
-<area shape="rect" id="node3" href="$class_au_lib_1_1_audio_base.html" title="AuLib::AudioBase" alt="" coords="267,5,395,32"/>
-</map>
