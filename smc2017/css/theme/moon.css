@@ -166,7 +166,12 @@ body {
   display: block;
   padding: 5px;
   overflow: auto;
-  max-height: 400px;
+  height: 100%;
+  width: 100%;
+  max-height: 650px;
+  box-sizing: border-box;
+  /*max-height: 400px;*/
+  
   word-wrap: normal; }
 
 .reveal table {

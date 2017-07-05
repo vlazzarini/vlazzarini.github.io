@@ -7,7 +7,7 @@
 		<title>CPOF</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/league.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -63,16 +63,11 @@ p { text-align: left; }
 			  </p>
 			  </section>
 			  <section>
-			  <p> It is also important to point out that
-		an alternative API by Michael Gogins provides some
-			  of this functionality in Csound, trying to
-			  add a C++ face to the underlying C-language
-			  functions.
-			  </p>
-			  <p> However, CPOF has been designed from the
+			  <p> CPOF has been designed from the
 			  ground up with heavy use of templating to
-			  provide a more complete C++ solution to the
-			  problem. </p>
+			  provide a complete C++ solution to the
+			  task of writing plugins for Csound.
+			  </p>
 			  </section>
 			  </section>
                           <section>
@@ -281,22 +276,7 @@ Csound for opcodes. To allow for ease of use, CPOF provides a wrapper
 template class (which is not too dissimilar to `std::vector`) for us to
 allocate and use as much memory as we need.
 </textarea>
-</section>
 
-<section data-markdown>
-<textarea data-template>			    
-This functionality
-is given by the `AuxMem` class, which has the following methods and
-members:
-
-* `allocate()`: allocates memory (if required).
-* `operator[]`: array-subscript access to the allocated memory.
-* `data()`: returns a pointer to the data.
-* `len()`: returns the length of the vector.
-* `begin()` and `end()`: return iterators to the beginning and end of
-data
-* `iterator` and `const_iterator`: iterator types for this class.
-</textarea>
 </section>
 <section data-markdown>
 <textarea data-template>			    
@@ -339,18 +319,6 @@ wrapper class that allows us to treat it as a vector object.
 This is provided by the `Table` class.
 </textarea>
 </section>
-
-<section data-markdown>
-<textarea data-template>
-* `init()`: initialises a table object from an opcode argument pointer.
-* `operator[]`: array-subscript access to the function table.
-* `data()`: returns a pointer to the function table data.
-* `len()`: returns the length of the table (excluding guard point).
-* `begin()` and `end()`: return iterators to the beginning and end of
-the function table
-* `iterator` and `const_iterator`: iterator types for this class.
-</textarea>
-</section>
 <section data-markdown>
 <textarea data-template>			    
 ```c++
@@ -373,10 +341,8 @@ struct Oscillator : csnd::Plugin<1, 3> {
   for (auto &s : out) {
    s = amp * tab[(uint32_t)x];
    x += si;
-   while (x < 0)
-    x += tab.len();
-   while (x >= tab.len())
-    x -= tab.len();
+   while (x < 0) x += tab.len();
+   while (x >= tab.len()) x -= tab.len();
    }
   return OK;
  }
@@ -434,95 +400,43 @@ facilitate their manipulation, `CPOF` provides a wrapper class
 series of `pv_bins` holding the floating-point data.
 </textarea>
 </section>
-
-<section data-markdown>
-<textarea data-template>
-
-The `Fsig` class has the following methods:
-
-* `init()`: initialisation from individual parameters or from an
-existing fsig. Also allocates frame memory as needed.
-* `dft_size()`, `hop_size()`, `win_size()`, `win_type()` and `nbins()`, returning the
-PV data parameters.
-* `count()`: get and set fsig framecount.
-* `isSliding()`: checks for sliding mode.
-* `fsig_format()`: returns the fsig data format.
-
-</textarea>
-</section>
-
-<section data-markdown>
-<textarea data-template>
-
-The `pv_frame` class contains the following methods:
-
-* `operator[]`: array-subscript access to the spectral frame
-* `data()`: returns a pointer to the spectral frame data.
-* `len()`: returns the length of the frame.
-* `begin()` and `end()`: return iterators to the beginning and end of
-the data frame.
-* `iterator` and `const_iterator`: iterator types for this class.
-
-</textarea>
-</section>
-
-<section data-markdown>
-<textarea data-template>
-
-Each Phase vocoder bin is held in a `pv_bin` container:
-
-* `amp()`: returns the bin amplitude.
-* `freq()`: returns the bin frequency.
-* `amp(float a)`: sets the bin amplitude to a.
-* `freq(float f)`: sets the bin frequency to f.
-* `operator*(pv_bin f)`: multiply the amp of a pvs bin by f.amp.
-* `operator*(MYFLT f)`: multiply the bin amp by f
-* `operator*=()`: unary versions of the above.
-
-</textarea>
-</section>
-
 <section data-markdown>
 <textarea data-template>
 
 ```c++
-/** f-sig plugin opcode example: pv gain change
-    with 1 output and 2 inputs (f,k) \n
-    fsig pvg fsin, kgain
- */
-struct PVGain : csnd::FPlugin<1, 2> {
- static constexpr char const *otypes = "f";
- static constexpr char const *itypes = "fk";
+struct PVTrace : csnd::FPlugin<1, 2> {
+  csnd::AuxMem<float> amps;
 
- int init() {
-  if (inargs.fsig_data(0).isSliding())
-   return csound->init_error("sliding not supported");
-    
-  if (inargs.fsig_data(0).fsig_format()
-   != csnd::fsig_format::pvs &&
-    inargs.fsig_data(0).fsig_format()
-   != csnd::fsig_format::polar)
-    return csound->init_error("fsig format not supported");
-		
-  csnd::Fsig &fout = outargs.fsig_data(0);
-  fout.init(csound, inargs.fsig_data(0));
-  framecount = 0;
-  return OK;
- }
-
- int kperf() {
-  csnd::pv_frame &fin = inargs.fsig_data(0);
-  csnd::pv_frame &fout = outargs.fsig_data(0);
-  uint32_t i;
-
-  if (framecount < fin.count()) {
-   MYFLT g = inargs[1];
-   std::transform(fin.begin(), fin.end(), fout.begin(),
-    [g](csnd::pv_bin f){ return f *= g; });
-   framecount = fout.count(fin.count());
+  int init() {
+    amps.allocate(csound, inargs.fsig_data(0).nbins());
+    csnd::Fsig &fout = outargs.fsig_data(0);
+    fout.init(csound, inargs.fsig_data(0));
+    framecount = 0;
+    return OK;
   }
-  return OK;
- }
+
+  int kperf() {
+    csnd::pv_frame &fin = inargs.fsig_data(0);
+    csnd::pv_frame &fout = outargs.fsig_data(0);
+
+    if (framecount < fin.count()) {
+      int n = fin.len() - (int)inargs[1];
+      float thrsh;
+      std::transform(fin.begin(), fin.end(), amps.begin(),
+                     [](csnd::pv_bin f) { return f.amp(); });
+      std::nth_element(amps.begin(), amps.begin() + n,
+                     amps.end());
+      thrsh = amps[n];
+      std::transform(fin.begin(), fin.end(), fout.begin(),
+                     [thrsh](csnd::pv_bin f) {
+                            return f.amp() >= thrsh ?
+                                   f : csnd::pv_bin(); });
+      framecount = fout.count(fin.count());
+    }
+
+    return OK;
+  }
+
 };
 ```
 </textarea>
@@ -542,19 +456,6 @@ only one-dimensional arrays (for multidimensional arrays a raw pointer
 to `ARRAYDAT` should be used), which nevertheless covers the most common uses.
 </textarea>
 </section>
-<section data-markdown>
-<textarea data-template>
-* `init()`: initialises an output variable.
-* `operator[]`: array-subscript access to the vector data.
-* `data()`: returns a pointer to the vector data.
-* `len()`: returns the length of the vector.
-* `begin()` and `end()`: return iterators to the beginning and end of
-the vector.
-* `iterator` and `const_iterator`: iterator types for this class.
-* `data_array()`: returns a pointer to the vector data.
-</textarea>
-</section>
-
 <section data-markdown>
 <textarea data-template>
 ```c++
@@ -581,10 +482,15 @@ struct SimpleArray : csnd::Plugin<1, 1> {
 </textarea>
 </section>
 </section>
+<section>
 <section data-markdown>
 <textarea data-template>
-Example
+Extreme Code Re-use 
 -------------------------------------------
+</textarea>
+</section>
+<section data-markdown>
+<textarea data-template>
 ```
 /** i-time, k-rate array operator
     i/kout[] op i/kin[]
@@ -699,9 +605,10 @@ void csnd::on_load(Csound *csound) {
 ```
 </textarea>
 </section>
+</section>
 <section data-markdown>
 <textarea data-template>
-Building the opcodes
+Building & Finding Out More
 -------------------------------------------
 
 In order to plugin opcodes with CPOF, we require a c++
