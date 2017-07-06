@@ -9,7 +9,7 @@ ksmps = 64
 instr 1
 
 k1 chnget "trace"
-a1,a2 diskin2 "metheny.wav"
+a1,a2 diskin2 "eskers1.wav"
 fs1 pvsanal (a1+a2)/2,2048,256,2048,1
 fs2 pvstrace1 fs1, k1
 a3 pvsynth fs2
@@ -36,7 +36,7 @@ i1 0 36000
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>trace</objectName>
   <x>143</x>
   <y>94</y>
@@ -48,7 +48,7 @@ i1 0 36000
   <midicc>0</midicc>
   <minimum>1.00000000</minimum>
   <maximum>128.00000000</maximum>
-  <value>1.00000000</value>
+  <value>94.98000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>

@@ -29,7 +29,7 @@ p { text-align: left; }
  <script type="text/javascript">
  // called by csound.js
  function moduleDidLoad() {
-   csound.CopyUrlToLocal("metheny.wav","metheny.wav", function() {
+   csound.CopyUrlToLocal("eskers1.wav","eskers1.wav", function() {
      fcopied = true;
      console.log("Engine ready. \nPowered by Web Assembly Csound\n");
 });
@@ -149,10 +149,13 @@ input[type=range]:focus::-webkit-slider-runnable-track {
                           <H2>Introduction</h2>
 			  </section>
 			  <section>
+			  <h2>Plugins</h2>
 			  <p>
-                          Csound has a fairly straightforward plugin
+                          Csound has a fairly straightforward <b>plugin</b>
 		mechanism that can be used extend its language, adding
-			  new native functionality to the system.
+			  new native functionality to the system in
+			  the form of new <i>opcodes</i> (or unit generators).
+			  
 			  </p>
 			  <p>
 			  The main interface for this mechanism was
@@ -162,23 +165,16 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 			  </p>
 			  </section>
 			  <section>
+			  <h2> C++ Opcodes </h2>
 			  <p>
 			  For many programmers, C++ is a more accessible
 			  language, even though it is much bigger and
 		with a lot more conceptual complexities.
 			  </p>
 			  <p>
-                          CPOF aims to provide an easy-to-use, heavily
-			  re-usable, API for plugin opcode
-			  development, with scalable qualities as far
-			  complexity is concerned. 
-			  </p>
-			  </section>
-			  <section>
-			  <p> CPOF has been designed from the
-			  ground up with heavy use of templating to
-			  provide a complete C++ solution to the
-			  task of writing plugins for Csound.
+                          CPOF aims to provide an easy-to-use, scalable, heavily
+			  re-usable, object-oriented <i>framework</i> for plugin opcode
+			  development.
 			  </p>
 			  </section>
 			  </section>
@@ -196,62 +192,79 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 			      function </li>
 			    </ol>
 			    </section>
-			    <section>
-			    <p>
-                            The opcode class is derived from the
-			    Plugin template base class:
-			    </p>
+
+<section data-markdown>
+<textarea data-template>
+Base Classes
+---------------			    
+The base class for most opcodes is `Plugin`. Derived from it, we have
+`FPlugin`, derived from `Plugin`, which is designed for
+frequency-domain plugins.
+
+</textarea>
+</section>
+
 			    <section data-markdown>
-<textarea data-template>			    
+
+			    <textarea data-template>
+			    Defining Opcodes
+			    --------
+			     An opcode class is derived from this
+			    template base class:
 ``` c++
 #include <plugin.h>
-struct MyPlug : csnd::Plugin<1,1> { };
+			    struct MyPlug : csnd::Plugin<1,1> { };
 			    ```
+			  This is actually a complete (but non-op) opcode with one output and one
+input (given by the template parameters). To this, we need to add processsing methods.
 </textarea>			    
-</section>
-<p>
-The above is actually a minimum (but non-op) opcode with one output and one
-input (the template parametes).
-To do something, we will need to add
-processsing methods to this class.
-</p>
+
 			    </section>
 <section data-markdown>
-<textarea data-template>			    
-In Csound, an opcode can be active at init and/or perf times.
-Init-time code is run once (e.g. on instantiation or re-initialisation
-in the case of instruments). Perf-time code runs repeatedly when
-Csound is processing audio or control signals. For each one of these
-actions (init, control, or audio), an opcode can provide a computing method:
+			    <textarea data-template>
+Action Times
+--------------
+In Csound, an opcode can be active at init and/or perf times:
+1. Init-time code is run once.
+2. Perf-time code runs repeatedly to process signals.
+
+For each one of these actions (init; control or audio processing) an
+			    opcode class can provide a computing method:
 			    `init()`, `kperf()`, or `aperf()`.
 </textarea>
-
-			   </section>
+</section>
 <section data-markdown>
-<textarea data-template>			    
+<textarea data-template>
+Init-time
+------------
 ``` c++
 struct Simplei : csnd::Plugin<1,1> {
   int init() {
-    outargs[0] = inargs[0];
-    return OK;
+     outargs[0] = inargs[0];
+     return OK;
   }
 };
-			    ```
-
-Because it implements only the `init()` method, this opcode can only run at init time.
+```
+Arguments to opcodes are provided as two arrays of `Params` objects,
+`outargs` and `inargs`, for output and input, respectively. From these we can get the
+various types of Csound data: scalars (as in the example above),
+			    vectors, strings, arrays,
+			    or fsigs.
 </textarea>			    
 			    </section>
 
 <section data-markdown>
-<textarea data-template>			    
+<textarea data-template>
+Perf-time (Control Signals)
+-------------------------
 ``` c++
 struct Simplek : csnd::Plugin<1,1> {
   int kperf() {
-    outargs[0] = inargs[0];
-    return OK;
+     outargs[0] = inargs[0];
+     return OK;
   }
 };
-			    ```
+```
 
 			    
 By implementing only the `kperf()` method, the
@@ -261,7 +274,9 @@ control signals.
 </section>
 
 <section data-markdown>
-<textarea data-template>			    
+<textarea data-template>
+Perf-time (Audio Signals)
+--------------------
 ``` c++
 struct Simplea : csnd::Plugin<1,1> {
   int aperf() {
@@ -269,7 +284,7 @@ struct Simplea : csnd::Plugin<1,1> {
     return OK;
   }
 };
-			    ```
+```
 
 			  
 By implementing only the `aperf()` method, the
@@ -281,7 +296,9 @@ processes `nsmps` of input data starting at `offset`.
 </section>
 <section data-markdown>
 <textarea data-template>
-To register an opcode, we call a template function that takes the
+Adding Opcodes
+-------------
+To register an opcode with Csound, we call a template function that takes the
 class as its template parameter, plus the name, argument types and
 action thread (init, perf, and/or audio). This template function
 is called inside `onload()`, the entry point for the opcode plugin library. 
@@ -289,18 +306,23 @@ is called inside `onload()`, the entry point for the opcode plugin library.
 </section>
 
 <section data-markdown>
-<textarea data-template>			    
+<textarea data-template>
+ON LOAD
+------------
 ``` c++
 #include <modload.h>
 void csnd::on_load(Csound *csound) {
-  csnd::plugin<Simplei>(csound, "simple", "i", "i", csnd::thread::i);
-  csnd::plugin<Simplek>(csound, "simple", "k", "k", csnd::thread::k);
-  csnd::plugin<Simplea>(csound, "simple", "a", "a", csnd::thread::a);
+ csnd::plugin<Simplei>(csound, "simple", "i", "i",
+                                  csnd::thread::i);
+ csnd::plugin<Simplek>(csound, "simple", "k", "k",
+                                  csnd::thread::k);
+ csnd::plugin<Simplea>(csound, "simple", "a", "a",
+                                  csnd::thread::a);
 }
-			    ```
+```
 
-The `plugin()` function takes the opcode class name as a template
-parameter. Its arguments are self-explanatory: the Csound
+`plugin()` takes the opcode class name as a template
+parameter. Its arguments are: the Csound
 engine, the opcode name, its argument types for output and input,  
 and the opcode action times (`i`, `k`, `a`, `ik`, `ia`, `ika`).
 </textarea>			    
@@ -308,64 +330,28 @@ and the opcode action times (`i`, `k`, `a`, `ik`, `ia`, `ika`).
 </section>
 
 <section>
+<h2> Support Classes </h2>
+</section>
+
+
 <section>
-<h2>Base Classes</h2>
-</section>
 <section data-markdown>
-<textarea data-template>			    
-The Opcode base class `Plugin` is derived from `OPDS` and
-has a number of members that should be noted:
-
-* `outargs`: output arguments (`Params` object).
-* `inargs`: input arguments (`Params` object).
-* `csound`: a pointer to the `Csound` engine object.
-* `offset`: the starting position of an audio vector (for audio opcodes).
-* `nsmps`: the size of an audio vector (also for audio opcodes only).
-
-</textarea>			    
-</section>
-<section data-markdown>
-<textarea data-template>			    
-The other base class in the CPOF is `FPlugin`, derived from `Plugin`, which
-provides an extra facility for fsig (streaming frequency-domain) plugins:
-
-* `framecount`: a member to hold a running count of fsig frames.
-
-</textarea>
-</section>
-<section data-markdown>
-<textarea data-template>			    
-Arguments are provided as two arrays of `Params` objects.
-The `Param` class is iterable and has the following overloaded operators:
-
-* `operator[]`: access each argument value as a `MYFLT` (floating-point type). For
-use with scalar arguments
-* `operator()` (also `data()`): function access gives the value as a `MYFLT*`, for use with vector arguments.
-* `fsig_data()`, `str_data()`, `vector_data()`: for spectral, string, and
-array type arguments.
-
-</textarea>
-</section>
-<section data-markdown>
-<textarea data-template>			    
-While numeric scalar arguments can be dealt directly as floating-point
-numbers, audio signals are vectors and should be treated as arrays. To
-facilitate this, the `AudioSig` class can be used to wrap them conveniently:
+<textarea data-template>
+Audio Signals
+------------------------
+While scalars can be dealt directly as floating-point
+numbers, audio signals are vectors and need some special care.
+The `AudioSig` class can be used to wrap them conveniently:
 ``` c++
 /** Constructor takes the plugin object and the
       audio argument pointer, and a reset flag if
       we need to clear an output buffer
    */
-AudioSig::AudioSig(OPDS *p, MYFLT *s, bool res = false)
+AudioSig::AudioSig(OPDS *p, MYFLT *s, bool res = false);
 ```
 </textarea>
 </section>
 </section>
-
-<section>
-<h2> Support Classes </h2>
-</section>
-
 <section>
 <section data-markdown>
 <textarea data-template>			    
@@ -373,23 +359,14 @@ Memory allocation
 ---------------------------------------------------
 
 For efficiency and to prevent leaks and undefined behaviour we need to
-leave all memory allocation to Csound and refrain from using C++
-allocators or standard library containers that use dynamic allocation
-behind the scenes (e.g. `std::vector`). If we follow these rules, our code
-will work as intended and cause no problems for users.
+leave memory management to Csound and **AVOID ALL** C++
+allocators or containers that use them (e.g. `std::vector`).
 
+CPOF provides the `AuxMem` class for opcodes that need dynamic
+memory allocation. This delegates memory management to Csound.
 </textarea>
 </section>
 
-<section data-markdown>
-<textarea data-template>			    
-This requires us to use the `AuxAlloc` mechanism implemented by
-Csound for opcodes. To allow for ease of use, CPOF provides a wrapper
-template class (which is not too dissimilar to `std::vector`) for us to
-allocate and use as much memory as we need.
-</textarea>
-
-</section>
 <section data-markdown>
 <textarea data-template>			    
 ```c++
@@ -425,9 +402,11 @@ struct DelayLine : csnd::Plugin<1, 2> {
 <textarea data-template>
 Table Access
 -----------------------------------------------
+Csound uses function tables in all sorts of applications, from
+oscillators to sequencers to convolution reverb and beyond.
 
-Access to function tables has also been facilitated by a thin
-wrapper class that allows us to treat it as a vector object.
+Access to these has  been facilitated by a thin
+wrapper that allows us to treat it as a vector object.
 This is provided by the `Table` class.
 </textarea>
 </section>
@@ -470,13 +449,10 @@ struct Oscillator : csnd::Plugin<1, 3> {
 Strings
 ---------------------------------------------
 
-String variables in Csound are held in a `STRINGDAT` data structure,
-containing a data member that holds the actual string and a size
-member with the allocated memory size. While CPOF does not
-wrap strings, it provides a translated access to string arguments
-through the argument objects `str_data()` function. This takes a
-an argument index (similarly to `data()`) and returns a reference to
-the string variable.
+String variables are held in a `STRINGDAT` data structure.
+While CPOF does not wrap strings, it provides access to string-type arguments
+through the `str_data()` method (from `Params`). It takes a
+an argument index and returns a reference to a `STRINGDAT`.
 
 </textarea>
 </section>
@@ -504,9 +480,7 @@ struct Tprint : csnd::Plugin<0,1> {
 Fsigs
 ------------------------------------------------
 
-For streaming spectral processing opcodes, we have a
-different base class with extra facilities needed for their operation (`FPlugin`).
-In Csound, fsig variables are held in a `PVSDAT` data structure. To
+Fsig (frequency-domain) variables are held in a `PVSDAT` structure. To
 facilitate their manipulation, `CPOF` provides a wrapper class
 `Fsig` for it. This holds a `pv_frame`, which itself contains a
 series of `pv_bins` holding the floating-point data.
@@ -575,11 +549,9 @@ struct PVTrace : csnd::FPlugin<1, 2> {
 Arrays
 ----------------------------------------------
 
-Opcodes with array inputs or outputs use the data structure `ARRAYDAT`
-for parameters. Again, in order to facilitate access to these argument
-types, CPOF provides a wrapper class, Vector. This currently supports
-only one-dimensional arrays (for multidimensional arrays a raw pointer
-to `ARRAYDAT` should be used), which nevertheless covers the most common uses.
+Array variables are defined by the `ARRAYDAT` structure. 
+CPOF provides a wrapper class, `Vector`. This currently supports
+only one-dimensional arrays, which covers the most common applications.
 </textarea>
 </section>
 <section data-markdown>
@@ -613,6 +585,9 @@ struct SimpleArray : csnd::Plugin<1, 1> {
 <textarea data-template>
 Extreme Code Re-use 
 -------------------------------------------
+The following example implements 44 distinct opcodes from a single
+class template, demonstrating an extreme case of
+code re-use.
 </textarea>
 </section>
 <section data-markdown>
@@ -739,9 +714,11 @@ Building & Finding Out More
 
 In order to plugin opcodes with CPOF, we require a c++
 compiler using c++11 mode (`-std=c++11`), and the Csound public
-headers (including `plugin.h`). The code should be built as a dynamic/shared
-library (e.g so in Linux and dylib in OSX). CPOF does not impose any
-link-time dependencies (not even to Csound).
+headers (including `plugin.h`).
+
+The code should be built as a dynamic/shared
+library. CPOF does not impose any special link-time dependencies
+(not even to Csound).
 
 <div class=align-center>
 [http://csound.github.io](http://csound.github.io)
