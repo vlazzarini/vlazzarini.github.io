@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>The Csound Opcode Pugin Framework</title>
+		<title>The Csound Opcode Plugin Framework</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/moon.css">
@@ -301,7 +301,7 @@ Adding Opcodes
 To register an opcode with Csound, we call a template function that takes the
 class as its template parameter, plus the name, argument types and
 action thread (init, perf, and/or audio). This template function
-is called inside `onload()`, the entry point for the opcode plugin library. 
+is called inside `on_load()`, the entry point for the opcode plugin library. 
 </textarea>
 </section>
 
