@@ -23,7 +23,119 @@ p { text-align: left; }
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+               </script>
+
+<script type="text/javascript" src="js/csound.js"></script>
+ <script type="text/javascript">
+ // called by csound.js
+ function moduleDidLoad() {
+   csound.CopyUrlToLocal("metheny.wav","metheny.wav", function() {
+     fcopied = true;
+     console.log("Engine ready. \nPowered by Web Assembly Csound\n");
+});
+  loaded = true;
+ }
+ function attachListeners() { 
+  document.getElementById('playButton').
+   addEventListener('click', togglePlay);
+  document.getElementById("trace").
+       addEventListener("input",SetTrace);
+ }
+
+ function SetTrace() {
+  var val = document.getElementById('trace').value
+  csound.setControlChannel('trace', val);
+ }
+
+
+ var fcopied = false;
+ var count = 0;
+
+ function handleMessage(message) {
+   var element = document.getElementById('console');
+   element.value += message;
+   count += 1;
+   if(count == 1000) {
+     element.value = ' ';
+     count = 0;
+   }
+ }
+
+ var playing = false;
+ var started = false;
+ var loaded = false;
+
+ function togglePlay(){
+  if(loaded && fcopied) {
+  if(!playing) {
+  if(started) csound.Play();
+  else {
+   csound.PlayCsd("pvstrace.csd");
+   started = true;
+  }
+  document.getElementById('playButton').innerText = "Pause";
+  playing = true;
+  } else {
+  csound.Csound.stop()
+  document.getElementById('playButton').innerText ="Play";
+  playing = false;
+  }
+}
+}
+ 
+</script>
+
+<style>
+.playbutton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input[type=range] {
+  height: 8px;
+  -webkit-appearance: none;
+  /*margin: 10px 0;*/
+  width: 70%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #205928;
+  border-radius: 1px;
+  /*border: 1px solid #18D501;*/
+}
+input[type=range]::-webkit-slider-thumb {
+  /*box-shadow: 3px 3px 3px #00AA00;*/
+  border: 2px solid #83E584;
+  height: 23px;
+  width: 23px;
+  border-radius: 23px;
+  background: #439643;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #205928;
+}
+
+
+</style>
+
+
 	</head>
 	<body>
 		<div class="reveal">
@@ -441,6 +553,20 @@ struct PVTrace : csnd::FPlugin<1, 2> {
 ```
 </textarea>
 </section>
+<section>
+<textarea class="console" cols="100" rows="30" id="console"
+  value="">Csound: not loaded</textarea>
+<p>
+<div id="center">
+  <button class="playbutton" id="playButton" width="40">play</button> <br>
+  spectral trace<br>
+  <input type="range" name="trace" id="trace" step="1" value="50"
+  min="1" max="128">
+</div>
+ 
+
+</section>
+
 </section>
 
 <section>
