@@ -68,7 +68,11 @@ p { text-align: left; }
  function togglePlay(){
   if(loaded && fcopied) {
   if(!playing) {
-  if(started) csound.Play();
+  if(started) {
+    code = document.getElementById('code').value;
+    csound.Play();
+    csound.CompileOrc(code);
+  }
   else {
    csound.PlayCsd("pvstrace.csd");
    started = true;
@@ -76,7 +80,8 @@ p { text-align: left; }
   document.getElementById('playButton').innerText = "Pause";
   playing = true;
   } else {
-  csound.Csound.stop()
+  csound.CompileOrc("schedule(-1,0,1)");
+  //csound.Csound.stop()
   document.getElementById('playButton').innerText ="Play";
   playing = false;
   }
@@ -132,6 +137,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background: #205928;
 }
 
+.console {
+
+background-color: black;
+color: green;
+}
 
 </style>
 
@@ -528,9 +538,21 @@ struct PVTrace : csnd::FPlugin<1, 2> {
 </textarea>
 </section>
 <section>
-<textarea class="console" cols="100" rows="30" id="console"
-  value="">Csound: not loaded</textarea>
-<p>
+<textarea class="console" cols="100" rows="25" id="console"
+  value="" >Csound: not loaded</textarea>
+<textarea class="csdcode" cols="100" rows="9" id="code"
+value="">
+instr 1
+ ktr = chnget:k("trace")
+ ain[] = diskin("eskers1.wav")
+ fsig = pvstrace1(pvsanal((ain[0]+ain[1])/2,2048,256,2048,1), ktr)
+ asig = pvsynth(fsig)*expsegr(1,1,1,1,0.001)
+ out(asig, asig)
+endin
+schedule(1,0,-1)
+</textarea>
+
+
 <div id="center">
   <button class="playbutton" id="playButton" width="40">play</button> <br>
   spectral trace<br>

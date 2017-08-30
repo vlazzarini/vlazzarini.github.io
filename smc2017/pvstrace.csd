@@ -7,19 +7,17 @@ nchnls = 2
 ksmps = 64
 
 instr 1
-
+kenv = expsegr(1,1,1,0.1,0.001)
 k1 chnget "trace"
-a1,a2 diskin2 "eskers1.wav"
-fs1 pvsanal (a1+a2)/2,2048,256,2048,1
-fs2 pvstrace1 fs1, k1
+a1[] = diskin("eskers1.wav")
+fs1 pvsanal (a1[0]+a1[1])/2,2048,256,2048,1
+fs2 pvstrace fs1, k1
 a3 pvsynth fs2
-  out a3, a3
+  out a3*kenv, a3*kenv
 endin
-
-
+schedule(1,0,-1)
 </CsInstruments>
 <CsScore>
-i1 0 36000
 </CsScore>
 </CsoundSynthesizer>
 <bsbPanel>
@@ -48,7 +46,7 @@ i1 0 36000
   <midicc>0</midicc>
   <minimum>1.00000000</minimum>
   <maximum>128.00000000</maximum>
-  <value>94.98000000</value>
+  <value>63.23000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
