@@ -1,0 +1,52 @@
+{
+  "name": "unmute-ios-audio",
+  "description": "Enable/unmute WebAudio on iOS, even while mute switch is on",
+  "version": "3.3.0",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/unmute-ios-audio/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "*"
+  },
+  "homepage": "https://github.com/feross/unmute-ios-audio",
+  "keywords": [
+    "ios",
+    "web audio",
+    "unlock",
+    "audio",
+    "unmute",
+    "user activation",
+    "mute switch"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/unmute-ios-audio.git"
+  },
+  "scripts": {
+    "build": "npx typescript --allowJs --declaration --emitDeclarationOnly index.js",
+    "test": "standard"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/feross"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/feross"
+    },
+    {
+      "type": "consulting",
+      "url": "https://feross.org/support"
+    }
+  ],
+  "types": "index.d.ts"
+}
