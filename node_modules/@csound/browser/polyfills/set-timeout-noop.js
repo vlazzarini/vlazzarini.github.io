@@ -1,1 +1,0 @@
-const setTimeout = (a, b) => {};
