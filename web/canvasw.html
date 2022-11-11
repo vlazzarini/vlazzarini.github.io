@@ -7,11 +7,31 @@
 -->
 <head>
  <title>Canvas Example</title>
- <style type="text/css">
-   textarea.console { font-family: "Courier New"; color: #FCF477;
-                     background-color: #007700 }
-   canvas.cnvs { font-family: "Courier New"; color: #FCF477;
-                     background-color: #FF0000 }
+  <style type="text/css">
+  html,
+  body {
+    font-family: Monospace;
+    color: #bf94f7;
+    background-color: #000055;
+  }
+
+  H1 {
+    font-size: 36px;
+  }
+
+
+    #cnvs {
+      touch-action: none;
+      background-color: #bf94f7;
+    }
+
+    #messages {
+      width: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Monospace;
+    }
   </style>
  <script type="text/javascript">
  const url = "../node_modules/@csound/browser/dist/csound.js"; 
@@ -106,7 +126,7 @@ function cnvs_out()
 </script>
 </head>
 <body>
-<H1> WAAW Csound Example </H1>
+<H1> Canvas Synth </H1>
   <p>
 <canvas class="cnvs" id="cnvs" width="400" height="400" style="border:1px solid#000000;"
  onmousemove="cnvs_getCoordinates(event)"
