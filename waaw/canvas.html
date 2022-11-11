@@ -34,16 +34,17 @@ let csound = null;
 if(csound == null) {
   const { Csound } = await import(url);
   csound = await Csound();
-await csound.setOption("-odac");
- await csound.setOption("--0dbfs=1");
+  await csound.setOption("-odac");
+  await csound.setOption("--0dbfs=1");
   await csound.compileOrc(code);
   await csound.start();
   await csound.setControlChannel("cf", 1000);
+  document.getElementById('console').innerHTML = "Csound: running";
 }
 };
 
  var count = 0;
-    function handleMessage(message) {
+ function handleMessage(message) {
         var element = document.getElementById('console');
         element.value += message;
         element.scrollTop = 99999; // focus on bottom
