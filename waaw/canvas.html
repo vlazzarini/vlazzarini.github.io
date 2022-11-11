@@ -13,9 +13,8 @@
    canvas.cnvs { font-family: "Courier New"; color: #FCF477;
                      background-color: #FF0000 }
   </style>
- <script type="text/javascript" src="js/csound.js"></script>
  <script type="text/javascript">
- const url = "./node_modules/@csound/browser/dist/csound.js"; 
+ const url = "../node_modules/@csound/browser/dist/csound.js"; 
 let csound = null;
 
  code =   "instr 1 \n" +
@@ -27,7 +26,7 @@ let csound = null;
   "kcf port kcf,0.01 \n" + 
   "a2 moogvcf a1, kcf*(1+ka), 0.8 \n" +
   "al,ar freeverb a2,a2, 0.3, 0.8 \n" +
-   "outs al,ar \n"  +
+   "outs (al+ar)/2 \n"  +
   "endin";
 
 
@@ -35,23 +34,13 @@ let csound = null;
 if(csound == null) {
   const { Csound } = await import(url);
   csound = await Csound();
-  await csoundSetOption("-odac");
+await csound.setOption("-odac");
+ await csound.setOption("--0dbfs=1");
   await csound.compileOrc(code);
   await csound.start();
-  await csound.setChannel("cf", 1000);
+  await csound.setControlChannel("cf", 1000);
 }
 };
-
-
-
- function moduleDidLoad() {
-  startCsound();
- );
-
-   
- }
- function attachListeners() {
- }
 
  var count = 0;
     function handleMessage(message) {
@@ -73,36 +62,40 @@ if(playing) {
    var rect = c.getBoundingClientRect();
    x=e.clientX - rect.left
    y=e.clientY - rect.top
-   csound.setChannel('amp',y);
-   csound.setChannel('freq',x);
+   csound.setControlChannel('amp',y);
+   csound.setControlChannel('freq',x);
 
    ctx.clearRect(0,0,400,400);
    ctx.fillStyle="#0000FF";
    ctx.fillRect(x,y,10,10);
   }
  }
- function cnvs_play(e){
-   csound.Event("i1 0 -1");
-   csound.setChannel('cf',3000);
+function cnvs_play(e){
+ if(csound != null) {
+   csound.inputMessage("i1 0 -1");
+   csound.setControlChannel('cf',3000);
    var c=document.getElementById("cnvs");
    var ctx=c.getContext("2d");
    var rect = c.getBoundingClientRect();
    x=e.clientX - rect.left
    y=e.clientY - rect.top
-   csound.setChannel('amp',y);
-   csound.setChannel('freq',x);
+   csound.setControlChannel('amp',y);
+   csound.setControlChannel('freq',x);
    ctx.fillStyle="#0000FF";
    ctx.fillRect(x,y,10,10);
-   playing = true;
+playing = true;
+} else startCsound();
  }
-  function cnvs_stop(e){
-   csound.Event("i-1 0 -1");
-   csound.setChannel('cf',1000);
+function cnvs_stop(e){
+ if(csound != null) {
+   csound.inputMessage("i-1 0 -1");
+   csound.setControlChannel('cf',1000);
    var c=document.getElementById("cnvs");
    var ctx=c.getContext("2d");
    ctx.clearRect(0,0,400,400);
    playing = false;
- }
+} else startCsound();
+}
 
 function cnvs_out()
 {
@@ -118,8 +111,7 @@ function cnvs_out()
  onmousemove="cnvs_getCoordinates(event)"
  onmousedown="cnvs_play(event)"
  onmouseup="cnvs_stop(event)"
- onmouseout="cnvs_out()"
->
+ onmouseout="cnvs_out()">
 </canvas>
  </p>
   <textarea class="console" cols="55" rows="13" id="console"
