@@ -137,7 +137,13 @@ function cnvs_out()
 <center>
 <H1> Canvas Synth </H1>
 <p>
-<canvas class="cnvs" id="cnvs" width="400" height="400" style="border:1px solid#000000;"
+<canvas class="cnvs" id="cnvs" width="400" height="400"
+style="border:1px solid#000000;"
+
+ ontouchstart="cnvs_play(event)"
+ ontouchend="cnvs_stop(event)"
+ ontouchmove="cnvs_getCoordinates(event)"
+
  onmousemove="cnvs_getCoordinates(event)"
  onmousedown="cnvs_play(event)"
  onmouseup="cnvs_stop(event)"
