@@ -35,22 +35,38 @@
   </style>
  <script type="text/javascript">
  const url = "./csound.js"; 
-let csound = null;
+ let csound = null;
 
- code =   "instr 1 \n" +
-  "kfr chnget \"freq\" \n" +
-  "kamp chnget \"amp\" \n" +
-  "kcf chnget \"cf\" \n" +
-  "ka linenr (400-kamp)/400,.01,0.1,0.01 \n" +
-  "a1 vco2   ka,440+kfr \n" +
-  "kcf port kcf,0.01 \n" + 
-  "a2 moogvcf a1, kcf*(1+ka), 0.8 \n" +
-  "al,ar freeverb a2,a2, 0.3, 0.8 \n" +
-   "outs (al+ar)/2 \n"  +
-  "endin";
+code = `
+  instr 1 
+  kfr chnget "freq"
+  kamp chnget "amp"
+  kcf chnget "cf"  
+  ka linenr (400-kamp)/400,.01,0.1,0.01
+  a1 vco2   ka,440+kfr
+  kcf port kcf,0.01
+  a2 moogvcf a1, kcf*(1+ka), 0.8 
+  al,ar freeverb a2,a2, 0.3, 0.8
+   out (al+ar)/2 
+  endin
+`;
 
 
- const startCsound = async () => {
+let count = 0;
+const handleMessage = message => {
+        var element = document.getElementById('console');
+        if(count == 0) element.innerHTML = "";
+        element.innerHTML += message;
+        element.innerHTML += '\n';
+        element.scrollTop = 99999; // focus on bottom
+        count += 1;
+        if(count == 1000) {    
+           count = 0;
+        }
+};
+
+
+const startCsound = async () => {
 if(csound == null) {
   const { Csound } = await import(url);
   csound = await Csound();
@@ -59,24 +75,15 @@ if(csound == null) {
   await csound.compileOrc(code);
   await csound.start();
   await csound.setControlChannel("cf", 1000);
-  document.getElementById('console').innerHTML = "Csound: running";
+  await csound.on("message", handleMessage);
+  document.getElementById('console').innerHTML = "Csound: click on canvas to play";
 }
 };
 
- var count = 0;
- function handleMessage(message) {
-        var element = document.getElementById('console');
-        element.value += message;
-        element.scrollTop = 99999; // focus on bottom
-        count += 1;
-        if(count == 1000) {
-           element.value = ' ';
-           count = 0;
-        }
-  }
+
 
  var playing = false;
- function cnvs_getCoordinates(e) {
+function cnvs_getCoordinates(e) {
 if(playing) {
    var c=document.getElementById("cnvs");
    var ctx=c.getContext("2d");
@@ -104,9 +111,10 @@ function cnvs_play(e){
    csound.setControlChannel('freq',x);
    ctx.fillStyle="#0000FF";
    ctx.fillRect(x,y,10,10);
-playing = true;
+   playing = true;
 } else startCsound();
- }
+}
+
 function cnvs_stop(e){
  if(csound != null) {
    csound.inputMessage("i-1 0 -1");
@@ -126,8 +134,9 @@ function cnvs_out()
 </script>
 </head>
 <body>
+<center>
 <H1> Canvas Synth </H1>
-  <p>
+<p>
 <canvas class="cnvs" id="cnvs" width="400" height="400" style="border:1px solid#000000;"
  onmousemove="cnvs_getCoordinates(event)"
  onmousedown="cnvs_play(event)"
@@ -136,7 +145,8 @@ function cnvs_out()
 </canvas>
  </p>
   <textarea class="console" cols="55" rows="13" id="console"
-  value="">Csound: not loaded</textarea>
+value="">Csound: click on canvas to load</textarea>
+</center>
 </body>
 </html>
 
