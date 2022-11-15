@@ -65,10 +65,11 @@ const handleMessage = message => {
         element.innerHTML = message;
 };
 
-let actx = new AudioContext();
+let actx = null
 const startCsound = async () => {
 if(csound == null) {
   const { Csound } = await import(url);
+  actx = new AudioContext();
   csound = await Csound({audioContext: actx});
   await csound.setOption("-odac");
   await csound.setOption("--0dbfs=1");
