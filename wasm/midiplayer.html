@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<!--
+ csound.js MIDI file player example
+ Copyright (C) 2013 V Lazzarini
+-->
+
+<head>
+    <title>WebAudio Csound</title>
+    <style type="text/css">
+    html, body {
+      font-family: Monospace;
+      color: #bf94f7;
+      background-color: #000055;
+    }
+
+    #console {
+        font-family:  Monospace;
+        color: #b5b6ff;
+        background-color: #000000;
+        font-size: 16px;
+        width: 805px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-style: solid;
+        padding: 20px 0px;
+      }
+
+     #filebut {
+       padding: 20px 0px;
+     }
+     input[type=file] {
+       font-family: Monospace;
+       font-size: 24px;
+       background-color: #b5b6ff;
+       color: #000000;
+     }
+
+     H1 {
+       font-size: 36px;
+     }
+
+     button {
+        margin: auto;
+        font-family: Monospace;
+        width: 805px;
+        padding: 10px 0px;
+        font-size: 24px;
+        background-color: #b5b6ff;
+     }
+    </style>
+<script type="text/javascript">
+ const url = "./csound.js"; 
+let csound = null;
+let actxt = null;
+
+let count = 0;
+const handleMessage = message => {
+        var element = document.getElementById('console');
+        if(count == 0) element.innerHTML = "";
+        element.innerHTML += message;
+        element.innerHTML += '\n';
+        element.scrollTop = 99999; // focus on bottom
+        count += 1;
+        if(count == 1000) {    
+           count = 0;
+        }
+};
+
+
+async function copyUrlToLocal(src, dest) {
+csd = await fetch(src)
+dat = await csd.arrayBuffer();
+await csound.fs.writeFile(dest, new Uint8Array(dat));
+}
+
+async function createCsound() {
+if(csound ==  null) {
+actx = new AudioContext;
+const { Csound } = await import(url);
+csound = await Csound({audioContext: actx, outputChannelCount: 2});
+await copyUrlToLocal("./gm.csd", "my.csd");
+await copyUrlToLocal("./sf_GMbank.sf2", "sf_GMbank.sf2");
+await csound.on("message", handleMessage);
+}
+}
+
+async function loadMidiFile(evt) {
+  var files = evt.target.files;
+  var f = files[0];
+  var objectURL = window.URL.createObjectURL(f);
+  await copyUrlToLocal(objectURL, "midifile.mid");
+  await csound.compileCsd("my.csd");
+  actx.suspend();
+  await csound.start();
+}
+
+let playing = false;
+async function handleFileSelect(evt) {
+ if(csound == null) {
+  await createCsound();
+  await loadMidiFile(evt);
+} else {
+  document.getElementById('console').innerHTML = "";
+  document.getElementById('playButton').disabled = true;
+  await csound.stop();
+  csound = null;
+  await createCsound();
+  await loadMidiFile(evt);
+ }
+ playing = false;
+ document.getElementById('playButton').disabled = false;
+ document.getElementById('playButton').innerText = "Play";
+}
+
+
+function togglePlay() {
+if(playing){
+actx.suspend();
+document.getElementById('playButton').innerText = "Play";
+playing=false;
+} else {
+actx.resume();
+document.getElementById('playButton').innerText = "Pause";
+playing=true;
+}
+}
+
+function main() {
+const button = document.getElementById('playButton');
+document.getElementById('files').
+addEventListener('change', handleFileSelect, false);
+button.disabled = true;
+button.addEventListener('click', togglePlay);
+}
+
+</script>
+</head>
+
+<body onload="main()">
+    <H1> MIDI File Player </H1>
+    <div id="filebut">
+    <input type="file" accept=".mid" id="files" name="file" />
+    </div>
+   <p> 
+   <button id="playButton">Play</button>
+    </p>
+    <p>
+      <textarea class="console" cols="65" rows="20" id="console">
+      Csound: load MIDI file</textarea>
+    <p>
+</body>
+
+</html>
