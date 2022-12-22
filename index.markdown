@@ -4,3 +4,7 @@
 
 layout: home
 ---
+
+[Miscellaneous Csound Wasm Examples]("./wasm/index.html")
+
+[The Absolute Vanilla Webaudio Csound Tutorial]("./vanilla/index.html")
