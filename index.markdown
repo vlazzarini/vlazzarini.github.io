@@ -5,6 +5,6 @@
 layout: home
 ---
 
-[Miscellaneous Csound Wasm Examples]("./wasm/index.html")
+[Miscellaneous Csound Wasm Examples]("https://vlazzarini.github.io/wasm/index.html")
 
-[The Absolute Vanilla Webaudio Csound Tutorial]("./vanilla/index.html")
+[The Absolute Vanilla Webaudio Csound Tutorial]("https://vlazzarini.github.io/vanilla/index.html")
