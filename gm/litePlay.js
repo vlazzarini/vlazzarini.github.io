@@ -5,7 +5,7 @@ const csoundjs =
 let csound = null;
 // audio context
 let audio_context = null;
-// source URL
+// source URL for assets
 const srcurl = "https://vlazzarini.github.io/gm/";
 // CSD file name
 const csd = "./gm.csd";
@@ -47,10 +47,12 @@ async function copyUrlToLocal(src, dest) {
     await csound.fs.writeFile(dest, new Uint8Array(dat));
 }
 
+// generic midi message
 export function midi(stat, b1, b2) {
     csound.midiMessage(stat, b1, b2);
 }
 
+// midi program message
 export function midiProgram(n, chn = 1) {
     if (chn >= 1 && chn <= 16) csound.midiMessage(chn + 191, n, 0);
 }
@@ -60,6 +62,7 @@ const globalObj = {
     BPM: 60.0
 };
 
+// Csound instrument class
 class Instrument {
     constructor(pgm, isDrums = false, rel = 0.1, instr = 10) {
         this.pgm = pgm;
@@ -140,28 +143,33 @@ class Instrument {
     }
 }
 
-const MSEC = 1000;
+// return seconds from beats
 export function secs(b) {
     return (b * 60.0) / globalObj.BPM;
 }
 
+// return beats from seconds
 export function beats(s) {
     return (s * globalObj.BPM) / 60.0;
 }
 
+// set beats per minute
 export function setBpm(bpm) {
     globalObj.BPM = bpm;
 }
 
+// returns beats per minute
 export function getBpm() {
     return globalObj.BPM; 
 }
 
+// current audio clock time
 export function audioClock() {
     if (audio_context) return audio_context.currentTime;
     else return 0;
 }
 
+// sequencer object
 export const sequencer = {
     clickOn: false,
     seqList: [],
@@ -258,6 +266,7 @@ export const sequencer = {
     },
 };
 
+// eventList object
 export const eventList = {
     events: [],
     play: function (when = 0, evtLst = this.events) {
@@ -299,6 +308,7 @@ export const eventList = {
     },
 };
 
+// instrument collection
 export const grandPiano = new Instrument(0);
 export const  piano = grandPiano;
 export const  brightPiano = new Instrument(1);

@@ -1,0 +1,206 @@
+---
+layout: post
+title:  "Time in JS"
+date:   2022-12-24 12:00:00
+categories: blogpost
+---
+
+Time in JS
+======
+
+With the advent of the Web Audio API in JS, the topic of time has been
+extensively covered in many blog posts and other internet
+articles. This discussion reports a personal experience, which may or
+may not be that useful more generally, as it pertains some specific
+use cases.
+
+Background
+-----
+
+The whole story starts with an idea to develop a simple API for music
+computing in JS. Now, you can't have a better premise for reinventing
+the wheel than this, given the myriad such projects that sprouted since the
+Web Audio API was released. Basically, they're two-a-penny by now,
+therefore it seems a bit stupid to spend time working on this.
+
+Nevertheless, there are a few reasons for doing it:
+
+* None of the existing systems have such an awesome sound synthesis
+engine as Csound behind it.
+* The system could be a playbed for experimentation of (or if we want to
+be hifalutin about it, for "reasoning about") music computing.
+* Most projects using Csound are designed to be used by Csounders, it
+could be interesting to see if we could hide Csound and just use a JS
+interface.
+* Finally, I would attempt a simple design, simple interface, within
+the scope of what we have been calling *lite coding* (a pun
+on *live coding*, which is often the complete opposite of simple).
+
+To start this, I took advantage of some Csound code I had put together over a
+decade ago. This adapted a manual example by Istvan Varga for the
+fluidsynth plugin opcodes to use the builtin soundfont engine in
+Csound. This gives direct access to a collection of 128 different rompler
+programs, plus a few drum kits, which I thought would just about
+provide all the synthesis I needed for the experiment.
+
+Csound is then loaded and hidden away. Access is mediated via
+Javascript, 
+
+```
+instrument.play() // plays a sound immediately
+instrument.stop() // stops playing it
+```
+
+and that is all we need. Now we can start using it to play sounds. You
+might ask, why not replace `instrument` by Web Audio node and do the
+same? The answer is very simple: there are not 128 rompler instruments
+plus a few drumkits available in the Web Audio API without any
+programming effort whatsoever. Plus Csound is more than a magnitude
+more powerful than the Web Audio API can ever be, if I ever want to
+expand this.
+
+JS Time 
+-------
+
+So now we turn to playing these instruments. We make these available
+in JS by creating an instrument class and instantiating a few generic
+ones like piano, organ, bass, drums, synth, etc. It is possible to
+play them in real time at the JS console and also directly via MIDI by
+plugging a keyboard (something else we get for free by using Csound).
+That's good, but what about creating some patterns, loops, etc.?
+
+The API is designed for instruments to respond immediately, so we need
+to find a way to fire them. For this, we could use a JS timers, such
+as `setTimeout()`, which allows us to fire an event after a given
+time. We could then apply a principle that works extremely well within
+Csound programming, *recursion*, which in this case is sometimes more
+specifically called *time recursion*. Here's the idea, set a function
+to play the sound and then schedule itself to repeat after some time
+has elapsed,
+
+```
+  cymbals = function (dur) {
+    drums.play(cymbal,0.7)
+    setTimeout(cymbals.bind(null,dur), MSEC*secs(dur));
+  };
+```
+
+In this example, we get the drums to play a cymbal sound (with
+amplitude set to 0.7), and then schedule the function to be run again
+after a certain duration. The duration is in beats and we have a
+translating function, `secs()`, to give use the elapsed time in
+seconds (and then this is passed in milliseconds to the JS timer.
+This way we can set the tempo in BPM independently. Prime this
+by calling
+
+```
+cymbals(1);
+```
+
+and we get a stream of cymbal pulses. We can get functions defined
+for kicks and snares, and set up a rhythm pattern like
+
+```
+cymbals(1);
+kicks(1.5);
+snares(2);
+```
+
+The easy thing with drum sounds is that they do necessarily need to be
+stopped as the repeated event will just replace the previous one. 
+Melodic instrument patterns could use the same idiom with some
+modifications. For example, let's create a bass line,
+
+```
+  basses = function(note,dur,vel=0.6) {
+    bass.play(note,vel);
+    if(vel > 0) vel = 0;
+    else {
+      vel = 0.6;
+      note += 7
+      if(note > Eb[4]) note -= 24;
+    }
+    setTimeout(basses.bind(null,note,dur,vel),MSEC*secs(dur)/2);
+  }
+  }
+  ```
+
+In this case we need to check if the note was played and stop it in
+the next call, using two timer repeats for each sound. We could
+modify this to use a single call instead, but this is the absolute
+simplest way to deal with the issue of starting and stopping sounds.
+Additionally, we make each sound have a different note by appying
+the interval of 7 semitones (a fifth), and limiting it to a given
+note. Then we can prime the pattern to play a sound per beat,
+
+```
+basses(Eb[3],.5);
+```
+
+starting from a given note. You can check how well these simple ideas
+work by running
+[this sketch](https://editor.p5js.org/vlazzarini/sketches/gqatdp9V6).
+One of the the great things about this set up is that the development
+can be done all online using the p5.js editor.
+
+Results
+------
+
+Does it work? Well, it does... kind of, or maybe not really. Set it
+playing and you get the expected rhythmic pattern going, as it seems,
+very well. But wait, after maybe a few seconds, some oddities start to
+appear in the bassline, and after a while the whole thing falls apart.
+
+The bass is the first one to go, as if the player gets tired (it's
+actually a good simulation of some bassists I have come to know).
+This is mainly to do with the fact that each sound we hear is
+made up of two scheduled timer calls. This is very prone to get
+disrupted by delays. Then the drum patterns gets also messed up,
+as they get out of sync with each other.
+
+The JS timer is simply not guaranteed to come in time, and often gets
+delayed. It is interesting to see that it starts off reasonably well,
+and for the sound events that are based on a single call it stays
+running with less disruption for a little while, but then it gets
+increasingly irregular later on. Any activity on the browser graphics,
+screen, etc and the timing of the calls will get disrupted further.
+
+Conclusions
+-------
+
+So this was an interesting experiment, even if it demonstrated the
+inadequacy of the JS timers. There is a few important things to note,
+however,
+
+* A very simple design is possible, and we can use this as basis for
+further experimentation.
+* While the JS timer is not resilient enough for a strongly-timed
+music environment, it may be possible to use it in musical situations
+where time is more fluid (not all music needs to be beat-based).
+* The mechanism offered here is conceptually very powerful for music
+programming. Recursion, whether implemented by JS timers, or by the
+strongly-timed Csound scheduler, is an important principle. It allows
+us to express musical sequences in a very compact way.
+* Even for applications where timing is important, what we have shown
+here may be usable for short segments. Perhaps if the design is
+modified to hook up patterns to be fired by a single callback.
+
+We can now move on and examine some alternatives to using JS timers
+solely and see whether we can improve things. We can discuss that in
+the next post.
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
