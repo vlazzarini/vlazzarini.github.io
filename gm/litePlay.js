@@ -224,6 +224,9 @@ export const sequencer = {
                             if (sched >= 0 && evt[0] >= 0 && this.on)
                                 theInstr.play(evt[0], amp, sched + i * bbs, dur);
                         } else {
+                            amp = this.amp;
+                            theInstr = this.instr;
+                            dur = theInstr.isDrums ? 0 : this.bbs;
                             for (const el of evt) {
                                 if (el.length > 1) amp = el[1];
                                 if (el.length > 2) sched += el[2];
