@@ -201,24 +201,42 @@ export const sequencer = {
             n: 0,
             on: true,
             play: function (sched) {
-                const what = this.what, bbs = this.bbs;
-                let amp = this.amp,theInstr = this.instr,
+                const what = this.what,
+                      bbs = this.bbs;
+                let amp = this.amp,
+                    theInstr = this.instr,
                     dur = theInstr.isDrums ? 0 : this.bbs;
                 for (let i = 0; i < 1 / bbs; i++) {
-                    let evt = what[this.n], snd = evt;
+                    let evt = what[this.n];
                     this.n = this.n != what.length - 1 ? this.n + 1 : 0;
-                    if (typeof evt === "object") {
-                        snd = evt[0];
-                        if (evt.length > 1) amp = evt[1];
-                        if (evt.length > 2) sched += evt[2];
-                        if (evt.length > 3) dur = evt[3];
-                        if (evt.length > 4) {
-                            theInstr = evt[4];
-                            dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
+                    if (typeof evt !== "object") {
+                        if (sched >= 0 && evt >= 0 && this.on)
+                            theInstr.play(evt, amp, sched + i * bbs, dur);
+                    } else {
+                        if (typeof evt[0] !== "object") {
+                            if (evt.length > 1) amp = evt[1];
+                            if (evt.length > 2) sched += evt[2];
+                            if (evt.length > 3) dur = evt[3];
+                            if (evt.length > 4) {
+                                theInstr = evt[4];
+                                dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
+                            }
+                            if (sched >= 0 && evt[0] >= 0 && this.on)
+                                theInstr.play(evt[0], amp, sched + i * bbs, dur);
+                        } else {
+                            for (const el of evt) {
+                                if (el.length > 1) amp = el[1];
+                                if (el.length > 2) sched += el[2];
+                                if (el.length > 3) dur = el[3];
+                                if (el.length > 4) {
+                                    theInstr = el[4];
+                                    dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
+                                }
+                                if (sched >= 0 && el[0] >= 0 && this.on)
+                                    theInstr.play(el[0], amp, sched + i * bbs, dur);
+                            }
                         }
-                    } 
-                    if (sched >= 0 && snd >= 0 && this.on)
-                        theInstr.play(snd, amp, sched + i * bbs, dur);
+                    }
                 }
             },
         };
