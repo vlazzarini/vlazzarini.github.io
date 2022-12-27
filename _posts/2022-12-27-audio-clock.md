@@ -9,7 +9,7 @@ In the previous post, I explored the simplest form of timing in JS,
 which is to use builtin timers such as `setTimeout()` to fire events
 at specific times. We noticed that within a music context, this
 approach is not resilient enough for applications requiring a steady
-pulse, whch are strongly timed. We can now investigate what the
+pulse, which are strongly timed. We can now investigate what the
 alternatives are. The first one of these is the graphics drawing
 clock, provided by `requestAnimationFrame()`, but we read it
 may be called about 60 times a second, which does not allow us
@@ -55,8 +55,8 @@ Correcting Time
 Let's then try the simplest approach. We can still use the JS timer
 mechanism to fire events, but now having access to a much better
 clock, we can apply a correction to the callback time. This can be
-done by taking the difference current time (from `audioClock()`) 
-and the expected time of the event. When that differemce is zero or 
+done by taking the difference between the current time (from `audioClock()`) 
+and the expected time of the event. When that is zero or 
 greater, it's time to play; if it's not, we do nothing and recurse.
 
 
