@@ -61,7 +61,7 @@ greater, it's time to play; if it's not, we do nothing and recurse.
 
 
 This means that events may be scheduled late, but we are able to
-record how late and so can adjust the time for the next event. The
+record how late and so can adjust the time for the next one. The
 callbacks are supposed to be run every millisecond; in practice that
 is never quite the case, however the assumption is that they will be
 called as soon as possible.
