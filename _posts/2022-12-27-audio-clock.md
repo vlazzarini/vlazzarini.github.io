@@ -87,7 +87,7 @@ percussion = function (instr, vel, dur, old) {
 
 ```
 
-A similar function is defined for the bass line; as before it applies
+A similar function is defined for the bass line; as before, it applies
 an interval to create a 12-tone sequence for musical movement, 
 and splits the sound event into start and stop calls. A
 number of these sequences are primed with the current audio time 
