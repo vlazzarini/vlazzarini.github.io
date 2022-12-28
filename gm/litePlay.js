@@ -192,58 +192,58 @@ export const sequencer = {
             setTimeout(this.click.bind(this, audioClock() - delta));
         } else setTimeout(this.click.bind(this, ref));
     },
-  sequence: function (i, w, a, b) {
-    return {
-      instr: i,
-      what: w,
-      amp: a,
-      bbs: b,
-      n: 0,
-      on: true,
-      play: function (sched) {
-        const what = this.what,
-          bbs = this.bbs;
-        let amp = this.amp,
-          theInstr = this.instr,
-          dur = theInstr.isDrums ? 0 : this.bbs;
-        for (let i = 0; i < 1 / bbs; i++) {
-          let evt = what[this.n];
-          this.n = this.n != what.length - 1 ? this.n + 1 : 0;
-          if (typeof evt !== "object") {
-            if (sched >= 0 && evt >= 0 && this.on)
-              theInstr.play(evt, amp, sched + i * bbs, dur);
-          } else {
-            if (typeof evt[0] !== "object") {
-              if (evt.length > 1) amp = evt[1];
-              if (evt.length > 2) sched += evt[2];
-              if (evt.length > 3) dur = evt[3];
-              if (evt.length > 4) {
-                theInstr = evt[4];
-                dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
-              }
-              if (sched >= 0 && evt[0] >= 0 && this.on)
-                theInstr.play(evt[0], amp, sched + i * bbs, dur);
-            } else {
-              for (const el of evt) {
-               amp = this.amp;
-               theInstr = this.instr;
-               dur = theInstr.isDrums ? 0 : this.bbs;
-                if (el.length > 1) amp = el[1];
-                if (el.length > 2) sched += el[2];
-                if (el.length > 3) dur = el[3];
-                if (el.length > 4) {
-                  theInstr = el[4];
-                  dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
+    sequence: function (i, w, a, b) {
+        return {
+            instr: i,
+            what: w,
+            amp: a,
+            bbs: b,
+            n: 0,
+            on: true,
+            play: function (sched) {
+                const what = this.what,
+                      bbs = this.bbs;
+                let amp = this.amp,
+                    theInstr = this.instr,
+                    dur = theInstr.isDrums ? 0 : this.bbs;
+                for (let i = 0; i < 1 / bbs; i++) {
+                    let evt = what[this.n];
+                    this.n = this.n != what.length - 1 ? this.n + 1 : 0;
+                    if (typeof evt !== "object") {
+                        if (sched >= 0 && evt >= 0 && this.on)
+                            theInstr.play(evt, amp, sched + i * bbs, dur);
+                    } else {
+                        if (typeof evt[0] !== "object") {
+                            if (evt.length > 1) amp = evt[1];
+                            if (evt.length > 2) sched += evt[2];
+                            if (evt.length > 3) dur = evt[3];
+                            if (evt.length > 4) {
+                                theInstr = evt[4];
+                                dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
+                            }
+                            if (sched >= 0 && evt[0] >= 0 && this.on)
+                                theInstr.play(evt[0], amp, sched + i * bbs, dur);
+                        } else {
+                            for (const el of evt) {
+                                amp = this.amp;
+                                theInstr = this.instr;
+                                dur = theInstr.isDrums ? 0 : this.bbs;
+                                if (el.length > 1) amp = el[1];
+                                if (el.length > 2) sched += el[2];
+                                if (el.length > 3) dur = el[3];
+                                if (el.length > 4) {
+                                    theInstr = el[4];
+                                    dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
+                                }
+                                if (sched >= 0 && el[0] >= 0 && this.on)
+                                    theInstr.play(el[0], amp, sched + i * bbs, dur);
+                            }
+                        }
+                    }
                 }
-                if (sched >= 0 && el[0] >= 0 && this.on)
-                  theInstr.play(el[0], amp, sched + i * bbs, dur);
-              }
-            }
-          }
-        }
-      },
-    };
-  },
+            },
+        };
+    },
     play: function (instr, what, howLoud, bbs = 1) {
         let id = this.seqList.length;
         if (bbs > 1) bbs = 1;
@@ -318,7 +318,8 @@ export const eventList = {
                 t += dur;
                 dur = instr.howLong;
             }
-            mess += instr.score(what, amp, t, dur);
+           if(what >= 0)
+              mess += instr.score(what, amp, t, dur);
         }
         return {
             score: mess,
@@ -327,7 +328,15 @@ export const eventList = {
             },
         };
     },
+    add: function(evt) {
+        this.events.push(evt);
+    },
+    clear: function() { this.events = []; },
 };
+
+function play(...theList) {
+    eventList.create(theList).play();
+}
 
 // instrument collection
 export const grandPiano = new Instrument(0);
