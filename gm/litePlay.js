@@ -334,7 +334,7 @@ export const eventList = {
     clear: function() { this.events = []; },
 };
 
-function play(...theList) {
+export function play(...theList) {
     eventList.create().play(0, theList);
 }
 
