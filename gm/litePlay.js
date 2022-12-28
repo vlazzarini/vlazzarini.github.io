@@ -294,7 +294,7 @@ export const eventList = {
         this.score(when, evtLst).play();
         this.events = evtLst;
     },
-    create: function (evtLst = []) {
+    create: function (...evtLst) {
         let e = Object.create(eventList);
         e.events = evtLst;
         return e;
@@ -335,7 +335,7 @@ export const eventList = {
 };
 
 function play(...theList) {
-    eventList.create(theList).play();
+    eventList.create().play(0, theList);
 }
 
 // instrument collection
