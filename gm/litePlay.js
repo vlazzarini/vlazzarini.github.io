@@ -95,7 +95,7 @@ class Instrument {
         }
 
         if (howLong <= 0) this.on[what] = 1;
-        if (howLoud < 0) {
+        if (howLoud <= 0) {
             instr *= -1;
             this.on[what] = 0;
         }
