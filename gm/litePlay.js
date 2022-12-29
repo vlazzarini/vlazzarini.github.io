@@ -171,6 +171,10 @@ class Instrument {
     }
 }
 
+function isInstr(instr) {
+    return (instr instanceof Instrument);
+}
+
 // return seconds from beats
 export function secs(b) {
     return (b * 60.0) / globalObj.BPM;
@@ -245,7 +249,7 @@ export const sequencer = {
                             if (evt.length > 1) amp = evt[1];
                             if (evt.length > 2) sched += evt[2];
                             if (evt.length > 3) dur = evt[3];
-                            if (evt.length > 4) {
+                            if (evt.length > 4 && isInstr(evt[4])) {
                                 theInstr = evt[4];
                                 dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
                             }
@@ -259,7 +263,7 @@ export const sequencer = {
                                 if (el.length > 1) amp = el[1];
                                 if (el.length > 2) sched += el[2];
                                 if (el.length > 3) dur = el[3];
-                                if (el.length > 4) {
+                                if (el.length > 4 && isInstr(el[4])) {
                                     theInstr = el[4];
                                     dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
                                 }
@@ -273,10 +277,12 @@ export const sequencer = {
         };
     },
     play: function (instr, what, howLoud, bbs = 1) {
-        let id = this.seqList.length;
-        if (bbs > 1) bbs = 1;
-        this.seqList.push(this.sequence(instr, what, howLoud, bbs));
-        return id;
+        if(isInstr(instr)) {
+            let id = this.seqList.length;
+            if (bbs > 1) bbs = 1;
+            this.seqList.push(this.sequence(instr, what, howLoud, bbs));
+            return id;
+        } else return -1;
     },
     start: function () {
         if(!this.clickOn) {
@@ -329,25 +335,24 @@ export const eventList = {
     },
     score: function (when = 0, evtLst = this.events) {
         let mess = "";
-        let instr = piano,
-            amp = piano.howLoud,
-            dur = piano.howLong,
+        let instr, amp, dur,
             t = when, what;
         for (const evt of evtLst) {
             if (typeof evt === "object") {
                 what = evt[0];
-                instr = evt.length > 4 ? evt[4] : instr;
+                instr = evt.length > 4 && isInstr(evt[4]) ? evt[4] : defInstr;
                 dur = evt.length > 3 ? evt[3] : dur;
-                t = evt.length > 2 ? evt[2] : t + dur;
+                t = evt.length > 2 ? evt[2] :   t;
                 amp = evt.length > 1 ? evt[1] : amp;
             } else {
                 what = evt;
                 amp = instr.howLoud;
-                t += dur;
                 dur = instr.howLong;
+                instr = defInstr;
             }
             if(what >= 0)
                 mess += instr.score(what, amp, t, dur);
+            t += dur;
         }
         return {
             score: mess,
@@ -362,13 +367,21 @@ export const eventList = {
     clear: function() { this.events = []; },
 };
 
+// generic play
 export function play(...theList) {
     eventList.create().play(0, theList);
+}
+
+// set default instrument
+export function instrument(instr) {
+    if(isInstr(instr)) defInstr = instr;
+    return defInstr;
 }
 
 // instrument collection
 export const grandPiano = new Instrument(0);
 export const  piano = grandPiano;
+let defInstr = piano;
 export const  brightPiano = new Instrument(1);
 export const  electricGrand = new Instrument(2);
 export const  honkyPiano = new Instrument(3);
