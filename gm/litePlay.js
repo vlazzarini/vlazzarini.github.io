@@ -126,20 +126,48 @@ class Instrument {
         return [what, howLoud, when, howLong, this];
     }
 
-    play(what = this.what, howLoud = this.howLoud, when = 0, howLong = 0) {
-        csound.inputMessage(this.score(what, howLoud, when, howLong));
-        return what;
+
+    play(...evtLst) {
+        const instr = this.instr;
+        let amp = this.howLoud,
+            dur = 0,
+            when = 0, what, mess = "";
+        if (evtLst.length == 0) {
+            mess += this.score(this.what,this.howLoud,0,0);
+        } else {
+            for (const evt of evtLst) {
+                if (typeof evt === "object") {
+                    what = evt[0];
+                    dur = evt.length > 3 ? evt[3] : dur;
+                    when = evt.length > 2 ? evt[2] : 0;
+                    amp = evt.length > 1 ? evt[1] : amp;
+                } else 
+                    what = evt;
+                mess += this.score(what, amp, when, dur);
+            }
+        }
+        csound.inputMessage(mess);
     }
 
-    stop(what = -1, when = 0) {
-        if (what < 0) {
-            for (what = 0; what < 128; what++) {
+    stop(...evtLst) {
+        let mess = "";
+        if (evtLst.length == 0) {
+            for (let what = 0; what < 128; what++) {
                 if (this.on[what]) {
-                    csound.inputMessage(this.score(what, 0, when, 0));
+                    mess += this.score(what, 0, 0, 0);
                 }
             }
-        } else csound.inputMessage(this.score(what, 0, when, 0));
-        return what;
+        } else {
+            for (const evt of evtLst) {
+                let what, when = 0
+                if(evt === 'object'){
+                    what = evt[0];
+                    when = evt.length > 2 ? evt[2] : 0;
+                } else what = evt;
+                mess += this.score(what, 0, when, 0);
+            }
+        }
+        csound.inputMessage(mess);
     }
 }
 
@@ -211,7 +239,7 @@ export const sequencer = {
                     this.n = this.n != what.length - 1 ? this.n + 1 : 0;
                     if (typeof evt !== "object") {
                         if (sched >= 0 && evt >= 0 && this.on)
-                            theInstr.play(evt, amp, sched + i * bbs, dur);
+                            theInstr.play([evt, amp, sched + i * bbs, dur]);
                     } else {
                         if (typeof evt[0] !== "object") {
                             if (evt.length > 1) amp = evt[1];
@@ -222,7 +250,7 @@ export const sequencer = {
                                 dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
                             }
                             if (sched >= 0 && evt[0] >= 0 && this.on)
-                                theInstr.play(evt[0], amp, sched + i * bbs, dur);
+                                theInstr.play([evt[0], amp, sched + i * bbs, dur]);
                         } else {
                             for (const el of evt) {
                                 amp = this.amp;
@@ -236,7 +264,7 @@ export const sequencer = {
                                     dur = dur > 0 ? dur : theInstr.isDrums ? 0 : t;
                                 }
                                 if (sched >= 0 && el[0] >= 0 && this.on)
-                                    theInstr.play(el[0], amp, sched + i * bbs, dur);
+                                    theInstr.play([el[0], amp, sched + i * bbs, dur]);
                             }
                         }
                     }
@@ -318,8 +346,8 @@ export const eventList = {
                 t += dur;
                 dur = instr.howLong;
             }
-           if(what >= 0)
-              mess += instr.score(what, amp, t, dur);
+            if(what >= 0)
+                mess += instr.score(what, amp, t, dur);
         }
         return {
             score: mess,
