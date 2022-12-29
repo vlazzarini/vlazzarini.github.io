@@ -346,6 +346,7 @@ export const eventList = {
                 amp = evt.length > 1 ? evt[1] : amp;
             } else {
                 what = evt;
+                instr = defInstr;
                 amp = instr.howLoud;
                 dur = instr.howLong;
                 instr = defInstr;
