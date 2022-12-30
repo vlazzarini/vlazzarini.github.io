@@ -11,7 +11,7 @@ ichn = 1
 lp1: massign   ichn, 0
 loop_le   ichn, 1, 16, lp1
 pgmassign 0, 0
-gisf   sfload "gm.sf2"
+gisf sfload "gm.sf2"
 sfpassign  0, gisf
 
 /* this instrument parses MIDI input
@@ -148,7 +148,7 @@ endin
 
 //ifn ftgen 8,0,1024,7,0,1024,0
 //tableiw 1,100,8
-schedule(10,0,5,60,127,0,100,0.5)
+//schedule(10,0,5,60,127,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
 </CsInstruments>
