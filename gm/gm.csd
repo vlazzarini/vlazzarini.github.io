@@ -131,10 +131,24 @@ kv table p7, 2
 kvol tablei kv, 5 
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-       outs a1*kvol*(0.5-kpan/2)*kenv, a2*kvol*(0.5+kpan/2)*kenv 
+a1 *= kvol*(0.5-kpan/2)*kenv
+a2 *= kvol*(0.5+kpan/2)*kenv
+krev table p7,8
+garev1 += a1*krev
+garev2 += a2*krev
+       outs a1, a2 
 endin
 
-//schedule(10,0,5,60,100,0,0,0.5)
+instr 100
+a1, a2 freeverb garev1, garev2, 0.7, 0.35
+outs a1, a2
+garev1 = 0
+garev2 = 0
+endin
+
+//ifn ftgen 8,0,1024,7,0,1024,0
+//tableiw 1,100,8
+//schedule(10,0,5,60,100,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
 </CsInstruments>
@@ -148,7 +162,9 @@ f3 0 1024 -7 64 1024 127
 f5 0 128 5 0.1 128 1   /* velocity mapping: less nuanced */
 f6 0 128 5 0.01  128 1 /* velocity mapping: more nuanced */
 f7 0 128 7 0 128 0  /* note on table */
+f8 0 1024 7 0 1024 0  /* reverb amount table */
 i 1 0 z
+i 100 0 z
 e
 </CsScore>
 </CsoundSynthesizer> 
