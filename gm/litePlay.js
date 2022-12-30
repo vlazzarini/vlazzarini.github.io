@@ -169,6 +169,10 @@ class Instrument {
         }
         csound.inputMessage(mess);
     }
+
+   reverb(amount) {
+    csound.tableSet(8, this.chn, amount);
+  }
 }
 
 function isInstr(instr) {
