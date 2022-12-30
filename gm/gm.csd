@@ -123,16 +123,16 @@ endin
 
 /* this is the GM soundfont synthesizer instrument */
 instr 10
-kenv linenr 10,0.001,p8,0.001
+aenv linenr 1,0,p8,0.01
 iamp table p5, 5
 imicro = 2^(frac(p4)/12)
-a1, a2 sfplay p5, int(p4), iamp, imicro, p6, 0, 0, 2
+a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro, p6, 0, 0, 2
 kv table p7, 2
 kvol tablei kv, 5 
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-a1 *= kvol*(0.5-kpan/2)*kenv
-a2 *= kvol*(0.5+kpan/2)*kenv
+a1 *= kvol*(0.5-kpan/2)
+a2 *= kvol*(0.5+kpan/2)
 krev table p7,8
 garev1 += a1*krev
 garev2 += a2*krev
@@ -148,7 +148,7 @@ endin
 
 //ifn ftgen 8,0,1024,7,0,1024,0
 //tableiw 1,100,8
-//schedule(10,0,5,60,100,0,100,0.5)
+schedule(10,0,5,60,127,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
 </CsInstruments>
