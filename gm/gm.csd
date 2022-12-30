@@ -3,9 +3,9 @@
 -odac -d 
 </CsOptions>
 <CsInstruments>
-nchnls=2
+nchnls = 2
 ksmps = 64
-            
+0dbfs = 1            
 
 ichn = 1
 lp1: massign   ichn, 0
