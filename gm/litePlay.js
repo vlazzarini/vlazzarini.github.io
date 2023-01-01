@@ -36,7 +36,7 @@ async function startEngine() {
     }
 };
 
-export engine = startEngine();
+export const engine = startEngine();
 
 // copy URL to local file
 async function copyUrlToLocal(src, dest) {
