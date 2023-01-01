@@ -36,8 +36,7 @@ async function startEngine() {
     }
 };
 
-console.log("start engine\n");
-startEngine().then(() => { console.log("started\n") });
+export engine = startEngine();
 
 // copy URL to local file
 async function copyUrlToLocal(src, dest) {
