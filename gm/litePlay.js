@@ -12,7 +12,7 @@ const csd = "./gm.csd";
 const sfont = "./gm.sf2";
 
 // this is the JS function to start Csound
-async function startEngine() {
+export async function startEngine() {
     // if the Csound object is not initialised
     if (csound == null) {
         // import the Csound method from csound.js
@@ -35,8 +35,6 @@ async function startEngine() {
         await csound.start();
     }
 };
-
-export const engine = startEngine();
 
 // copy URL to local file
 async function copyUrlToLocal(src, dest) {
