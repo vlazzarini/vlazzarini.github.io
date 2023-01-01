@@ -34,7 +34,10 @@ async function startEngine() {
         // start the engine
         await csound.start();
     }
-}();
+};
+
+console.log("start engine\n");
+startEngine().then(() => { console.log("started\n") });
 
 // copy URL to local file
 async function copyUrlToLocal(src, dest) {
