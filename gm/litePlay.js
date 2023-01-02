@@ -336,35 +336,30 @@ export const eventList = {
         e.events = evtLst;
         return e;
     },
-    score: function (when = 0, evtLst = this.events) {
-        let mess = "";
-        let instr, amp, dur,
-            t = when, what;
-        for (const evt of evtLst) {
-            if (typeof evt === "object") {
-                what = evt[0];
-                instr = evt.length > 4 && isInstr(evt[4]) ? evt[4] : defInstr;
-                dur = evt.length > 3 ? evt[3] : dur;
-                t = evt.length > 2 ? evt[2] :   t;
-                amp = evt.length > 1 ? evt[1] : amp;
-            } else {
-                what = evt;
-                instr = defInstr;
-                amp = instr.howLoud;
-                dur = instr.howLong;
-                instr = defInstr;
-            }
-            if(what >= 0)
-                mess += instr.score(what, amp, t, dur);
-            t += dur;
-        }
-        return {
-            score: mess,
-            play: function () {
-                csound.inputMessage(this.score);
-            },
-        };
-    },
+   score: function (when = 0, evtLst = this.events) {
+    let mess = "";
+    for (const evt of evtLst) {
+      let instr, amp, dur, what;
+      if (typeof evt === "object") {
+        what = evt[0];
+        instr = evt.length > 4  &&  isInstr(evt[4]) ? evt[4] : defInstr;
+        dur = evt.length > 3 ? evt[3] : defInstr.howLong;
+        when = evt.length > 2 ? evt[2] : when;
+        amp = evt.length > 1 ? evt[1] : instr.howLoud;
+      } else {
+        instr = defInstr;
+        what = evt;
+        amp = instr.howLoud;
+        dur = instr.howLong;
+      }
+      mess += instr.score(what, amp, when, dur);
+      when += dur;
+    }
+    return {
+      score: mess,
+      play: function () {
+        csound.inputMessage(this.score);
+      },
     add: function(evt) {
         this.events.push(evt);
     },
