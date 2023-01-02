@@ -238,18 +238,18 @@ export const sequencer = {
             play: function (sched) {
                 const what = this.what,
                       bbs = this.bbs;
-                let amp = this.amp,
-                    theInstr = this.instr,
+                let amp, theInstr = this.instr,
                     dur = theInstr.isDrums ? 0 : this.bbs;
                 for (let i = 0; i < 1 / bbs; i++) {
                     let evt = what[this.n];
+		    amp = this.amp;
                     this.n = this.n != what.length - 1 ? this.n + 1 : 0;
                     if (typeof evt !== "object") {
                         if (sched >= 0 && evt >= 0 && this.on)
                             theInstr.play([evt, amp, sched + i * bbs, dur]);
                     } else {
                         if (typeof evt[0] !== "object") {
-                            if (evt.length > 1) amp = evt[1];
+                            if (evt.length > 1) amp *= evt[1];
                             if (evt.length > 2) sched += evt[2];
                             if (evt.length > 3) dur = evt[3];
                             if (evt.length > 4 && isInstr(evt[4])) {
@@ -263,7 +263,7 @@ export const sequencer = {
                                 amp = this.amp;
                                 theInstr = this.instr;
                                 dur = theInstr.isDrums ? 0 : this.bbs;
-                                if (el.length > 1) amp = el[1];
+                                if (el.length > 1) amp *= el[1];
                                 if (el.length > 2) sched += el[2];
                                 if (el.length > 3) dur = el[3];
                                 if (el.length > 4 && isInstr(el[4])) {
