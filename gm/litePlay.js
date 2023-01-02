@@ -373,7 +373,9 @@ export const eventList = {
 
 // generic play
 export function play(...theList) {
-    eventList.create().play(0, theList);
+    if(theList.length >  0)
+	eventList.create().play(0, theList);
+    else defInstr.play();
 }
 
 // set default instrument
