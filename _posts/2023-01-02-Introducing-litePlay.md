@@ -20,20 +20,28 @@ IDEs (online or otherwise) may be used, but at the time of writing, I
 have not yet found a better environment for what I am proposing here.
 
 
-Simple as Simple
+Simple as Simple Can Be
 -------
 
-So, the first idea was to demonstrate how a flexible and simple system
-could be constructed using Csound, as I'd already discussed in earlier
+The first idea was to demonstrate how a flexible and simple system
+could be constructed using Csound and I've already discussed this in earlier
 posts. I began playing with an interface called GMPlay.js, which
 contained means to make sound with very simple JS statements. Then the
 question of providing a stable musical time platform was investigated,
-and when that part was solved, I could concentrate on the interface
-design proper. At that point, litePlay.js was born, provided as an
-ECMA6 module, which we will henceforth refer to through 
-the namespace `lp`.
+which occupied my attention for a while (see the previous posts on the
+matter). 
 
-The first thing was to reduce everything to a `play()` action that
+When that part was solved, I was able tp concentrate on the interface
+design proper. At that point, I had to find a better name for the
+project and litePlay.js was born. This is now provided as an
+ES6 module, to which we will henceforth refer through the namespace 
+`lp`. The simplest way to use it at the moment is to import it
+dynamically into a script (also loading a separate JS file containing
+a bunch of useful constants into the HTML page). We'll leave discussing
+these details for later posts, let's look now at the fundamental principles
+of the API.
+
+The first thing I did was to reduce everything to a `play()` action that
 could be invoked on different objects. Depending on what these were,
 slightly different interpretations of play would be effective. That's
 the well-known idea of polymorphism in action. We can start at the
@@ -72,8 +80,8 @@ define these in the simplest way possible: `what` shall we play?
 
 The system should be able to respond that in ways that are
 recognisable by the user. If we are considering, for instance, 
-common-practice Western music, then what could be for instance,
-a pitch, defined in scientific pitch notation, or perhaps an unpitched
+common-practice Western music, then `what` could be for instance,
+a tone, defined in scientific pitch notation, or perhaps an unpitched
 sound from a standard collection. That seems to be a reasonable
 place to start. Now we can say
 
@@ -81,14 +89,14 @@ place to start. Now we can say
 lp.play(Eb5)
 ```
 
-and we get a pitch corresponding to E flat in the 5th octave (with the
+and we get a sound with a pitch corresponding to E flat in the 5th octave (with the
 A4 standard tuning, 440Hz). We can also say
 
 ```
 lp.drums.play(snare)
 ```
 
-to get a snare drum sound. The interface should allow you to ask for
+to get a snare drum sound. The instrument interface should allow you to ask for
 more sounds from a single instrument at one time,
 
 ```
@@ -105,7 +113,7 @@ lp.play(C4, E4, G4)
 giving us an arpeggio. We should note the polymorphism here: by asking
 more than one sound out of an instrument, we get them at the same time
 (and held until we tell it to stop playing); conversely, when we ask
-the system to play, it gives us the sounds in a sequence (each lasting
+the system to play something, it gives us the sounds in a sequence (each lasting
 for the same duration). It is important to note that the `what` is a
 generic attribute that can be made to fit whatever specification we want.
 Although we have used the conventions of scientific pitch notation
@@ -128,15 +136,15 @@ lp.play([C4, 0.1], [E4, 0.5], [G4, 0.9])
 ```
 
 We can now group these two attributes together using square
-braces `[ ]`, something facilitated through JS arrays. The
+braces `[ ]`, something that is facilitated through JS arrays. The
 resulting arpeggio is then played in a crescendo.
 
 When?
 -----
 
-The arpeggio sounds above are each separated by the
+Each one of the arpeggio tones above is each separated from the
 previous by an even amount of time (which we may call one beat).
-What if we want to disrupt this pattern and make the second note
+What if we want to disrupt this pattern and make the second sound
 come earlier in time? As before, the interface should allow us to do
 this, and we may use the same method to group the attributes in a
 simple way, adding the `when` to it,
@@ -145,7 +153,7 @@ simple way, adding the `when` to it,
 lp.play([C4, 0.1, 0], [E4, 0.2, 0.5], [G4, 0.4, 2])
 ```
 
-Now, the first sound comes immediately (0 beats delay), the
+Now, the first sound comes immediately (zero delay), the
 second one half a beat later, and the third is played two beats
 after the first.
 
@@ -169,7 +177,7 @@ Instruments
 
 Seeing that different instruments can be used, it would be good to 
 allow this to be controlled from the generic play interface. So far,
-we have only used a piano sound, which is what we get when
+we have only heard a piano sound, which is what we get when
 the system is started. We can modify this by
 
 ```
@@ -182,8 +190,9 @@ us to give each sound a different instrument,
 
 
 ```
-lp.play([C4, 0.3, 0, 3, lp.organ], [E4, 0.6, 0.5, 0.5, lp.synth], [G4,
-0.9, 2, 0.2, lp.piano]);
+lp.play([C4, 0.3, 0, 3, lp.organ], 
+        [E4, 0.6, 0.5, 0.5, lp.synth], 
+        [G4, 0.9, 2, 0.2, lp.piano]);
 ```
 
 Events
@@ -206,7 +215,9 @@ that in this case the final parameter is a non-op (the instrument
 cannot be changed),
 
 ```
-lp.organ.play([C4, 0.1, 0, 3], [E4, 0.2, 0.5, 0.5], [G4, 0.4, 2, 0.1])
+lp.organ.play([C4, 0.1, 0, 3], 
+              [E4, 0.2, 0.5, 0.5], 
+	      [G4, 0.4, 2, 0.1]);
 ```
 
 Conclusions
@@ -219,10 +230,11 @@ intuitive and standard notions about sound and music. It is also
 constructed in an open way: while it works on the principle of sounds
 as events, it is not prescriptive in terms of what these are beyond
 having a character (`what`), an intensity (`howLoud`), a start time
-(`when`), a duration (`howLong`) and being played on sound making
-object (`instr`). In follow up posts, I will be looking at other
-components of litePlay.js that can support the creation of more 
-complex musical structures.
+(`when`), a duration (`howLong`) and being played on a sound making
+object (`instr`). In the follow up posts, I will be looking at other
+components of litePlay.js that can support the creation of  
+musical structures consisting of many events.
+
 
 
 
