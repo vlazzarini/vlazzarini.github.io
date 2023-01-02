@@ -345,7 +345,7 @@ export const eventList = {
                 what = evt[0];
                 instr = evt.length > 4 && isInstr(evt[4]) ? evt[4] : defInstr;
                 dur = evt.length > 3 ? evt[3] : instr.howLong;
-                t = evt.length > 2 ? evt[2] :   1;
+                t = evt.length > 2 ? evt[2] :   t;
                 amp = evt.length > 1 ? evt[1] : instr.howLoud;
             } else {
                 what = evt;
@@ -361,7 +361,6 @@ export const eventList = {
         return {
             score: mess,
             play: function () {
-		console.log(this.score);
                 csound.inputMessage(this.score);
             },
         };
