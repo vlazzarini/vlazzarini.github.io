@@ -361,6 +361,7 @@ export const eventList = {
         return {
             score: mess,
             play: function () {
+		console.log(this.score);
                 csound.inputMessage(this.score);
             },
         };
