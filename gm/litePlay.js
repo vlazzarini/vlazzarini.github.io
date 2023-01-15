@@ -169,9 +169,31 @@ class Instrument {
         csound.inputMessage(mess);
     }
 
+   bend(amount) {
+    const val = 2 ** (amount/12);
+    csound.tableSet(14,this.chn, val);
+   }  
+
    reverb(amount) {
     csound.tableSet(8, this.chn, amount);
   }
+}
+
+class Sampler extends Instrument {
+   constructor(pgm, isDrums = false, rel = 0.1) {
+      super(pgm, isDrums, rel, 11);
+   }
+   load(what, fo = 60) {
+      this.what = fo;
+      copyUrlToLocal(what, "localfile").then(() => {
+      csound.inputMessage('i2 0 0' + ' "localfile" ' + this.what + ' ' + this.pgm  + ' ' + this.chn)
+      });
+   }
+   loop(start, end, fade = 0.025) {
+      csound.tableSet(11, this.chn, start);
+      csound.tableSet(12, this.chn, end);
+      csound.tableSet(13, this.chn, fade);
+   }
 }
 
 function isInstr(instr) {
