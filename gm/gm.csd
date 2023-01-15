@@ -126,7 +126,8 @@ instr 10
 iamp table p5, 5
 aenv linenr iamp,0,p8,0.01
 imicro = 2^(frac(p4)/12)
-a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro, p6, 0, 0, 2
+kbend table p7,14
+a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro+kbend, p6, 0, 0, 2
 kv table p7, 2
 kvol tablei kv, 5 
 kpan  table p7, 3
@@ -152,9 +153,10 @@ kend table p7,12
 kstart = kstart > 0 ? kstart : 0;
 kend = kend > 0 ? kend : iln;
 kfade table p7, 13
+kpitch table p7, 14
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-asig flooper2 iamp,ipitch,kstart,kend,kfade,ifn 
+asig flooper2 iamp,ipitch+kpitch,kstart,kend,kfade,ifn 
 aout linenr asig,0,p8,0.01
 a1 = (0.5-kpan/2)*aout
 a2 = (0.5+kpan/2)*aout
@@ -207,10 +209,11 @@ f6 0 128 5 0.01  128 1 /* velocity mapping: more nuanced */
 f7 0 128 7 0 128 0  /* note on table */
 f8 0 1024 7 0 1024 0  /* reverb amount table */
 f9 0 1024 7 0 1024 0  /* sample table */
-f10 0 1024 7 60 1024 60  /* sample base table */
+f10 0 1024 -7 60 1024 60  /* sample base table */
 f11 0 1024 7 0 1024 0  /* sample loop start table */
 f12 0 1024 7 0 1024 0  /* sample loop end table */
-f13 0 1024 7 0.025 1024 0.025  /* sample loop fade table */
+f13 0 1024 -7 0.025 1024 0.025  /* sample loop fade table */
+f14 0 1024 7 0 1024 0  /* sample ptich table */
 i 1 0 z
 i 100 0 z
 e
