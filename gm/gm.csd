@@ -139,6 +139,45 @@ garev2 += a2*krev
        outs a1, a2 
 endin
 
+// sample playback
+instr 11
+ifo table p6,10
+ifn table p6,9
+iamp table p5, 5
+iln = ftlen(ifn)/ftsr(ifn)
+imicro = 2^(frac(p4)/12)
+ipitch = imicro*cpsmidinn(p4)/cpsmidinn(ifo)
+kstart table p6,11
+kend table p6,12
+kstart = kstart > 0 ? kstart : 0;
+kend = kend > 0 ? kend : iln;
+kpan  table p7, 3
+kpan = (kpan - 64)/128
+asig flooper2 iamp,ipitch,kstart,kend,0.025,ifn 
+aout linenr asig,0,p8,0.01
+a1 = (0.5-kpan/2)*aout
+a2 = (0.5+kpan/2)*aout
+krev table p7,8
+garev1 += a1*krev
+garev2 += a2*krev
+       outs a1, a2
+if kend == iln then
+ iend = (p3 - p8)/ipitch
+ if timeinsts() >= iend then
+  turnoff 
+ endif
+endif              
+endin
+
+// loading tables
+// i2 0 0 "sample" f0 chn
+instr 2
+S1 = p4
+ign ftgen 0,0,0,1,S1,0,0,0,1
+tablew ign,p6,9
+tablew p5,p6,10
+endin
+
 instr 100
 a1, a2 freeverb garev1, garev2, 0.7, 0.35
 outs a1, a2
@@ -150,6 +189,9 @@ endin
 //tableiw 1,100,8
 //schedule(10,0,5,60,127,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
+
+schedule(2,0,0,"pianoc2.wav",48,0)
+schedule(11,1,7,60,100,0,500,0.1)
 
 </CsInstruments>
 <CsScore>
@@ -163,6 +205,10 @@ f5 0 128 5 0.1 128 1   /* velocity mapping: less nuanced */
 f6 0 128 5 0.01  128 1 /* velocity mapping: more nuanced */
 f7 0 128 7 0 128 0  /* note on table */
 f8 0 1024 7 0 1024 0  /* reverb amount table */
+f9 0 1024 7 0 1024 0  /* sample table */
+f10 0 1024 7 60 1024 60  /* sample base table */
+f11 0 1024 7 0 1024 0  /* sample loop start table */
+f12 0 1024 7 0 1024 0  /* sample loop end table */
 i 1 0 z
 i 100 0 z
 e
