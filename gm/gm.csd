@@ -190,8 +190,8 @@ endin
 //schedule(10,0,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
-schedule(2,0,0,"pianoc2.wav",48,0,500)
-schedule(11,1,-1,48,100,0,500,0.1)
+//schedule(2,0,0,"pianoc2.wav",48,0,500)
+//schedule(11,1,-1,48,100,0,500,0.1)
 
 </CsInstruments>
 <CsScore>
