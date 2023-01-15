@@ -153,7 +153,6 @@ kstart = kstart > 0 ? kstart : 0;
 kend = kend > 0 ? kend : iln;
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-print ipitch
 asig flooper2 iamp,ipitch,kstart,kend,0.025,ifn 
 aout linenr asig,0,p8,0.01
 a1 = (0.5-kpan/2)*aout
@@ -163,7 +162,7 @@ garev1 += a1*krev
 garev2 += a2*krev
        outs a1, a2
 if kend == iln then
- iend = (p3 - p8)/ipitch
+ iend = (iln - p8*2.1)/ipitch  
  if timeinsts() >= iend then
   turnoff 
  endif
@@ -177,9 +176,6 @@ S1 = p4
 ign ftgen 0,0,0,1,S1,0,0,0,1
 tablew ign,p6,9
 tablew p5,p7,10
-print p5
-ifo table p7,10
-print ifo
 endin
 
 instr 100
@@ -194,8 +190,8 @@ endin
 //schedule(10,0,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
-//schedule(2,0,0,"pianoc2.wav",48,0,500)
-//schedule(11,1,7,60,100,0,500,0.1)
+schedule(2,0,0,"pianoc2.wav",48,0,500)
+schedule(11,1,-1,48,100,0,500,0.1)
 
 </CsInstruments>
 <CsScore>
