@@ -156,10 +156,20 @@ kfade table p7, 13
 kpitch table p7, 14
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-asig flooper2 iamp,ipitch*kpitch,kstart,klend,kfade,ifn 
-aout linenr asig,0,p8,0.01
-a1 = (0.5-kpan/2)*aout
-a2 = (0.5+kpan/2)*aout
+
+aenv linenr iamp,0,p8,0.01 
+if ftchnls(ifn) == 1 then
+a1 flooper2 iamp,ipitch*kpitch,kstart,klend,kfade,ifn
+a1 = a1*aenv
+a2 = a1*aenv
+else 
+a1,a2 flooper2 iamp,ipitch*kpitch,kstart,klend,kfade,ifn 
+a1 = a1*aenv
+a2 = a2*aenv
+endif
+
+a1 *= (0.5-kpan/2)
+a2 *= (0.5+kpan/2)
 krev table p7,8
 garev1 += a1*krev
 garev2 += a2*krev
