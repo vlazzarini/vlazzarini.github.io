@@ -145,7 +145,7 @@ instr 11
 ifo table p7,10
 ifn table p6,9
 iamp table p5,5
-iln = ftlen(ifn)/ftsr(ifn)
+iln = ftlen(ifn)/(ftsr(ifn)*ftchnls(ifn))
 imicro = 2^(frac(p4)/12)
 ipitch = imicro*cpsmidinn(p4)/cpsmidinn(ifo)
 kstart table p7,11
@@ -186,7 +186,7 @@ endin
 // i2 0 0 "sample" f0 pgm chn
 instr 2
 S1 = p4
-ign ftgen 0,0,0,1,S1,0,0,1
+ign ftgen 0,0,0,1,S1,0,0,0
 tablew ign,p6,9
 tablew p5,p7,10
 endin
@@ -203,8 +203,8 @@ endin
 //schedule(10,0,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
-schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0,500)
-schedule(11,1,-1,48,100,0,500,0.1)
+//schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0,500)
+//schedule(11,1,-1,48,100,0,500,0.1)
 
 </CsInstruments>
 <CsScore>
