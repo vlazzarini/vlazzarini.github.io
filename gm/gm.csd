@@ -153,6 +153,7 @@ kstart = kstart > 0 ? kstart : 0;
 kend = kend > 0 ? kend : iln;
 kpan  table p7, 3
 kpan = (kpan - 64)/128
+print ipitch
 asig flooper2 iamp,ipitch,kstart,kend,0.025,ifn 
 aout linenr asig,0,p8,0.01
 a1 = (0.5-kpan/2)*aout
