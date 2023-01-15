@@ -176,7 +176,7 @@ endin
 // i2 0 0 "sample" f0 pgm chn
 instr 2
 S1 = p4
-ign ftgen 0,0,0,1,S1,0,0,0,1
+ign ftgen 0,0,0,1,S1,0,0,1
 tablew ign,p6,9
 tablew p5,p7,10
 endin
@@ -193,8 +193,8 @@ endin
 //schedule(10,0,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
-//schedule(2,0,0,"pianoc2.wav",48,0,500)
-//schedule(11,1,-1,48,100,0,500,0.1)
+schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0,500)
+schedule(11,1,-1,48,100,0,500,0.1)
 
 </CsInstruments>
 <CsScore>
