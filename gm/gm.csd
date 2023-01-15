@@ -141,14 +141,14 @@ endin
 
 // sample playback
 instr 11
-ifo table p6,10
+ifo table p7,10
 ifn table p6,9
-iamp table p5, 5
+iamp table p5,5
 iln = ftlen(ifn)/ftsr(ifn)
 imicro = 2^(frac(p4)/12)
 ipitch = imicro*cpsmidinn(p4)/cpsmidinn(ifo)
-kstart table p6,11
-kend table p6,12
+kstart table p7,11
+kend table p7,12
 kstart = kstart > 0 ? kstart : 0;
 kend = kend > 0 ? kend : iln;
 kpan  table p7, 3
@@ -171,14 +171,14 @@ endif
 endin
 
 // loading tables
-// i2 0 0 "sample" f0 chn
+// i2 0 0 "sample" f0 pgm chn
 instr 2
 S1 = p4
 ign ftgen 0,0,0,1,S1,0,0,0,1
 tablew ign,p6,9
-tablew p5,p6,10
+tablew p5,p7,10
 print p5
-ifo table p6,10
+ifo table p7,10
 print ifo
 endin
 
@@ -194,7 +194,7 @@ endin
 //schedule(10,0,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
-//schedule(2,0,0,"pianoc2.wav",60,0)
+//schedule(2,0,0,"pianoc2.wav",48,0,500)
 //schedule(11,1,7,60,100,0,500,0.1)
 
 </CsInstruments>
