@@ -198,8 +198,9 @@ klend = kend > 0 ? kend : iln;
 kpitch table p7, 14
 kpan  table p7, 3
 kpan = (kpan - 64)/128
+ksp  table p7, 15
 
-aph phasor 1/(klend - kstart)
+aph phasor ksp/(klend - kstart)
 atimpt = kstart + aph*(klend - kstart)
 aenv linenr iamp,0,p8,0.01 
 if ftchnls(ifn) == 1 then
@@ -219,7 +220,7 @@ garev1 += a1*krev
 garev2 += a2*krev
        outs a1, a2
 if kend == 0 then
- kend = (iln - p8*2.1)/(ipitch*kpitch)  
+ kend = (iln - p8*2.1)/(ipitch*ksp)  
  if timeinsts() >= kend then
   turnoff 
  endif
@@ -249,8 +250,8 @@ endin
 //schedule(10,0,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
-schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0,500)
-schedule(12,1,-1,48,100,0,500,0.1)
+//schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0,500)
+//schedule(12,1,-1,48,100,0,500,0.1)
 
 </CsInstruments>
 <CsScore>
@@ -270,6 +271,7 @@ f11 0 1024 -7 0 1024 0  /* sample loop start table */
 f12 0 1024 -7 0 1024 0  /* sample loop end table */
 f13 0 1024 -7 0.025 1024 0.025  /* sample loop fade table */
 f14 0 1024 -7 1 1024 1  /* sample pitch table */
+f15 0 1024 -7 1 1024 1  /* sample speed table */
 i 1 0 z
 i 100 0 z
 e
