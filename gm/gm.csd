@@ -127,7 +127,7 @@ iamp table p5, 5
 aenv linenr iamp,0,p8,0.01
 imicro = 2^(frac(p4)/12)
 kbend table p7,14
-a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro+kbend, p6, 0, 0, 2
+a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro*kbend, p6, 0, 0, 2
 kv table p7, 2
 kvol tablei kv, 5 
 kpan  table p7, 3
@@ -156,7 +156,7 @@ kfade table p7, 13
 kpitch table p7, 14
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-asig flooper2 iamp,ipitch+kpitch,kstart,klend,kfade,ifn 
+asig flooper2 iamp,ipitch*kpitch,kstart,klend,kfade,ifn 
 aout linenr asig,0,p8,0.01
 a1 = (0.5-kpan/2)*aout
 a2 = (0.5+kpan/2)*aout
@@ -165,8 +165,8 @@ garev1 += a1*krev
 garev2 += a2*krev
        outs a1, a2
 if kend == 0 then
- iend = (iln - p8*2.1)/ipitch  
- if timeinsts() >= iend then
+ kend = (iln - p8*2.1)/(ipitch*kpitch)  
+ if timeinsts() >= kend then
   turnoff 
  endif
 endif              
@@ -213,7 +213,7 @@ f10 0 1024 -7 60 1024 60  /* sample base table */
 f11 0 1024 7 0 1024 0  /* sample loop start table */
 f12 0 1024 7 0 1024 0  /* sample loop end table */
 f13 0 1024 -7 0.025 1024 0.025  /* sample loop fade table */
-f14 0 1024 7 0 1024 0  /* sample ptich table */
+f14 0 1024 -7 1 1024 1  /* sample pitch table */
 i 1 0 z
 i 100 0 z
 e
