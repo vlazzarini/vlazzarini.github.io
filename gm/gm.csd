@@ -151,12 +151,12 @@ ipitch = imicro*cpsmidinn(p4)/cpsmidinn(ifo)
 kstart table p7,11
 kend table p7,12
 kstart = kstart > 0 ? kstart : 0;
-kend = kend > 0 ? kend : iln;
+klend = kend > 0 ? kend : iln;
 kfade table p7, 13
 kpitch table p7, 14
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-asig flooper2 iamp,ipitch+kpitch,kstart,kend,kfade,ifn 
+asig flooper2 iamp,ipitch+kpitch,kstart,klend,kfade,ifn 
 aout linenr asig,0,p8,0.01
 a1 = (0.5-kpan/2)*aout
 a2 = (0.5+kpan/2)*aout
@@ -164,7 +164,7 @@ krev table p7,8
 garev1 += a1*krev
 garev2 += a2*krev
        outs a1, a2
-if kend == iln then
+if kend == 0 then
  iend = (iln - p8*2.1)/ipitch  
  if timeinsts() >= iend then
   turnoff 
