@@ -218,7 +218,7 @@ a2 *= (0.5+kpan/2)
 krev table p7,8
 garev1 += a1*krev
 garev2 += a2*krev
-       outs a1, a2
+       outs a1*.2, a2*.2
 if kend == 0 then
  kend = (iln - p8*2.1)/(ipitch*ksp)  
  if timeinsts() >= kend then
