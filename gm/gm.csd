@@ -142,17 +142,17 @@ endin
 
 // sample playback
 instr 11
-ifo table p7,10
+ifo table p6,10
 ifn table p6,9
 iamp table p5,5
 iln = ftlen(ifn)/(ftsr(ifn)*ftchnls(ifn))
 imicro = 2^(frac(p4)/12)
 ipitch = imicro*cpsmidinn(p4)/cpsmidinn(ifo)
-kstart table p7,11
-kend table p7,12
+kstart table p6,11
+kend table p6,12
 kstart = kstart > 0 ? kstart : 0;
 klend = kend > 0 ? kend : iln;
-kfade table p7, 13
+kfade table p6, 13
 kpitch table p7, 14
 kpan  table p7, 3
 kpan = (kpan - 64)/128
@@ -184,22 +184,24 @@ endin
 
 
 // sample playback (spectral)
+// p6 is pgm -> sample num
 instr 12
-ifo table p7,10
+ifo table p6,10
 ifn table p6,9
 iamp table p5,5
 iln = ftlen(ifn)/(ftsr(ifn)*ftchnls(ifn))
 imicro = 2^(frac(p4)/12)
 ipitch = imicro*cpsmidinn(p4)/cpsmidinn(ifo)
-kstart table p7,11
-kend table p7,12
+kstart table p6,11
+kend table p6,12
 kstart = kstart > 0 ? kstart : 0;
 klend = kend > 0 ? kend : iln;
 kpitch table p7, 14
 kpan  table p7, 3
 kpan = (kpan - 64)/128
-ksp  table p7, 15
-
+ks0  table p6, 15  // sample speed ref per pgm
+ksp  table p7, 16  // playback speed per chn
+ksp *= ks0
 aph phasor ksp/(klend - kstart)
 atimpt = kstart + aph*(klend - kstart)
 aenv linenr iamp,0,p8,0.01 
@@ -230,12 +232,12 @@ endin
 
 
 // loading tables
-// i2 0 0 "sample" f0 pgm chn
+// i2 0 0 "sample" f0 pgm
 instr 2
 S1 = p4
 ign ftgen 0,0,0,1,S1,0,0,0
 tablew ign,p6,9
-tablew p5,p7,10
+tablew p5,p6,10
 endin
 
 instr 100
@@ -250,7 +252,7 @@ endin
 //schedule(10,0,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
-//schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0,500)
+//schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0)
 //schedule(12,1,-1,48,100,0,500,0.1)
 
 </CsInstruments>
@@ -271,7 +273,8 @@ f11 0 1024 -7 0 1024 0  /* sample loop start table */
 f12 0 1024 -7 0 1024 0  /* sample loop end table */
 f13 0 1024 -7 0.025 1024 0.025  /* sample loop fade table */
 f14 0 1024 -7 1 1024 1  /* sample pitch table */
-f15 0 1024 -7 1 1024 1  /* sample speed table */
+f15 0 1024 -7 1 1024 1  /* sample speed ref table */
+f16 0 1024 -7 1 1024 1  /* sample playback speed table */
 i 1 0 z
 i 100 0 z
 e
