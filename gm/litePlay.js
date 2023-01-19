@@ -334,7 +334,7 @@ export const sequencer = {
             },
         };
     },
-    play: function (instr, what, howLoud = 1, bbs = 1) {
+    add: function (instr, what, howLoud = 1, bbs = 1) {
         if(isInstr(instr)) {
             let id = this.idcnt++;
             if (bbs > 1) bbs = 1;
@@ -342,7 +342,7 @@ export const sequencer = {
             return id;
         } else return -1;
     },
-    start: function () {
+    play: function () {
         if(!this.clickOn) {
             this.clickOn = true;
             this.click(audioClock());
@@ -355,7 +355,7 @@ export const sequencer = {
     clear: function () {
         this.seqList = [];
     },
-    togglePause () {
+    togglePause: function () {
         this.clickOn =! this.clickOn;
         this.click(audioClock());
     },
