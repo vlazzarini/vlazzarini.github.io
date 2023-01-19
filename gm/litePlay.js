@@ -273,7 +273,7 @@ export const sequencer = {
             this.seqList.forEach((v, i, a) => {
                 v.play(beats(t - delta));
             });
-            cbs = [...this.callbacks];
+            const cbs = [...this.callbacks];
             this.callbacks = [];
             cbs.forEach((v,i,a) => {
                 v(beats(t - delta));
