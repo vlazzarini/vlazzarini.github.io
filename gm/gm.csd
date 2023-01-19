@@ -126,7 +126,8 @@ instr 10
 iamp table p5, 5
 aenv linenr iamp,0,p8,0.01
 imicro = 2^(frac(p4)/12)
-a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro, p6, 0, 0, 2
+kbend table p7,14
+a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro*kbend, p6, 0, 0, 2
 kv table p7, 2
 kvol tablei kv, 5 
 kpan  table p7, 3
@@ -137,6 +138,106 @@ krev table p7,8
 garev1 += a1*krev
 garev2 += a2*krev
        outs a1, a2 
+endin
+
+// sample playback
+instr 11
+ifo table p6,10
+ifn table p6,9
+iamp table p5,5
+iln = ftlen(ifn)/(ftsr(ifn)*ftchnls(ifn))
+imicro = 2^(frac(p4)/12)
+ipitch = imicro*cpsmidinn(p4)/cpsmidinn(ifo)
+kstart table p6,11
+kend table p6,12
+kstart = kstart > 0 ? kstart : 0;
+klend = kend > 0 ? kend : iln;
+kfade table p6, 13
+kpitch table p7, 14
+kpan  table p7, 3
+kpan = (kpan - 64)/128
+
+aenv linenr iamp,0,p8,0.01 
+if ftchnls(ifn) == 1 then
+a1 flooper2 iamp,ipitch*kpitch,kstart,klend,kfade,ifn
+a1 = a1*aenv
+a2 = a1*aenv
+else 
+a1,a2 flooper2 iamp,ipitch*kpitch,kstart,klend,kfade,ifn 
+a1 = a1*aenv
+a2 = a2*aenv
+endif
+
+a1 *= (0.5-kpan/2)
+a2 *= (0.5+kpan/2)
+krev table p7,8
+garev1 += a1*krev
+garev2 += a2*krev
+       outs a1, a2
+if kend == 0 then
+ kend = (iln - p8*2.1)/(ipitch*kpitch)  
+ if timeinsts() >= kend then
+  turnoff 
+ endif
+endif              
+endin
+
+
+// sample playback (spectral)
+// p6 is pgm -> sample num
+instr 12
+ifo table p6,10
+ifn table p6,9
+iamp table p5,5
+iln = ftlen(ifn)/(ftsr(ifn)*ftchnls(ifn))
+imicro = 2^(frac(p4)/12)
+ipitch = imicro*cpsmidinn(p4)/cpsmidinn(ifo)
+kstart table p6,11
+kend table p6,12
+kstart = kstart > 0 ? kstart : 0;
+klend = kend > 0 ? kend : iln;
+kpitch table p7, 14
+kpan  table p7, 3
+kpan = (kpan - 64)/128
+ks0  table p6, 15  // sample speed ref per pgm
+ksp  table p7, 16  // playback speed per chn
+ksp *= ks0
+aph phasor ksp/(klend - kstart)
+atimpt = kstart + aph*(klend - kstart)
+aenv linenr iamp,0,p8,0.01 
+if ftchnls(ifn) == 1 then
+a1 mincer atimpt,iamp,ipitch*kpitch,ifn,1
+a1 = a1*aenv
+a2 = a1*aenv
+else 
+a1,a2 mincer atimpt,iamp,ipitch*kpitch,ifn,1 
+a1 = a1*aenv
+a2 = a2*aenv
+endif
+
+a1 *= (0.5-kpan/2)
+a2 *= (0.5+kpan/2)
+krev table p7,8
+garev1 += a1*krev
+garev2 += a2*krev
+       outs a1*.2, a2*.2
+if kend == 0 then
+ kend = (iln - p8*2.1)/(ipitch*ksp)  
+ if timeinsts() >= kend then
+  turnoff 
+ endif
+endif              
+endin
+
+
+
+// loading tables
+// i2 0 0 "sample" f0 pgm
+instr 2
+S1 = p4
+ign ftgen 0,0,0,1,S1,0,0,0
+tablew ign,p6,9
+tablew p5,p6,10
 endin
 
 instr 100
@@ -151,6 +252,9 @@ endin
 //schedule(10,0,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
+//schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0)
+//schedule(12,1,-1,48,100,0,500,0.1)
+
 </CsInstruments>
 <CsScore>
 /* program preset (memory) table */
@@ -163,6 +267,14 @@ f5 0 128 5 0.1 128 1   /* velocity mapping: less nuanced */
 f6 0 128 5 0.01  128 1 /* velocity mapping: more nuanced */
 f7 0 128 7 0 128 0  /* note on table */
 f8 0 1024 7 0 1024 0  /* reverb amount table */
+f9 0 1024 7 0 1024 0  /* sample table */
+f10 0 1024 -7 60 1024 60  /* sample base table */
+f11 0 1024 -7 0 1024 0  /* sample loop start table */
+f12 0 1024 -7 0 1024 0  /* sample loop end table */
+f13 0 1024 -7 0.025 1024 0.025  /* sample loop fade table */
+f14 0 1024 -7 1 1024 1  /* sample pitch table */
+f15 0 1024 -7 1 1024 1  /* sample speed ref table */
+f16 0 1024 -7 1 1024 1  /* sample playback speed table */
 i 1 0 z
 i 100 0 z
 e
