@@ -117,10 +117,10 @@ this clock by any (meaningful) number of integer divisions (2, 3, 4, 5
 etc). Sequences are given a list of events (as a JS array) and play
 these at each beat or subdivided beat. 
 
-To set up a sequence, we use the `.play()` interface to the sequencer
+To set up a sequence, we use the `.add()` interface to the sequencer
 
 ```
-sequencer.play(instrument, whatList, [howLoud [,beatDiv]])
+sequencer.add(instrument, whatList, [howLoud [,beatDiv]])
 ```
 
 where we have to provide an instrument, an list of what to play, an optional
@@ -148,11 +148,11 @@ When `litePlay.js` starts, the sequencer is stopped. So to hear these
 sequences, we need to
 
 ```
-sequencer.start()
+sequencer.play()
 ```
 
 The sequencer has a complete set of playback and sequence controls:
-`.start()`, `.stop()`, `.togglePause`. Each sequence can be
+`.play()`, `.stop()`, `.togglePause`. Each sequence can be
 muted with `.toggleMute(sequence)`,  soloed 
 `.toggleSolo(sequence)`, and removed with `.remove(sequence)`.
 
@@ -175,7 +175,8 @@ run at the next clock cycle (beat). This guarantees that events
 triggered by the sequence are hard-synced to the sequencer
 clock. The callback signature is `func(t)` , where `t` is the
 sequencer clock time. This should be used to align the playback
-of an `eventList`.
+of an `eventList` so that the event list is played exactly in sync
+with the sequences.
 
 For example,
 
@@ -194,7 +195,7 @@ instrument, which creates an event with a set of parameters
 (`what, howLoud, when, howLong`). The `eList` then
 is used in an arrow function defining the callback, and
 we can add to the sequencer. The callback is run
-only once but it may be rescheduled recursively.
+only once but it may be rescheduled recursively. 
 
 
 Conclusions
