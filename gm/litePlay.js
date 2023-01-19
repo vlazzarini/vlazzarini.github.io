@@ -180,7 +180,7 @@ export class Instrument {
     }
 }
 
-export sample = {
+export const sample = {
     number: 0,
     fo: 60,
     bpm: 60,
