@@ -58,11 +58,12 @@ export function midiProgram(n, chn = 1) {
 
 const globalObj = {
     freeChannel: 16,
-    BPM: 60.0
+    BPM: 60.0,
+    sampnum: 0
 };
 
 // Csound instrument class
-class Instrument {
+export class Instrument {
     constructor(pgm, isDrums = false, rel = 0.1, instr = 10) {
         this.pgm = pgm;
         this.chn = globalObj.freeChannel++;
@@ -169,31 +170,59 @@ class Instrument {
         csound.inputMessage(mess);
     }
 
-   bend(amount) {
-    const val = 2 ** (amount/12);
-    csound.tableSet(14,this.chn, val);
-   }  
+    bend(amount) {
+        const val = 2 ** (amount/12);
+        csound.tableSet(14,this.chn, val);
+    }  
 
-   reverb(amount) {
-    csound.tableSet(8, this.chn, amount);
-  }
+    reverb(amount) {
+        csound.tableSet(8, this.chn, amount);
+    }
 }
 
-class Sampler extends Instrument {
-   constructor(pgm, isDrums = false, rel = 0.1) {
-      super(pgm, isDrums, rel, 11);
-   }
-   load(what, fo = 60) {
-      this.what = fo;
-      copyUrlToLocal(what, "localfile").then(() => {
-      csound.inputMessage('i2 0 0' + ' "localfile" ' + this.what + ' ' + this.pgm  + ' ' + this.chn)
-      });
-   }
-   loop(start, end, fade = 0.025) {
-      csound.tableSet(11, this.chn, start);
-      csound.tableSet(12, this.chn, end);
-      csound.tableSet(13, this.chn, fade);
-   }
+export sample = {
+    number: 0,
+    fo: 60,
+    bpm: 60,
+    instr: null,
+    load: function(what, fo = 60, bpm = 0){
+        this.fo = fo;
+        this.bpm = bpm;
+        copyUrlToLocal(what, "localfile").then(() => {
+            csound.inputMessage('i2 0 0' + ' "localfile" ' + this.fo + ' ' + this.number);
+            if(bpm >  0) csound.tableSet(15, this.number, getBpm()/bpm);  
+        })
+    },
+    loop: function(start, end) {
+        csound.tableSet(11, this.number, start);
+        csound.tableSet(12, this.number, end);
+    },
+    create: function (what = null, fo = 60, bpm = 0) {
+        let e = Object.create(sample);
+        e.number = globalObj.sampnum++;
+        if(what) e.load(what, fo, bpm);
+        e.instr = new Sampler(e);
+        return e;
+    },
+    play: function (...evtList){
+        this.instr.play(...evtList);
+    }
+}
+
+export class Sampler extends Instrument {
+    constructor(pgm, isDrums = false, rel = 0.1) {
+        super(pgm.number, isDrums, rel, 12);
+        this.sample = pgm;
+        this.what = pgm.fo;
+    }
+    play(...evtLst) {
+        if(this.sample.bpm >  0) 
+            csound.tableSet(15, this.number, getBpm()/this.sample.bpm); 
+        super.play(...evtLst);
+    }
+    speed(val) {
+        csound.tableSet(16, this.chn, val);
+    }
 }
 
 function isInstr(instr) {
@@ -230,8 +259,11 @@ export function audioClock() {
 export const sequencer = {
     clickOn: false,
     seqList: [],
+    idcnt: 0,
     time: 0.0,
-    callback: null,
+    callbacks: [],
+    addCallback: function(x) { this.callbacks.push(x) },
+    clearCallbacks: function() { this.callbacks = [] },
     click: function (ref) {
         if (!this.clickOn) return;
         let t = secs(1);
@@ -241,16 +273,17 @@ export const sequencer = {
             this.seqList.forEach((v, i, a) => {
                 v.play(beats(t - delta));
             });
-            if (this.callback) {
-                let s = this.callback;
-                this.callback = null;
-                s(beats(t - delta));
-            }
+            cbs = [...this.callbacks];
+            this.callbacks = [];
+            cbs.forEach((v,i,a) => {
+                v(beats(t - delta));
+            });
             setTimeout(this.click.bind(this, audioClock() - delta));
         } else setTimeout(this.click.bind(this, ref));
     },
-    sequence: function (i, w, a, b) {
+    sequence: function (i, w, a, b, j) {
         return {
+            id: j,
             instr: i,
             what: w,
             amp: a,
@@ -301,11 +334,11 @@ export const sequencer = {
             },
         };
     },
-    play: function (instr, what, howLoud, bbs = 1) {
+    play: function (instr, what, howLoud = 1, bbs = 1) {
         if(isInstr(instr)) {
-            let id = this.seqList.length;
+            let id = this.idcnt++;
             if (bbs > 1) bbs = 1;
-            this.seqList.push(this.sequence(instr, what, howLoud, bbs));
+            this.seqList.push(this.sequence(instr, what, howLoud, bbs, id));
             return id;
         } else return -1;
     },
@@ -327,15 +360,14 @@ export const sequencer = {
         this.click(audioClock());
     },
     toggleMute: function (id = -1) {
-        if (id != -1) this.seqList[id].on = !this.seqList[id].on;
-        else
-            this.seqList.forEach((v, i, a) => {
+        this.seqList.forEach((v, i, a) => {
+            if(id < 0 || v.id == id)  
                 v.on = !v.on;
-            });
+        });
     },
     toggleSolo: function (id) {
         this.seqList.forEach((v, i, a) => {
-            if (i != id) v.on = !v.on;
+            if (v.id != id) v.on = !v.on;
         });
     },
     clock: function () {
@@ -344,6 +376,11 @@ export const sequencer = {
     isRunning: function () {
         return this.clickOn;
     },
+    remove: function(id) {
+        this.seqList.forEach((v, i, a) => {
+            if (v.id == id) this.seqList.splice(i,1);
+        });   
+    }
 };
 
 // eventList object
@@ -387,10 +424,20 @@ export const eventList = {
             },
         };
     },
-    add: function(evt) {
-        this.events.push(evt);
+    add: function(...evtLst) {
+        for (const evt of evtLst)  
+            this.events.push(evt);
     },
     clear: function() { this.events = []; },
+    remove: function(ndx = -1) {
+        if(ndx < 0 ) this.events.pop();
+        else this.events.splice(ndx,1);
+    },
+    insert: function(pos, ...evtLst) {
+        let start = pos;
+        for (const evt of evtLst)  
+            this.events.splice(pos, 0, evt);
+    } 
 };
 
 // generic play
