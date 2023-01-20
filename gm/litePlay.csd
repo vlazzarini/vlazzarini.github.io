@@ -289,15 +289,16 @@ garev2 = 0
 endin
 
 //ifn ftgen 8,0,1024,7,0,1024,0
-instr 101
+/*instr 101
  tableiw 0.5,100,17
  tableiw 0.4,100,27
  tableiw 0.1,100,19
  tableiw 1,100,20
  tableiw 0.7,100,21
 endin
-schedule(101,0,0)
-schedule(10,1,5,60,10,0,100)
+*/
+//schedule(101,0,0)
+//schedule(10,1,5,60,10,0,100)
 //schedule(10,1,5,60.5,100,0,0)
 
 //schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0)
