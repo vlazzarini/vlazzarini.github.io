@@ -4,6 +4,7 @@
 </CsOptions>
 <CsInstruments>
 nchnls = 2
+nchnls_i = 1
 ksmps = 64
 0dbfs = 1            
 
@@ -121,14 +122,27 @@ nxt:
 
 endin
 
+/* topmost cf */
+gicf = log(sr/2)
 /* this is the GM soundfont synthesizer instrument */
 instr 10
+
 iamp table p5, 5
 aenv linenr iamp,0,p8,0.01
 imicro = 2^(frac(p4)/12)
 kbend table p7,14
 a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro*kbend, p6, 0, 0, 2
 kv table p7, 2
+
+kcfi table p7,17
+kres table p7,18
+kcf = exp(kcfi*gicf)
+a1f vclpf a1,kcf,kres
+a2f vclpf a2,kcf,kres
+a1 balance a1f,a1
+a2 balance a2f,a2
+
+
 kvol tablei kv, 5 
 kpan  table p7, 3
 kpan = (kpan - 64)/128
@@ -215,6 +229,14 @@ a1 = a1*aenv
 a2 = a2*aenv
 endif
 
+kcfi table p7,17
+kres table p7,18
+kcf = exp(kcfi*gicf)
+a1f vclpf a1,kcf,kres
+a2f vclpf a2,kcf,kres
+a1 balance a1f,a1
+a2 balance a2f,a2
+
 a1 *= (0.5-kpan/2)
 a2 *= (0.5+kpan/2)
 krev table p7,8
@@ -248,8 +270,12 @@ garev2 = 0
 endin
 
 //ifn ftgen 8,0,1024,7,0,1024,0
-//tableiw 1,100,8
-//schedule(10,0,5,60,10,0,100,0.5)
+//instr 101
+//tableiw 2,100,2
+//tableiw 1,100,18
+//endin
+//schedule(101,0,0)
+//schedule(10,1,5,60,10,0,100,0.5)
 //schedule(10,1,5,60.5,100,0,0,0.5)
 
 //schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0)
@@ -272,9 +298,12 @@ f10 0 1024 -7 60 1024 60  /* sample base table */
 f11 0 1024 -7 0 1024 0  /* sample loop start table */
 f12 0 1024 -7 0 1024 0  /* sample loop end table */
 f13 0 1024 -7 0.025 1024 0.025  /* sample loop fade table */
-f14 0 1024 -7 1 1024 1  /* sample pitch table */
-f15 0 1024 -7 1 1024 1  /* sample speed ref table */
-f16 0 1024 -7 1 1024 1  /* sample playback speed table */
+f14 0 1024 7 1 1024 1  /* sample pitch table */
+f15 0 1024 7 1 1024 1  /* sample speed ref table */
+f16 0 1024 7 1 1024 1  /* sample playback speed table */
+f17 0 1024 7 1 1024 1  /* lp cutoff table */
+f18 0 1024 7 0 1024 0  /* lp res table */
+
 i 1 0 z
 i 100 0 z
 e

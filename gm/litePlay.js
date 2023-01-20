@@ -178,6 +178,29 @@ export class Instrument {
     reverb(amount) {
         csound.tableSet(8, this.chn, amount);
     }
+
+    cutoff(amount) {
+        csound.tableSet(17, this.chn, amount < 1 ?
+                        (amount > 0 ? amount : 0) : 1);
+    }
+
+    resonance(amount) {
+        csound.tableSet(18, this.chn, amount < 1 ?
+                        (amount > 0 ? amount : 0): 1);
+    }
+
+    pan(amount) {
+        csound.tableSet(3, this.chn, (amount < 1 ?
+                                      (amount > 0 ? amount : 0)
+                                      : 1)*127);
+    }
+
+    volume(amount) {
+        csound.tableSet(2, this.chn, (amount < 1 ?
+                                      (amount > 0 ? amount : 0)
+                                      : 1)*127);
+    }
+ 
 }
 
 export const sample = {

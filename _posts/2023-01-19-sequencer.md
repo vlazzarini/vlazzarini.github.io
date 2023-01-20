@@ -197,7 +197,6 @@ is used in an arrow function defining the callback, and
 we can add to the sequencer. The callback is run
 only once but it may be rescheduled recursively. 
 
-
 Conclusions
 --------
 
