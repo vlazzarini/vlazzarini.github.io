@@ -134,7 +134,7 @@ idec table p7,24
 isus table p7,25
 irel table p7,26
 iamp table p5, 5
-aenv madsr iatt+1/kr, idec+1/kr, isus, irel+1/kr
+aenv madsr iatt+1/kr, idec, isus, irel
 imicro = 2^(frac(p4)/12)
 kbend table p7,14
 a1, a2 sfplay p5, int(p4), iamp*aenv*0.0001, imicro*kbend, p6, 0, 0, 2
@@ -146,7 +146,7 @@ isus table p7,21
 irel table p7,22
 kcfi table p7,17
 kres table p7,18
-kcfi += madsr(iatt+1/kr,idec+1/kr,isus,irel+1/kr)*table(p7,27)
+kcfi += madsr(iatt+1/kr,idec,isus,irel)*table(p7,27)
 kcf = exp((kcfi < 1 ? kcfi : 1)*gicf)
 a1f vclpf a1,kcf,kres
 a2f vclpf a2,kcf,kres
@@ -234,7 +234,7 @@ ksp  table p7, 16  // playback speed per chn
 ksp *= ks0
 aph phasor ksp/(klend - kstart)
 atimpt = kstart + aph*(klend - kstart)
-aenv madsr iatt+1/kr, idec+1/kr, isus, ire+1/kr
+aenv madsr iatt+1/kr, idec, isus, ire
 if ftchnls(ifn) == 1 then
 a1 mincer atimpt,iamp,ipitch*kpitch,ifn,1
 a1 = a1*aenv
@@ -251,7 +251,7 @@ isus table p7,21
 irel table p7,22
 kcfi table p7,17
 kres table p7,18
-kcfi += madsr(iatt+1/kr,idec+1/kr,isus,irel+1/kr)*table(p7,27)
+kcfi += madsr(iatt+1/kr,idec,isus,irel)*table(p7,27)
 kcf = exp((kcfi < 1 ? kcfi : 1)*gicf)
 a1f vclpf a1,kcf,kres
 a2f vclpf a2,kcf,kres
@@ -333,7 +333,7 @@ f22 0 1024 7 0 1024 0  /* lp rel */
 f23 0 1024 7 0 1024 0  /* a att */
 f24 0 1024 7 0 1024 0  /* d dec */
 f25 0 1024 7 1 1024 1  /* s sus */
-f26 0 1024 7 0.1 1024 0.1  /* r rel */
+f26 0 1024 -7 0.1 1024 0.1  /* r rel */
 f27 0 1024 7 0 1024 0  /* fil env amount */
 
 
