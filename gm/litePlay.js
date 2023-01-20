@@ -64,10 +64,9 @@ const globalObj = {
 
 // Csound instrument class
 export class Instrument {
-    constructor(pgm, isDrums = false, rel = 0.1, instr = 10) {
+    constructor(pgm, isDrums = false, instr = 10) {
         this.pgm = pgm;
         this.chn = globalObj.freeChannel++;
-        this.rel = rel;
         this.isDrums = isDrums;
         this.what = 60;
         this.howLoud = 1;
@@ -77,12 +76,11 @@ export class Instrument {
     }
 
     score(what, howLoud, when, howLong) {
-        let rel = this.rel;
         let prog = this.pgm;
         let instr = this.instr + what / 1000000 + this.chn / 1000;
         if (this.isDrums) {
-            if (prog == 7) rel = 2;
-            else rel = 0.5;
+            if (prog == 7) csound.tableSet(26, this.chn, 2); 
+            else csound.tableSet(26, this.chn, 0.5);
             if (what == 29 || what == 30) instr = 10.97;
             else if (what == 42 || what == 44 || what == 46 || what == 49)
                 instr = 10.91;
@@ -114,10 +112,7 @@ export class Instrument {
                 " " +
                 prog +
                 " " +
-                " " +
                 this.chn +
-                " " +
-                rel +
                 "\n"
         );
     }
@@ -201,11 +196,19 @@ export class Instrument {
                                       : 1)*127);
     }
 
-    filterEnvelope(att, dec, sus, rel) {
+    filterEnvelope(amount, att, dec, sus, rel) {
         csound.tableSet(19, this.chn, att);
         csound.tableSet(20, this.chn, dec);
         csound.tableSet(21, this.chn, sus);
-        csound.tableSet(22, this.chn, rel);   
+        csound.tableSet(22, this.chn, rel);
+        csound.tableSet(27, this.chn, amount);  
+    }
+
+    ampEnvelope(att, dec, sus, rel) {
+        csound.tableSet(23, this.chn, att);
+        csound.tableSet(24, this.chn, dec);
+        csound.tableSet(25, this.chn, sus);
+        csound.tableSet(26, this.chn, rel); 
     }
 
 }
@@ -240,8 +243,8 @@ export const sample = {
 }
 
 export class Sampler extends Instrument {
-    constructor(pgm, isDrums = false, rel = 0.1) {
-        super(pgm.number, isDrums, rel, 12);
+    constructor(pgm, isDrums = false) {
+        super(pgm.number, isDrums, 12);
         this.sample = pgm;
         this.what = pgm.fo;
     }

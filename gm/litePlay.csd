@@ -45,6 +45,7 @@ nxt:
          else
            krel = 0.5
          endif
+         tablew krel,kch,26
          if (kd1 == 29 || kd1 == 30) then ; EXC7
           kinst = 10.97
          elseif (kd1 == 42 || kd1 == 44 || kd1 == 46 || kd1 == 49) then ; EXC1
@@ -63,7 +64,7 @@ nxt:
         else
          krel = 0.5
         endif
-        event "i", kinst, 0, -1, kd1, kd2, kpg, kch,krel
+        event "i", kinst, 0, -1, kd1, kd2, kpg, kch
         tablew 1,kd1,7
      
     elseif (kst == 128 || (kst == 144 && kd2 == 0)) then ; note off
@@ -128,11 +129,15 @@ gicf = log(sr/2)
 /* this is the GM soundfont synthesizer instrument */
 instr 10
 
+iatt table p7,23
+idec table p7,24
+isus table p7,25
+irel table p7,26
 iamp table p5, 5
-aenv linenr iamp,0,p8,0.01
+aenv madsr iatt+1/kr, idec+1/kr, isus, irel+1/kr
 imicro = 2^(frac(p4)/12)
 kbend table p7,14
-a1, a2 sfplay p5, int(p4), aenv*0.0001, imicro*kbend, p6, 0, 0, 2
+a1, a2 sfplay p5, int(p4), iamp*aenv*0.0001, imicro*kbend, p6, 0, 0, 2
 kv table p7, 2
 
 iatt table p7,19
@@ -141,7 +146,7 @@ isus table p7,21
 irel table p7,22
 kcfi table p7,17
 kres table p7,18
-kcfi += madsr(iatt+1/kr,idec+1/kr,isus,irel+1/kr)
+kcfi += madsr(iatt+1/kr,idec+1/kr,isus,irel+1/kr)*table(p7,27)
 kcf = exp((kcfi < 1 ? kcfi : 1)*gicf)
 a1f vclpf a1,kcf,kres
 a2f vclpf a2,kcf,kres
@@ -161,6 +166,7 @@ endin
 
 // sample playback
 instr 11
+irel table p7,26
 ifo table p6,10
 ifn table p6,9
 iamp table p5,5
@@ -176,7 +182,7 @@ kpitch table p7, 14
 kpan  table p7, 3
 kpan = (kpan - 64)/128
 
-aenv linenr iamp,0,p8,0.01 
+aenv linenr iamp,0,irel,0.01 
 if ftchnls(ifn) == 1 then
 a1 flooper2 iamp,ipitch*kpitch,kstart,klend,kfade,ifn
 a1 = a1*aenv
@@ -194,7 +200,7 @@ garev1 += a1*krev
 garev2 += a2*krev
        outs a1, a2
 if kend == 0 then
- kend = (iln - p8*2.1)/(ipitch*kpitch)  
+ kend = (iln - irel*2.1)/(ipitch*kpitch)  
  if timeinsts() >= kend then
   turnoff 
  endif
@@ -205,6 +211,11 @@ endin
 // sample playback (spectral)
 // p6 is pgm -> sample num
 instr 12
+
+iatt table p7,23
+idec table p7,24
+isus table p7,25
+ire table p7,26
 ifo table p6,10
 ifn table p6,9
 iamp table p5,5
@@ -223,7 +234,7 @@ ksp  table p7, 16  // playback speed per chn
 ksp *= ks0
 aph phasor ksp/(klend - kstart)
 atimpt = kstart + aph*(klend - kstart)
-aenv linenr iamp,0,p8,0.01 
+aenv madsr iatt+1/kr, idec+1/kr, isus, ire+1/kr
 if ftchnls(ifn) == 1 then
 a1 mincer atimpt,iamp,ipitch*kpitch,ifn,1
 a1 = a1*aenv
@@ -240,7 +251,7 @@ isus table p7,21
 irel table p7,22
 kcfi table p7,17
 kres table p7,18
-kcfi += madsr(iatt+1/kr,idec+1/kr,isus,irel+1/kr)
+kcfi += madsr(iatt+1/kr,idec+1/kr,isus,irel+1/kr)*table(p7,27)
 kcf = exp((kcfi < 1 ? kcfi : 1)*gicf)
 a1f vclpf a1,kcf,kres
 a2f vclpf a2,kcf,kres
@@ -254,14 +265,12 @@ garev1 += a1*krev
 garev2 += a2*krev
        outs a1*.2, a2*.2
 if kend == 0 then
- kend = (iln - p8*2.1)/(ipitch*ksp)  
+ kend = (iln - ire)/(ipitch*ksp)  
  if timeinsts() >= kend then
   turnoff 
  endif
 endif              
 endin
-
-
 
 // loading tables
 // i2 0 0 "sample" f0 pgm
@@ -280,18 +289,19 @@ garev2 = 0
 endin
 
 //ifn ftgen 8,0,1024,7,0,1024,0
-//instr 101
-// tableiw 0.5,100,17
-// tableiw 0.1,100,19
-// tableiw 1,100,20
-// tableiw 0.7,100,21
-//endin
-//schedule(101,0,0)
-//schedule(10,1,5,60,10,0,100,0.5)
-//schedule(10,1,5,60.5,100,0,0,0.5)
+instr 101
+ tableiw 0.5,100,17
+ tableiw 0.4,100,27
+ tableiw 0.1,100,19
+ tableiw 1,100,20
+ tableiw 0.7,100,21
+endin
+schedule(101,0,0)
+schedule(10,1,5,60,10,0,100)
+//schedule(10,1,5,60.5,100,0,0)
 
 //schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0)
-//schedule(12,1,-1,48,100,0,500,0.1)
+//schedule(12,1,-1,48,100,0,500)
 
 </CsInstruments>
 <CsScore>
@@ -319,6 +329,12 @@ f19 0 1024 7 0 1024 0  /* lp att */
 f20 0 1024 7 0 1024 0  /* lp dec */
 f21 0 1024 7 1 1024 1  /* lp sus */
 f22 0 1024 7 0 1024 0  /* lp rel */
+f23 0 1024 7 0 1024 0  /* a att */
+f24 0 1024 7 0 1024 0  /* d dec */
+f25 0 1024 7 1 1024 1  /* s sus */
+f26 0 1024 7 0.1 1024 0.1  /* r rel */
+f27 0 1024 7 0 1024 0  /* fil env amount */
+
 
 i 1 0 z
 i 100 0 z
