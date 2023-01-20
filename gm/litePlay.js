@@ -8,7 +8,7 @@ let audio_context = null;
 // source URL for assets
 const srcurl = "https://vlazzarini.github.io/gm/";
 // CSD file name
-const csd = "./gm.csd";
+const csd = "./litePlay.csd";
 const sfont = "./gm.sf2";
 
 // this is the JS function to start Csound
@@ -200,7 +200,14 @@ export class Instrument {
                                       (amount > 0 ? amount : 0)
                                       : 1)*127);
     }
- 
+
+    filterEnvelope(att, dec, sus, rel) {
+        csound.tableSet(19, this.chn, att);
+        csound.tableSet(20, this.chn, dec);
+        csound.tableSet(21, this.chn, sus);
+        csound.tableSet(22, this.chn, rel);   
+    }
+
 }
 
 export const sample = {
