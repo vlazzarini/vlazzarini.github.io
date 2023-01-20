@@ -100,7 +100,7 @@ designed to provide a clock to which any number of sequences
 are aligned. With the `sequencer` object, we can have
 
 * sequences: these are defined by event lists (JS arrays) with a
-similar format as used in `eventLists`
+similar format as used in `eventLists`.
 
 * callbacks: functions that can be registered to be executed in sync
 with the sequencer clock. We can trigger the playback of event
@@ -134,7 +134,31 @@ const kck = [[kick, 0.1], O, [kick, 0.2]];c
 const snr = [snare,O];
 ```
 
-where an `O` means play nothing, and we can add these to the sequencer
+where an `O` means play nothing. The `when` parameter is always
+relative to the current beat (or subdivision), so it can be used to
+offset the start time (always in beat units). If we want to have more
+than one event on a given beat, we can pass an event list instead
+of a single event for that step. A default instrument for a given
+sequence can be overwridden by passing a different instrument as the
+last event parameter,
+
+```
+melody = [
+    [[Eb5, 3, 0, 2, organ], [Bb5, 3, 0, 2, organ], [G6, 1, 0, 2]],
+    O,
+    [[F5, 3, 0, 2, organ], [Ab5, 3, 0, 2, organ], [Db6, 1, 0, 3.5]],
+    O,
+    O,
+    [Bb5, 1, 0.5, 0.5],
+    [[Eb5, 3, 0, 1, organ], [G5, 3, 0, 1, organ], [C6]],
+    O,
+    Bb5,
+    Ab5,
+    ];
+riff = [Eb3, [G3, 1, 0, 0.5], Bb3, [Db3, 2, 0.75, 0.2]];   
+```
+
+Once we have set up our `whatList` we can add it to the sequencer,
 
 ```
 const sequencer = lp.sequencer;
@@ -142,6 +166,8 @@ const drums = lp.drums;
 const cymbals = sequencer.play(drums, shuf, amp, 1/3);
 const kicks = sequencer.play(drums, kck, amp, 1/3);
 const snares = sequencer.play(drums, snr, amp);
+const bassline = sequencer.add(bass, riff, 0.1);
+const topline = sequencer.add(synth, melody, 0.1);
 ```
 
 When `litePlay.js` starts, the sequencer is stopped. So to hear these
