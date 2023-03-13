@@ -265,7 +265,7 @@ garev1 += a1*krev
 garev2 += a2*krev
        outs a1*.2, a2*.2
 if kend == 0 then
- kend = (iln - ire)/(ipitch*ksp)  
+ kend = (iln - ire*2.1)/ksp;///(ipitch*ksp)  
  if timeinsts() >= kend then
   turnoff 
  endif
@@ -302,6 +302,8 @@ endin
 //schedule(10,1,5,60.5,100,0,0)
 
 //schedule(2,0,0,"/Users/victor/audio/paisley.ogg",48,0)
+//schedule(12,1,-1,48,100,0,500)
+//schedule(2,0,0,"pianoc2.wav",48,0)
 //schedule(12,1,-1,48,100,0,500)
 
 </CsInstruments>
