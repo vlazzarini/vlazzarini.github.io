@@ -239,7 +239,13 @@ export const sample = {
     },
     play: function (...evtList){
         this.instr.play(...evtList);
+    },
+    instrument: function (what = null, fo = 60, bpm = 0) {
+        if(instr.null)
+            return this.create(what, fo, bpm).instr;
+        else return instr;
     }
+    
 }
 
 export class Sampler extends Instrument {
