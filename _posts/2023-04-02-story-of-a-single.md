@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Story of a single"
+title:  "The Story of a Single"
 date:   2023-04-02 12:00:00
 categories: blogpost
 ---

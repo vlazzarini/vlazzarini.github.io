@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Event lists and Sequencer"
+title:  "Event Lists and Sequencer"
 date:   2023-01-19 09:00:00
 categories: blogpost
 ---
