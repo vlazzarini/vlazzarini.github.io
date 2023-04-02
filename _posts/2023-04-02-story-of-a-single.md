@@ -16,7 +16,7 @@ Particularly important in this piece, I think, are the influences from
 Indian Classical music, particularly in terms of rhythm and in the
 modalism adopted. From that perspective, it is possible to note the
 use of a particular raga from the Melakarta, *Hanumatodi* (S R1 G2 M1 P
-D1 N2 S), as a pentatonic sub-set from it. The rhythm structure is,
+D1 N2 S), and a pentatonic sub-set from it. The rhythm structure is,
 for the most part, based on a 5+5+2 pattern, which is also described
 by the Carnatic tala *Khanda Jati Matya*. The tempo is lightning fast,
 which was typical of many of his pieces.
