@@ -129,8 +129,20 @@ wanted. You can judge for yourself here,
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7fiQ0yLWvFG3NmN0MU1bgv?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
+Video
+-----------
 
+Since I had a completely new track with a much stronger arrangement,
+it made sense to revise the video so that it could be linked to the
+release. The trouble was that I did not have footage for the drums
+recording or for any of the new parts I had re-recorded and added this
+year. So I decided to re-cut the video to match the first part, which
+was possible to do, and fade out at the start of the drums solo
+(basically a 'single cut' of the track). The intro had come out so
+well in the master that I decided to keep it and place it under the
+title, syncing the text with the first strike of the chords.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bbZvNnT8tkg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 
