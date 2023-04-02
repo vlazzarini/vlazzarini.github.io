@@ -7,7 +7,7 @@ categories: blogpost
 
 Earlier in March, I released a single with Aman Jagwani on drums based
 on an arrangement of the Mahavishnu Orchestra's track *Meeting of the
-Spirits*. This is the story behing the arrangement and recording.
+Spirits*. This is the story behind the arrangement and recording.
 
 This composition is very typical of the style and sound
 McLaughlin was developing with the Mahavishnu. It was a very original
