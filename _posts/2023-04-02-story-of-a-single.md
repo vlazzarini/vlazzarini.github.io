@@ -11,7 +11,7 @@ Spirits*. This is the story behind the arrangement and recording.
 
 This composition is very typical of the style and sound
 McLaughlin was developing with the Mahavishnu. It was a very original
-take on the Jazz-Rock, or fusion, which was only nascent at the time.
+take on Jazz-Rock, or fusion, which was only nascent at the time.
 Particularly important in this piece, I think, are the influences from
 Indian Classical music, particularly in terms of rhythm and in the
 modalism adopted. From that perspective, it is possible to note the
