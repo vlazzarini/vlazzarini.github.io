@@ -90,9 +90,9 @@ string machine parts, as well as the synth solo, but restructured the
 arrangement completely, re-recording and adding many other keyboard
 parts.
 
-While in the earlier recording I had proceeded in a fairly traditional
+In the earlier recording I had proceeded in a fairly traditional
 way, using the DAW simply as if it were a multitrack recorder with
-little editing bar fade outs, now I started making cuts and move
+little editing bar fade outs. Now I started making cuts and move
 things about to accommodate the new recorded parts and the new
 arrangement.
 
