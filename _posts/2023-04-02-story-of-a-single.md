@@ -97,7 +97,7 @@ things about to accommodate the new recorded parts and the new
 arrangement.
 
 I recorded a guide for the intro, playing the chords on the piano
-(which was not used in the final mix), and inserted it at the start.
+(not used in the final mix), and inserted it at the start.
 Then I overdubbed several parts to re-create the introduction in
 a rich-sounding way. The first part them followed more or less like in my original
 recording, but I added a number of background parts to fill it
