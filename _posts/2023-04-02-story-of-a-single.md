@@ -81,7 +81,7 @@ finish the mix, master it and make a release, which you can listen to here:
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4taMhVBy66FvfbLGALLpB5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-The experience led me to consider what else we could do. I showed my
+The experience made me consider what else we could do in collaboration. I showed my
 version of *Meeting* to Aman and he agreed to add drums to it. Now I
 had a stronger proposition. I could work out a more complete
 arrangement, adding back in the parts I had left out. So I reused
