@@ -76,9 +76,9 @@ The Prologue allows the ME signal to bypass the filter, so we can
 test this conclusion. Plotting the input and output waveforms
 confirms this.
 
-<img src="https://vlazzarini.github.io/saw-prologue_00.pdf">
+<img src="https://vlazzarini.github.io/saw-prologue_00.jpg">
 
-<img src="https://vlazzarini.github.io/prologue-Q0.pdf">
+<img src="https://vlazzarini.github.io/prologue-Q0.jpg">
 
 Non-linearities
 ------------
