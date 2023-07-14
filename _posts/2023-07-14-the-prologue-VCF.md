@@ -94,7 +94,7 @@ resonance).
 Non-linearities
 ------------
 
-The Prologue is anectotically known for its grit with high-resonance
+The Prologue is anecdotically known for its grit with high-resonance
 settings. We should anticipate that this results from filter
 non-linearities introduced by the CA3080 OTAs, which provide
 the CV gain responsible for setting the cutoff
