@@ -54,18 +54,18 @@ we can find a couple of integrators following VC gain units.
 
 However, if we draw a flowchart from this, we will see that the
 damping feedback control is not placed in the usual location for
-a state variable. In that classic design, it runs from the first integrator
-back to the input.
+a state variable. Let's recall the classic state variable design, 
 
 <img src="https://vlazzarini.github.io/statevar.png">
 
-Here, it runs from the output to before the second
-gain unit.
+We can see, the feedback path runs from the first integrator 
+back to the input. Here in the Prologue VCF,
+it runs from the output to before the second gain unit,
 
 <img src="https://vlazzarini.github.io/presentation.005.jpeg">
 
 A close analysis shows that this is still equivalent to a
-state-variable lowpass, but it results on a reversed-polarity output.
+state-variable lowpass, but it results in a reversed-polarity output.
 It is of course the case that the topology of the state variable
 filter can be tweaked to get some variants, and this confirms
 that. Interestingly enough, it is possible to extract high-pass
