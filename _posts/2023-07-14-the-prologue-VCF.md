@@ -31,7 +31,7 @@ but that seems to have been removed later on.
 The prologue also had some limitations in terms of modulation with
 only one LFO per voice.
 
-![Prologue voice architecture](presentation.003.jpeg "Voice architecture")
+<img src="https://vlazzarini.github.io/presentation.003.jpeg">
 
 However that was also the case of many classic VCO polysynths.
 
@@ -50,19 +50,19 @@ we are accustomed to see these tend to be of the state-variable
 type. A look at the circuit diagram makes us believe that, since
 we can find a couple of integrators following VC gain units.
 
-![VCF circuit](presentation.004.jpeg "VCF circuit")
+<img src="https://vlazzarini.github.io/presentation.004.jpeg">
 
 However, if we draw a flowchart from this, we will see that the
 damping feedback control is not placed in the usual location for
 a state variable. In that classic design, it runs from the first integrator
 back to the input.
 
-![State variable flowchart](statevar.png "State variable flowchart")
+<img src="https://vlazzarini.github.io/statevar.png">
 
 Here, it runs from the output to before the second
 gain unit.
 
-![VCF flowchart](presentation.005.jpeg "VCF flowchart")
+<img src="https://vlazzarini.github.io/presentation.005.jpeg">
 
 A close analysis shows that this is still equivalent to a
 state-variable lowpass, but it results on a reversed-polarity output.
@@ -76,9 +76,9 @@ The Prologue allows the ME signal to bypass the filter, so we can
 test this conclusion. Plotting the input and output waveforms
 confirms this.
 
-![ME Sawtooth](saw-prologue_00.pdf "ME Sawtooth")
+<img src="https://vlazzarini.github.io/saw-prologue_00.pdf">
 
-![VCF output](prologue-Q0.pdf "VCF output")
+<img src="https://vlazzarini.github.io/prologue-Q0.pdf">
 
 Non-linearities
 ------------
@@ -93,8 +93,7 @@ damping feedback level and the resonance amount.
 We can clearly see these non-linearities having an effect on the
 synthesizer output, for resonance levels above 50%,
 
-![VCF outputs](presentation.009.jpeg "VCF outputs for various resonance
- levels")
+<img src="https://vlazzarini.github.io/presentation.009.jpeg">
 
 As we can observe, a number of subsidiary peaks at multiples of
 the filter frequency are present. In a linear 2-pole filter we should
