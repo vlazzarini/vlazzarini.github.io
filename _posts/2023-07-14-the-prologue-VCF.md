@@ -22,7 +22,7 @@ putting the full analogue signal through an ADC/DAC to implement
 the digital effects with no true analogue route to the
 output.
 
-<img src="./presentation.002.jpeg">
+<img src="https://vlazzarini.github.io/presentation.002.jpeg">
 
 Interestingly enough, an examination of the service manual documents
 shows that at some point an effects bypass was present in the design,
