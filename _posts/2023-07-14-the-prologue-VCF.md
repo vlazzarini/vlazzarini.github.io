@@ -5,9 +5,9 @@ date:   2023-07-14 12:00:00
 categories: blogpost
 ---
 
-In 2018 Korg released, somewhat unexpectedly, a polyphonic synthesizer,
-in 8 and 16-voice variants, called the Prologue.This was special on
-many counts, among these we may cite
+In 2018 Korg released, somewhat unexpectedly, an analogue/hybrid
+polyphonic synthesizer in 8 and 16-voice variants called the
+Prologue.This was special on many counts, among these we may cite
 
 * It has three oscillators, two VCOs and a digital oscillator (the
 multiengine, ME). At the time, this was only the second 16V analogue synthesizer
@@ -22,7 +22,7 @@ putting the full analogue signal through an ADC/DAC to implement
 the digital effects with no true analogue route to the
 output.
 
-<img src="_posts/presentation.002.jpeg">
+<img src="./presentation.002.jpeg">
 
 Interestingly enough, an examination of the service manual documents
 shows that at some point an effects bypass was present in the design,
