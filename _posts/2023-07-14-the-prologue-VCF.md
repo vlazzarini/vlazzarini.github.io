@@ -102,8 +102,8 @@ frequency, and the differential amplifier used to control the
 damping feedback level and the resonance amount. A separate
 source of non-linearity is the double-back diodes in the "fixed"
 feedback route. This makes the gain in that path actually dependent
-on the signal level. It work as an expander, increasing the damping
-if the voltage goes beyond a certain threshold.
+on the signal level. They work together as an expander,
+increasing the damping if the voltage goes beyond a certain threshold.
 
 We can clearly see these non-linearities having an effect on the
 synthesizer output, for resonance levels above 50%,
