@@ -83,15 +83,27 @@ output
 
 confirms this.
 
+Another interesting thing about the VCF circuit is
+that the feedback path is split into two: "fixed gain" and
+a voltage control variable-gain route. The former sets the
+minimum Q to 0.5 (or damping = 2), and the latter increases it.
+It does that by pushing more signal in an opposite polarity to
+the fixed route, therefore reducing the damping (and increasing
+resonance). 
+
 Non-linearities
 ------------
 
 The Prologue is anectotically known for its grit with high-resonance
 settings. We should anticipate that this results from filter
 non-linearities introduced by the CA3080 OTAs, which provide
-the VCc-controlled gain responsible for setting the cutoff
+the CV gain responsible for setting the cutoff
 frequency, and the differential amplifier used to control the
-damping feedback level and the resonance amount.
+damping feedback level and the resonance amount. A separate
+source of non-linearity is the double-back diodes in the "fixed"
+feedback route. This makes the gain in that path actually dependent
+on the signal level. It work as an expander, increasing the damping
+if the voltage goes beyond a certain threshold.
 
 We can clearly see these non-linearities having an effect on the
 synthesizer output, for resonance levels above 50%,
