@@ -73,12 +73,15 @@ and band-pass outputs from this filter (at the ya and yb points,
 respectively), but this is not realised in the synthesizer.
 
 The Prologue allows the ME signal to bypass the filter, so we can
-test this conclusion. Plotting the input and output waveforms
-confirms this.
+test this conclusion. Plotting the VCF input and 
 
 <img src="https://vlazzarini.github.io/saw-prologue_00.jpg">
 
+output
+
 <img src="https://vlazzarini.github.io/prologue-Q0.jpg">
+
+confirms this.
 
 Non-linearities
 ------------
