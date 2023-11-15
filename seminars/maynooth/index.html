@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>a-ubimus</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/beige.css">
+
+		<!-- Theme used for syntax highlighted code -->
+
+<link rel="stylesheet" href="plugin/highlight/monokai.css">
+<style>
+
+
+
+</style>
+</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                          <section style="font-size:90%;">
+                          <H1> Issues of Ubiquitous Music Archaeology </H1>
+                          <H2> Victor Lazzarini </H2>
+                           <H3> Music Department, Maynooth University </H3>
+                          </section>
+                          <section>
+                          <section>
+                          <h3> About Me </h3>
+                         <img src="plug.jpg" height="320"
+                          width="480"> </img>
+                          </section>
+                          <section>
+                          <p>
+                          Computer music languages, systems, and
+		platforms; embedded computing; high-performance
+		computing; analogue computing.
+                          </p>
+                          <p>
+                          Musical signal processing; spectral methods;
+		analogue and virtual digital models.
+                          </p>
+                          <p>
+                          Ubiquitous music; Computational thinking in
+                          Music; Mathematical music theory; a-ubimus.
+                          </p>                         
+                          </section>
+                          <section>
+                         <img src="spectral.jpeg" width="300"
+                          height="413"> </img>
+                          <p>
+                          Lazzarini, V (2021), <em> Specral Music
+		Design: A Computational Approach</em>, Oxford
+		Univ. Press.
+                          </p>
+                          </section>
+                          
+                          <section>
+                          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5M2q7MA3zS4Z2soAyX8Kxn?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                          
+                          </section>
+                          </section>
+                          <section>
+                          <section>
+                          <H3> What is ubiquitous music? </H3>
+                          </section>
+
+                          <section>
+                          <p>
+                          Ubiquitous music (ubimus) can be described
+		as a research/practice area where music intersects with
+		various fields of knowledge: computer science,
+		acoustics, signal processing, psychology, cognition, education, etc.                     
+                          </p>
+                          </section>
+                          <section>
+                          <p>
+                          Its origins lie in the extension of the
+                          concept of ubiquitous computing (Weiser 1991) to
+                          music, and the notion that technologies
+                          tend to recede to the background and become
+                          invisible.
+                          </p>
+                          <p>
+                          However, while this served as a jumping
+                          point, ubimus developed outwards to incorporate
+                          many other ideas and working methods
+                          </p>
+                          </section>
+                          <section>
+                          <p>
+                         <img src="ubimus.jpeg" width="200"
+                          height="275"> </img>
+
+                          <img src="jnmr.jpg" width="200"
+                          height="275">
+                          </img>
+                          <p>
+                          <p>
+                              <img src="cmj.jpeg" width="200"
+                          height="275"> </img>
+                          <img src="ubimus2.jpeg" width="200"
+                          height="275">
+</img>
+</p>
+                          </section>
+</section>
+<section>
+<section>
+<h3>Software Archaeology</h3>
+<p> <em>"This isn’t programming, this is archaeology!" the programmer
+                          complained, wading through the ancient
+                          rubble of some particularly crufty piece of
+                          code. </em> <br> (Hunt and Thomas,
+                          <em>Software Archaeology </em>, 2001) </p>
+
+</section>
+<section>
+<p>
+Along with other products of human activity, software as artefacts can 
+be subject to archaeological study.</p><p>
+As noted by Hunt and Thomas
+(2001), a piece of code can be taken as a legacy object almost as soon
+as it is written. </p><p>
+Understanding software, and learning from it, may even be
+an active aspect of working with an existing codebase that is
+continuously maintained.
+</p>
+</section>
+
+<section>
+<p>
+Just as in other forms of archaeology, we should develop techniques to
+handle and study code in a very careful and non-destructive way.
+</p>
+</section>
+<section>
+<p>
+We
+should try to learn from the motivations and decisions taken in the
+design of a piece of software.
+</p>
+</section>
+<section>
+<p>
+We should refrain from immediate reactions
+such as "what in the hell where they thinking", but try to discover
+something about the frame of mind of the creators of the code we are
+looking at.
+</p>
+</section>
+</section>
+<section>
+<section>
+<h3>Ubimus Archaeology (a-ubimus)</h3>
+                         <img src="stockhausen.jpeg" width="700"
+                          height="373">
+</img>
+</section>
+<section>
+<p>
+Beyond the techniques and methods of software archaeology lies the
+field of <em>ubimus archaeology</em>, or a-ubimus (Keller and
+Lazzarini 2021).
+</p><p>
+Here we are interested in recovering and
+reconstructing various related artefacts (software, hardware, audio,
+documentation, etc) and tracing the ideas that
+led to these, also taking into consideration the context, material
+resources and byproducts related to ubimus activities.
+</p>
+</section>
+<section>
+<p>
+The study of a-ubimus has several cross-concerns: for instance, we can
+speak of the archaeology of creative resources, the archaeology of
+creative models, and the archeology of creative ecosystems.
+</p><p>
+While it
+has emerged only recently as a distinct field of research, it has
+a number of important precendents.
+</p>
+</section>
+<section>
+<p>
+Among these we could cite <p>
+<ul "font-size:80%;">
+<li> the work of Zattra et al (2007) in the
+reconstruction of Chowning's <em>Stria</em>, as an example
+of rescuing the materials and ideas associated with a key artefact of
+  Computer Music. </li>
+<li>
+ Reconstructed versions of classic computer
+music packages (MUSIC V, CMusic, mit-ems Csound) were offered as part of my
+<em> Audio Programming Book</em> (MIT Press, 2010) is also a precendent that
+led to work in a-ubimus. </li>
+</ul>
+</section>
+<section>
+<ul "font-size:80%;">
+<li> A detailed studied of music programming
+systems in Lazzarini (2013) is also representative of
+early work in a-ubimus.
+</li>
+<li>
+More recently, the work of Frances Morgan (2021) on the Electronic Music Studios
+(EMS) of London can also be placed within the scope of a-ubimus.
+</li>
+</ul>
+</section>
+</section>
+<section>
+<section>
+<h3> Case Study: Reconstructing Risset's <em>Little Boy</em></h3>
+<p> To demonstrate an instance of a-ubimus research, we will examine
+a recent work reported in Lazzarini et al (2023). </p>
+</section>
+<section>
+<p>
+Jean-Claude Risset's <em>Little Boy Suite</em> is an example
+from the early computer music period (1961-9).
+</p><p>
+Composed using
+MUSIC V for sound synthesis, it was assembled out of various
+rendered fragments into a complete work on magnetic tape.
+</p><p>
+This is a work whose sources were deemed to be lost, and
+as part of our research, we were able to recover them.
+</p>
+</section>
+<section>
+<p>
+To accomplish the reconstruction, we were required to
+<ul "font-size:80%;">
+<li>Recreate a working copy of MUSIC V as used by Risset (a replica)</li>
+<li>Recover the MUSIC V code (scores) used to realise the
+sounds in the piece </li>
+<li>Identify the use of the fragments in published versions
+of the work 
+</li>
+</ul>
+</p>
+</section>
+</section>
+<section>
+<section>
+<h3>MUSIC V Replica</h3>
+</section>
+<section>
+<h3> MUSIC N Family </h3>
+<img src="drawing.png"> </img>
+</section>
+
+<section>
+<h3> Methodology </h3>
+<ul style="font-size:80%;">
+<li>
+Use version control
+</li>
+<li>
+Respect the original code; use comments to help preserve original
+code; additions/modifications only made in extreme cases.
+</li>
+<li>
+Do not assume the code runs (and runs as intended) just because it
+compiles and builds. <br>
+</li>
+<li>
+Capture snapshots of it in operation, using tracing, checking outputs
+against expected results.
+</li>
+<li>
+Cross-compare different sources.
+</li>
+</uk>
+</section>
+<section>
+<h3>
+Sources
+</h3>
+</section>
+<section>
+<p>
+A semi-restored FORTRAN source code, from a 1975 SAIL printout,
+turned into machine-readable format, with a few adjustments for
+gfortran, by Bill Schottstaedt (2008)
+</li>
+</p>
+<img src="saril.jpg"> </img>
+</section>
+<section>
+<p>
+Fragments of code found in J. C. Risset's Catalog of Computer
+Synthesized Sounds (1969)
+</p>
+<img src="cat.jpg" width="453"
+                          height="562"> </img>
+</section>
+<section>
+<p>
+The MUSIC V manual/tutorial in chapters 2 and 3 of the Mathews et al
+(1970)<em> The Technology of Computer Music </em>. This provided some
+code fragments and a full outline of the program that were helpful
+to debug and reconstruct non-working parts.
+</p>
+</section>
+<section>
+<p>
+A facsimile of computer printouts from 1968 of MUSIC V found amongst
+Risset's archive materials.
+</p>
+<img src="musicv-68.png" width="453"
+                          height="540"> </img>
+
+
+</section>
+
+
+</section>
+<section>
+<section>
+<H3>Little Boy Reconstruction</H3>
+</section>
+
+<section >
+<p style="font-size:80%;"> 46 MUSIC V scores were recovered from the Fonds Risset
+archives in Marseille. <p>
+<img src="rissetscore.png" width="850"
+                          height="500"> </img>
+</section>
+<section>
+<p style="font-size:80%;"> These scores were transcribed into a machine-readable format </p>
+<img src="code.jpg"  width="355"
+                          height="500"> </img>
+
+</section>
+<section>
+<p style="font-size:80%;"> The MUSIC V replica was used to render this code
+into audio files </p>
+<img src="run.jpg"  width="420"
+                          height="550"> </img>
+
+</section>
+
+<section style="font-size:80%;">
+<p> An iterative process was worked out where code was
+run and the MUSIC V replica was modified to yield correct results
+</p>
+<p> Running errors, invalid outputs, etc where examined to
+provide corrections to the software
+</p>
+<p> Synthesised fragments were compared to the mixed/produced
+versions of the piece.
+</p>
+</section>
+</section>
+<section>
+<section>
+<H3>Results &amp; Discussion </H3>
+</section>
+<section>
+<H3>MUSIC V versions</H3>
+<p style="font-size:80%;">
+The a-ubimus approach demonstrated that many alternative
+versions of MUSIC V existed.
+</p>
+<p style="font-size:80%;">
+Variations were customised by composers to better suit
+their work or a particular piece.
+</p>
+<p style="font-size:80%;">
+We have preserved the various uncovered versions of the software
+using modern versioning control.
+</p>
+</section>
+<section>
+<H3>Re-evaluating Contributions</H3>
+<p style="font-size:80%;">
+As part of this process, we were able to re-evaluate
+contributions to the development of computer music,
+correcting the historical record
+</p>
+<ul style="font-size:80%;">
+  <li> Frequency modulation (FM) synthesis was first explored by James
+  Tenney in the period of 61-4, using noise as modulator.</li>
+  <li>
+  We found the earliest extant code fragment of sinusoidal FM (by
+  Risset), which precedes John Chowning's paper by around 5 years. 
+  </li>
+  <li>
+  We traced the development of feedback amplitude
+  modulation (FBAM) by Risset, and
+  reconstructed the Fortran source code of a FBAM
+  unit generator by F.R.Moore (which had been lost).
+</li>
+</ul>
+</section>
+<section>
+<H3>Working Environment Dynamics</H3>
+<p style="font-size:80%;">
+We have been able to explore the dynamics of the work at
+Bell labs and the interaction between composers and engineers/scientists.
+</p>
+<p style="font-size:80%;">
+It is interesting to note that while many interests where shared,
+there were differing opinions/perceptions regarding the use of
+computer technology for musical ends.
+</p>
+</section>
+<section>
+<H3>Precision?</H3>
+<p style="font-size:80%;">
+We were also able to question the myth of precision that arose
+in early computer music.
+</p>
+<p style="font-size:80%;">
+While it is true that sound synthesis was much more reproducible
+that in the analogue studio, many variables still existed.
+</p>
+<p style="font-size:80%;">
+In particular, all sources had to be decoded and recorded
+into magnetic tape, prior to editing/mixing. That challenged
+the idea of a fully precise process.
+</p>
+</section>
+</section>
+<section>
+<section>
+<H3>Conclusions</H3>
+                         <img src="cartoon.jpeg" width="480"
+                          height="370">
+</section>
+<section>
+<H3>A-ubimus Contributions</H3>
+<p style="font-size:80%;">
+Research in a-ubimus can contribute to an understanding of
+music, techniques, technologies, and the creative environment
+around these.
+</p>
+<p style="font-size:80%;">
+It can allow re-use of lost software/hardware in new
+musical applications.
+</p>
+<p style="font-size:80%;">
+It can also teach today's practioners lessons about the
+development of the tools of their trade.
+</p>
+</section>
+<section>
+<H3>Applications</H3>
+<ul style="font-size:80%;">
+<li> Reconstruction of lost musical works.
+  </li>
+<li> Recovering of techniques and artefacts for music making.
+</li>
+<li> A re-evaluation of the emergence and
+development of musical practices.
+</li>
+</ul>  
+</section>
+<section>
+<H3>Digital Humanities</H3>
+<p style="font-size:80%;">
+A-ubimus has a strong connection to research in
+the Digital Humanities. Many of the approaches and
+methods can find common ground. It is of course
+directly related to cultural archaeology, and
+it would be useful to explore these connections
+further.
+</p>
+</section>
+<section>
+<H3>Acknowledgements</H3>
+<p>
+D. Keller and N. Radivojevic, co-authors of the
+case study reported here.
+<p>
+<p>
+Vincent Tiffon from Fonds Risset for providing access
+to Risset's archival mateiral.
+</p>
+<p>
+Bill Schottstaedt for providing the machine-readable
+transcription of the SAIL version of MUSIC V.
+</p>
+</section>
+<section>
+<H3>References</H3>
+<ul style="font-size:50%;">
+<li> Weiser, M. (1991). The Computer for the 21st Century. Scientific
+  American 265.
+</li>  
+<li>  
+Hunt, A., and Thomas, D. (2002). Software archaeology. <em> IEEE
+  Softw. </em> 19.
+  </li>
+<li>  
+Lazzarini, V. (2013). The development of computer music programming
+  systems. <em> J. New Music Res. </em> 42.
+  </li>
+<li>  
+  Zattra, L., Meneghini, M., Baudoin, O., and Dahan, K. (2007). Reconstructing
+  Stria (Special Issue). <em> Computer Music Journal </em> 31 (3).
+  </li>
+  <li>
+Morgan, Frances (2021). Electronic Music Studios London Ltd (EMS), the
+  Synthi 100 synthesizer and the construction of electronic music
+  histories, PhD thesis, Royal College of Art, London.
+  </li>
+<li>
+Lazzarini, V., and Keller, D. (2021). Towards a ubimus
+archaeology. <em>  Proceedings of the Workshop on Ubiquitous Music
+(UbiMus 2021) </em>, Porto, Portugal. 
+  </li>
+  <li>
+  Lazzarini, V., Keller, D., and Radivojevic, N. (2022). Issues of
+  ubimus archaeology: Reconstructing Risset’s music. <em>  Proceedings
+  of the Sound and Music Computing Conference </em>, St.Etienne, France.
+  </li>
+<li>  
+Keller, D., Radivojević, N., and Lazzarini, V. (2022). Issues of
+  ubimus archaeology: Beyond pure computing and precision during the
+  analogue-digital transition. <em> Proceedings of the Ubiquitous
+  Music Symposium (UbiMus 2022) </em>, Curitiba, Brazil.
+ </li> 
+ <li>
+Lazzarini, V., Keller, D., and Radivojevic, N. (2023).  
+Issues of ubiquitous music archaeology: Shared knowledge, simulation,
+terseness, and ambiguity in early computer music. <em>
+ Front. Sig. Proc </em> 3.
+</li>
+
+
+  
+</ul>  
+</section>
+</section>
+                          
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
