@@ -5,6 +5,8 @@
 layout: home
 ---
 
+[litePlay.js](./litePlay.js/)
+
 [Miscellaneous Csound Wasm Examples](./wasm/index.html)
 
 [The Absolute Vanilla Webaudio Csound Tutorial](./vanilla/index.html)
