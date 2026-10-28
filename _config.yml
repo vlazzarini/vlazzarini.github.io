@@ -52,4 +52,4 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-exclude: ['attic']
+exclude: ['attic', 'node_modules', 'vendor']
