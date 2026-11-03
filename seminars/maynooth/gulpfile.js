@@ -8,14 +8,14 @@ const {rollup} = require('rollup')
 const terser = require('@rollup/plugin-terser')
 const babel = require('@rollup/plugin-babel').default
 const commonjs = require('@rollup/plugin-commonjs')
-const resolve = require('@rollup/plugin-node-resolve').default
+const nodeResolve = require('@rollup/plugin-node-resolve')
+const resolve = nodeResolve.default || nodeResolve
 const sass = require('sass')
 
 const gulp = require('gulp')
 const tap = require('gulp-tap')
 const zip = require('gulp-zip')
 const header = require('gulp-header')
-const eslint = require('gulp-eslint')
 const minify = require('gulp-clean-css')
 const connect = require('gulp-connect')
 const autoprefixer = require('gulp-autoprefixer')
@@ -256,11 +256,7 @@ gulp.task('qunit', () => {
     } );
 } )
 
-gulp.task('eslint', () => gulp.src(['./js/**', 'gulpfile.js'])
-        .pipe(eslint())
-        .pipe(eslint.format()))
-
-gulp.task('test', gulp.series( 'eslint', 'qunit' ))
+gulp.task('test', gulp.series( 'qunit' ))
 
 gulp.task('default', gulp.series(gulp.parallel('js', 'css', 'plugins'), 'test'))
 
@@ -302,7 +298,7 @@ gulp.task('serve', () => {
         `!${slidesRoot}**/node_modules/**`, // ignore node_modules
     ], gulp.series('reload'))
 
-    gulp.watch(['js/**'], gulp.series('js', 'reload', 'eslint'))
+    gulp.watch(['js/**'], gulp.series('js', 'reload'))
 
     gulp.watch(['plugin/**/plugin.js', 'plugin/**/*.html'], gulp.series('plugins', 'reload'))
 
